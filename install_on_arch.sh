@@ -30,11 +30,12 @@ install_zsh()
   echo "Set zsh as default shell"
   chsh -s $(which zsh)
 
-  echo "Install oh-my-zsh"
+  echo "Installing oh-my-zsh"
   sudo curl -L http://install.ohmyz.sh | sh
 
-  echo "Install zsh autosuggestions plugin"
+  echo "Installing zsh plugins"
   git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 }
 
 installer()
@@ -102,9 +103,30 @@ installer()
 
   # Clone config
   echo "Cloning config"
-  # git clone https://github.com/Tai-Github/dotfiles
-  # [ -d "$HOME/.config/alacritty" ] && rm -rf ~/.config/alacritty
-  # cp -r
+  git clone https://github.com/TaiK7/dotfiles
+
+  # Alacritty
+  [ -d "$HOME/.config/alacritty" ] && rm -rf ~/.config/alacritty
+  cp -r dotfiles/alacritty ~/.config/alacritty
+
+  # Zsh
+  cp dotfiles/oh-my-zsh/theme/custom.zsh-theme ~/.oh-my-zsh/custom/themes/custom.zsh-theme
+  [[ -e "$HOME/.zshrc" ]] && rm ~/.zshrc
+  cp dotfiles/zshrc ~/.zshrc
+
+  # Neofetch
+  [ -d "$HOME/.config/neofetch" ] && rm -rf ~/.config/neofetch
+  cp -r dotfiles/neofetch ~/.config/neofetch
+
+  # Ranger
+  [ -d "$HOME/.config/ranger" ] && rm -rf ~/.config/ranger
+  cp -r dotfiles/ranger ~/.config/ranger
+
+  # Swap capslock and esc key
+  echo setxkbmap -option caps:swapescape > ~/.profile
+
+  # Remove dotfiles folder
+  rm -rf dotfiles
   echo "-------------------------------------------------------------------------------------------"
   sleep 0.7
 
