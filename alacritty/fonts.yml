@@ -1,0 +1,34 @@
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: "Nerd Font Cascadia Code"
+    #style: Regular
+
+  # Bold font face
+  bold:
+    family: "Nerd Font Cascadia Code"
+    #style: Bold
+
+  # Italic font face
+  italic:
+    family: "Nerd Font Cascadia Code"
+    #style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: "Nerd Font Cascadia Code"
+    #style: Bold Italic
+
+  # Point size
+  size: 9
+
+  # Offset
+  #offset:
+  #  x: 0
+  #  y: 0
+
+  # Glyph offset
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
