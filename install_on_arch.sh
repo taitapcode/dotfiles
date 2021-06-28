@@ -3,13 +3,15 @@
 # Exit when command fails
 set -o errexit
 
-ask_install_yay()
+install_yay()
 {
   echo "Installing yay..."
-  pacman -S --needed git base-devel
-  git clone https://aur.archlinux.org/yay.git
-  cd yay
+  sudo pacman -S --needed git base-devel
+  git clone https://aur.archlinux.org/yay-git.git
+  cd yay-git
   makepkg -si
+  cd ..
+  rm -rf yay-git
 }
 
 ask_install_alacritty()
@@ -49,7 +51,7 @@ installer()
   # Install yay
 
   if ! [ -x "$(command -v yay)" ]; then
-    ask_install_yay
+    install_yay
   else
     echo "Yay already installed ..."
   fi

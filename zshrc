@@ -8,7 +8,7 @@ ENABLE_CORRECTION="true"
 ZSH_THEME="custom"
 
 # Load plugins
-plugins=(vi-mode zsh-auautosuggestions zsh-syntax-highlighting)
+plugins=(vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 
 # Enable change cursor on insert mode
 VI_MODE_SET_CURSOR=true
