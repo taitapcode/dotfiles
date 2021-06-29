@@ -76,7 +76,7 @@ install_ranger()
 
 }
 
-# Instaler
+# Installer
 sudo clear
 
 echo "---------------------------------------------------------------"
