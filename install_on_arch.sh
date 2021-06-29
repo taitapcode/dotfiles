@@ -3,23 +3,9 @@
 # Exit when command fails
 set -o errexit
 
-install_yay()
-{
-  if ! [ -x "$(command -v yay)" ]; then
-    [ -d "$HOME/yay-git" ] && rm -rf ~/yay-git
-    sudo pacman -S --needed git base-devel
-		git clone https://aur.archlinux.org/yay-git.git
-		cd ~/yay-git
-		makepkg -si
-    cd ~
-    rm -rf yay-git
-  fi
-}
-
 install_alacritty()
 {
   echo "Alacritty installing..."
-  yay -Sy nerd-fonts-cascadia-code
   ! [ -x "$(command -v alacritty)" ] && sudo pacman -Sy alacritty
   [ -d "$HOME/.config/alacritty" ] && rm -rf ~/.config/alacritty
   cp -r ~/dotfiles/alacritty ~/.config/alacritty
@@ -92,7 +78,6 @@ echo "---------------------------------------------------------------"
 # Ask install alacritty
 read -p "Do you like to install alacritty config? (Y/N): " answer
 if [[ "$answer" != "${answer#[Yy]}" ]]; then
-  install_yay
   install_alacritty
 else
   echo "Install alacritty config cancel"
@@ -103,7 +88,6 @@ sleep 0.7
 # Ask install zsh
 read -p "Do you like to install zsh config? (Y/N): " answer
 if [[ "$answer" != "${answer#[Yy]}" ]]; then
-  install_yay
   install_zsh
 else
   echo "Install zsh config cancel"

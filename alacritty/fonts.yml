@@ -2,22 +2,22 @@
 font:
   # Normal (roman) font face
   normal:
-    family: "Nerd Font Cascadia Code"
+    family: Source Code Pro
     #style: Regular
 
   # Bold font face
   bold:
-    family: "Nerd Font Cascadia Code"
+    family: Source Code Pro
     #style: Bold
 
   # Italic font face
   italic:
-    family: "Nerd Font Cascadia Code"
+    family: Source Code Pro
     #style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: "Nerd Font Cascadia Code"
+    family: Source Code Pro
     #style: Bold Italic
 
   # Point size
