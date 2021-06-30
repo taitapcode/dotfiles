@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 
 # Set theme
-ZSH_THEME="custom"
+ZSH_THEME="duellj"
 
 # Load plugins
 plugins=(vi-mode zsh-autosuggestions zsh-syntax-highlighting)
@@ -40,7 +40,8 @@ alias gp='git push origin master'
 
 # Other
 alias nvimconfig="cd ~/.config/nvim && nvim"
-alias cl='clear'
+alias cl="clear"
+alias rf="rm -rf"
 
 # Set auto cd
 setopt auto_cd

@@ -6,7 +6,7 @@
 
 ## Import files (Colors, Fonts, Etc)
 import:
-  - ~/.config/alacritty/colorscheme.yml
+  - ~/.config/alacritty/dracula.yml
   - ~/.config/alacritty/fonts.yml
 
 ## Set environment variables

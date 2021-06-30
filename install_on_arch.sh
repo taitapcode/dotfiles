@@ -3,9 +3,26 @@
 # Exit when command fails
 set -o errexit
 
+install_font()
+{
+   if ! [ -x "$(command -v yay)" ]; then
+    [ -d "$HOME/yay-git" ] && rm -rf ~/yay-git
+    sudo pacman -S --needed git base-devel
+		git clone https://aur.archlinux.org/yay-git.git
+		cd ~/yay-git
+		makepkg -si
+    cd ~
+    rm -rf yay-git
+  fi
+
+  # Install font
+  yay -Sy nerd-fonts-fira-code
+}
+
 install_alacritty()
 {
   echo "Alacritty installing..."
+  install_font
   ! [ -x "$(command -v alacritty)" ] && sudo pacman -Sy alacritty
   [ -d "$HOME/.config/alacritty" ] && rm -rf ~/.config/alacritty
   cp -r ~/dotfiles/alacritty ~/.config/alacritty
@@ -36,7 +53,6 @@ install_zsh()
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
   # Copy config
-  cp ~/dotfiles/oh-my-zsh/theme/custom.zsh-theme ~/.oh-my-zsh/custom/themes/custom.zsh-theme
   [[ -e "$HOME/.zshrc" ]] && rm ~/.zshrc
   cp ~/dotfiles/zshrc ~/.zshrc
 }
