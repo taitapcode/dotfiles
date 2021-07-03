@@ -1,13 +1,12 @@
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;
-;;	    ____        __      __              
+;;	    ____        __      __
 ;;	   / __ \____  / /_  __/ /_  ____ ______
 ;;	  / /_/ / __ \/ / / / / __ \/ __ `/ ___/
-;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /    
-;;	/_/    \____/_/\__, /_.___/\__,_/_/     
-;;	              /____/                    
+;;	 / ____/ /_/ / / /_/ / /_/ / /_/ / /
+;;	/_/    \____/_/\__, /_.___/\__,_/_/
+;;	              /____/
 ;;
-;; Created By Aditya Shakya @adi1090x
 ;;
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -62,7 +61,7 @@ spacing = 0
 dim-value = 1.0
 
 wm-name = bspwm
-locale = 
+locale =
 
 tray-position = right
 tray-detached = false
@@ -97,13 +96,12 @@ compositing-border = over
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 ;;
-;;	    __  ___          __      __         
+;;	    __  ___          __      __
 ;;	   /  |/  /___  ____/ /_  __/ /__  _____
 ;;	  / /|_/ / __ \/ __  / / / / / _ \/ ___/
-;;	 / /  / / /_/ / /_/ / /_/ / /  __(__  ) 
-;;	/_/  /_/\____/\__,_/\__,_/_/\___/____/  
+;;	 / /  / / /_/ / /_/ / /_/ / /  __(__  )
+;;	/_/  /_/\____/\__,_/\__,_/_/\___/____/
 ;;
-;; Created By Aditya Shakya @adi1090x
 ;;
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -187,7 +185,7 @@ poll-interval = 2
 time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
-format-charging-prefix = 
+format-charging-prefix =
 
 format-discharging = <ramp-capacity> <label-discharging>
 
@@ -286,19 +284,19 @@ label-separator-padding = 0
 
 ;; [module/mod]
 ;; type = internal/bspwm
-;; 
+;;
 ;; format = <label-mode>
 ;; format-background = ${color.YELLOW}
 ;; format-foreground = ${color.BACKGROUND}
 ;; format-padding = 1
-;; 
+;;
 ;; label-monocle = "Monocle"
 ;; label-tiled = "Tiled"
-;; 
+;;
 ;; label-floating = ", Float"
 ;; label-pseudotiled = ", Pseudo"
 ;; label-fullscreen = ", Full"
-;; 
+;;
 ;; label-locked = " Locked"
 ;; label-sticky = " Sticky"
 ;; label-private = " Private"
@@ -413,12 +411,3 @@ ramp-signal-3 = 直
 ramp-signal-4 = 直
 ramp-signal-font = 2
 ramp-signal-foreground = ${color.CYAN}
-
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-;;	    __________  ______
-;;	   / ____/ __ \/ ____/
-;;	  / __/ / / / / /_    
-;;	 / /___/ /_/ / __/    
-;;	/_____/\____/_/       
-;;
-;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

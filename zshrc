@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 
 # Set theme
-ZSH_THEME="duellj"
+ZSH_THEME="custom"
 
 # Load plugins
 plugins=(vi-mode zsh-autosuggestions zsh-syntax-highlighting)
