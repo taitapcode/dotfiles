@@ -114,7 +114,7 @@ xfce4-power-manager &
 xsetroot -cursor_name left_ptr
 
 # Restore wallpaper
-bash $HOME/.fehbg
+feh --no-fehbg --bg-scale "$HOME/.config/bspwm/wallpapers/cyberpunk.jpg"
 
 # Start mpd
 exec mpd &
