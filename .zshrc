@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 
 # Set theme
-ZSH_THEME="custom"
+ZSH_THEME="robbyrussell"
 
 # Load plugins
 plugins=(vi-mode zsh-autosuggestions zsh-syntax-highlighting)
@@ -22,29 +22,11 @@ export LANG=en_US.UTF-8
 # Set default editor
 export EDITOR='nvim'
 
-# User alias
-# ls
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
-
-# git
-alias gcl='git clone --depth 1'
-alias gi='git init'
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push origin master'
-
-# Other
-alias nvimconfig="cd ~/.config/nvim && nvim"
-alias cl="clear"
-alias rf="rm -rf"
+# Alias
+[[ -f $HOME/.config/aliasrc ]] && source $HOME/.config/aliasrc
 
 # Set auto cd
 setopt auto_cd
 
 # Show system information
-neofetch
+# neofetch

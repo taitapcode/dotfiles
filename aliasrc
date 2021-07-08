@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# ls
+alias l='ls -lh'
+alias ll='ls -lAh'
+alias la='ls -A'
+alias lm='ls -m'
+alias lr='ls -R'
+alias lg='ls -l --group-directories-first'
+
+# git
+alias gcl='git clone --depth 1'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+
+# Other
+alias nvimconfig="nvim $HOME/.config/nvim"
+alias zshrc="nvim $HOME/.zshrc"
+alias cl="clear"
+alias rf="rm -rf"
+alias pacmansy="sudo pacman -Sy"
