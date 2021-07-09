@@ -1,13 +1,15 @@
 # Export
-export ZSH=$HOME/.oh-my-zsh   # Path to your oh-my-zsh installation.
-export LANG=en_US.UTF-8       # Set language environment
-export EDITOR='nvim'          # Set default editor
+export ZSH=$HOME/.oh-my-zsh           # Path to your oh-my-zsh installation.
+export LANG=en_US.UTF-8               # Set language environment
+export EDITOR='nvim'                  # Set default editor
+export BROWSER='chromium'             # Set default browser
+export PATH='$PATH:$HOME/.local/bin'  # This will help you run scripts which are in these folders.
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
 # Set theme
-ZSH_THEME="robbyrussell"
+ZSH_THEME="omz"
 
 # Set auto cd
 setopt auto_cd

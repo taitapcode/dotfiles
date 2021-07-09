@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Ls
+alias l="ls -lh"
+alias la="ls -A"
+alias ll="ls -lAh"
+alias lm="ls -m"
+alias lr="ls -R"
+alias lg="ls -l --group-directories-first"
+
+# Git
+alias gcl='git clone'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+
+# Pacman
+alias pacinstall="sudo pacman -S"
+alias pacupdate="sudo pacman -Sy"
+alias pacupgrade="sudo pacman -Syu"
+alias pacclean="sudo pacman -Sc"
+alias pacsearch="sudo pacman -Ss"
+alias pacinstalled="pacman -Q"
+alias pacfind="pacman -Qs"
+alias pacremove="sudo pacman -Rns"
+
+# Other
+alias nvimconfig="nvim $HOME/.config/nvim"
+alias zshconfig="nvim $HOME/.zshrc"
+alias cl="clear"
+alias rf="rm -rf"
