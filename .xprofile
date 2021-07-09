@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Adds ~/.local/bin and its subdirectories to $PATH. 
+# Adds ~/.local/bin and its subdirectories to $PATH.
 # This will help you run scripts which are in these folders.
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
@@ -13,16 +13,16 @@ export QT_IM_MODULE=ibus
 xset r rate 300 50 &
 
 # Wallpaper
-feh --bg-fill Wallpapers/wallpaper1.jpg &
+feh --bg-fill wallpapers/wallpaper4.jpg &
 
 # Transparency
 picom -b &
 
 # Start ibus
-ibus-daemon -drx &
+pidof ibus-daemon > /dev/null || ibus-daemon -drx &
 
 # Netework manager applet
 nm-applet &
 
 # Status bar
-$HOME/dynamic-bar/bar.sh &
+$HOME/.config/dynamic-bar/bar.sh &
