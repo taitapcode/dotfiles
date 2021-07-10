@@ -15,11 +15,11 @@ ext="${filename##*.}"
 # Get case
 case "$ext" in
   "pdf")
-      wpspdf "$filename";;
+    wpspdf "$filename";;
   "doc" | "docx")
-      wps "$filename";;
+    wps "$filename";;
   "ppt" | "pptx")
-      wpp "$filename";;
+    wpp "$filename";;
   "xlsx" | "xls" | "csv")
     et "$filename" ;;
   "jpg" | "png" | "jpeg")

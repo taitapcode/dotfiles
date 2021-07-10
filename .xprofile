@@ -1,9 +1,8 @@
-
 # Speed up key
 xset r rate 300 50 &
 
 # Wallpaper
-feh --bg-fill wallpapers/wallpaper4.jpg &
+feh --bg-fill wallpapers/wallpaper5.jpg &
 
 # Transparency
 picom -b &
