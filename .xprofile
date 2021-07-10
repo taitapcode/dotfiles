@@ -1,17 +1,12 @@
-# Speed up key
-xset r rate 300 50 &
+#!/bin/bash
 
-# Wallpaper
-feh --bg-fill wallpapers/wallpaper5.jpg &
+export GTK_IM_MODULE=ibus                            # Export ibus module
+export XMODIFIERS=@im=ibus                           # Export ibus module
+export QT_IM_MODULE=ibus                             # Export ibus module
 
-# Transparency
-picom -b &
-
-# Start ibus
-pidof ibus-daemon > /dev/null || ibus-daemon -drx &
-
-# Netework manager applet
-nm-applet &
-
-# Status bar
-$HOME/.config/dynamic-bar/bar.sh &
+xset r rate 300 50 &                                 # Speed xrate up
+feh --bg-fill wallpapers/wallpaper5.jpg &            # Set wallpaper
+picom -b &                                           # Transparency
+pidof ibus-daemon > /dev/null || ibus-daemon -drx &  # Start ibus-daemon
+nm-applet &                                          # Netework manager applet
+$HOME/.config/dynamic-bar/bar.sh &                   # Run status bar
