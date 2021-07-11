@@ -1,12 +1,8 @@
 #!/bin/bash
 
-export GTK_IM_MODULE=ibus                            # Export ibus module
-export XMODIFIERS=@im=ibus                           # Export ibus module
-export QT_IM_MODULE=ibus                             # Export ibus module
-
-xset r rate 300 50 &                                 # Speed xrate up
-feh --bg-fill wallpapers/wallpaper5.jpg &            # Set wallpaper
-picom -b &                                           # Transparency
-pidof ibus-daemon > /dev/null || ibus-daemon -drx &  # Start ibus-daemon
-nm-applet &                                          # Netework manager applet
-$HOME/.config/dynamic-bar/bar.sh &                   # Run status bar
+xset r rate 300 50 &                                        # Speed xrate up
+feh --no-fehbg --bg-fill $HOME/wallpapers/wallpaper5.jpg &  # Set wallpaper
+picom -b &                                                  # Transparency
+pidof ibus-daemon > /dev/null || ibus-daemon -drx &         # Start ibus-daemon
+nm-applet &                                                 # Netework manager applet
+$HOME/.config/dynamic-bar/bar.sh &                          # Run status bar
