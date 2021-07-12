@@ -1,6 +1,5 @@
-#!/bin/sh
-
 # Ls
+alias ls="ls --color=auto"
 alias l="ls -lh"
 alias la="ls -A"
 alias ll="ls -lAh"
@@ -30,3 +29,4 @@ alias nvimconfig="nvim $HOME/.config/nvim"
 alias zshconfig="nvim $HOME/.zshrc"
 alias cl="clear"
 alias rf="rm -rf"
+alias ..="cd .."

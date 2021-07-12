@@ -1,0 +1,14 @@
+add_file()
+{
+  [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+}
+
+add_plugin()
+{
+  PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+  if [ -d "$ZDOTDIR/plugins/$PLUGIN_NAME" ]; then
+    add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+  else
+    echo "Not found $1 plugin, please install and put it to '~/.zsh/plugins'"
+  fi
+}

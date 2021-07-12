@@ -1,7 +1,6 @@
 #!/bin/sh
-# -------------------------------------------------------------------
 
 [[ -f $HOME/.xprofile ]] && source $HOME/.xprofile &
 
-# Exec 
+# Exec
 exec dwm
