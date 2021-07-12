@@ -21,9 +21,6 @@ add_file "zsh-vim-mode"
 add_plugin "zsh-autosuggestions"
 add_plugin "zsh-syntax-highlighting"
 
-# Vim mode
-VI_MODE_SET_CURSOR=true
-
 # History
 HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=10000

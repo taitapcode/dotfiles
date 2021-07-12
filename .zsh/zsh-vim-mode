@@ -1,20 +1,9 @@
-# Control whether to force a redraw on each mode change.
-#
-# Resetting the prompt on every mode change can cause lag when switching modes.
-# This is especially true if the prompt does things like checking git status.
-#
-# Set to "true" to force the prompt to reset on each mode change.
-# Unset or set to any other value to do the opposite.
-#
-# The default is not to reset, unless we're showing the mode in RPS1.
-typeset -g VI_MODE_RESET_PROMPT_ON_MODE_CHANGE
-# Control whether to change the cursor style on mode change.
-#
-# Set to "true" to change the cursor on each mode change.
-# Unset or set to any other value to do the opposite.
-typeset -g VI_MODE_SET_CURSOR
+# Vim mode
 
-typeset -g VI_KEYMAP=main
+# Control whether to change the cursor style on mode change.
+VI_MODE_SET_CURSOR=true
+
+VI_KEYMAP=main
 
 function _vi-mode-set-cursor-shape-for-keymap() {
   [[ "$VI_MODE_SET_CURSOR" = true ]] || return
@@ -39,10 +28,6 @@ function zle-keymap-select() {
   # update keymap variable for the prompt
   typeset -g VI_KEYMAP=$KEYMAP
 
-  if [[ "${VI_MODE_RESET_PROMPT_ON_MODE_CHANGE:-}" = true ]]; then
-    zle reset-prompt
-    zle -R
-  fi
   _vi-mode-set-cursor-shape-for-keymap "${VI_KEYMAP}"
 }
 zle -N zle-keymap-select
@@ -53,7 +38,6 @@ function zle-line-init() {
   local prev_vi_keymap
   prev_vi_keymap="${VI_KEYMAP:-}"
   typeset -g VI_KEYMAP=main
-  [[ "$prev_vi_keymap" != 'main' ]] && [[ "${VI_MODE_RESET_PROMPT_ON_MODE_CHANGE:-}" = true ]] && zle reset-prompt
   (( ! ${+terminfo[smkx]} )) || echoti smkx
   _vi-mode-set-cursor-shape-for-keymap "${VI_KEYMAP}"
 }
@@ -122,19 +106,3 @@ function wrap_clipboard_widgets() {
 wrap_clipboard_widgets copy vi-yank vi-yank-eol vi-backward-kill-word vi-change-whole-line vi-delete
 wrap_clipboard_widgets paste vi-put-{before,after}
 unfunction wrap_clipboard_widgets
-
-# if mode indicator wasn't setup by theme, define default
-if [[ -z "$MODE_INDICATOR" ]]; then
-  MODE_INDICATOR='%B%F{red}<%b<<%f'
-fi
-
-function vi_mode_prompt_info() {
-  # If we're using the prompt to display mode info, and we haven't explicitly
-  # disabled "reset prompt on mode change", then set it here.
-  #
-  # We do that here instead of the `if` statement below because the user may
-  # set RPS1/RPROMPT to something else in their custom config.
-  : "${VI_MODE_RESET_PROMPT_ON_MODE_CHANGE:=true}"
-
-  echo "${${VI_KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
-}
