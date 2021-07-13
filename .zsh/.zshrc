@@ -12,8 +12,8 @@ autoload -Uz colors && colors
 # Useful functions
 source "$ZDOTDIR/zsh-functions"
 
-# # Add some files
-add_file "zsh-alias"
+# Add some files
+add_file "zsh-aliases"
 add_file "zsh-theme"
 add_file "zsh-vim-mode"
 

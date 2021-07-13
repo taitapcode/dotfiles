@@ -13,12 +13,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # X11
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
-export XSERVERRC="$XDG_CONFIG_HOME"/X11/xserverrc
+export XAUTHORITY="$XDG_CONFIG_HOME/X11/Xauthority"  # Warning: This line will break some DMs
 
 # Ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
-
-# Other
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"  # Warning: This line will break some DMs
