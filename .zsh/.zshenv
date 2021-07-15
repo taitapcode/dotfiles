@@ -1,7 +1,7 @@
 # Default program
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="qutebrowser"
 
 # Help you run scripts which are in these folders
 export PATH="$PATH:$HOME/.local/bin"
