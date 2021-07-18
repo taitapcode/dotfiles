@@ -1,6 +1,3 @@
-# Set options
-setopt auto_cd
-
 # Completion
 autoload -Uz compinit
 compinit
