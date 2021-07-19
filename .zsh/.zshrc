@@ -14,11 +14,15 @@ add_file "zsh-aliases"
 add_file "zsh-theme"
 add_file "zsh-vim-mode"
 
-# Plugins
-add_plugin "zsh-autosuggestions"
-add_plugin "zsh-syntax-highlighting"
-
 # History
 HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=10000
 HISTSIZE=10000
+
+# Plugins
+add_plugin "zsh-autosuggestions"
+add_plugin "zsh-syntax-highlighting"
+
+# Zsh autosuggestions
+# Set Alt+Tab to choose autosuggestion
+bindkey '^[\t' autosuggest-accept
