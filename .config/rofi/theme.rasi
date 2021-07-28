@@ -1,14 +1,14 @@
 * {
     background-color:            #282c34;
-    border-color:                #1580a1;
+    border-color:                #3452eb;
     text-color:                  #eeeeee;
     font:                        "Source Code Pro 16";
-    prompt-background:           #1580a1;
+    prompt-background:           #405df5;
     prompt-foreground:           #eeeeee;
     prompt-padding:              5px;
     alternate-normal-background: #282c34;
     alternate-normal-foreground: @text-color;
-    selected-normal-background:  #197794;
+    selected-normal-background:  #3452eb;
     selected-normal-foreground:  #ffffff;
     spacing:                     3;
 }
