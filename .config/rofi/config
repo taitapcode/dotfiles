@@ -1,0 +1,12 @@
+! Enabled modi
+rofi.modi:                           window,run,ssh,file-browser
+! Theme
+rofi.theme: .config/rofi/theme.rasi
+! Window width
+rofi.width:                          30
+! Number of lines
+rofi.lines:                          15
+! Number of columns
+rofi.columns:                        1
+! Border width
+rofi.bw:                             3
