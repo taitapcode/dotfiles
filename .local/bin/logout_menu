@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script need rofi, nerd font to work.
+
+# Do not run as root
+[ $EUID -eq 0 ] && echo "Do not run this script as root" && exit 1
+
+selected=$(echo "  Shutdow
+  Reset
+鈴  Sleep" | rofi -dmenu -p "Menu" -i -lines 3)
+
+if [[ $selected == "  Shutdow" ]]; then
+  shutdown now
+elif [[ $selected == "  Reset" ]]; then
+  reboot
+elif [[ $selected == "鈴  Sleep" ]]; then
+  systemctl suspend
+fi

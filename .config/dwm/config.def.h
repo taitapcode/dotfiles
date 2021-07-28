@@ -156,9 +156,7 @@ static Key keys[] = {
   TAGKEYS(                        XK_9,                      8)
   { MODKEY|SHIFTKEY,              XK_q,      quit,           {0} },
 
-  { MODKEY|CTRLKEY|SHIFTKEY,      XK_r,      spawn,          SHCMD("reboot") },
-  { MODKEY|CTRLKEY|SHIFTKEY,      XK_s,      spawn,          SHCMD("shutdown now") },
-
+  { MODKEY,                       XK_x,      spawn,          SHCMD("logout_menu") },
 
   { 0,          XF86XK_MonBrightnessUp,      spawn,          SHCMD("xbacklight -inc 10%") },
   { 0,          XF86XK_MonBrightnessDown,    spawn,          SHCMD("xbacklight -dec 10%") },

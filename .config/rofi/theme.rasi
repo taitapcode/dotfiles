@@ -1,84 +1,43 @@
 * {
-    background-color:            #282c34;
-    border-color:                #3452eb;
-    text-color:                  #eeeeee;
-    font:                        "Source Code Pro 16";
-    prompt-background:           #405df5;
-    prompt-foreground:           #eeeeee;
-    prompt-padding:              5px;
-    alternate-normal-background: #282c34;
-    alternate-normal-foreground: @text-color;
-    selected-normal-background:  #3452eb;
-    selected-normal-foreground:  #ffffff;
-    spacing:                     3;
+  background-color: #22262b;
+  border-color: #2a2c30;
+  text-color: #8ca0aa;
+  spacing: 0;
+  width: 512px;
 }
 
-#window {
-    border:  3;
-    padding: 5;
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
 }
 
-#mainbox {
-    border:  0;
-    padding: 0;
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
 }
 
-
-#message {
-    border:       1px dash 0px 0px ;
-    padding:      1px ;
+textbox {
+  background-color: #2e343f;
+  border: 0 0 1px 0;
+  border-color: #282C33;
+  padding: 8px 16px;
 }
 
-#listview {
-    fixed-height: 0;
-    border:       2px dash 0px 0px ;
-    spacing:      2px ;
-    scrollbar:    false;
-    padding:      2px 0px 0px ;
+entry {
+  padding: 16px;
 }
 
-#element {
-    border:  0;
-    padding: 1px ;
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
 }
 
-#element.selected.normal {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
 }
 
-#element.alternate.normal {
-    background-color: @alternate-normal-background;
-    text-color:       @alternate-normal-foreground;
+element selected {
+  background-color: #2e343f;
 }
-
-#sidebar {
-    border: 2px dash 0px 0px ;
-}
-
-#button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
-#inputbar {
-    spacing:    0;
-    padding:    0px;
-}
-
-#case-indicator {
-    spacing:    0;
-}
-
-#entry {
-    padding: 4px 4px;
-    expand: false;
-    width: 12em;
-}
-
-#prompt {
-    padding:          @prompt-padding;
-    background-color: @prompt-background;
-    text-color:       @prompt-foreground;
-}
-
