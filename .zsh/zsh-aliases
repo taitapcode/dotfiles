@@ -1,30 +1,3 @@
-# Extract function
-# usage: ex <file>
-ex()
-{
-  if [ -f $1 ]; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1   ;;
-      *.tar.gz)    tar xzf $1   ;;
-      *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
-      *.gz)        gunzip $1    ;;
-      *.tar)       tar xf $1    ;;
-      *.tbz2)      tar xjf $1   ;;
-      *.tgz)       tar xzf $1   ;;
-      *.zip)       unzip $1     ;;
-      *.Z)         uncompress $1;;
-      *.7z)        7z x $1      ;;
-      *.deb)       ar x $1      ;;
-      *.tar.xz)    tar xf $1    ;;
-      *.tar.zst)   unzstd $1    ;;
-      *)           echo "'$1' cannot be extracted via ex()"
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
-
 # Mv
 alias mv="mv -i"
 
@@ -40,6 +13,9 @@ alias rf="rm -rf"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
+
+# Pacman
+alias pac="sudo pacman"
 
 # Navigation
 alias ..="cd .."
@@ -64,30 +40,6 @@ alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push origin master"
 alias gst="git status"
-
-# Pacman
-alias pacs="sudo pacman -S"
-alias pacsy="sudo pacman -Sy"
-alias pacsyu="sudo pacman -Syu"
-alias pacsc="sudo pacman -Sc"
-alias pacss="sudo pacman -Ss"
-alias pacq="pacman -Q"
-alias pacqs="pacman -Qs"
-alias pacqn="pacman -Qn"
-alias pacqm="pacman -Qm"
-alias pacrns="sudo pacman -Rns"
-
-# Yay
-alias yays="yay -S"
-alias yayss="yay -Ss"
-alias yaysy="yay -Sy"
-alias yaysyu="yay -Syu"
-alias yaysc="yay -Sc"
-alias yayq="yay -Q"
-alias yayqs="yay -Qs"
-alias yayqn="yay -Qn"
-alias yayqm="yay -Qm"
-alias yayrns="yay -Rns"
 
 # Other
 alias nvimconfig="nvim $HOME/.config/nvim"

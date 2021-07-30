@@ -3,8 +3,9 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="chromium"
 
-# Help you run scripts which are in these folders
-export PATH="$PATH:$HOME/.local/bin"
+# Adds ~/.local/bin and its subdirectories to $PATH. This will help you run scripts which are in these folders
+# anywhere without writing whole path.
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 
 # Some default config directories
 export XDG_CONFIG_HOME="$HOME/.config"
