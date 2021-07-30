@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Dependencies: alsa-utils
+volume () {
+  # Get volume status
+  STATUS=$(amixer sget Master | tail -n1 | sed -r "s/.*\[(.*)\]/\1/")
+  VOL=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
+
+  # Print output
+  if [ "$STATUS" = "off" ]; then
+    printf "婢 MUTE"
+  else
+    if [ "$VOL" -gt -1 ] && [ "$VOL" -le 10 ]; then
+      printf "奄 %s%%" "$VOL"
+    elif [ "$VOL" -gt 10 ] && [ "$VOL" -le 50 ]; then
+      printf "奔 %s%%" "$VOL"
+    else
+      printf "墳 %s%%" "$VOL"
+    fi
+  fi
+
+  printf "%s" "$SEP"
+}

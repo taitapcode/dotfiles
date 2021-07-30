@@ -5,4 +5,4 @@ xwallpaper --zoom $HOME/.config/wallpapers/08.jpg &         # Set wallpaper
 picom -b &                                                  # Transparency
 pidof ibus-daemon > /dev/null || ibus-daemon -drx &         # Start ibus-daemon
 nm-applet &                                                 # Netework manager applet
-$HOME/.config/dynamic-bar/bar.sh &                          # Run status bar
+$HOME/.config/dwm/bar/bar.sh &                          # Run status bar
