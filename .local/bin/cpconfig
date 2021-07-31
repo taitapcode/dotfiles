@@ -12,18 +12,16 @@ old_cp_alias=$(alias | grep "cp='cp -i'")
 # Set variable
 config_path="$HOME/.config"
 local_path="$HOME/.local"
-dotzsh_path="$HOME/.zsh"
 
-dotfiles_path="$HOME/dotfiles"
+dotfiles_path="$HOME/.dotfiles"
 dotfiles_config_path="$dotfiles_path/.config"
 dotfiles_local_path="$dotfiles_path/.local"
-dotfiles_dotzsh_path="$dotfiles_path/.zsh"
 dotfiles_tmp_path="/tmp/dofiles"
 
 # Remove old config
 mv $dotfiles_path/.git /tmp/
 rm -rf $dotfiles_path
-mkdir $dotfiles_path $dotfiles_config_path $dotfiles_local_path $dotfiles_dotzsh_path
+mkdir $dotfiles_path $dotfiles_config_path $dotfiles_local_path
 mkdir $dotfiles_config_path/X11
 mv /tmp/.git $dotfiles_path
 
@@ -38,16 +36,11 @@ cp $config_path/rofi $dotfiles_config_path -r
 cp $config_path/picom $dotfiles_config_path -r
 cp $config_path/dwm $dotfiles_config_path -r
 cp $config_path/st $dotfiles_config_path -r
-
-# Copy config in .zsh directory
-cp $dotzsh_path/z* $dotfiles_dotzsh_path
-cp $dotzsh_path/.zshenv $dotfiles_dotzsh_path
-cp $dotzsh_path/.zprofile $dotfiles_dotzsh_path
-cp $dotzsh_path/.zshrc $dotfiles_dotzsh_path
-cp $dotzsh_path/plugins $dotfiles_dotzsh_path -r
+cp $config_path/zsh $dotfiles_config_path -r
 
 # Remove some unnecessary files
 rm $dotfiles_config_path/ranger/colorschemes/__* -r -f
+rm $dotfiles_config_path/zsh/.{zcompdump,zsh_history}
 
 # Redo alias cp -i if old_cp_alias valid
 [[ $old_cp_alias == "cp='cp -i'" ]] && alias cp="cp -i"
