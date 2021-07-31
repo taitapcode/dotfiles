@@ -2,6 +2,7 @@
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="chromium"
+export USER_DIR="$HOME/User"
 
 # Adds ~/.local/bin and its subdirectories to $PATH. This will help you run scripts which are in these folders
 # anywhere without writing whole path.
