@@ -12,6 +12,7 @@ old_cp_alias=$(alias | grep "cp='cp -i'")
 # Set variable
 config_path="$HOME/.config"
 local_path="$HOME/.local"
+icon_path="$HOME/.icons"
 
 dotfiles_path="$HOME/.dotfiles"
 dotfiles_config_path="$dotfiles_path/.config"
@@ -19,17 +20,18 @@ dotfiles_local_path="$dotfiles_path/.local"
 dotfiles_tmp_path="/tmp/dofiles"
 
 # Remove old config
-mv $dotfiles_path/.git /tmp/
-rm -rf $dotfiles_path
-mkdir $dotfiles_path $dotfiles_config_path $dotfiles_local_path
-mkdir $dotfiles_config_path/X11
-mv /tmp/.git $dotfiles_path
+rm -rf $dotfiles_path/.config/*
+rm -rf $dotfiles_path/.local/*
+rm -rf $dotfiles_path/.icons/*
+mkdir  $dotfiles_config_path/X11
 
-# Copy config in .local directory
+# Copy config in .local, .icon directory
 cp $local_path/bin $dotfiles_local_path -r
+cp $icon_path $dotfiles_path -r
 
 # Copy config in .config directory
 cp $config_path/wallpapers $dotfiles_config_path -r
+cp $config_path/gtk-3.0 $dotfiles_config_path -r
 cp $config_path/X11/x* $dotfiles_config_path/X11
 cp $config_path/ranger $dotfiles_config_path -r
 cp $config_path/rofi $dotfiles_config_path -r
@@ -44,4 +46,4 @@ rm $dotfiles_config_path/ranger/colorschemes/__* -r -f
 rm $dotfiles_config_path/zsh/.{zcompdump,zsh_history}
 
 # Redo alias cp -i if old_cp_alias valid
-[[ $old_cp_alias == "cp='cp -i'" ]] && alias cp="cp -i"
+[[ $old_cp_alias == "cp='cp -i'" ]] && alias $old_cp_alias

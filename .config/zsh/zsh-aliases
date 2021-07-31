@@ -15,7 +15,7 @@ alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
 # Pacman
-alias pac="sudo pacman"
+alias pm="sudo pacman"
 
 # Navigation
 alias ..="cd .."
@@ -34,7 +34,7 @@ alias lr="ls -R"
 alias lg="ls -l --group-directories-first"
 
 # Git
-alias gcl="git clone"
+alias gcl="git clone --depth 1"
 alias gi="git init"
 alias ga="git add"
 alias gc="git commit -m"
