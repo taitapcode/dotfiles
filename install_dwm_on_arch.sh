@@ -27,6 +27,7 @@ echo "Clone config repo..."
 git clone --depth=1 https://github.com/TaiK7/dotfiles ~/.dotfiles
 cp ~/.dotfiles/.config ~ -r
 cp ~/.dotfiles/.local ~ -r
+cp ~/.dotfiles/.icons ~ -r
 
 # Install dwm and st terminal
 echo "Install dwm"
