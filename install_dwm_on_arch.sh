@@ -29,13 +29,20 @@ cp ~/.dotfiles/.config ~ -r
 cp ~/.dotfiles/.local ~ -r
 cp ~/.dotfiles/.icons ~ -r
 
-# Install dwm and st terminal
+# Install dwm
 echo "Install dwm"
 cd ~/.config/dwm/
 sudo make install clean
 
+# Install st terminal
 echo "Install st terminal"
 cd ~/.config/st/
 sudo make install clean
+
+# Install zsh plugins
+git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git \
+  ~/.config/zsh/plugins/zsh-autosuggestions
+git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  ~/.config/zsh/plugins/zsh-syntax-highlighting
 
 exit 0
