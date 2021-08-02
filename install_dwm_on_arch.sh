@@ -5,7 +5,7 @@ sudo clean
 
 # Install dependencies
 echo "Install dependencies..."
-sudo pacman -Sy xorg xorg-xinit git xwallpaper chromium alsa-utils zsh ibus sxiv mpv
+sudo pacman -Sy xorg xorg-xinit git xwallpaper chromium ranger alsa-utils zsh ibus sxiv mpv
 
 # Install A.U.R helper
 echo "Install A.U.R helper..."
@@ -20,7 +20,6 @@ yay -S picom-jonaburg-git nerd-fonts-fira-code ibus-bamboo
 # Zsh init
 echo "Set default shell to zsh..."
 chsh -s $(which zsh)
-sudo echo "export ZDOTDIR=$HOME/.config/zsh" > /etc/zsh/zshenv
 
 # Clone config
 echo "Clone config repo..."
@@ -44,5 +43,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git \
   ~/.config/zsh/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ~/.config/zsh/plugins/zsh-syntax-highlighting
+
+echo "Befor restart, make sure you have 'export ZDOTDIR=\$HOME/.config/zsh'"
 
 exit 0

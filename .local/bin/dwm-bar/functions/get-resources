@@ -2,8 +2,6 @@
 
 defind_check_location='/'
 
-resources()
-{
   # Get all the infos first to avoid high resources usage
   free_output=$(free -h | grep Mem)
   df_output=$(df -h $defind_check_location | tail -n 1)
@@ -21,5 +19,3 @@ resources()
 
   # Print output
   printf " %s/%s | ﬙ %s |  %s/%s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT"
-  printf "%s" "$SEP"
-}
