@@ -18,4 +18,4 @@ defind_check_location='/'
   STOTOT=$(echo $df_output | awk '{print $2}')
 
   # Print output
-  printf " %s/%s | ﬙ %s |  %s/%s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT"
+  printf "[  %s/%s ] [ ﬙ %s ] [  %s/%s ]" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT"

@@ -5,12 +5,11 @@ while true
 do
   # Add bar functions
   bar=""
-  bar="$bar$(covid-status) | "
-  bar="$bar$(get-resources) | "
-  bar="$bar$(get-backlight) | "
-  bar="$bar$(get-volume) | "
-  bar="$bar$(get-power) | "
-  bar="$bar$(get-datetime)"
+  bar="$bar$(get-resources) "
+  bar="$bar[ $(get-backlight) ] "
+  bar="$bar[ $(get-volume) ] "
+  bar="$bar[ $(get-power) ] "
+  bar="$bar[ $(get-datetime) ]"
 
   # Set bar functions
   xsetroot -name "$bar"
