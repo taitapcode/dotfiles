@@ -26,3 +26,5 @@ add_plugin "zsh-syntax-highlighting"
 # Zsh autosuggestions
 # Set Alt+Tab to choose autosuggestion
 bindkey '^[\t' autosuggest-accept
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
