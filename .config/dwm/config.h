@@ -18,7 +18,7 @@ static const int showsystray        = 1;        /* 0 means no systray */
 static const int swallowfloating    = 1;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FiraCode Nerd Font:size=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { "FiraCode Nerd Font:style=Medium,Regular:size=12:antialias=true:autohint=true" };
 static const char col_gray1[]       = "#0c1424";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";
