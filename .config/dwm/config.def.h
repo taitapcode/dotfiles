@@ -101,6 +101,7 @@ static Key keys[] = {
   /* modifier                     key        function        argument */
   { MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
   { MODKEY|SHIFTKEY,              XK_Return, spawn,          {.v = termcmd } },
+  { CTRLKEY|SHIFTKEY,             XK_space,  spawn,          {.v = termcmd } },
   { MODKEY,                       XK_c,      spawn,          {.v = browsercmd } },
   { MODKEY|SHIFTKEY,              XK_f,      togglefullscr,  {0} },
   { MODKEY|SHIFTKEY,              XK_b,      togglebar,      {0} },
