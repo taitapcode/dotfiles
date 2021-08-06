@@ -5,9 +5,8 @@
 # Do not run as root
 [ $EUID -eq 0 ] && echo "Do not run this script as root" && exit 1
 
-selected=$(echo "  Shutdow
-  Reset
-鈴  Sleep" | rofi -dmenu -p "Power" -i -lines 3)
+selected=$(printf "  Shutdow\n  Reset\n鈴  Sleep" | \
+  rofi -dmenu -p "Power" -i -lines 3)
 
 if [[ $selected == "  Shutdow" ]]; then
   shutdown now
