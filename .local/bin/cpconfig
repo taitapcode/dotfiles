@@ -12,7 +12,6 @@ old_cp_alias=$(alias | grep "cp='cp -i'")
 # Set variable
 config_path="$HOME/.config"
 local_path="$HOME/.local"
-icon_path="$HOME/.icons"
 
 dotfiles_path="$HOME/.dotfiles"
 dotfiles_config_path="$dotfiles_path/.config"
@@ -22,12 +21,11 @@ dotfiles_tmp_path="/tmp/dofiles"
 # Remove old config
 rm -rf $dotfiles_path/.config/*
 rm -rf $dotfiles_path/.local/*
-rm -rf $dotfiles_path/.icons/*
 mkdir  $dotfiles_config_path/X11
 
-# Copy config in .local, .icon directory
+# Copy config in .local directory
 cp $local_path/bin $dotfiles_local_path -r
-cp $icon_path $dotfiles_path -r
+cp $local_path/share/icons $dotfiles_local_path -r
 
 # Copy config in .config directory
 cp $config_path/wallpapers $dotfiles_config_path -r
