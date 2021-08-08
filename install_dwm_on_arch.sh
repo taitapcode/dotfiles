@@ -26,7 +26,6 @@ echo "Clone config repo..."
 git clone --depth=1 https://github.com/TaiK7/dotfiles ~/.dotfiles
 cp ~/.dotfiles/.config ~ -r
 cp ~/.dotfiles/.local ~ -r
-cp ~/.dotfiles/.icons ~ -r
 
 # Install dwm
 echo "Install dwm"
@@ -44,6 +43,7 @@ git clone --depth 1 https://github.com/zsh-users/zsh-autosuggestions.git \
 git clone --depth 1 https://github.com/zsh-users/zsh-syntax-highlighting.git \
   ~/.config/zsh/plugins/zsh-syntax-highlighting
 
-echo "Befor restart, make sure you have 'export ZDOTDIR=\$HOME/.config/zsh'"
+cd
+echo "Befor restart, make sure you have 'export ZDOTDIR=\$HOME/.config/zsh' in '/etc/zsh/zshenv'"
 
 exit 0

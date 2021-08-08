@@ -7,7 +7,7 @@
 
 # Unalias old cp -i if it exist
 old_cp_alias=$(alias | grep "cp='cp -i'")
-[[ $old_cp_alias == "cp='cp -i'" ]] && unalias cp
+[[ $old_cp_alias != "" ]] && unalias cp
 
 # Set variable
 config_path="$HOME/.config"
@@ -21,27 +21,28 @@ dotfiles_tmp_path="/tmp/dofiles"
 # Remove old config
 rm -rf $dotfiles_path/.config/*
 rm -rf $dotfiles_path/.local/*
-mkdir  $dotfiles_config_path/X11
+mkdir  $dotfiles_local_path/share
 
 # Copy config in .local directory
-cp $local_path/bin $dotfiles_local_path -r
-cp $local_path/share/icons $dotfiles_local_path -r
+cp $local_path/bin         $dotfiles_local_path -r
+cp $local_path/share/icons $dotfiles_local_path/share -r
 
 # Copy config in .config directory
-cp $config_path/wallpapers $dotfiles_config_path -r
-cp $config_path/gtk-3.0 $dotfiles_config_path -r
-cp $config_path/X11/x* $dotfiles_config_path/X11
-cp $config_path/ranger $dotfiles_config_path -r
-cp $config_path/rofi $dotfiles_config_path -r
-cp $config_path/picom $dotfiles_config_path -r
-cp $config_path/dwm $dotfiles_config_path -r
-cp $config_path/st $dotfiles_config_path -r
 cp $config_path/user-dirs.dirs $dotfiles_config_path
-cp $config_path/zsh $dotfiles_config_path -r
+cp $config_path/wallpapers     $dotfiles_config_path -r
+cp $config_path/gtk-3.0        $dotfiles_config_path -r
+cp $config_path/X11            $dotfiles_config_path -r
+cp $config_path/ranger         $dotfiles_config_path -r
+cp $config_path/rofi           $dotfiles_config_path -r
+cp $config_path/picom          $dotfiles_config_path -r
+cp $config_path/dwm            $dotfiles_config_path -r
+cp $config_path/st             $dotfiles_config_path -r
+cp $config_path/zsh            $dotfiles_config_path -r
 
 # Remove some unnecessary files
 rm $dotfiles_config_path/ranger/colorschemes/__* -r -f
 rm $dotfiles_config_path/zsh/.{zcompdump,zsh_history}
+rm $dotfiles_config_path/X11/Xauthority
 
 # Redo alias cp -i if old_cp_alias valid
-[[ $old_cp_alias == "cp='cp -i'" ]] && alias $old_cp_alias
+[[ $old_cp_alias != "" ]] && alias $old_cp_alias
