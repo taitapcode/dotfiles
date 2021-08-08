@@ -22,7 +22,7 @@ if [ -f $1 ]; then
     *.tar.xz)    tar xf $1    ;;
     *.tar.zst)   unzstd $1    ;;
     *)
-      echo "'$1' cannot be extracted via ex()"
+      echo "'$1' cannot be extracted"
       exit 1
   esac
 else
