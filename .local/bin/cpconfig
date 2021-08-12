@@ -26,10 +26,10 @@ mkdir  $dotfiles_local_path/share
 # Copy config in .local directory
 cp $local_path/bin         $dotfiles_local_path -r
 cp $local_path/share/icons $dotfiles_local_path/share -r
+cp $local_path/share/walls $dotfiles_local_path/share -r
 
 # Copy config in .config directory
 cp $config_path/user-dirs.dirs $dotfiles_config_path
-cp $config_path/wallpapers     $dotfiles_config_path -r
 cp $config_path/gtk-3.0        $dotfiles_config_path -r
 cp $config_path/X11            $dotfiles_config_path -r
 cp $config_path/ranger         $dotfiles_config_path -r

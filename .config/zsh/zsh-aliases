@@ -42,6 +42,6 @@ alias gp="git push origin master"
 alias gst="git status"
 
 # Other
-alias nvimconfig="nvim $HOME/.config/nvim"
+alias nvimconfig="cd $HOME/.config/nvim && nvim"
 alias zshconfig="nvim $HOME/.zshrc"
 alias cl="clear"
