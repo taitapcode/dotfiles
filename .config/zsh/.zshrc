@@ -16,8 +16,8 @@ add_file "zsh-vim-mode"
 
 # History
 HISTFILE=$ZDOTDIR/.zsh_history
-SAVEHIST=10000
-HISTSIZE=10000
+SAVEHIST=5000
+HISTSIZE=5000
 
 # Plugins
 add_plugin "zsh-autosuggestions"
@@ -26,5 +26,3 @@ add_plugin "zsh-syntax-highlighting"
 # Zsh autosuggestions
 # Set Alt+Tab to choose autosuggestion
 bindkey '^[\t' autosuggest-accept
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

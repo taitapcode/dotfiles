@@ -2,7 +2,7 @@
 
 xset r rate 300 50                                          # Speed xrate up
 setxkbmap -option caps:swapescape                           # Swap capslock and esc key
-xwallpaper --zoom $XDG_DATA_HOME/walls/08.jpg           # Set wallpaper
+xwallpaper --zoom $XDG_DATA_HOME/walls/08.jpg               # Set wallpaper
 picom -b                                                    # Transparency
 pidof ibus-daemon > /dev/null || ibus-daemon -drx &         # Start ibus-daemon
 nm-applet &                                                 # Netework manager applet
