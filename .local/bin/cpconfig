@@ -26,6 +26,7 @@ mkdir  $dotfiles_local_path/share
 # Copy config in .local directory
 cp $local_path/bin         $dotfiles_local_path -r
 cp $local_path/share/icons $dotfiles_local_path/share -r
+cp $local_path/share/themes $dotfiles_local_path/share -r
 cp $local_path/share/walls $dotfiles_local_path/share -r
 
 # Copy config in .config directory

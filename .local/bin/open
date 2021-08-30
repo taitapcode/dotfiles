@@ -16,7 +16,7 @@ ext="${filename##*.}"
 case "$ext" in
   "jpg" | "png" | "jpeg")
     sxiv "$filename";;
-  "mp4" | "mkv" | "mp3" | "gif")
+  "mp4" | "mkv" | "mp3" | "wav" | "gif")
     mpv "$filename" ;;
   "html")
     "$BROWSER" "$filename";;
