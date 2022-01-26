@@ -1,8 +1,7 @@
 configuration {
   /* Enable modi */
-  modi: "window,run,ssh,file-browser,drun";
-  /* Theme */
-  theme: "~/.config/rofi/theme.rasi";
+  modi: "window,run,ssh,drun";
+  combi-modi: "window,run,ssh,drun";
   /* Window size */
   width: 40;
   lines: 6;
@@ -15,3 +14,4 @@ configuration {
   /* Hide scrollbar */
   hide-scrollbar: true;
 }
+@theme "~/.config/rofi/theme.rasi"
