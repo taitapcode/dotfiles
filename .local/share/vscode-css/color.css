@@ -65,12 +65,12 @@
 
 /* Cursor */
 .monaco-editor .cursors-layer .cursor {
-  background-image: linear-gradient(to bottom, #fc6c8f, #ff7c80, #ff9074, #ffa46d, #ffb86c);
+  background-image: linear-gradient(to bottom, #ffb86c, #ff9877, #ff7c92, #f26db4, #be6ed5);
 }
 
 /* Line numbers */
 .monaco-editor .relative-current-line-number {
-  background-image: linear-gradient(to right top, #dbd95c, #eaca57, #f4bb57, #fcac5d, #ff9e66);
+  background-image: linear-gradient(to right top, #ffb86c, #ff8e7f, #fc70a9, #be6ed5, #127aeb);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
