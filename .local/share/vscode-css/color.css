@@ -6,7 +6,7 @@
 
 /* Cursor */
 .monaco-editor .cursors-layer .cursor {
-  background-image: linear-gradient(to bottom, #ffb86c, #ff9877, #ff7c92, #f26db4, #be6ed5);
+  background-image: linear-gradient(to bottom, #dfee3e, #e5da2b, #e9c71c, #ebb312, #eb9f12);
 }
 
 /* Line numbers */
@@ -42,7 +42,7 @@
   > .monaco-action-bar
   .badge
   .badge-content {
-  background-image: linear-gradient(var(--gradient-dir2), #d66efd, #ff2ced);
+  background-image: linear-gradient(var(--gradient-dir2), #fd6e6e, #ff2ced);
 }
 
 /* Tab border */
@@ -78,63 +78,3 @@
     background-position: 0% 50%;
   }
 }
-
-/* Linear gradient text color */
-/* .mtk10,
-.mtk15 {
-  color: transparent;
-  background-image: linear-gradient(to left top, #fc6c8f, #ff2ced, #ffb86c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.mtk5 {
-  color: transparent;
-  background-image: linear-gradient(var(--gradient-dir1), #20e3b2, #4dd78a);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-.mtk16 {
-  color: transparent;
-  background-image: linear-gradient(var(--gradient-dir1), #d66efd, #6a5af9);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-.mtk9,
-.mtk17 {
-  color: transparent;
-  background-image: linear-gradient(to right top, #0072ff, #2cccff);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-.mtk18 {
-  color: transparent;
-  background-image: linear-gradient(var(--gradient-dir2), #82aaff 50%, #3d6ef7);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-style: normal;
-}
-
-.mtk3 {
-  color: transparent;
-  background-image: linear-gradient(to right top, #c29ffd, #ffb4dc, #fef0d1);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-}
-
-.mtk7 {
-  color: transparent;
-  background-image: linear-gradient(to right bottom, #fc6c8f, #ffb86c);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-} */
