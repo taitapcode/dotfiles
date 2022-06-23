@@ -5,7 +5,7 @@ sudo clean
 
 # Install dependencies
 echo "Install dependencies..."
-sudo pacman -Sy zsh git base-devel zoxide fzf exa bat ranger neovim
+sudo pacman -Sy zsh git base-devel zoxide fzf exa bat ranger neovim github-cli
 
 # Install A.U.R helper
 echo "Install Paru A.U.R helper..."
@@ -44,6 +44,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions \
 
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+
+echo "Login to github..."
+gh auth login
 
 cd
 echo "Before reset, make sure you have 'export ZDOTDIR=\$HOME/.zsh' in '/etc/zsh/zshenv'"
