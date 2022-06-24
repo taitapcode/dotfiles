@@ -1,6 +1,9 @@
 # Default program
 export EDITOR="nvim"
 
+# Vi mode
+export VI_MODE_SET_CURSOR=true
+
 # Fzf
 export FZF_DEFAULT_COMMAND="find . -type f -not -path '*/\.git/*' -not -path '*/node_modules/*'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

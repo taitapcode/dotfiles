@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$ZDOTDIR/.oh-my-zsh"
+export ZSH="$ZDOTDIR/oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -80,7 +80,11 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	fzf
-	zsh-vi-mode
+	yarn
+	zoxide
+	extract
+	gitfast
+	vi-mode
 	zsh-autosuggestions  
 	fast-syntax-highlighting
 )

@@ -20,25 +20,26 @@ alias lta='lt --all'
 alias cat='bat'
 
 # Cp
-alias cp="cp -i"
-alias cf="cp -r"
+alias cp='cp -i'
+alias cf='cp -r'
 
 # Rm
-alias rm="rm -i"
-alias rf="rm -rf"
+alias rm='rm -i'
+alias rf='rm -rf'
 
 # Grep
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
-alias fgrep="fgrep --color=auto"
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # Git
-alias gcl="git clone --depth 1"
-alias gi="git init"
-alias ga="git add"
-alias gc="git commit -m"
-alias gp="git push origin master"
-alias gst="git status"
+alias gcl='git clone --depth 1'
+alias gi='git init'
+alias ga='git add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+alias gst='git status'
+alias lgit='lazygit'
 
 # Others
 alias cl='clear'

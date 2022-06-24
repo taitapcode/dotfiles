@@ -5,7 +5,7 @@ sudo clean
 
 # Install dependencies
 echo "Install dependencies..."
-sudo pacman -Sy zsh git base-devel zoxide fzf exa bat ranger neovim github-cli
+sudo pacman -Sy zsh git lazygit base-devel zoxide fzf exa bat ranger neovim github-cli
 
 # Install A.U.R helper
 echo "Install Paru A.U.R helper..."
@@ -20,19 +20,13 @@ paru -c
 
 # Change default shell to zsh
 echo "Set default shell to zsh..."
-chsh -s $(which zsh)
-
-# Install Oh My Zsh
-echo "Install Oh-My-Zsh..."
-export ZDOTDIR="$HOME/.zsh"
-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s /bin/zsh
 
 # Clone config
 echo "Clone config repo..."
 git clone --depth=1 https://github.com/noname0203/dotfiles -b wsl ~/.dotfiles
 cp ~/.dotfiles/.config ~ -r
-cp ~/.dotfiles/.zsh/* ~ -r
+cp ~/.dotfiles/.zsh ~ -r
 
 # Install zsh plugins
 echo "Install zsh-vi-mode, zsh-autosuggestions, fast-syntax-highlighting..."
@@ -50,6 +44,6 @@ gh auth login
 
 cd
 echo "Make sure you use Nerd Font for icon: https://www.nerdfonts.com/font-downloads"
-echo "Before reset, make sure you have 'export ZDOTDIR=\$HOME/.zsh' in '/etc/zsh/zshenv'"
+echo 'Before reset, make sure you have "export ZDOTDIR=$HOME/.zsh" in "/etc/zsh/zshenv"'
 
 exit 0
