@@ -29,9 +29,7 @@ cp ~/.dotfiles/.config ~ -r
 cp ~/.dotfiles/.zsh ~ -r
 
 # Install zsh plugins
-echo "Install zsh-vi-mode, zsh-autosuggestions, fast-syntax-highlighting..."
-git clone https://github.com/jeffreytse/zsh-vi-mode \
-  $ZSH_CUSTOM/plugins/zsh-vi-mode
+echo "Install zsh-autosuggestions, fast-syntax-highlighting..."
 
 git clone https://github.com/zsh-users/zsh-autosuggestions \ 
 	${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
