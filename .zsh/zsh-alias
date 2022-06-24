@@ -1,4 +1,5 @@
 # Navigation
+alias cd='z'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
@@ -11,8 +12,9 @@ alias remove='paru -Rns'
 alias cleanup='paru -Sc'
 
 # Ls (Exa)
-alias ls='exa --icons --header --long'
-alias la='ls --all'
+alias ls='exa --icons'
+alias ll='ls --header --long'
+alias la='ll --all'
 alias lt='ls --tree --level=2'
 alias lta='lt --all'
 
