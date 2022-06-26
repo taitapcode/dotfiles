@@ -13,5 +13,5 @@ function fish_greeting
   else
     set -f wellcome 'Good Night!'
   end
-  echo $cyan$wellcome$normal Today is date $green$date
+  echo $cyan$wellcome$normal Today is $green$date
 end
