@@ -10,9 +10,11 @@ function fish_prompt
 
   set -l ahead (_git_ahead)
   set -g whitespace ' '
+  set -l now (date +%T)
 
   if test $last_status = 0
     set initial_indicator "$green◆"
+    set time_indicator $yellow"[$now]"
     set status_indicator "$normal❯$cyan❯$green❯"
   else
     set initial_indicator "$red✖ $last_status"
@@ -37,11 +39,11 @@ function fish_prompt
   end
 
   # Notify if a command took more than 5 minutes
-  if [ "$CMD_DURATION" -gt 300000 ]
-    echo The last command took (math "$CMD_DURATION/1000") seconds.
-  end
+  # if [ "$CMD_DURATION" -gt 300000 ]
+  #   echo The last command took (math "$CMD_DURATION/1000") seconds.
+  # end
 
-  echo -n -s $initial_indicator $whitespace $cwd $git_info $whitespace $ahead $status_indicator $whitespace
+  echo -n -s $time_indicator $whitespace $initial_indicator $whitespace $cwd $git_info $whitespace $ahead $status_indicator $whitespace
 end
 
 function _git_ahead

@@ -12,7 +12,7 @@ alias remove='paru -Rns'
 alias cleanup='paru -Sc'
 
 # Ls (Exa)
-alias ls='exa --icons'
+alias ls='exa --icons --group-directories-first'
 alias ll='ls --header --long'
 alias la='ll --all'
 alias lt='ll --tree --level=2'

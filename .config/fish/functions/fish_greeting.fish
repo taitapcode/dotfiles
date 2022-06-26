@@ -1,3 +1,3 @@
 function fish_greeting
-    echo Wellcome back! The time is (set_color yellow; date +%T)
+    echo Wellcome back! Today is (set_color yellow; date "+%d/%m/%Y")
 end
