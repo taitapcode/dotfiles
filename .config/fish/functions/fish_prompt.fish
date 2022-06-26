@@ -17,7 +17,8 @@ function fish_prompt
     set time_indicator $yellow"[$now]"
     set status_indicator "$normal❯$cyan❯$green❯"
   else
-    set initial_indicator "$red✖ $last_status"
+    set initial_indicator "$red$last_status"
+    set time_indicator $yellow"[$now]"
     set status_indicator "$red❯$red❯$red❯"
   end
   set -l cwd $cyan(basename (prompt_pwd))
