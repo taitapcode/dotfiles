@@ -49,7 +49,14 @@ function __zoxide_z
     else if test $argc -eq 1 -a -d $argv[1]
         __zoxide_cd $argv[1]
     else
-        set -l result (command zoxide query --exclude (__zoxide_pwd) -- $argv)
+        # Fix <Space><Tab> dont work
+        if string match '*#*' $argv &>/dev/null
+            set target (string match '*#*' $argv | string replace \# '')
+        else
+            set target $argv
+        end
+        set -l result (command zoxide query --exclude (__zoxide_pwd) -- $target)
+
         and __zoxide_cd $result
     end
 end
@@ -65,8 +72,13 @@ function __zoxide_z_complete
     else if test (count $tokens) -eq (count $curr_tokens)
         # If the last argument is empty, use interactive selection.
         set -l query $tokens[2..-1]
+        # set -l result (zoxide query -i -- $query)
+        # commandline --current-process "$tokens[1] "(string escape $result)
+        # commandline --function repaint
+
+        # Fix <Space><Tab> dont work
         set -l result (zoxide query -i -- $query)
-        commandline --current-process "$tokens[1] "(string escape $result)
+        and echo \#(string escape $result)
         commandline --function repaint
     end
 end
