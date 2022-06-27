@@ -4,7 +4,7 @@ function fish_greeting
   set -l green (set_color -o green)
   set -f h (date +%H)
   set -f date (date +%d/%m/%Y)
-  if [ $h -lt 12 ]
+  if [ $h -lt 11 ]
     set -f wellcome 'Good Morning!'
   else if [ $h -lt 18 ]
     set -f wellcome 'Good Affternoon!'
