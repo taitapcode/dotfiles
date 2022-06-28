@@ -22,15 +22,16 @@ cd ~/paru
 makepkg -si
 ```
 
-4. Clone config from github
+4. Install for tmux plugins
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tmux-sensible ~/.config/tmux/plugins/tmux-sensible
+git clone https://github.com/dracula/tmux ~/.config/tmux/plugins/tmux
+```
+
+5. Clone config from github
 ```bash
 git clone --depth=1 https://github.com/noname0203/dotfiles -b wsl ~/.dotfiles
 cp ~/.dotfiles/.config ~ -r
-```
-
-5. Install for tmux
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone https://github.com/dracula/tmux.git ~/.tmux/plugins/tmux
-tmux source ~/.config/tmux/tmux.conf
+cp ~/dotfiles/.tmux.conf ~
 ```
