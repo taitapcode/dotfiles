@@ -27,3 +27,10 @@ makepkg -si
 git clone --depth=1 https://github.com/noname0203/dotfiles -b wsl ~/.dotfiles
 cp ~/.dotfiles/.config ~ -r
 ```
+
+5. Install for tmux
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/dracula/tmux.git ~/.tmux/plugins/tmux
+tmux source ~/.config/tmux/tmux.conf
+```
