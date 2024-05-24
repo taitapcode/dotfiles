@@ -4,12 +4,9 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
 
-# Pacman / Paru
+# Pacman / Yay
 alias pm='sudo pacman'
-alias update='paru -Sy'
-alias upgrade='paru'
-alias remove='paru -Rns'
-alias cleanup='paru -Sc'
+alias cleanup='yay -Scc'
 
 # Ls (Exa)
 alias ls='exa --icons --group-directories-first'
