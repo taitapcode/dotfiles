@@ -18,6 +18,7 @@
 - neovim
 - github-cli
 - fish
+- tmux
 
 ### 2. Set fish as default shell using `chsh`
 
@@ -27,9 +28,14 @@
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
-- apt
 - bang-bang
 - robbyrussell
 - [oh-my-fish-config](https://github.com/taitapcode/oh-my-fish-config)
 - [zoxide.fish](https://github.com/kidonng/zoxide.fish)
 - [fzf.fish](https://github.com/PatrickF1/fzf.fish)
+
+### 4. Setup tpm for tmux
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
