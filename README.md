@@ -19,6 +19,7 @@
 - github-cli
 - fish
 - tmux
+- tmuxinator
 
 ### 2. Set fish as default shell using `chsh`
 
