@@ -1,3 +1,0 @@
-PROMPT="%B%{$fg[blue]%}┌─%{$fg[blue]%}─[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %{$fg[blue]%}["
-PROMPT+="%{$fg[white]%}%~%{$fg[blue]%}]
-└─$%b "
