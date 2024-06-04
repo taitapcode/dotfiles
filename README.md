@@ -17,7 +17,7 @@ makepkg -si
 ### Install AUR packages
 
 ```bash
-yay -S tmuxinator ttf-delugia-code
+yay -S tmuxinator ttf-delugia-code pfetch-rs
 ```
 
 ### Set fish as default shell
@@ -39,6 +39,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```bash
 cd ~/dotfiles
 stow .
+fish
 ```
 
 ### Install `omf plugins` and set fish theme
