@@ -7,7 +7,6 @@
 
 ```bash
 git clone https://github.com/taitapcode/dotfiles.git ~/dotfiles
-git clone https://github.com/oh-my-fish/oh-my-fish ~/.local/share/omf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
@@ -42,13 +41,15 @@ chsh -s $(which fish)
 ```bash
 cd ~/dotfiles
 stow .
-fish
 ```
 
-## Install `omf plugins` and set fish theme
+## Install `oh my fish`
 
-> [!NOTE]
-> You have to refresh your fish shell before using `omf` command with `fish` command
+```bash
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+```
+
+## Install `oh my fish` plugins and set theme
 
 ```bash
 omf install bang-bang robbyrussell https://github.com/kidonng/zoxide.fish https://github.com/PatrickF1/fzf.fish

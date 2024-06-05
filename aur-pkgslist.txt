@@ -1,4 +1,3 @@
 tmuxinator
 ttf-delugia-code
 pfetch-rs
-ueberzugpp

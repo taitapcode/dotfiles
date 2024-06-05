@@ -4,10 +4,12 @@ fzf
 eza
 fd
 bat
-ranger
+yazi
+ffmpegthumbnailer
+unarchiver
+jq
 neovim
 github-cli
 stow
 base-devel
 tmux
-python-pillow
