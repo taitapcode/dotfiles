@@ -4,10 +4,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
 
-# Pacman / Paru
-alias pm='sudo pacman'
-alias cleanup='paru -Scc'
-
 # Ls (Exa)
 alias ls='eza --icons --group-directories-first'
 alias ll='ls --header --long'
@@ -40,6 +36,7 @@ alias gst='git status'
 alias lgit='lazygit'
 
 # Others
+alias pm='sudo pacman'
 alias cl='clear'
 alias lg='lazygit'
 alias mux='tmuxinator'
