@@ -1,9 +1,20 @@
 ## Installation for arch linux distro
 
+> [!NOTE]
+> Make sure you installed `git`
+
+### Clone repositories
+
+```bash
+git clone https://github.com/taitapcode/dotfiles.git ~/dotfiles
+git clone https://github.com/oh-my-fish/oh-my-fish ~/.local/share/omf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
 ### Install packages with pacman
 
 ```bash
-sudo pacman -Sy git lazygit zoxide fzf eza fd bat ranger neovim github-cli stow base-devel tmux
+sudo pacman -Sy - < ~/dotfiles/pkgslist.txt
 ```
 
 ### Install AUR helper (yay)
@@ -17,21 +28,13 @@ makepkg -si
 ### Install AUR packages
 
 ```bash
-yay -S tmuxinator ttf-delugia-code pfetch-rs
+yay -S - < ~/dotfiles/aur-pkgslist.txt
 ```
 
 ### Set fish as default shell
 
 ```bash
 chsh -s $(which fish)
-```
-
-### Clone some repos
-
-```bash
-git clone https://github.com/taitapcode/dotfiles.git -b wsl ~/dotfiles
-git clone https://github.com/oh-my-fish/oh-my-fish ~/.local/share/omf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ### Setup your config files

@@ -4,7 +4,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
 
-# Ls (Exa)
+# Ls (Eza)
 alias ls='eza --icons --group-directories-first'
 alias ll='ls --header --long'
 alias la='ll --all'

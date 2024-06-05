@@ -1,0 +1,13 @@
+lazygit
+zoxide
+fzf
+eza
+fd
+bat
+ranger
+neovim
+github-cli
+stow
+base-devel
+tmux
+python-pillow
