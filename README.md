@@ -42,17 +42,3 @@ chsh -s $(which fish)
 cd ~/dotfiles
 stow .
 ```
-
-## Install `oh my fish`
-
-```bash
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
-```
-
-## Install `oh my fish` plugins and set theme
-
-```bash
-omf install bang-bang robbyrussell https://github.com/kidonng/zoxide.fish https://github.com/PatrickF1/fzf.fish
-omf theme robbyrussell
-fish
-```
