@@ -1,4 +1,4 @@
-# right prompt for agnoster theme
+# right prompt for agnoster theme (with some modification)
 # shows vim mode status
 
 # ===========================
@@ -12,6 +12,7 @@ set -q color_vi_mode_indicator; or set color_vi_mode_indicator black
 set -q color_vi_mode_normal; or set color_vi_mode_normal green
 set -q color_vi_mode_insert; or set color_vi_mode_insert blue
 set -q color_vi_mode_visual; or set color_vi_mode_visual red
+set -q color_vi_mode_replace; or set color_vi_mode_replace yellow
 
 
 # ===========================
@@ -70,6 +71,14 @@ function prompt_vi_mode -d 'vi mode status indicator'
             echo "$right_segment_separator"
             set_color -b $color_vi_mode_visual $color_vi_mode_indicator
             echo " V "
+        case replace
+            set -l mode (fish_cursor_name_to_code $cursor_vi_mode_visual)
+            echo -e "\e[\x3$mode q"
+            set_color $color_vi_mode_replace
+            echo "$right_segment_separator"
+            set_color -b $color_vi_mode_replace $color_vi_mode_indicator
+            echo " R "
+
     end
 end
 
