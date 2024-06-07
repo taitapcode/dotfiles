@@ -1,4 +1,4 @@
-function rpp
+function rcc
     for file_cpp in $argv
         if test -e $file_cpp; and test (string replace -r -- ".+\.(.+)\$" '$1' $file_cpp) = cpp
             set -l file_out (echo $file_cpp | sed 's/\.[^.]*$//')
