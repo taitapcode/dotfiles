@@ -19,7 +19,7 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 ## Install shell (fish) and shell utilities
 
 ```bash
-sudo pacman -S fish fzf zoxide bat eza fd
+sudo pacman -S fish fzf zoxide bat eza fd starship
 yay -S pfetch-rs
 stow ~/.dotfiles/fish
 ```
