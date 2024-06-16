@@ -22,6 +22,14 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 sudo pacman -S fish fzf zoxide bat eza fd starship
 yay -S pfetch-rs
 stow ~/.dotfiles/fish
+stow ~/.dotfiles/pfetch
+```
+
+## Install starship
+
+```bash
+sudo pacman -S starship
+stow ~/.dotfiles/starship
 ```
 
 ## Install terminal (kitty)
