@@ -23,6 +23,7 @@ require('lazy').setup({
     { import = 'lazyvim.plugins.extras.editor.mini-move' },
     { import = 'lazyvim.plugins.extras.util.mini-hipatterns' },
     { import = 'lazyvim.plugins.extras.editor.illuminate' },
+    { import = 'lazyvim.plugins.extras.editor.telescope' },
 
     { import = 'lazyvim.plugins.extras.lang.python' },
     { import = 'lazyvim.plugins.extras.lang.clangd' },

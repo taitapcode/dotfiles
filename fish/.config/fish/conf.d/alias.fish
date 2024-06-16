@@ -1,8 +1,7 @@
 # Navigation
-alias cd='z'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias 3..='cd ../../..'
+alias ..='z ..'
+alias ...='z ../..'
+alias 3..='z ../../..'
 
 # Ls (Eza)
 alias ls='eza --icons --group-directories-first'
