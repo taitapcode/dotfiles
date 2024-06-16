@@ -1,0 +1,60 @@
+return {
+  {
+    'telescope.nvim',
+    opts = function(_, opts)
+      opts.defaults.prompt_prefix = ' '
+      opts.defaults.selection_caret = '󰋇 '
+      opts.defaults.file_ignore_patterns = { 'node_modules', '.git' }
+      opts.defaults.mappings.i = {
+        ['<esc>'] = require('telescope.actions').close,
+        ['<C-k>'] = require('telescope.actions').move_selection_previous,
+        ['<C-j>'] = require('telescope.actions').move_selection_next,
+      }
+    end,
+  },
+  {
+    'neo-tree.nvim',
+    opts = {
+      close_if_last_window = true,
+      window = {
+        width = 27,
+        mappings = {
+          ['o'] = 'open',
+          ['oc'] = 'none',
+          ['od'] = 'none',
+          ['og'] = 'none',
+          ['om'] = 'none',
+          ['on'] = 'none',
+          ['os'] = 'none',
+          ['ot'] = 'none',
+        },
+      },
+
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+          hide_hidden = false,
+          -- hide_by_name = {
+          --   "node_modules",
+          -- },
+          never_show = {
+            '.git',
+            'node_modules',
+          },
+        },
+      },
+    },
+  },
+  {
+    'gitsigns.nvim',
+    opts = function(_, opts)
+      opts.current_line_blame = true
+      opts.current_line_blame_formatter = '<author>, <author_time:%A %d/%m/%Y> - <summary>'
+      opts.current_line_blame_opts = {
+        virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
+        delay = 500,
+      }
+    end,
+  },
+}

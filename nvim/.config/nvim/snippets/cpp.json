@@ -1,0 +1,49 @@
+{
+  "Template for competitive": {
+    "prefix": "gaytemplate",
+    "body": [
+      "#include<bits/stdc++.h>",
+      "#define el '\\n'",
+      "#define ll long long",
+      "#define db double",
+      "#define ldb long double",
+      "using namespace std;",
+      "",
+      "int main()",
+      "{",
+      "  ios_base::sync_with_stdio(0);",
+      "  cin.tie(0); cout.tie(0);",
+      "",
+      "  $0",
+      "",
+      "  return 0;",
+      "}"
+    ],
+    "description": "Template for competitive"
+  },
+  "Print function": {
+    "prefix": "prifunc",
+    "body": [
+      "void print()",
+      "{",
+      "  cout << el;",
+      "}",
+      "",
+      "template<typename First, typename ... Strings>",
+      "void print(First arg, const Strings&... rest)",
+      "{",
+      "  cout << arg << ' ';",
+      "  print(rest...);",
+      "}"
+    ],
+    "description": "Print function"
+  },
+  "File open": {
+    "prefix": "fileopen",
+    "body": [
+      "freopen(\"${1:filename}.inp\", \"r\", stdin);",
+      "freopen(\"$1.out\", \"w\", stdout);"
+    ],
+    "description": "File open"
+  }
+}

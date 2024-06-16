@@ -1,5 +1,5 @@
 # Navigation
-# alias cd='z'
+alias cd='z'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
@@ -33,10 +33,7 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 alias gst='git status'
-alias lgit='lazygit'
 
 # Others
 alias pm='sudo pacman'
 alias cl='clear'
-alias lg='lazygit'
-alias mux='tmuxinator'
