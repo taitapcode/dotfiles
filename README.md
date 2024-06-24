@@ -19,7 +19,7 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 ## Install shell (fish) and shell utilities
 
 ```bash
-sudo pacman -S fish fzf zoxide bat eza fd starship
+sudo pacman -S fish fzf zoxide bat eza fd
 yay -S pfetch-rs
 stow ~/.dotfiles/fish
 stow ~/.dotfiles/pfetch
@@ -51,8 +51,8 @@ stow ~/.dotfiles/lazygit
 
 ```bash
 sudo pacman -S tmux
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 stow ~/.dotfiles/tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## Install neovim
