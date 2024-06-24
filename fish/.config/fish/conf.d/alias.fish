@@ -33,6 +33,10 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 alias gst='git status'
 
+# Tmux
+alias tmx='tmux'
+alias mux='tmuxinator'
+
 # Others
 alias pm='sudo pacman'
 alias cl='clear'
