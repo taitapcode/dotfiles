@@ -21,9 +21,7 @@ cd ~/.dotfiles
 
 ```bash
 sudo pacman -S fish fzf zoxide bat eza fd
-yay -S pfetch-rs
 stow fish
-stow pfetch
 ```
 
 ## Install starship
@@ -33,12 +31,15 @@ sudo pacman -S starship
 stow starship
 ```
 
-## Setup Hyprland
+## Install Hyprland
 
 ```bash
-sudo pacman -S copyq brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd
-yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects wlogout dracula-gtk-theme
+sudo pacman -S copyq brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd nautilus
+yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects wlogout dracula-gtk-theme sddm-catppuccin-git
 stow hyprland
+sudo mkdir /etc/sddm.conf.d/
+sudo touch /etc/sddm.conf.d/theme.conf
+sudo printf "[Theme]\nCurrent=catppuccin"
 ```
 
 ## Install terminal (kitty)
