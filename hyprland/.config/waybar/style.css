@@ -60,13 +60,18 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray,
-#cpu {
+#cpu,
+#disk {
   border-radius: 6px;
   margin: 6px 5px;
   padding: 4px 12px;
   /* background-color: #181825; */
   background-color: rgba(24, 24, 37, 0.6);
   color: #cdd6f4;
+}
+
+#disk {
+  color: #b4befe;
 }
 
 #cpu {
