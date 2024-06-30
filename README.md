@@ -14,6 +14,7 @@ makepkg -si
 ```bash
 sudo pacman -S stow
 git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 ## Install shell (fish) and shell utilities
@@ -21,23 +22,23 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 ```bash
 sudo pacman -S fish fzf zoxide bat eza fd
 yay -S pfetch-rs
-stow ~/.dotfiles/fish
-stow ~/.dotfiles/pfetch
+stow fish
+stow pfetch
 ```
 
 ## Install starship
 
 ```bash
 sudo pacman -S starship
-stow ~/.dotfiles/starship
+stow starship
 ```
 
 ## Setup Hyprland
 
 ```bash
-sudo pacman -S cliphist brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd
-yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects
-stow ~/.dotfiles/hyprland
+sudo pacman -S copyq brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd
+yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects wlogout dracula-gtk-theme
+stow hyprland
 ```
 
 ## Install terminal (kitty)
@@ -45,36 +46,36 @@ stow ~/.dotfiles/hyprland
 ```bash
 sudo pacman -S kitty
 yay -S ttf-delugia-code
-stow ~/.dotfiles/kitty
+stow kitty
 ```
 
 ## Install lazygit
 
 ```bash
 sudo pacman -S lazygit
-stow ~/.dotfiles/lazygit
+stow lazygit
 ```
 
 ## Install tmux
 
 ```bash
 sudo pacman -S tmux
-stow ~/.dotfiles/tmux
+stow tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ## Install neovim
 
 ```bash
-sudo pacman -S neovim nodejs npm xclip
-stow ~/.dotfiles/nvim
+sudo pacman -S neovim nodejs npm xclip unzip
+stow nvim
 ```
 
 ## Install yazi
 
 ```bash
 sudo pacman -S yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
-stow ~/.dotfiles/yazi
+stow yazi
 ```
 
 ## Install ranger
@@ -82,5 +83,5 @@ stow ~/.dotfiles/yazi
 ```bash
 sudo pacman -S ranger
 yay -S ueberzugpp
-stow ~/.dotfiles/ranger
+stow ranger
 ```
