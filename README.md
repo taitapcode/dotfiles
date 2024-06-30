@@ -32,6 +32,14 @@ sudo pacman -S starship
 stow ~/.dotfiles/starship
 ```
 
+## Setup Hyprland
+
+```bash
+sudo pacman -S cliphist brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd
+yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects
+stow ~/.dotfiles/hyprland
+```
+
 ## Install terminal (kitty)
 
 ```bash
