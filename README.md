@@ -1,14 +1,5 @@
 # My dotfiles
 
-## Install A.U.R Helper (Yay)
-
-```bash
-sudo pacman -Sy --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-```
-
 ## Clone dotfiles and install GNU stow
 
 ```bash
@@ -29,17 +20,6 @@ stow fish
 ```bash
 sudo pacman -S starship
 stow starship
-```
-
-## Install Hyprland
-
-```bash
-sudo pacman -S copyq brightnessctl noto-fonts-emoji waybar rofi-wayland bluez blueman xdg-desktop-portal-hyprland wpaperd ttf-jetbrains-mono-nerd nautilus
-yay -S bibata-cursor-theme whitesur-icon-theme ttf-delugia-code sddm-catppuccin-git swaylock-effects wlogout dracula-gtk-theme sddm-catppuccin-git
-stow hyprland
-sudo mkdir /etc/sddm.conf.d/
-sudo touch /etc/sddm.conf.d/theme.conf
-sudo printf "[Theme]\nCurrent=catppuccin"
 ```
 
 ## Install terminal (kitty)
