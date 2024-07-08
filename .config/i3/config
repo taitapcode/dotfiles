@@ -233,7 +233,7 @@ mode "Action" {
   # back to normal: Enter or Escape or $mod+a
   bindsym Return mode "default"
   bindsym Escape mode "default"
-  bindsym $mod+r mode "default"
+  bindsym $mod+u mode "default"
 
 }
 bindsym $mod+u mode "Action"
