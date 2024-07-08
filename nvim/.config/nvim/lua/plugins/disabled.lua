@@ -11,6 +11,7 @@ end
 local disabled_plugins = {
   'flash.nvim',
   'persistence.nvim',
+  'tokyonight.nvim',
 }
 
 return disablePlugins(disabled_plugins)
