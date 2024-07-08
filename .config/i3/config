@@ -229,6 +229,7 @@ mode "Action" {
   bindsym r restart
   bindsym e exec i3-msg exit
   bindsym s exec systemctl poweroff
+  bindsym Shift+r exec systemctl reboot
 
   # back to normal: Enter or Escape or $mod+a
   bindsym Return mode "default"
