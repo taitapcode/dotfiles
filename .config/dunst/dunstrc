@@ -7,7 +7,7 @@
     alignment = "left"
     vertical_alignment = "center"
     ellipsize = "middle"
-    offset = "15x15"
+    offset = "15x45"
     padding = 15
     horizontal_padding = 15
     text_icon_padding = 15
