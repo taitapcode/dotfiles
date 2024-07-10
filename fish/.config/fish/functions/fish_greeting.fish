@@ -1,5 +1,5 @@
 function fish_greeting
-    # pfetch
+    pfetch
 
     # set -f normal (set_color normal)
     # set -l cyan (set_color -o cyan)

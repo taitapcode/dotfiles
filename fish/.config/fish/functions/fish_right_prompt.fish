@@ -11,7 +11,7 @@
 set -q color_vi_mode_indicator; or set color_vi_mode_indicator black
 set -q color_vi_mode_normal; or set color_vi_mode_normal green
 set -q color_vi_mode_insert; or set color_vi_mode_insert blue
-set -q color_vi_mode_visual; or set color_vi_mode_visual red
+set -q color_vi_mode_visual; or set color_vi_mode_visual magenta
 set -q color_vi_mode_replace; or set color_vi_mode_replace yellow
 
 
