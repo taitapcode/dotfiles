@@ -94,8 +94,11 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a apps
-bindsym $mod+Return exec kitty
-bindsym $mod+b exec thorium-browser
+set $terminal kitty
+set $browser mercury-browser-avx2
+
+bindsym $mod+Return exec $terminal
+bindsym $mod+b exec $browser
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 
