@@ -95,7 +95,7 @@ tiling_drag modifier titlebar
 
 # start a apps
 set $terminal kitty
-set $browser mercury-browser-avx2
+set $browser firefox
 
 bindsym $mod+Return exec $terminal
 bindsym $mod+b exec $browser
