@@ -21,5 +21,6 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 ```bash
 sudo pacman -S feh dunst picom brightnessctl blueman \
 ttf-jetbrains-mono-nerd polybar rofi noto-fonts-cjk noto-fonts-emoji noto-fonts \
-whitesur-icon-theme dracula-gtk-theme bibata-cursor-theme paru firefox
+whitesur-icon-theme dracula-gtk-theme bibata-cursor-theme paru firefox \
+ibus ibus-bamboo-git
 ```
