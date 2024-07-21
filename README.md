@@ -1,6 +1,6 @@
 # i3 dotfiles
 
-## Add chaotic aur
+## Add chaotic A.U.R
 
 ```bash
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -16,11 +16,17 @@ In `/etc/pacman.conf`
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
-## Install pkgs
+## Install dependencies
 
 ```bash
 sudo pacman -S feh dunst picom brightnessctl blueman \
 ttf-jetbrains-mono-nerd polybar rofi noto-fonts-cjk noto-fonts-emoji noto-fonts \
 whitesur-icon-theme dracula-gtk-theme bibata-cursor-theme paru firefox \
 ibus ibus-bamboo-git
+```
+
+## Fix wrong time displayed due to dual boot setup
+
+```bash
+timedatectl set-local-rtc 1
 ```
