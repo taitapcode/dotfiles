@@ -63,7 +63,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec --no-startup-id ibus-daemon -drx
 exec --no-startup-id setxkbmap -option ctrl:nocaps,shift:both_capslock
-exec --no-startup-id sleep 0; xcape
+exec --no-startup-id sleep; xcape
+
 
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
 gaps inner 10
