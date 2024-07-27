@@ -21,7 +21,6 @@ function! IBusOn()
   execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
 endfunction
 augroup IBusHandler
-    autocmd CmdLineEnter [/?] call IBusOn()
     autocmd CmdLineLeave [/?] call IBusOff()
     autocmd InsertEnter * call IBusOn()
     autocmd InsertLeave * call IBusOff()
