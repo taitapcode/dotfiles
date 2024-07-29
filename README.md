@@ -19,7 +19,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 ## Install dependencies
 
 ```bash
-sudo pacman -S feh dunst picom brightnessctl blueman xcape \
+sudo pacman -S feh dunst picom brightnessctl blueman xcape stow \
 ttf-jetbrains-mono-nerd polybar rofi noto-fonts-cjk noto-fonts-emoji noto-fonts \
 whitesur-icon-theme dracula-gtk-theme bibata-cursor-theme paru firefox \
 ibus ibus-bamboo-git
