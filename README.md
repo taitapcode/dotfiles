@@ -11,7 +11,7 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg
 
 In `/etc/pacman.conf`
 
-```apacheconf
+```toml
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
@@ -23,6 +23,7 @@ sudo pacman -S feh dunst picom brightnessctl blueman xcape \
 ttf-jetbrains-mono-nerd polybar rofi noto-fonts-cjk noto-fonts-emoji noto-fonts \
 whitesur-icon-theme dracula-gtk-theme bibata-cursor-theme paru firefox \
 ibus ibus-bamboo-git
+paru -S alttab
 ```
 
 ## Fix wrong time displayed due to dual boot setup
