@@ -5,9 +5,7 @@ return {
       colorscheme = 'catppuccin-mocha',
     },
   },
-
   { 'mg979/vim-visual-multi' },
-
   {
     'christoomey/vim-tmux-navigator',
     lazy = false,
