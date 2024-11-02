@@ -12,6 +12,7 @@
 #backlight,
 #network,
 #pulseaudio,
+#custom-notification,
 #tray {
   padding: 0 10px;
   border-radius: 15px;
@@ -217,12 +218,6 @@ window#waybar {
 }
 
 #cpu {
-  background: rgb(30, 30, 46);
-  background: radial-gradient(
-    circle,
-    rgba(30, 30, 46, 1) 30%,
-    rgba(17, 17, 27, 1) 100%
-  );
   color: #89b4fa;
 }
 
