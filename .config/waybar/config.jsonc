@@ -1,80 +1,65 @@
 {
-  "layer": "top",
-  "position": "top",
-  "spacing": 0,
-  "height": 34,
-  "modules-left": ["custom/logo", "hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 50, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 5, // Gaps between modules (4px)
+  // Choose the order of the modules
+  // "margin-left":25,
+  // "margin-right":25,
+  "margin-bottom": -11,
+  //"margin-top":5,
+  "modules-left": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
-    "cpu",
-    "memory",
-    "disk",
     "backlight",
     "pulseaudio",
     "battery",
-    "custom/power",
+    "memory",
+    "disk",
+    "cpu",
+    "clock",
   ],
+  "modules-center": ["hyprland/window"],
+
   "disk": {
     "format": " {percentage_used}%",
     "tooltip": true,
     "tooltip-format": "{used} / {total}",
   },
-  "hyprland/workspaces": {
-    "on-click": "activate",
-    // "format": "{icon}",
-    // "format-icons": {},
+
+  "hyprland/window": {
+    "max-length": 50,
   },
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-active": " {icon} ",
+    "on-click": "activate",
+  },
+
+  "tray": {
+    "spacing": 10,
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "interval": 60,
+    "format": "{:%I:%M}",
+    "max-length": 25,
   },
   "cpu": {
-    "format": " {}%",
+    "interval": 1,
+    "format": "{icon0} {icon1} {icon2} {icon3}",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
   "memory": {
     "interval": 5,
     "format": " {}%",
     "max-length": 10,
   },
-  "tray": {
-    "spacing": 10,
-  },
-  "clock": {
-    "tooltip-format": "{calendar}",
-    "format-alt": " {:%a, %d/%m/%Y}",
-    "format": " {:%I:%M %p}",
-  },
-  "network": {
-    "format-wifi": "{icon}",
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format-ethernet": "󰀂",
-    "format-alt": "󱛇",
-    "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 5,
-    "nospacing": 1,
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "󰂰 {volume}%",
-    "nospacing": 1,
-    "tooltip": false,
-    // "tooltip-format": "Volume : {volume}%",
-    "format-muted": "󰖁 {volume}%",
-    "format-icons": {
-      "headphone": "",
-      "default": ["󰕿", "󰖀", "󰕾", ""],
-    },
-    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "scroll-step": 5,
-  },
-  "custom/logo": {
-    "format": "  ",
-    "tooltip": false,
-    "on-click": "rofi -show window",
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
     "format": "{icon} {capacity}%",
@@ -89,9 +74,21 @@
     },
     "tooltip": false,
   },
-  "custom/power": {
-    "format": "",
+  "battery#bat2": {
+    "bat": "BAT2",
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+    "nospacing": 1,
     "tooltip": false,
-    "on-click": "wlogout",
+    // "tooltip-format": "Volume : {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-icons": {
+      "headphone": "",
+      "default": ["󰕿", "󰖀", "󰕾", ""],
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "scroll-step": 5,
   },
 }
