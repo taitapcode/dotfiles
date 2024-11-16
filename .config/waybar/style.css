@@ -245,9 +245,9 @@ window#waybar {
   font-weight: bolder;
 }
 
-#pulseaudio.muted {
-  background-color: #90b1b1;
-}
+/* #pulseaudio.muted { */
+/*   background-color: #90b1b1; */
+/* } */
 
 #tray {
   /* background-color: #2980b9; */
