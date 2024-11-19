@@ -24,6 +24,8 @@ require('lazy').setup({
     { import = 'lazyvim.plugins.extras.util.mini-hipatterns' },
     { import = 'lazyvim.plugins.extras.editor.illuminate' },
     { import = 'lazyvim.plugins.extras.editor.telescope' },
+    { import = 'lazyvim.plugins.extras.editor.mini-diff' },
+    { import = 'lazyvim.plugins.extras.editor.aerial' },
 
     { import = 'lazyvim.plugins.extras.lang.python' },
     { import = 'lazyvim.plugins.extras.lang.clangd' },

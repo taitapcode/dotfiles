@@ -26,46 +26,6 @@ return {
   },
 
   {
-    'dashboard-nvim',
-    opts = function(_, opts)
-      opts.config.center = {
-        {
-          action = LazyVim.pick('files'),
-          desc = ' Find File',
-          icon = ' ',
-          key = 'f',
-        },
-        {
-          action = 'ene | startinsert',
-          desc = ' New File',
-          icon = ' ',
-          key = 'n',
-        },
-        {
-          action = 'Telescope oldfiles',
-          desc = ' Recent Files',
-          icon = ' ',
-          key = 'r',
-        },
-        {
-          action = 'Telescope live_grep',
-          desc = ' Find Text',
-          icon = ' ',
-          key = 'g',
-        },
-        {
-          action = 'qa',
-          desc = ' Quit',
-          icon = ' ',
-          key = 'q',
-        },
-      }
-
-      opts.config.footer = { '💤  Best neovim for a lazy guy 󰒲' }
-    end,
-  },
-
-  {
     'lualine.nvim',
     opts = function(_, opts)
       table.remove(opts.sections.lualine_x, 1)
