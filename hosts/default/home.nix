@@ -139,6 +139,41 @@ in {
     tmux = {
       enable = true;
       prefix = "C-s";
+      disableConfirmationPrompt = true;
+      escapeTime = 0;
+      mouse = true;
+      keyMode = "vi";
+      extraConfig = ''
+        # Allow yazi preview images
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
+
+        # Moving between windows
+        bind -n M-H previous-window
+        bind -n M-L next-window
+
+        # Kill windows and panes without confirm
+        bind-key x kill-pane
+        bind-key & kill-window
+      '';
+      plugins = with pkgs; [
+        tmuxPlugins.vim-tmux-navigator
+        tmuxPlugins.pain-control
+        tmuxPlugins.sensible
+        tmuxPlugins.yank
+        {
+          plugin = tmuxPlugins.catppuccin;
+          extraConfig = ''
+            set -g @catppuccin_flavor "mocha"
+            set -g @catppuccin_window_status_style "rounded"
+            set -g @catppuccin_status_fill "all"
+            set -g @catppuccin_directory_text "#{pane_current_path}"
+            set -g @catppuccin_application_icon " "
+            set -g @catppuccin_session_icon " "
+          '';
+        }
+      ];
     };
 
     yazi = {
