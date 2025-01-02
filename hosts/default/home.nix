@@ -7,12 +7,6 @@ in {
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     brave
 
     nodejs_23
@@ -81,6 +75,7 @@ in {
       };
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+        fish_vi_key_bindings
       '';
       plugins = [
         {
@@ -100,6 +95,10 @@ in {
         character = {
           success_symbol = "[➜](bold green)";
           error_symbol = "[➜](bold red)";
+          vimcmd_symbol = "[❯](bold green)";
+          vimcmd_replace_one_symbol = "[❯](bold purple)";
+          vimcmd_replace_symbol = "[❯](bold purple)";
+          vimcmd_visual_symbol = "[❯](bold yellow)";
         };
         directory = {
           truncation_length = 1;
@@ -132,7 +131,7 @@ in {
 
     nh = {
       enable = true;
-      flake = "/home/tai/nixos-config";
+      flake = "${homeDir}/nixos-config";
       clean.enable = true;
     };
 
@@ -171,6 +170,7 @@ in {
             set -g @catppuccin_directory_text "#{pane_current_path}"
             set -g @catppuccin_application_icon " "
             set -g @catppuccin_session_icon " "
+            set -g status-position top
           '';
         }
       ];
