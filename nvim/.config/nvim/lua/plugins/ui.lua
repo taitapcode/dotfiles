@@ -9,7 +9,6 @@ return {
       },
     },
   },
-
   {
     'noice.nvim',
     opts = function(_, opts)
@@ -24,7 +23,6 @@ return {
       opts.presets.lsp_doc_border = true
     end,
   },
-
   {
     'lualine.nvim',
     opts = function(_, opts)
