@@ -20,8 +20,8 @@ require('lazy').setup({
     -- import any extras modules here
     { import = 'lazyvim.plugins.extras.ui.mini-indentscope' },
     { import = 'lazyvim.plugins.extras.coding.mini-comment' },
-    { import = 'lazyvim.plugins.extras.editor.mini-move' },
     { import = 'lazyvim.plugins.extras.util.mini-hipatterns' },
+    { import = 'lazyvim.plugins.extras.editor.mini-move' },
     { import = 'lazyvim.plugins.extras.editor.illuminate' },
     { import = 'lazyvim.plugins.extras.editor.mini-diff' },
     { import = 'lazyvim.plugins.extras.editor.aerial' },
