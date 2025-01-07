@@ -50,6 +50,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
@@ -78,7 +79,8 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
+  services.libinput.touchpad.naturalScrolling = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tai = {
@@ -86,19 +88,20 @@
     isNormalUser = true;
     description = "tai";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    # packages = with pkgs; [
+    # ];
   };
 
   # Programs
   programs.firefox.enable = true;
   programs.fish.enable = true;
+  programs.hyprland.enable = true;
+  programs.xwayland.enable = true;
   programs.neovim = {
     enable = true;
     defaultEditor = true;
   };
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -133,6 +136,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-  
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
