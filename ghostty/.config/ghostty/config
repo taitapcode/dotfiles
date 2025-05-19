@@ -1,0 +1,4 @@
+resize-overlay = never
+theme = catppuccin-mocha
+font-family = Delugia
+font-size = 18

@@ -8,7 +8,7 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ```
 
-## Install shell (fish) and shell utilities
+## Install fish shell and shell utilities
 
 ```bash
 sudo pacman -S fish fzf zoxide bat eza fd
@@ -22,12 +22,20 @@ sudo pacman -S starship
 stow starship
 ```
 
-## Install terminal (kitty)
+## Install kitty terminal
 
 ```bash
 sudo pacman -S kitty
 yay -S ttf-delugia-code
 stow kitty
+```
+
+## Install ghostty terminal
+
+```bash
+sudo pacman -S ghostty
+paru -S ttf-delugia-code
+stow ghostty
 ```
 
 ## Install lazygit
