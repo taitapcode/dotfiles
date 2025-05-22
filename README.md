@@ -20,7 +20,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
 ```bash
-sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look zen-browser ghostty
+sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look brave-bin ghostty
 paru -S ttf-delugia-code whitesur-icon-theme catppuccin-gtk-theme-mocha
 timedatectl set-local-rtc 1
 ```
