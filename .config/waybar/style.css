@@ -72,12 +72,12 @@ window#waybar {
   /* padding-bottom: 2px; */
   font-weight: bolder;
   color: #cdd6f4;
+  border-bottom: solid 3px #9399b2;
 }
 
 #workspaces button.active {
-  box-shadow: rgba(0, 0, 0, 0.288) 2 2 5 2px;
   background: #45475a;
-  background-size: 400% 400%;
+  border-bottom: solid 3px #74c7ec;
 }
 
 #window {
@@ -207,4 +207,8 @@ window#waybar {
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
+}
+
+#custom-notification {
+  color: #f5c2e7;
 }
