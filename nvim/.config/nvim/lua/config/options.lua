@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.opt.swapfile = false
 vim.opt.wrap = true
+vim.opt.laststatus = 3
