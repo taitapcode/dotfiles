@@ -66,11 +66,3 @@ stow nvim
 sudo pacman -S yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
 stow yazi
 ```
-
-## Install ranger
-
-```bash
-sudo pacman -S ranger
-yay -S ueberzugpp
-stow ranger
-```
