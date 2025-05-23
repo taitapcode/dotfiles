@@ -4,7 +4,15 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     -- add any opts here
-    provider = 'gemini',
+    provider = 'openai',
+    openai = {
+      endpoint = 'https://generativelanguage.googleapis.com/v1beta/openai/',
+      model = 'gemini-2.0-flash',
+      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      temperature = 0,
+      max_completion_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
+      reasoning_effort = 'medium', -- low|medium|high, only used for reasoning models
+    },
     gemini = {
       model = 'gemini-2.0-flash', -- your desired model (or use gpt-4o, etc.)
       timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
