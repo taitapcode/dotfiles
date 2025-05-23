@@ -56,7 +56,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ## Install neovim
 
 ```bash
-sudo pacman -S neovim nodejs npm xclip unzip wl-clipboard
+sudo pacman -S neovim nodejs npm xclip unzip wl-clipboard curl
 stow nvim
 ```
 

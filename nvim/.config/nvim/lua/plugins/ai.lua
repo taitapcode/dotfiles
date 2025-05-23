@@ -21,6 +21,10 @@ return {
         align = 'center', -- left, center, right for title
         rounded = true,
       },
+      ask = {
+        border = 'rounded',
+        start_insert = false, -- Start insert mode when opening the edit window
+      },
     },
     mappings = {
       submit = {
