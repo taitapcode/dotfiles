@@ -4,7 +4,7 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     -- add any opts here
-    provider = 'openai',
+    provider = 'openai', -- Require set OPENAI_API_KEY env variable
     openai = {
       endpoint = 'https://generativelanguage.googleapis.com/v1beta/openai/',
       model = 'gemini-2.0-flash',
@@ -18,6 +18,9 @@ return {
       timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
       temperature = 0,
       max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+    },
+    web_search_engine = {
+      provider = 'google', -- Require set GOOGLE_SEARCH_API_KEY and GOOGLE_SEARCH_ENGINE_ID env variable
     },
     behaviour = {
       support_paste_from_clipboard = true,
