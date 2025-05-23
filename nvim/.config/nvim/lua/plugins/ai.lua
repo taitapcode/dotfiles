@@ -11,6 +11,22 @@ return {
       temperature = 0,
       max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
     },
+    behaviour = {
+      support_paste_from_clipboard = true,
+    },
+    windows = {
+      width = 35,
+      sidebar_header = {
+        enabled = true, -- true, false to enable/disable the header
+        align = 'center', -- left, center, right for title
+        rounded = true,
+      },
+    },
+    mappings = {
+      submit = {
+        insert = '<C-e>', -- submit the current query
+      },
+    },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',
