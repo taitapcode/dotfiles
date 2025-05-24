@@ -7,6 +7,11 @@ local function optDesc(desc)
   }
 end
 
+set('n', '<m-k>', ':resize -1<CR>', optDesc('Resize up'))
+set('n', '<m-j>', ':resize +1<CR>', optDesc('Resize down'))
+set('n', '<m-l>', ':vertical resize -1<CR>', optDesc('Resize left'))
+set('n', '<m-h>', ':vertical resize +1<CR>', optDesc('Resize right'))
+
 set('x', '<leader>p', [["_dP]])
 set('n', 'x', [["_x]])
 set('n', 'X', [["_X]])
@@ -15,7 +20,3 @@ set('n', '<m-w>', function()
   Snacks.bufdelete()
 end, optDesc('Delete Buffer'))
 set('n', '<leader>hh', ':nohl<cr>', optDesc('No highlight'))
-set('n', '<m-k>', ':resize -1<CR>', optDesc('Resize up'))
-set('n', '<m-j>', ':resize +1<CR>', optDesc('Resize down'))
-set('n', '<m-l>', ':vertical resize -1<CR>', optDesc('Resize left'))
-set('n', '<m-h>', ':vertical resize +1<CR>', optDesc('Resize right'))
