@@ -7,6 +7,10 @@ return {
       vim.list_extend(opts.ensure_installed, {
         'css',
         'scss',
+        'html',
+        'gdscript',
+        'godot_resource',
+        'gdshader',
       })
     end
   end,
