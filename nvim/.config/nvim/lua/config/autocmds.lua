@@ -10,7 +10,15 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end,
 })
 
+-- Auto remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*' },
   command = [[%s/\s\+$//e]],
 })
+
+-- Start Godot host if project.godot exists
+local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
+if gdproject then
+  io.close(gdproject)
+  vim.fn.serverstart('./godothost')
+end

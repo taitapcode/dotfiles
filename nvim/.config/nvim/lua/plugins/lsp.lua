@@ -3,6 +3,9 @@ return {
     'nvim-lspconfig',
     opts = {
       inlay_hints = { enabled = false },
+      servers = {
+        gdscript = {},
+      },
       setup = {
         clangd = function(_, opts)
           opts.capabilities.offsetEncoding = { 'utf-16' }
