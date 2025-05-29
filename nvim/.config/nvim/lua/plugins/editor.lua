@@ -37,6 +37,7 @@ return {
     'flash.nvim',
     keys = {
       { 's', false },
+      { 'S', false },
       {
         'f',
         mode = { 'n', 'x', 'o' },
@@ -44,6 +45,14 @@ return {
           require('flash').jump()
         end,
         desc = 'Flash',
+      },
+      {
+        'F',
+        mode = { 'n', 'x', 'o' },
+        function()
+          require('flash').treesitter()
+        end,
+        desc = 'Flash Treesitter',
       },
     },
     opts = function(_, opts)
