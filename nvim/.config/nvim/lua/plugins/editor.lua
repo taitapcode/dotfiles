@@ -33,4 +33,33 @@ return {
       },
     },
   },
+  {
+    'flash.nvim',
+    keys = {
+      { 's', false },
+      {
+        'f',
+        mode = { 'n', 'x', 'o' },
+        function()
+          require('flash').jump()
+        end,
+        desc = 'Flash',
+      },
+    },
+    opts = function(_, opts)
+      opts.jump = {
+        autojump = true,
+        nohlsearch = true,
+      }
+
+      opts.modes = {
+        search = {
+          enabled = true,
+        },
+        char = {
+          enabled = false,
+        },
+      }
+    end,
+  },
 }

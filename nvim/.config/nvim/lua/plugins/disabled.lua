@@ -9,7 +9,6 @@ end
 
 -- Add plugins you want to disable here
 local disabled_plugins = {
-  'flash.nvim',
   'persistence.nvim',
   'tokyonight.nvim',
 }
