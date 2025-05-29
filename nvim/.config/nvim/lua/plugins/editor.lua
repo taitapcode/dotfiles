@@ -1,5 +1,20 @@
 return {
   {
+    'mini.files',
+    keys = {
+      {
+        '<leader>e',
+        function()
+          require('mini.files').open(vim.api.nvim_buf_get_name(0), true)
+        end,
+        desc = 'Open mini.files (Directory of Current File)',
+      },
+    },
+    opts = function(_, opts)
+      opts.options.use_as_default_explorer = true
+    end,
+  },
+  {
     'neo-tree.nvim',
     opts = {
       close_if_last_window = true,
@@ -36,8 +51,8 @@ return {
   {
     'flash.nvim',
     keys = {
-      { 's', false },
-      { 'S', false },
+      { 's', mode = { 'n', 'x', 'o' }, false },
+      { 'S', mode = { 'n', 'x', 'o' }, false },
       {
         'f',
         mode = { 'n', 'x', 'o' },
