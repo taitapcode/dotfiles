@@ -9,6 +9,13 @@ return {
         end,
         desc = 'Open mini.files (Directory of Current File)',
       },
+      {
+        '<leader>E',
+        function()
+          require('mini.files').open(vim.uv.cwd(), true)
+        end,
+        desc = 'Open mini.files (cwd)',
+      },
     },
     opts = function(_, opts)
       opts.options.use_as_default_explorer = true
@@ -60,7 +67,7 @@ return {
       { 's', mode = { 'n', 'x', 'o' }, false },
       { 'S', mode = { 'n', 'x', 'o' }, false },
       {
-        'f',
+        '<m-f>',
         mode = { 'n', 'x', 'o' },
         function()
           require('flash').jump()
@@ -68,7 +75,7 @@ return {
         desc = 'Flash',
       },
       {
-        'F',
+        '<m-F>',
         mode = { 'n', 'x', 'o' },
         function()
           require('flash').treesitter()
@@ -85,9 +92,6 @@ return {
       opts.modes = {
         search = {
           enabled = true,
-        },
-        char = {
-          enabled = false,
         },
       }
     end,

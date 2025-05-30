@@ -9,6 +9,7 @@ end
 
 -- Add plugins you want to disable here
 local disabled_plugins = {
+  'nvim-cmp',
   'neo-tree.nvim',
   'persistence.nvim',
   'tokyonight.nvim',
