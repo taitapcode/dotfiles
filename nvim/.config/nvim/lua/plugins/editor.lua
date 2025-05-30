@@ -12,6 +12,12 @@ return {
     },
     opts = function(_, opts)
       opts.options.use_as_default_explorer = true
+      opts.mappings = {
+        go_in = '',
+        go_out = '',
+        go_in_plus = 'l',
+        go_out_plus = 'h',
+      }
     end,
   },
   {
