@@ -1,14 +1,14 @@
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["l"]
 run = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["p"]
 run = "plugin smart-paste"
 desc = "Paste into the hovered directory or CWD"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["y"]
 run = ["yank", '''
 	shell --confirm 'echo "$@" | xclip -i -selection clipboard -t text/uri-list'
@@ -18,7 +18,7 @@ run = ["yank", '''
 on = ["<Esc>"]
 run = "close"
 desc = "Cancel input"
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["d"]
 run = "remove --permanently"
 desc = "Remove file"
