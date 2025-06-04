@@ -1,6 +1,6 @@
-# My dotfiles
+# My Dotfiles
 
-## Clone dotfiles and install GNU stow
+## Prerequisites
 
 ```bash
 sudo pacman -S stow
@@ -8,21 +8,23 @@ git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ```
 
-## Install fish shell and shell utilities
+## Installation
+
+### Fish Shell and Utilities
 
 ```bash
 sudo pacman -S fish fzf zoxide bat eza fd
 stow fish
 ```
 
-## Install starship
+### Starship
 
 ```bash
 sudo pacman -S starship
 stow starship
 ```
 
-## Install kitty terminal
+### Kitty Terminal
 
 ```bash
 sudo pacman -S kitty
@@ -30,7 +32,7 @@ yay -S ttf-delugia-code
 stow kitty
 ```
 
-## Install ghostty terminal
+### Ghostty Terminal
 
 ```bash
 sudo pacman -S ghostty
@@ -38,14 +40,14 @@ paru -S ttf-delugia-code
 stow ghostty
 ```
 
-## Install lazygit
+### Lazygit
 
 ```bash
 sudo pacman -S lazygit
 stow lazygit
 ```
 
-## Install tmux
+### Tmux
 
 ```bash
 sudo pacman -S tmux
@@ -53,14 +55,14 @@ stow tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-## Install neovim
+### Neovim
 
 ```bash
 sudo pacman -S neovim nodejs npm xclip unzip wl-clipboard curl
 stow nvim
 ```
 
-## Install yazi
+### Yazi
 
 ```bash
 sudo pacman -S yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
