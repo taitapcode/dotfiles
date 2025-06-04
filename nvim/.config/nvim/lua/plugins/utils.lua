@@ -24,4 +24,14 @@ return {
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
+  {
+    'pysan3/fcitx5.nvim',
+    opts = function(_, opts)
+      local en = 'keyboard-us'
+      local vi = 'unikey'
+      opts.imname = {
+        norm = en,
+      }
+    end,
+  },
 }
