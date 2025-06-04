@@ -28,7 +28,7 @@ stow starship
 
 ```bash
 sudo pacman -S kitty
-yay -S ttf-delugia-code
+paru -S ttf-delugia-code
 stow kitty
 ```
 
