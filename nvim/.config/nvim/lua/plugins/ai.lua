@@ -4,7 +4,7 @@ return {
   version = false, -- Never set this value to "*"! Never!
   opts = {
     -- add any opts here
-    provider = 'openai', -- Require set OPENAI_API_KEY env variable
+    provider = 'gemini', -- Require set OPENAI_API_KEY env variable
     openai = {
       endpoint = 'https://generativelanguage.googleapis.com/v1beta/openai/',
       model = 'gemini-2.0-flash',
