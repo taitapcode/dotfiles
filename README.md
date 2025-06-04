@@ -1,9 +1,9 @@
-# Hyprland dotfiles
+# Hyprland Dotfiles
 
-## Install requirement
+## Installation Requirements
 
 > [!IMPORTANT]
-> Make sure install chaotic aur
+> Ensure you have the Chaotic AUR installed.
 
 ```bash
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
@@ -12,15 +12,15 @@ sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.ta
 sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
 ```
 
-`/etc/pacman.conf`
-
 ```conf
 [chaotic-aur]
 Include = /etc/pacman.d/chaotic-mirrorlist
 ```
 
+Finally, install the required packages:
+
 ```bash
-sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts noto-fonts-cjk waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look ghostty hy3
+sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts noto-fonts-cjk waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look ghostty hy3 fcitx5-config-qt fcitx5 fcitx5-qt fcitx5-gtk fcitx5-unikey
 paru -S ttf-delugia-code whitesur-icon-theme catppuccin-gtk-theme-mocha thorium-browser
 timedatectl set-local-rtc 1
 ```
