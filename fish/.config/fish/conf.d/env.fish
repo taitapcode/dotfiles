@@ -1,4 +1,4 @@
 # Set default editor
 set -gx EDITOR nvim
 
-fish_add_path (go env GOPATH)/bin
+fish_add_path (go env GOPATH)/bin $HOME/.bun/bin
