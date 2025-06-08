@@ -24,6 +24,7 @@ return {
         go_out = '',
         go_in_plus = 'l',
         go_out_plus = 'h',
+        synchronize = '<Return>',
       }
     end,
   },
