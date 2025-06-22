@@ -27,6 +27,24 @@ return {
         synchronize = '<Return>',
       }
 
+      opts.content = {
+        filter = function(fs_entry)
+          local hidden_folders = {
+            '.git',
+            'node_modules',
+            'build',
+            'dist',
+            '.next',
+          }
+          for _, folder_name in ipairs(hidden_folders) do
+            if fs_entry.name == folder_name then
+              return false
+            end
+          end
+          return true
+        end,
+      }
+
       -- Set multiple keymaps for the same action in mini.files
       local miniFiles = require('mini.files')
       local set = vim.keymap.set
