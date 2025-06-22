@@ -26,6 +26,22 @@ return {
         go_out_plus = 'h',
         synchronize = '<Return>',
       }
+
+      -- Set multiple keymaps for the same action in mini.files
+      local miniFiles = require('mini.files')
+      local set = vim.keymap.set
+
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'MiniFilesBufferCreate',
+        callback = function(args)
+          local function keyMapOpts(desc)
+            return { desc = desc, buffer = args.data.buf_id }
+          end
+
+          -- Exit mini.files with <Esc>
+          set('n', '<Esc>', miniFiles.close, keyMapOpts('MiniFiles: Exit'))
+        end,
+      })
     end,
   },
   {

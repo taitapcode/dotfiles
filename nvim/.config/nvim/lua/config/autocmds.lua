@@ -3,12 +3,12 @@
 -- Add any additional autocmds here
 
 -- Disable autoformat on cpp
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-  pattern = { 'cpp' },
-  callback = function()
-    vim.b.autoformat = false
-  end,
-})
+-- vim.api.nvim_create_autocmd({ 'FileType' }, {
+--   pattern = { 'cpp' },
+--   callback = function()
+--     vim.b.autoformat = false
+--   end,
+-- })
 
 -- Auto remove trailing whitespace on save
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
