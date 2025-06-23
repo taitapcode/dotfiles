@@ -128,6 +128,9 @@ return {
         search = {
           enabled = true,
         },
+        char = {
+          enabled = false,
+        },
       }
     end,
   },
