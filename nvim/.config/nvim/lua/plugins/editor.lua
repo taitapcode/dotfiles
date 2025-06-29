@@ -134,4 +134,11 @@ return {
       }
     end,
   },
+  {
+    'snacks.nvim',
+    opts = function(_, opts)
+      -- Disable scroll animation
+      opts.scroll.enabled = false
+    end,
+  },
 }
