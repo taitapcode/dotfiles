@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 })
 
 -- Start Godot host if project.godot exists
+-- Put this flags in Godot external text editor: --server ./godot --remote-send ":e {file}<CR>{line}G{col}|"
 local gdproject = io.open(vim.fn.getcwd() .. '/project.godot', 'r')
 if gdproject then
   io.close(gdproject)
