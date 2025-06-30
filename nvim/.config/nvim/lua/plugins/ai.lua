@@ -11,7 +11,7 @@ return {
           model = 'gemini-2.0-flash', -- your desired model (or use gpt-4o, etc.)
           timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
           extra_request_body = {
-            max_tokens = 32768, -- Increase this to include reasoning tokens (for reasoning models)
+            max_tokens = 16384, -- Increase this to include reasoning tokens (for reasoning models)
           },
         },
       },
