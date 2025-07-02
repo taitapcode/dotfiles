@@ -5,6 +5,7 @@ return {
       inlay_hints = { enabled = false },
       servers = {
         gdscript = {},
+        fish_lsp = {},
       },
       setup = {
         clangd = function(_, opts)
@@ -24,6 +25,7 @@ return {
           'css-lsp',
           'cssmodules-language-server',
           'css-variables-language-server',
+          'fish-lsp',
         })
       end
     end,
