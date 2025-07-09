@@ -65,6 +65,6 @@ stow nvim
 ### Yazi TUI File Manager 📁
 
 ```bash
-sudo pacman -S yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
+sudo pacman -S yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide 7zip
 stow yazi
 ```
