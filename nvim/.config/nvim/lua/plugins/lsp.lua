@@ -11,6 +11,14 @@ return {
         clangd = function(_, opts)
           opts.capabilities.offsetEncoding = { 'utf-16' }
         end,
+
+        cssls = function(_, opts)
+          opts.settings = {
+            css = {
+              validate = false, -- Disable CSS validation for tailwindcss
+            },
+          }
+        end,
       },
     },
   },
