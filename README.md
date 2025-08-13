@@ -20,7 +20,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist
 Finally, install the required packages:
 
 ```bash
-sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts noto-fonts-cjk waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look ghostty hy3 fcitx5-config-qt fcitx5 fcitx5-qt fcitx5-gtk fcitx5-unikey zen-browser
+sudo pacman -S paru brightnessctl noto-fonts-emoji noto-fonts noto-fonts-cjk waybar bluez blueman xdg-desktop-portal-hyprland swww ttf-jetbrains-mono-nerd nautilus bibata-cursor-theme swaync nwg-look hy3 fcitx5-config-qt fcitx5 fcitx5-qt fcitx5-gtk fcitx5-unikey zen-browser
 paru -S ttf-delugia-code whitesur-icon-theme catppuccin-gtk-theme-mocha
 timedatectl set-local-rtc 1
 ```
