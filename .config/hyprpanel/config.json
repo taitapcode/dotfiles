@@ -1,0 +1,68 @@
+{
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
+  "theme.font.name": "Ubuntu Nerd Font",
+  "theme.font.label": "Ubuntu Nerd Font",
+  "theme.font.size": "0.9rem",
+  "tear": true,
+  "menus.transition": "crossfade",
+  "scalingPriority": "gdk",
+  "theme.bar.transparent": false,
+  "theme.bar.menus.opacity": 100,
+  "menus.dashboard.shortcuts.enabled": true,
+  "menus.clock.time.military": false,
+  "menus.clock.weather.location": "Ho Chi Minh",
+  "menus.clock.weather.unit": "metric",
+  "menus.clock.time.hideSeconds": false,
+  "theme.bar.floating": false,
+  "theme.bar.buttons.enableBorders": true,
+  "bar.autoHide": "fullscreen",
+  "theme.bar.border.location": "none",
+  "theme.bar.enableShadow": false,
+  "menus.clock.weather.enabled": false,
+  "menus.dashboard.directories.enabled": false,
+  "menus.power.lowBatteryNotification": true,
+  "theme.bar.buttons.modules.ram.enableBorder": false,
+  "bar.workspaces.reverse_scroll": true,
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces",
+        "windowtitle"
+      ],
+      "middle": [
+        "media"
+      ],
+      "right": [
+        "systray",
+        "network",
+        "bluetooth",
+        "volume",
+        "ram",
+        "cpu",
+        "battery",
+        "clock",
+        "notifications"
+      ]
+    }
+  },
+  "bar.customModules.worldclock.showIcon": true,
+  "menus.media.hideAuthor": true,
+  "menus.media.hideAlbum": true,
+  "menus.media.displayTime": true,
+  "menus.media.displayTimeTooltip": true,
+  "bar.clock.format": "%I:%M %p",
+  "bar.bluetooth.label": false,
+  "theme.bar.buttons.network.enableBorder": false,
+  "bar.network.label": false,
+  "theme.bar.background": "#1e1e2e",
+  "theme.bar.outer_spacing": "0.4em",
+  "theme.bar.buttons.spacing": "0.3em",
+  "theme.bar.buttons.radius": "0.5em",
+  "theme.bar.dropdownGap": "3em",
+  "theme.bar.margin_bottom": "0.3em",
+  "bar.customModules.ram.labelType": "used"
+}
