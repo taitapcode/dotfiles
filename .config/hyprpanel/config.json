@@ -1,5 +1,7 @@
 {
-  "bar.customModules.storage.paths": ["/"],
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
   "theme.font.name": "Ubuntu Nerd Font",
   "theme.font.label": "Ubuntu Nerd Font",
   "theme.font.size": "0.9rem",
@@ -26,8 +28,16 @@
   "theme.bar.buttons.windowtitle.enableBorder": false,
   "bar.layouts": {
     "0": {
-      "left": ["workspaces", "windowtitle", "bluetooth", "network", "systray"],
-      "middle": ["media"],
+      "left": [
+        "workspaces",
+        "windowtitle",
+        "bluetooth",
+        "network",
+        "systray"
+      ],
+      "middle": [
+        "media"
+      ],
       "right": [
         "volume",
         "ram",
@@ -58,6 +68,39 @@
   "bar.customModules.storage.labelType": "used",
   "bar.customModules.storage.tooltipStyle": "simple",
   "bar.customModules.ram.label": true,
-  "bar.customModules.storage.units": "auto"
+  "bar.customModules.storage.units": "auto",
+  "menus.volume.raiseMaximumVolume": true,
+  "bar.workspaces.monitorSpecific": true,
+  "bar.workspaces.show_icons": true,
+  "bar.workspaces.workspaceMask": false,
+  "bar.workspaces.numbered_active_indicator": "underline",
+  "bar.windowtitle.class_name": true,
+  "bar.windowtitle.custom_title": true,
+  "theme.bar.buttons.workspaces.hover": "#bac2de",
+  "theme.bar.buttons.workspaces.occupied": "#bac2de",
+  "theme.bar.buttons.workspaces.active": "#bac2de",
+  "theme.bar.buttons.workspaces.border": "#bac2de",
+  "theme.bar.buttons.windowtitle.text": "#89b4fa",
+  "theme.bar.buttons.windowtitle.icon": "#89b4fa",
+  "theme.bar.buttons.windowtitle.border": "#89b4fa",
+  "theme.bar.buttons.bluetooth.text": "#a6e3a1",
+  "theme.bar.buttons.bluetooth.icon": "#a6e3a1",
+  "theme.bar.buttons.bluetooth.border": "#a6e3a1",
+  "theme.bar.buttons.network.text": "#dc8add",
+  "theme.bar.buttons.network.icon": "#dc8add",
+  "theme.bar.buttons.network.border": "#dc8add",
+  "theme.bar.buttons.systray.border": "#77767b",
+  "theme.bar.buttons.systray.customIcon": "#77767b",
+  "theme.bar.buttons.volume.text": "#89dbeb",
+  "theme.bar.buttons.volume.icon": "#89dbeb",
+  "theme.bar.buttons.volume.border": "#89dbeb",
+  "theme.bar.buttons.modules.ram.text": "#8ff0a4",
+  "theme.bar.buttons.modules.ram.icon": "#8ff0a4",
+  "theme.bar.buttons.modules.ram.border": "#8ff0a4",
+  "theme.bar.buttons.modules.cpu.text": "#ffbe6f",
+  "theme.bar.buttons.modules.cpu.icon": "#ffbe6f",
+  "theme.bar.buttons.modules.cpu.border": "#ffbe6f",
+  "theme.bar.buttons.modules.storage.text": "#f38ba8",
+  "theme.bar.buttons.modules.storage.icon": "#f38ba8",
+  "theme.bar.buttons.modules.storage.border": "#f38ba8"
 }
-
