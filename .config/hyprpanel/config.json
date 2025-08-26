@@ -102,5 +102,6 @@
   "theme.bar.buttons.modules.cpu.border": "#ffbe6f",
   "theme.bar.buttons.modules.storage.text": "#f38ba8",
   "theme.bar.buttons.modules.storage.icon": "#f38ba8",
-  "theme.bar.buttons.modules.storage.border": "#f38ba8"
+  "theme.bar.buttons.modules.storage.border": "#f38ba8",
+  "wallpaper.enable": false
 }
