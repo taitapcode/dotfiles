@@ -1,7 +1,5 @@
 {
-  "bar.customModules.storage.paths": [
-    "/"
-  ],
+  "bar.customModules.storage.paths": ["/"],
   "theme.font.name": "Ubuntu Nerd Font",
   "theme.font.label": "Ubuntu Nerd Font",
   "theme.font.size": "0.9rem",
@@ -28,16 +26,8 @@
   "theme.bar.buttons.windowtitle.enableBorder": false,
   "bar.layouts": {
     "0": {
-      "left": [
-        "workspaces",
-        "windowtitle",
-        "bluetooth",
-        "network",
-        "systray"
-      ],
-      "middle": [
-        "media"
-      ],
+      "left": ["workspaces", "windowtitle", "bluetooth", "network", "systray"],
+      "middle": ["media"],
       "right": [
         "volume",
         "ram",
@@ -66,7 +56,7 @@
   "theme.bar.margin_bottom": "0.3em",
   "bar.customModules.ram.labelType": "used",
   "bar.customModules.storage.labelType": "used",
-  "bar.customModules.storage.tooltipStyle": "simple",
+  "bar.customModules.storage.tooltipStyle": "percentage-bar",
   "bar.customModules.ram.label": true,
   "bar.customModules.storage.units": "auto",
   "menus.volume.raiseMaximumVolume": true,
@@ -103,5 +93,8 @@
   "theme.bar.buttons.modules.storage.text": "#f38ba8",
   "theme.bar.buttons.modules.storage.icon": "#f38ba8",
   "theme.bar.buttons.modules.storage.border": "#f38ba8",
-  "wallpaper.enable": false
+  "wallpaper.enable": false,
+  "bar.customModules.storage.round": false,
+  "bar.customModules.storage.label": true
 }
+
