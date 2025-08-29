@@ -1,5 +1,7 @@
 {
-  "bar.customModules.storage.paths": ["/"],
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
   "theme.font.name": "Ubuntu Nerd Font",
   "theme.font.label": "Ubuntu Nerd Font",
   "theme.font.size": "0.9rem",
@@ -26,8 +28,16 @@
   "theme.bar.buttons.windowtitle.enableBorder": false,
   "bar.layouts": {
     "0": {
-      "left": ["workspaces", "windowtitle", "bluetooth", "network", "systray"],
-      "middle": ["media"],
+      "left": [
+        "workspaces",
+        "windowtitle",
+        "bluetooth",
+        "network",
+        "systray"
+      ],
+      "middle": [
+        "media"
+      ],
       "right": [
         "volume",
         "ram",
@@ -97,4 +107,3 @@
   "bar.customModules.storage.round": false,
   "bar.customModules.storage.label": true
 }
-
