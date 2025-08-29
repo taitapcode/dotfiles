@@ -3,3 +3,6 @@ theme = catppuccin-mocha
 font-family = Delugia
 font-size = 18
 keybind = ctrl+enter=unbind
+font-synthetic-style = bold-italic
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
