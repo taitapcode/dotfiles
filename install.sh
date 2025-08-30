@@ -1,106 +1,129 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-REPO_URL="https://github.com/taitapcode/dotfiles"
-branch="hyprland"
+REPO_URL="https://github.com/taitapcode/dotfiles.git"
+BRANCH="hyprland"
 DOTFILES_DIR="$HOME/.hyprland"
-DRY=0
 
-log() { printf "%s\n" "$*" >&2; }
-warn() { printf "⚠️ %s\n" "$*" >&2; }
-die() {
-  printf "❌ %s\n" "$*" >&2
-  exit 1
-}
-
-run() {
-  if ((DRY)); then
-    log "🚀 [dry-run] %s\n" "$*" >&2
-  else
-    "$@"
-  fi
-}
-
-help() {
-  cat <<'USAGE'
-Usage: install.sh [options]
-
-Options:
-  -h, --help            Show this help and exit
-  -n, --dry-run         Print actions without executing
-  -v, --verbose         Enable verbose output
-USAGE
-}
-
-backup_file() {
-  log "Backing up existing dotfiles..."
-  if [[ -d "$DOTFILES_DIR" ]]; then
-    local timestamp
-    timestamp=$(date +%Y%m%d%H%M%S)
-    local backup_dir="${DOTFILES_DIR}_backup_${timestamp}"
-    run mv "$DOTFILES_DIR" "$backup_dir"
-    log "Existing directory moved to $backup_dir"
-  fi
-}
-
-install_chaotic_aur() {
-  log "Installing Chaotic AUR repository..."
-
-  run sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
-  run sudo pacman-key --lsign-key 3056513887B78AEB
-  run sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
-  run sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
-
-  # Thêm block một lần
-  if ! grep -q '^\[chaotic-aur\]' /etc/pacman.conf; then
-    run printf '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist\n' | sudo tee -a /etc/pacman.conf >/dev/null
+install_pkgs() {
+  if [[ $# -lt 1 ]]; then
+    echo "usage: install_pkgs <pkg> [pkg2 ...]" >&2
+    return 2
   fi
 
-  run sudo pacman -Syu --noconfirm
+  # Ensure paru exists
+  command -v paru >/dev/null 2>&1 || {
+    echo "Error: paru not found on PATH." >&2
+    return 127
+  }
+
+  local -a missing=()
+  local pkg
+  for pkg in "$@"; do
+    if ! pacman -Q "$pkg" &>/dev/null; then
+      missing+=("$pkg")
+    else
+      echo "$pkg is already installed."
+    fi
+  done
+
+  if ((${#missing[@]} == 0)); then
+    echo "All packages are already installed."
+    return 0
+  fi
+
+  local -a opts=(--needed --noconfirm)
+
+  echo "Installing: ${missing[*]}"
+  paru -Sy "${opts[@]}" "${missing[@]}"
+}
+
+install_chaoticaur_and_AUR_helper() {
+  echo "Install Chaotic AUR..."
+  sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+  sudo pacman-key --lsign-key 3056513887B78AEB
+  sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
+  sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
+  if ! grep -q '\[chaotic-aur\]' /etc/pacman.conf; then
+    echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf
+  fi
+  sudo pacman -Sy paru --needed --noconfirm
+}
+
+install_dependencies() {
+  echo "Installing dependencies..."
+  local deps=(
+    git
+    stow
+
+    # Fonts
+    noto-fonts-emoji
+    noto-fonts
+    noto-fonts-cjk
+
+    # Bluetooth
+    bluez
+    bluez-utils
+    blueman
+
+    # Hyprland related tools
+    xdg-desktop-portal-hyprland
+    nautilus
+    bibata-cursor-theme
+    nwg-look
+    zen-browser
+    grim
+    wl-clipboard
+    hyprpicker
+    swww
+    swaync
+    waybar
+    rofi
+
+    # Fcitx5
+    fcitx5
+    fcitx5-unikey
+    fcitx5-gtk
+    fcitx5-configtool
+
+    # AUR packages
+    ttf-delugia-code
+    catppuccin-gtk-theme-mocha
+
+    # Hyprpannel
+    ags-hyprpanel-git
+    power-profiles-daemon
+    hyprsunset
+  )
+  install_pkgs "${deps[@]}"
 }
 
 clone_dotfiles() {
-  run git clone --depth 1 --branch "$branch" "$REPO_URL" "$DOTFILES_DIR"
+  echo "Cloning dotfiles repo..."
+  if [[ -d "$DOTFILES_DIR" ]]; then
+    echo "Dotfiles directory already exists at $DOTFILES_DIR. Skipping clone."
+    return 0
+  fi
+  git clone --depth 1 "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR"
 }
 
-getargs() {
-  # Manual parser supporting short and long options
-  while (($#)); do
-    case "$1" in
-    -h | --help)
-      help
-      exit 0
-      ;;
-    -n | --dry-run)
-      DRY=1
-      shift
-      continue
-      ;;
-    -v | --verbose)
-      set -x
-      shift
-      continue
-      ;;
-    --)
-      shift
-      break
-      ;;
-    -*)
-      die "Unknown option: $1"
-      ;;
-    *)
-      # Positional arg (unused currently). Stop parsing if needed.
-      break
-      ;;
-    esac
-  done
+sync_config() {
+  cd "$DOTFILES_DIR" || exit 1
+  rm -rf "$HOME/.config/hypr" && stow .
+}
+
+fix_dualboot_time() {
+  echo "Fixing dual boot time issue..."
+  sudo timedatectl set-local-rtc 1 --adjust-system-clock
 }
 
 main() {
-  getargs "$@"
-  backup_file
-  install_chaotic_aur
+  install_chaoticaur_and_AUR_helper
+  install_dependencies
   clone_dotfiles
+  sync_config
+  fix_dualboot_time
+  echo "Installation complete! Please restart your system."
 }
 
-main "$@"
+main
