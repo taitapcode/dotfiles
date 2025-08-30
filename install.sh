@@ -78,7 +78,7 @@ install_dependencies() {
     swww
     swaync
     waybar
-    rofi
+    rofi-wayland
 
     # Fcitx5
     fcitx5
