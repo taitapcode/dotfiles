@@ -108,6 +108,7 @@ clone_dotfiles() {
 }
 
 sync_config() {
+  echo "Syncing configuration with stow..."
   cd "$DOTFILES_DIR" || exit 1
   rm -rf "$HOME/.config/hypr" && stow .
 }
