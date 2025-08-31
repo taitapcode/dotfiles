@@ -15,7 +15,7 @@ return {
           },
         },
         copilot = {
-          model = 'claude-sonnet-4',
+          model = 'gpt-4.1',
           timeout = 30000,
         },
       },
@@ -56,7 +56,7 @@ return {
 
       system_prompt = function()
         local hub = require('mcphub').get_hub_instance()
-        return hub and hub:get_active_servers_prompt() or ''
+        return hub and 'Today is ' .. os.date('%d/%m/%Y') .. '.' .. hub:get_active_servers_prompt() or ''
       end,
       -- Using function prevents requiring mcphub before it's loaded
       custom_tools = function()
