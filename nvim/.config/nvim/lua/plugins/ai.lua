@@ -23,7 +23,7 @@ return {
         provider = 'snacks',
       },
       web_search_engine = {
-        provider = 'google', -- Require set GOOGLE_SEARCH_API_KEY and GOOGLE_SEARCH_ENGINE_ID env variable
+        provider = 'tavily', -- Required TAVILY_API_KEY environment variable
       },
       behaviour = {
         support_paste_from_clipboard = true,
@@ -53,6 +53,17 @@ return {
           insert = '<C-e>', -- submit the current query
         },
       },
+
+      system_prompt = function()
+        local hub = require('mcphub').get_hub_instance()
+        return hub and hub:get_active_servers_prompt() or ''
+      end,
+      -- Using function prevents requiring mcphub before it's loaded
+      custom_tools = function()
+        return {
+          require('mcphub.extensions.avante').mcp_tool(),
+        }
+      end,
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = 'make',
@@ -72,5 +83,17 @@ return {
         ft = { 'markdown', 'Avante' },
       },
     },
+  },
+  {
+    'ravitemer/mcphub.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    build = 'bundled_build.lua', -- Bundles `mcp-hub` binary along with the neovim plugin
+    config = function()
+      require('mcphub').setup({
+        use_bundled_binary = true, -- Use local `mcp-hub` binary
+      })
+    end,
   },
 }
