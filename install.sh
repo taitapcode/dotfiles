@@ -68,6 +68,7 @@ install_dependencies() {
 
     # Hyprland related tools
     xdg-desktop-portal-hyprland
+    brightnessctl
     nautilus
     bibata-cursor-theme
     nwg-look
@@ -76,7 +77,7 @@ install_dependencies() {
     wl-clipboard
     hyprpicker
     swww
-    swaync
+    # swaync
     waybar
     rofi-wayland
 
@@ -96,6 +97,7 @@ install_dependencies() {
     hyprsunset
   )
   install_pkgs "${deps[@]}"
+  sudo pacman -Rnsc dunst --noconfirm
 }
 
 clone_dotfiles() {
@@ -104,7 +106,7 @@ clone_dotfiles() {
     echo "Dotfiles directory already exists at $DOTFILES_DIR. Skipping clone."
     return 0
   fi
-  git clone --depth 1 "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR"
+  git clone "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR" --depth 1 
 }
 
 sync_config() {
