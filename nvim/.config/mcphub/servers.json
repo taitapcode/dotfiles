@@ -14,6 +14,15 @@
         "DEFAULT_MINIMUM_TOKENS": "1000"
       }
     },
+    "fetch": {
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "autoApprove": [
+        "fetch"
+      ],
+      "command": "uvx"
+    },
     "sequentialthinking": {
       "args": [
         "-y",
