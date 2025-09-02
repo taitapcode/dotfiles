@@ -53,7 +53,7 @@ return {
           insert = '<C-e>', -- submit the current query
         },
       },
-
+      disabled_tools = { 'fetch' },
       system_prompt = function()
         local hub = require('mcphub').get_hub_instance()
         return hub and 'Today is ' .. os.date('%d/%m/%Y') .. '.' .. hub:get_active_servers_prompt() or ''
