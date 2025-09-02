@@ -42,10 +42,10 @@ install_chaoticaur_and_AUR_helper() {
   echo "Install Chaotic AUR..."
   sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
   sudo pacman-key --lsign-key 3056513887B78AEB
-  sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' --noconfirm
-  sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst' --noconfirm
-  if ! grep -q '\[chaotic-aur\]' /etc/pacman.conf; then
-    echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf
+  sudo pacman -U "https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst" --noconfirm
+  sudo pacman -U "https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst" --noconfirm
+  if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
+    echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
   fi
   sudo pacman -Sy paru --needed --noconfirm
 }
@@ -80,6 +80,7 @@ install_dependencies() {
     # swaync
     waybar
     rofi-wayland
+    sddm-astronaut-theme
 
     # Fcitx5
     fcitx5
@@ -106,13 +107,19 @@ clone_dotfiles() {
     echo "Dotfiles directory already exists at $DOTFILES_DIR. Skipping clone."
     return 0
   fi
-  git clone "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR" --depth 1 
+  git clone "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR" --depth 1
 }
 
 sync_config() {
   echo "Syncing configuration with stow..."
   cd "$DOTFILES_DIR" || exit 1
   rm -rf "$HOME/.config/hypr" && stow .
+}
+
+apply_sddm_config() {
+  echo -e "[Theme]\nCurrent=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+  echo -e "[General]\nInputMethod=qtvirtualkeyboard" | sudo tee /etc/sddm.conf.d/virtualkbd.conf
+  sudo sed -i "9s#.*#ConfigFile=Themes/hyprland_kath.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 }
 
 fix_dualboot_time() {
@@ -125,6 +132,7 @@ main() {
   install_dependencies
   clone_dotfiles
   sync_config
+  apply_sddm_config
   fix_dualboot_time
   echo "Installation complete! Please restart your system."
 }
