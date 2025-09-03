@@ -137,6 +137,14 @@ apply_sddm_config() {
   sudo sed -i "9s#.*#ConfigFile=Themes/hyprland_kath.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 }
 
+apply_grub_config() {
+  git clone https://github.com/Lxtharia/minegrub-theme.git --depth 1 ~/minegrub-theme
+  cd ~/minegrub-theme
+  sudo ./install_theme.sh
+  cd ..
+  rm -rf ~/minegrub-theme
+}
+
 fix_dualboot_time() {
   echo "Fixing dual boot time issue..."
   sudo timedatectl set-local-rtc 1 --adjust-system-clock
@@ -149,6 +157,7 @@ main() {
   clone_dotfiles
   sync_hyprland_config
   apply_sddm_config
+  apply_grub_config
   fix_dualboot_time
   sync_dotfiles
   echo "Installation complete! Please restart your system."
