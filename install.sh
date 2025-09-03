@@ -2,8 +2,10 @@
 set -Eeuo pipefail
 
 REPO_URL="https://github.com/taitapcode/dotfiles.git"
-BRANCH="hyprland"
-DOTFILES_DIR="$HOME/.hyprland"
+HYPRLAND_BRANCH="hyprland"
+DOTFILES_BRANCH="hyprland"
+HYPRLAND_DIR="$HOME/.hyprland"
+DOTFILES_DIR="$HOME/.dotfiles"
 
 install_pkgs() {
   if [[ $# -lt 1 ]]; then
@@ -55,18 +57,11 @@ install_dependencies() {
   local deps=(
     git
     stow
-
-    # Fonts
     noto-fonts-emoji
     noto-fonts
     noto-fonts-cjk
-
-    # Bluetooth
     bluez
     bluez-utils
-    blueman
-
-    # Hyprland related tools
     xdg-desktop-portal-hyprland
     brightnessctl
     nautilus
@@ -81,24 +76,38 @@ install_dependencies() {
     waybar
     rofi-wayland
     sddm-astronaut-theme
-
-    # Fcitx5
     fcitx5
     fcitx5-unikey
     fcitx5-gtk
     fcitx5-configtool
+    github-cli
 
     # AUR packages
     ttf-delugia-code
     catppuccin-gtk-theme-mocha
-
-    # Hyprpannel
     ags-hyprpanel-git
     power-profiles-daemon
     hyprsunset
   )
   install_pkgs "${deps[@]}"
-  sudo pacman -Rnsc dunst --noconfirm
+}
+
+remove_unused_pkgs() {
+  pkgs=(
+    dunst
+    network-manager-applet
+  )
+
+  paru -Rns "${pkgs[@]}" --noconfirm
+}
+
+clone_hyprland_dotifles() {
+  echo "Cloning hyprland dotfiles repo..."
+  if [[ -d "$HYPRLAND_DIR" ]]; then
+    echo "Dotfiles directory already exists at $HYPRLAND_DIR. Skipping clone."
+    return 0
+  fi
+  git clone "$REPO_URL" -b "$HYPRLAND_BRANCH" "$HYPRLAND_DIR" --depth 1
 }
 
 clone_dotfiles() {
@@ -107,17 +116,23 @@ clone_dotfiles() {
     echo "Dotfiles directory already exists at $DOTFILES_DIR. Skipping clone."
     return 0
   fi
-  git clone "$REPO_URL" -b "$BRANCH" "$DOTFILES_DIR" --depth 1
+  git clone "$REPO_URL" -b "$DOTFILES_BRANCH" "$DOTFILES_DIR" --depth 1
 }
 
-sync_config() {
+sync_hyprland_config() {
   echo "Syncing configuration with stow..."
-  cd "$DOTFILES_DIR" || exit 1
+  cd "$HYPRLAND_DIR" || exit 1
   rm -rf "$HOME/.config/hypr" && stow .
+}
+
+sync_dotfiles() {
+  echo "Syncing dotfiles with stow..."
+  cd "$DOTFILES_DIR" || exit 1
 }
 
 apply_sddm_config() {
   echo -e "[Theme]\nCurrent=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
+  sudo mkdir -p /etc/sddm.conf.d
   echo -e "[General]\nInputMethod=qtvirtualkeyboard" | sudo tee /etc/sddm.conf.d/virtualkbd.conf
   sudo sed -i "9s#.*#ConfigFile=Themes/hyprland_kath.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 }
@@ -130,10 +145,12 @@ fix_dualboot_time() {
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
+  clone_hyprland_dotifles
   clone_dotfiles
-  sync_config
+  sync_hyprland_config
   apply_sddm_config
   fix_dualboot_time
+  sync_dotfiles
   echo "Installation complete! Please restart your system."
 }
 
