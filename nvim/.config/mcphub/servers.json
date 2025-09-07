@@ -16,12 +16,9 @@
     },
     "git": {
       "args": [
-        "mcp-server-git",
-        "--repository",
-        "~/.dotfiles"
+        "mcp-server-git"
       ],
-      "command": "uvx",
-      "disabled": false
+      "command": "uvx"
     },
     "sequentialthinking": {
       "args": [
