@@ -12,6 +12,7 @@ return {
   {
     'noice.nvim',
     opts = function(_, opts)
+      opts.presets.lsp_doc_border = true
       table.insert(opts.routes, {
         filter = {
           event = 'notify',
@@ -20,7 +21,15 @@ return {
         opts = { skip = true },
       })
 
-      opts.presets.lsp_doc_border = true
+      -- Remove noisy and annoying jdtls notifications
+      table.insert(opts.routes, {
+        filter = {
+          event = 'lsp',
+          kind = 'progress',
+          find = 'jdtls',
+        },
+        opts = { skip = true },
+      })
     end,
   },
   {
