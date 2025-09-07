@@ -14,6 +14,15 @@
         "DEFAULT_MINIMUM_TOKENS": "1000"
       }
     },
+    "git": {
+      "args": [
+        "mcp-server-git",
+        "--repository",
+        "~/.dotfiles"
+      ],
+      "command": "uvx",
+      "disabled": false
+    },
     "sequentialthinking": {
       "args": [
         "-y",
