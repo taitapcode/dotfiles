@@ -81,6 +81,7 @@ install_dependencies() {
     fcitx5-gtk
     fcitx5-configtool
     github-cli
+    sxiv
 
     # AUR packages
     ttf-delugia-code
