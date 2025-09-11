@@ -82,13 +82,13 @@ install_dependencies() {
     fcitx5-configtool
     github-cli
     sxiv
+    hyprsunset
 
     # AUR packages
     ttf-delugia-code
     catppuccin-gtk-theme-mocha
     ags-hyprpanel-git
     power-profiles-daemon
-    hyprsunset
   )
   install_pkgs "${deps[@]}"
 }

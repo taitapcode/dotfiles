@@ -105,5 +105,17 @@
   "theme.bar.buttons.modules.storage.border": "#f38ba8",
   "wallpaper.enable": false,
   "bar.customModules.storage.round": false,
-  "bar.customModules.storage.label": true
+  "bar.customModules.storage.label": true,
+  "menus.dashboard.shortcuts.left.shortcut3.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut2.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut2.command": "",
+  "menus.dashboard.shortcuts.left.shortcut2.tooltip": "",
+  "menus.dashboard.shortcuts.left.shortcut3.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut3.command": "",
+  "menus.dashboard.shortcuts.left.shortcut4.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "",
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": ""
 }
