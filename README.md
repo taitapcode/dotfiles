@@ -58,7 +58,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ### Neovim Editor 📝
 
 ```bash
-sudo pacman -S neovim nodejs npm xclip unzip wl-clipboard curl uv
+sudo pacman -S neovim nodejs npm xclip unzip wl-clipboard curl uv tree-sitter-cli
 stow nvim
 ```
 
