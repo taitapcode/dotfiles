@@ -10,6 +10,16 @@ cd ~/.dotfiles
 
 ## Installation 🚀
 
+You can use the automated installer:
+
+```bash
+cd ~/.dotfiles
+chmod +x install.sh
+./install.sh --all
+# or pick modules
+./install.sh fish nvim tmux
+```
+
 ### Fish Shell and Utilities 🐚
 
 ```bash
