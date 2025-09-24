@@ -1,5 +1,5 @@
 resize-overlay = never
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 font-family = Delugia
 font-size = 18
 keybind = ctrl+enter=unbind
