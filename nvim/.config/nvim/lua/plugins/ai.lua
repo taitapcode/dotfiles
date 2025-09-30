@@ -19,9 +19,9 @@ return {
           timeout = 30000,
         },
       },
-      selector = {
-        provider = 'snacks',
-      },
+      -- selector = {
+      --   provider = 'snacks',
+      -- },
       web_search_engine = {
         provider = 'tavily', -- Required TAVILY_API_KEY environment variable
       },

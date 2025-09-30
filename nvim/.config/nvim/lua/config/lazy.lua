@@ -41,7 +41,8 @@ require('lazy').setup({
     -- { import = 'lazyvim.plugins.extras.lang.nix' },
     -- { import = 'lazyvim.plugins.extras.lang.go' },
     { import = 'lazyvim.plugins.extras.lang.java' },
-    { import = 'lazyvim.plugins.extras.lang.svelte' },
+    -- { import = 'lazyvim.plugins.extras.lang.svelte' },
+    { import = 'lazyvim.plugins.extras.lang.vue' },
 
     { import = 'lazyvim.plugins.extras.linting.eslint' },
     { import = 'lazyvim.plugins.extras.formatting.prettier' },
