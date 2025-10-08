@@ -15,7 +15,7 @@ return {
           },
         },
         copilot = {
-          model = 'gpt-4.1',
+          model = 'claude-sonnet-4',
           timeout = 30000,
         },
       },
