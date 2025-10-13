@@ -27,6 +27,7 @@ return {
       },
       behaviour = {
         support_paste_from_clipboard = true,
+        auto_add_current_file = false,
       },
       windows = {
         width = 35,
