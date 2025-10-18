@@ -1,5 +1,5 @@
 {
-  "Template for competitive": {
+  "Competitive Programming Template": {
     "prefix": "gaytemplate",
     "body": [
       "#include<bits/stdc++.h>",
@@ -12,31 +12,20 @@
       "int main()",
       "{",
       "  ios_base::sync_with_stdio(0);",
-      "  cin.tie(0); cout.tie(0);",
+      "  cin.tie(0);",
+      "  cout.tie(0);",
       "",
       "  $0",
       "",
       "  return 0;",
       "}"
     ],
-    "description": "Template for competitive"
+    "description": "Competitive Programming Template"
   },
-  "Print function": {
-    "prefix": "prifunc",
-    "body": [
-      "void print()",
-      "{",
-      "  cout << el;",
-      "}",
-      "",
-      "template<typename First, typename ... Strings>",
-      "void print(First arg, const Strings&... rest)",
-      "{",
-      "  cout << arg << ' ';",
-      "  print(rest...);",
-      "}"
-    ],
-    "description": "Print function"
+  "Fast I/O": {
+    "prefix": "fastio",
+    "body": ["ios_base::sync_with_stdio(0);", "cin.tie(0);", "cout.tie(0);"],
+    "description": "Fast I/O"
   },
   "File open": {
     "prefix": "fileopen",
@@ -45,5 +34,27 @@
       "freopen(\"$1.out\", \"w\", stdout);"
     ],
     "description": "File open"
+  },
+  "Debug Macro": {
+    "prefix": "debug",
+    "body": [
+      "#ifdef EBUG",
+      "template<typename T> std::string _dbg_to_str(const T& v){ std::ostringstream oss; oss<<v; return oss.str(); }",
+      "inline std::string _dbg_to_str(const std::string& s){ return '\"'+s+'\"'; }",
+      "inline std::string _dbg_to_str(const char* s){ return '\"'+std::string(s)+'\"'; }",
+      "inline std::string _dbg_to_str(char c){ return '\"'+std::string(1,c)+'\"'; }",
+      "template<typename A,typename B> std::string _dbg_to_str(const std::pair<A,B>& p){ return '('+_dbg_to_str(p.first)+\", \"+_dbg_to_str(p.second)+')'; }",
+      "template<typename C> std::string _dbg_seq(const C& c,const char* o=\"[\",const char* e=\"]\"){ std::string r=o; bool f=1; for(auto &x:c){ if(!f) r+=\", \"; f=0; r+=_dbg_to_str(x);} return r+e; }",
+      "template<typename T> std::string _dbg_to_str(const std::vector<T>& v){ return _dbg_seq(v); }",
+      "template<typename T> std::string _dbg_to_str(const std::set<T>& s){ return _dbg_seq(s,\"{\",\"}\"); }",
+      "template<typename K,typename V> std::string _dbg_to_str(const std::map<K,V>& m){ std::string r=\"{\"; bool f=1; for(auto &kv:m){ if(!f) r+=\", \"; f=0; r+=_dbg_to_str(kv.first)+\": \"+_dbg_to_str(kv.second);} return r+\"}\"; }",
+      "inline void _debug_print(const char* names){}",
+      "template<typename T,typename... R> void _debug_print(const char* names,T&& v,R&&... r){ while(*names==' ') ++names; const char* c=strchr(names,','); if(!c){ std::cerr<<names<<\": \"<<_dbg_to_str(v); } else { std::cerr.write(names,c-names)<<\": \"<<_dbg_to_str(v)<<\", \"; _debug_print(c+1,std::forward<R>(r)...);} }",
+      "#define debug(...) std::cerr<<\"DEBUG: \"; _debug_print(#__VA_ARGS__,__VA_ARGS__); std::cerr<<'\\n';",
+      "#else",
+      "#define debug(...)",
+      "#endif"
+    ],
+    "description": "DEBUG: name: value, ... (works with arrays, vector, set, map, pair) - only when compiled with -DEBUG"
   }
 }
