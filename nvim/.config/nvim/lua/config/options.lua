@@ -5,4 +5,4 @@ vim.opt.swapfile = false
 vim.opt.wrap = true
 vim.opt.laststatus = 3
 -- vim.g.lazyvim_picker = 'snacks'
--- vim.g.ai_cmp = false
+vim.g.ai_cmp = false
