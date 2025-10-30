@@ -18,7 +18,10 @@ return {
     opts.testcases_use_single_file = false
     opts.testcases_single_file_format = '$(FNOEXT).test'
     opts.compile_command = {
-      cpp = { exec = 'g++', args = { '-Wall', '-DEBUG', '$(FNAME)', '-o', './' .. test_dir .. '/$(FNOEXT)' } },
+      cpp = {
+        exec = 'g++',
+        args = { '-std=c++17', '-O2', '-Wall', '-Wextra', '-DEBUG', '$(FNAME)', '-o', './' .. test_dir .. '/$(FNOEXT)' },
+      },
     }
     opts.run_command = {
       cpp = { exec = './' .. test_dir .. '/$(FNOEXT)' },
