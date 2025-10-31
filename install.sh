@@ -133,7 +133,7 @@ install_tmux() {
 }
 
 install_nvim() {
-  pacman_install neovim nodejs npm xclip unzip wl-clipboard curl uv tree-sitter-cli
+  pacman_install neovim nodejs npm xclip unzip wl-clipboard curl tree-sitter-cli go rust
   do_stow nvim
 }
 
