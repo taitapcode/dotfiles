@@ -6,3 +6,6 @@ vim.opt.wrap = true
 vim.opt.laststatus = 3
 -- vim.g.lazyvim_picker = 'snacks'
 vim.g.ai_cmp = false
+
+-- Disable duplicate statusline from tpipeline
+vim.g.tpipeline_clearstl = 1

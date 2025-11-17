@@ -60,4 +60,11 @@ return {
     event = 'InsertCharPre', -- Set the event to 'InsertCharPre' for better compatibility
     priority = 1000,
   },
+  {
+    'vimpostor/vim-tpipeline',
+    event = 'VeryLazy',
+    config = function()
+      vim.g.tpipeline_autoembed = 0
+    end,
+  },
 }
