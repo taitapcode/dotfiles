@@ -61,10 +61,11 @@ return {
     priority = 1000,
   },
   {
-    'vimpostor/vim-tpipeline',
-    event = 'VeryLazy',
+    'Wansmer/treesj',
+    keys = { '<Leader>m', '<Leader>j', '<Leader>s' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
-      vim.g.tpipeline_autoembed = 0
+      require('treesj').setup()
     end,
   },
 }
