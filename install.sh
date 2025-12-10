@@ -83,12 +83,14 @@ install_dependencies() {
     github-cli
     sxiv
     hyprsunset
+    keyd
 
     # AUR packages
     ttf-delugia-code
     catppuccin-gtk-theme-mocha
     ags-hyprpanel-git
     power-profiles-daemon
+    grimblast-git
   )
   install_pkgs "${deps[@]}"
 }
@@ -135,20 +137,33 @@ apply_sddm_config() {
   echo -e "[Theme]\nCurrent=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
   sudo mkdir -p /etc/sddm.conf.d
   echo -e "[General]\nInputMethod=qtvirtualkeyboard" | sudo tee /etc/sddm.conf.d/virtualkbd.conf
-  sudo sed -i "9s#.*#ConfigFile=Themes/hyprland_kath.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+  sudo sed -i "9s#.*#ConfigFile=Themes/pixel_sakura.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 }
 
 apply_grub_config() {
   git clone https://github.com/Lxtharia/minegrub-theme.git --depth 1 ~/minegrub-theme
   cd ~/minegrub-theme
   sudo ./install_theme.sh
-  cd ..
+  cd
   rm -rf ~/minegrub-theme
+  echo 'GRUB_THEME=/boot/grub/themes/minegrub/theme.txt' | sudo tee /etc/default/grub
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-fix_dualboot_time() {
-  echo "Fixing dual boot time issue..."
-  sudo timedatectl set-local-rtc 1 --adjust-system-clock
+apply_keyd_config() {
+  sudo systemctl enable --now keyd
+  echo "[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape when pressed and control when held.
+capslock = overload(control, esc)
+
+# Remaps the escape key to capslock
+esc = capslock" | sudo tee /etc/keyd/default.conf
+  sudo keyd reload
 }
 
 main() {
@@ -159,7 +174,6 @@ main() {
   sync_hyprland_config
   apply_sddm_config
   apply_grub_config
-  fix_dualboot_time
   sync_dotfiles
   echo "Installation complete! Please restart your system."
 }
