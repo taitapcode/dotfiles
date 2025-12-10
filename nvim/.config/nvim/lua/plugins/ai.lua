@@ -1,4 +1,5 @@
 return {
+  { 'zbirenbaum/copilot.lua' },
   {
     'yetone/avante.nvim',
     opts = function(_, opts)
