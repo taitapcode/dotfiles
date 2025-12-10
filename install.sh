@@ -164,6 +164,13 @@ capslock = overload(control, esc)
 # Remaps the escape key to capslock
 esc = capslock" | sudo tee /etc/keyd/default.conf
   sudo keyd reload
+
+  echo "#!/bin/sh
+if [ \"\${1}\" = \"post\" ]; then
+    sleep 1
+    systemctl restart keyd
+fi" | sudo tee /lib/systemd/system-sleep/keyd-restart
+  sudo chmod +x /lib/systemd/system-sleep/keyd-restart
 }
 
 main() {
