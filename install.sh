@@ -174,6 +174,7 @@ main() {
   sync_hyprland_config
   apply_sddm_config
   apply_grub_config
+  apply_keyd_config
   sync_dotfiles
   echo "Installation complete! Please restart your system."
 }
