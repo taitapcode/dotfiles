@@ -1,6 +1,18 @@
 # Hyprland Dotfiles
 
-Simple automated setup of my Hyprland environment on Arch-based systems.
+A complete, automated Hyprland window manager setup for Arch-based systems. Includes configuration for Hyprland, HyprPanel, Rofi, Waybar, Swaync, and more, with a one-command installer.
+
+## Features
+
+- **Hyprland WM**: Tiling window manager configuration with keybindings and custom settings
+- **HyprPanel**: Modern status bar and dashboard powered by AGS
+- **Application Launchers**: Rofi for application launching and wofi backup
+- **Notifications**: Swaync for system notifications
+- **Input Method**: Fcitx5 with Unikey for Vietnamese input support
+- **Theming**: Catppuccin Mocha color scheme with GTK theme and cursor
+- **Wallpapers**: Automatic wallpaper management with swww
+- **Utilities**: Screen capture, brightness control, color picker, sunset mode
+- **Boot**: SDDM Astronaut theme and minegrub boot theme
 
 ## Quick Start
 
@@ -8,44 +20,37 @@ Simple automated setup of my Hyprland environment on Arch-based systems.
 curl -fsSL https://raw.githubusercontent.com/taitapcode/dotfiles/hyprland/install.sh | bash
 ```
 
-Alternative with `wget`:
+## Installation Steps
 
-```bash
-wget -qO- https://raw.githubusercontent.com/taitapcode/dotfiles/hyprland/install.sh | bash
-```
+The installation script performs the following:
 
-## What The Script Does
+1. **Chaotic AUR Setup**: Adds Chaotic AUR repository keys and enables the repository
+2. **AUR Helper**: Installs `paru` for AUR package management
+3. **Core Dependencies**: Installs all required packages (see list below)
+4. **Repository Clone**: Clones dotfiles to `~/.hyprland` and `~/.dotfiles`
+5. **Configuration Sync**: Uses `stow` to symlink configs to `~/.config`
+6. **System Configuration**:
+   - Applies SDDM login theme
+   - Installs and configures GRUB minegrub theme
+   - Configures keyd for keyboard remapping (Capslock → Esc)
+7. **Git Configuration**: Optionally sets up Git user email and name
 
-- Chaotic AUR: Adds keyring + mirrorlist and enables `[chaotic-aur]` in `pacman.conf`.
-- AUR helper: Installs `paru` and uses it for package installs.
-- Dependencies: Installs core packages (Hyprland tools, fonts, bluetooth, theming, Wayland utilities, Fcitx5, panel, etc.).
-- Dotfiles: Clones/uses this repo at `~/.hyprland` (skips if present).
-- Symlinks: Uses `stow` to link configs into `~/.config`.
-- Clock fix: Sets `timedatectl set-local-rtc 1` for Windows dual‑boot.
+## Essential Post-Installation Steps
 
-Packages installed include (non‑exhaustive):
+1. **Reboot**: Required for services and system settings to take effect
 
-`git`, `paru`, `noto-fonts(-cjk|-emoji)`, `bluez`, `bluez-utils`, `blueman`, `xdg-desktop-portal-hyprland`, `nautilus`, `bibata-cursor-theme`, `nwg-look`, `zen-browser`, `grim`, `wl-clipboard`, `hyprpicker`, `swww`, `swaync`, `waybar`, `rofi`, `fcitx5` (+ `unikey`, `gtk`, `configtool`), `ttf-delugia-code`, `catppuccin-gtk-theme-mocha`, `ags-hyprpanel-git`, `power-profiles-daemon`, `hyprsunset`.
+   ```bash
+   reboot
+   ```
 
-## Requirements
+2. **Configure Theme**: Customize GTK theme and cursor
 
-- Arch-based distro with `sudo` and internet access.
-- Shell: `bash`.
-- Symlinking: `stow` is required for linking configs.
+   ```bash
+   nwg-look
+   ```
 
-## After Installation
+3. **Set Input Method**: Configure Fcitx5 if using multiple languages
 
-- Reboot: Many services and the clock setting apply after a reboot.
-- Input method: Configure Fcitx5 as needed.
-- Theming: Use `nwg-look` to apply the Catppuccin GTK theme and cursor.
-
-## Troubleshooting
-
-- Paru not found: The script installs it; if this fails, rerun the script after verifying Chaotic AUR steps completed.
-- Stow not found: Install `stow` (see Requirements) and run `./install.sh` again, or run `stow .` inside `~/.hyprland`.
-- Existing configs: The script removes `~/.config/hypr` before stowing. Back up any customizations in that path beforehand.
-
-## Uninstall/Revert
-
-- Remove symlinks by running `stow -D .` from `~/.hyprland`.
-- Manually remove packages if desired using `paru -Rns <pkg>`.
+   ```bash
+   fcitx5-configtool
+   ```
