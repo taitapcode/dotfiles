@@ -14,7 +14,7 @@ DRY_RUN=false
 USE_AUR=true
 SET_DEFAULT_SHELL=false
 
-modules=(fish starship kitty ghostty lazygit tmux nvim yazi)
+modules=(fish kitty lazygit tmux nvim yazi)
 selected_modules=()
 
 msg() { printf "\033[1;32m==>\033[0m %s\n" "$*"; }
@@ -25,7 +25,7 @@ run() {
   if $DRY_RUN; then
     printf "[dry] %s\n" "$*"
   else
-    eval "$@"
+    "$@"
   fi
 }
 
@@ -34,10 +34,21 @@ need_cmd() {
 }
 
 ensure_pacman() {
-  if ! need_cmd "$PACMAN_CMD"; then
-    err "This installer targets Arch Linux (requires pacman)."
-    exit 1
-  fi
+   if ! need_cmd "$PACMAN_CMD"; then
+     err "This installer targets Arch Linux (requires pacman)."
+     exit 1
+   fi
+}
+
+ensure_aur_helper() {
+   if ! $USE_AUR; then
+     return 0
+   fi
+   if ! aur_helper >/dev/null; then
+     err "AUR helper required (paru or yay). Install one with: sudo pacman -S paru"
+     err "Or run with --no-aur flag to skip AUR packages"
+     exit 1
+   fi
 }
 
 pacman_install() {
@@ -60,19 +71,16 @@ aur_helper() {
 }
 
 aur_install() {
-  local pkgs=("$@")
-  if [ ${#pkgs[@]} -eq 0 ]; then return 0; fi
-  if ! $USE_AUR; then
-    warn "Skipping AUR packages (disabled): ${pkgs[*]}"
-    return 0
-  fi
-  local helper
-  if ! helper=$(aur_helper); then
-    warn "No AUR helper (paru/yay) found; skipping: ${pkgs[*]}"
-    return 0
-  fi
-  msg "Installing via ${helper}: ${pkgs[*]}"
-  run "$helper" -S --needed --noconfirm "${pkgs[@]}"
+   local pkgs=("$@")
+   if [ ${#pkgs[@]} -eq 0 ]; then return 0; fi
+   if ! $USE_AUR; then
+     warn "Skipping AUR packages (disabled): ${pkgs[*]}"
+     return 0
+   fi
+   local helper
+   helper=$(aur_helper)
+   msg "Installing via ${helper}: ${pkgs[*]}"
+   run "$helper" -S --needed --noconfirm "${pkgs[@]}"
 }
 
 do_stow() {
@@ -82,7 +90,7 @@ do_stow() {
     return 0
   fi
   msg "Stowing $dir -> $TARGET_DIR"
-  run stow -v -t "$TARGET_DIR" $STOW_FLAGS "$dir"
+  run stow -v -t "$TARGET_DIR" "$STOW_FLAGS" "$dir"
 }
 
 install_fish() {
@@ -109,7 +117,7 @@ install_kitty() {
 }
 
 install_ghostty() {
-  pacman_install ghostty || warn "ghostty may be unavailable on your repo; skipping if not found."
+  pacman_install ghostty
   aur_install ttf-delugia-code
   do_stow ghostty
 }
@@ -138,12 +146,7 @@ install_nvim() {
 }
 
 install_yazi() {
-  # Prefer '7zip' package; fall back to p7zip on older repos
-  local seven_zip_pkg="7zip"
-  if ! pacman -Si 7zip >/dev/null 2>&1; then
-    seven_zip_pkg="p7zip"
-  fi
-  pacman_install yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide "$seven_zip_pkg"
+  pacman_install yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide 7zip
   do_stow yazi
 }
 
@@ -226,12 +229,13 @@ parse_args() {
 }
 
 main() {
-  parse_args "$@"
-  ensure_pacman
-  if ! need_cmd stow; then
-    msg "Installing stow"
-    pacman_install stow
-  fi
+   parse_args "$@"
+   ensure_pacman
+   ensure_aur_helper
+   if ! need_cmd stow; then
+     msg "Installing stow"
+     pacman_install stow
+   fi
   msg "Modules selected: ${selected_modules[*]}"
   for m in "${selected_modules[@]}"; do
     case "$m" in
