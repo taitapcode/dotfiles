@@ -24,6 +24,6 @@ Or specific modules:
 
 ## Requirements
 
-- Arch Linux
+- `stow`
 - `pacman` + AUR helper (`paru`/`yay`)
 - `git`

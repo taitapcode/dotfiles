@@ -17,9 +17,9 @@ return {
           timeout = 30000,
         },
       }
-      opts.web_search_engine = {
-        provider = 'tavily',
-      }
+      -- opts.web_search_engine = {
+      --   provider = 'tavily',
+      -- }
       opts.behaviour = {
         support_paste_from_clipboard = true,
         auto_add_current_file = false,
@@ -33,7 +33,7 @@ return {
         },
         ask = {
           border = 'rounded',
-          start_insert = false,
+          start_insert = true,
         },
       }
       opts.input = {
