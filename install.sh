@@ -11,7 +11,6 @@ SUDO_CMD=${SUDO_CMD:-sudo}
 STOW_FLAGS=${STOW_FLAGS:-}
 
 DRY_RUN=false
-USE_AUR=true
 SET_DEFAULT_SHELL=false
 
 modules=(fish kitty lazygit tmux nvim yazi)
@@ -34,19 +33,15 @@ need_cmd() {
 }
 
 ensure_pacman() {
-   if ! need_cmd "$PACMAN_CMD"; then
-     err "This installer targets Arch Linux (requires pacman)."
-     exit 1
-   fi
+  if ! need_cmd "$PACMAN_CMD"; then
+    err "This installer targets Arch Linux (requires pacman)."
+    exit 1
+  fi
 }
 
 ensure_aur_helper() {
-   if ! $USE_AUR; then
-     return 0
-   fi
    if ! aur_helper >/dev/null; then
      err "AUR helper required (paru or yay). Install one with: sudo pacman -S paru"
-     err "Or run with --no-aur flag to skip AUR packages"
      exit 1
    fi
 }
@@ -73,10 +68,6 @@ aur_helper() {
 aur_install() {
    local pkgs=("$@")
    if [ ${#pkgs[@]} -eq 0 ]; then return 0; fi
-   if ! $USE_AUR; then
-     warn "Skipping AUR packages (disabled): ${pkgs[*]}"
-     return 0
-   fi
    local helper
    helper=$(aur_helper)
    msg "Installing via ${helper}: ${pkgs[*]}"
@@ -158,18 +149,16 @@ Modules:
   ${modules[*]}
 
 Options:
-  --all                 Install/stow all modules (default if none specified)
-  --no-aur              Skip installing AUR packages (e.g., fonts)
-  --dry-run             Print actions without executing
-  --set-default-shell   Run chsh to set fish as default shell (if selected)
-  --target DIR          Stow target directory (default: \$HOME)
-  --stow-flags FLAGS    Extra flags passed to stow
-  -h, --help            Show this help
+   --all                 Install/stow all modules (default if none specified)
+   --dry-run             Print actions without executing
+   --set-default-shell   Run chsh to set fish as default shell (if selected)
+   --target DIR          Stow target directory (default: \$HOME)
+   --stow-flags FLAGS    Extra flags passed to stow
+   -h, --help            Show this help
 
 Examples:
-  ./install.sh --all
-  ./install.sh fish nvim tmux
-  ./install.sh --no-aur kitty
+   ./install.sh --all
+   ./install.sh fish nvim tmux
 EOF
 }
 
@@ -186,15 +175,11 @@ parse_args() {
       parsed=("${modules[@]}")
       shift
       ;;
-    --no-aur)
-      USE_AUR=false
-      shift
-      ;;
-    --dry-run)
-      DRY_RUN=true
-      shift
-      ;;
-    --set-default-shell)
+     --dry-run)
+       DRY_RUN=true
+       shift
+       ;;
+     --set-default-shell)
       SET_DEFAULT_SHELL=true
       shift
       ;;
@@ -229,13 +214,13 @@ parse_args() {
 }
 
 main() {
-   parse_args "$@"
-   ensure_pacman
-   ensure_aur_helper
-   if ! need_cmd stow; then
-     msg "Installing stow"
-     pacman_install stow
-   fi
+  parse_args "$@"
+  ensure_pacman
+  ensure_aur_helper
+  if ! need_cmd stow; then
+    msg "Installing stow"
+    pacman_install stow
+  fi
   msg "Modules selected: ${selected_modules[*]}"
   for m in "${selected_modules[@]}"; do
     case "$m" in
