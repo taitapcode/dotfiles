@@ -176,6 +176,21 @@ fi" | sudo tee /lib/systemd/system-sleep/keyd-restart
   sudo chmod +x /lib/systemd/system-sleep/keyd-restart
 }
 
+config_git() {
+  echo -n "Do you want to configure Git now? (Y/n): "
+  read -r response
+  if [[ "$response" =~ ^[Nn]$ ]]; then
+    echo "Skipping Git configuration."
+    return 0
+  fi
+  echo -n "Enter your Git user email: "
+  read -r email
+  git config --global user.email "$email"
+  echo -n "Enter your Git user name: "
+  read -r name
+  git config --global user.name "$name"
+}
+
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
@@ -185,6 +200,7 @@ main() {
   apply_sddm_config
   apply_grub_config
   apply_keyd_config
+  config_git
   sync_dotfiles
   echo "Installation complete! Please restart your system."
 }
