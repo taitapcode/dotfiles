@@ -11,9 +11,9 @@ SUDO_CMD=${SUDO_CMD:-sudo}
 STOW_FLAGS=${STOW_FLAGS:-}
 
 DRY_RUN=false
-SET_DEFAULT_SHELL=false
 
-modules=(fish kitty lazygit tmux nvim yazi)
+modules=(fish kitty lazygit tmux nvim yazi ghostty starship)
+default_modules=(fish kitty lazygit tmux nvim yazi)
 selected_modules=()
 
 msg() { printf "\033[1;32m==>\033[0m %s\n" "$*"; }
@@ -40,10 +40,10 @@ ensure_pacman() {
 }
 
 ensure_aur_helper() {
-   if ! aur_helper >/dev/null; then
-     err "AUR helper required (paru or yay). Install one with: sudo pacman -S paru"
-     exit 1
-   fi
+  if ! aur_helper >/dev/null; then
+    err "AUR helper required (paru or yay). Install one with: sudo pacman -S paru"
+    exit 1
+  fi
 }
 
 pacman_install() {
@@ -66,12 +66,12 @@ aur_helper() {
 }
 
 aur_install() {
-   local pkgs=("$@")
-   if [ ${#pkgs[@]} -eq 0 ]; then return 0; fi
-   local helper
-   helper=$(aur_helper)
-   msg "Installing via ${helper}: ${pkgs[*]}"
-   run "$helper" -S --needed --noconfirm "${pkgs[@]}"
+  local pkgs=("$@")
+  if [ ${#pkgs[@]} -eq 0 ]; then return 0; fi
+  local helper
+  helper=$(aur_helper)
+  msg "Installing via ${helper}: ${pkgs[*]}"
+  run "$helper" -S --needed --noconfirm "${pkgs[@]}"
 }
 
 do_stow() {
@@ -87,12 +87,10 @@ do_stow() {
 install_fish() {
   pacman_install fish fzf zoxide bat eza fd
   do_stow fish
-  if $SET_DEFAULT_SHELL; then
-    if chsh -s "$(command -v fish)" "$USER"; then
-      msg "Default shell switched to fish for $USER"
-    else
-      warn "Failed to change default shell; you may need to run: chsh -s \"$(command -v fish)\" $USER"
-    fi
+  if run chsh -s "$(command -v fish)" "$USER"; then
+    msg "Default shell switched to fish for $USER"
+  else
+    warn "Failed to change default shell; you may need to run: chsh -s \"$(command -v fish)\" $USER"
   fi
 }
 
@@ -149,12 +147,11 @@ Modules:
   ${modules[*]}
 
 Options:
-   --all                 Install/stow all modules (default if none specified)
-   --dry-run             Print actions without executing
-   --set-default-shell   Run chsh to set fish as default shell (if selected)
-   --target DIR          Stow target directory (default: \$HOME)
-   --stow-flags FLAGS    Extra flags passed to stow
-   -h, --help            Show this help
+    --all                 Install/stow all modules (default if none specified)
+    --dry-run             Print actions without executing
+    --target DIR          Stow target directory (default: \$HOME)
+    --stow-flags FLAGS    Extra flags passed to stow
+    -h, --help            Show this help
 
 Examples:
    ./install.sh --all
@@ -175,12 +172,8 @@ parse_args() {
       parsed=("${modules[@]}")
       shift
       ;;
-     --dry-run)
-       DRY_RUN=true
-       shift
-       ;;
-     --set-default-shell)
-      SET_DEFAULT_SHELL=true
+    --dry-run)
+      DRY_RUN=true
       shift
       ;;
     --target)
@@ -206,9 +199,9 @@ parse_args() {
       ;;
     esac
   done
-  # If no explicit modules except flags were given, default to all
+  # If no explicit modules except flags were given, default to default modules
   if [ ${#parsed[@]} -eq 0 ]; then
-    parsed=("${modules[@]}")
+    parsed=("${default_modules[@]}")
   fi
   selected_modules=("${parsed[@]}")
 }
