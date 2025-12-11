@@ -13,7 +13,7 @@ return {
           },
         },
         copilot = {
-          model = 'claude-sonnet-4',
+          model = 'claude-haiku-4.5',
           timeout = 30000,
         },
       }
