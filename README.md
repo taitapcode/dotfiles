@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-git clone https://github.com/taitapcode/dotfiles ~/.dotfiles
+git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles
 cd ~/.dotfiles && chmod +x install.sh && ./install.sh
 ```
 
