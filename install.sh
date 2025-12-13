@@ -191,6 +191,10 @@ config_git() {
   git config --global user.name "$name"
 }
 
+config_skip_review_paru() {
+  echo "SkipReview" | sudo tee -a /etc/paru.conf
+}
+
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
