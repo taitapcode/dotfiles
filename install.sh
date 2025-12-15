@@ -160,10 +160,10 @@ apply_keyd_config() {
 [main]
 
 # Maps capslock to escape when pressed and control when held.
-capslock = overloadt(control, esc, 150)
+# capslock = overloadt(control, esc, 150)
 
 # Remaps capslock to escape
-# capslock = esc
+capslock = esc
 
 # Remaps the escape key to capslock
 esc = capslock" | sudo tee /etc/keyd/default.conf
