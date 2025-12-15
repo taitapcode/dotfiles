@@ -84,6 +84,7 @@ install_dependencies() {
     sxiv
     hyprsunset
     keyd
+    mpv
 
     # AUR packages
     ttf-delugia-code
@@ -159,10 +160,10 @@ apply_keyd_config() {
 [main]
 
 # Maps capslock to escape when pressed and control when held.
-# capslock = overload(control, esc)
+capslock = overloadt(control, esc, 150)
 
 # Remaps capslock to escape
-capslock = esc
+# capslock = esc
 
 # Remaps the escape key to capslock
 esc = capslock" | sudo tee /etc/keyd/default.conf
@@ -207,6 +208,8 @@ main() {
   config_git
   sync_dotfiles
   echo "Installation complete! Please restart your system."
+  echo "To install my dotfiles, run this command:"
+  echo "git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh"
 }
 
 main
