@@ -64,7 +64,7 @@
   "theme.bar.buttons.radius": "0.5em",
   "theme.bar.dropdownGap": "3em",
   "theme.bar.margin_bottom": "0.3em",
-  "bar.customModules.ram.labelType": "used",
+  "bar.customModules.ram.labelType": "used/total",
   "bar.customModules.storage.labelType": "used",
   "bar.customModules.storage.tooltipStyle": "percentage-bar",
   "bar.customModules.ram.label": true,
