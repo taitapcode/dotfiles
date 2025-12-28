@@ -19,6 +19,14 @@ return {
             },
           }
         end,
+
+        pyright = function(_, opts)
+          opts.capabilities = {
+            window = {
+              workDoneProgress = false, -- Disables the progress bar for pyright
+            },
+          }
+        end,
       },
     },
   },
