@@ -136,7 +136,7 @@ install_nvim() {
 }
 
 install_yazi() {
-  pacman_install yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide 7zip
+  pacman_install yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
   do_stow yazi
 }
 
