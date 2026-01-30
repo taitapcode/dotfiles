@@ -6,7 +6,7 @@ return {
       opts.provider = 'copilot'
       opts.providers = {
         gemini = {
-          model = 'gemini-2.0-flash',
+          model = 'gemini-3-flash-preview',
           timeout = 30000,
           extra_request_body = {
             max_tokens = 16384,
