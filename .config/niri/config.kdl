@@ -382,9 +382,13 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
     Mod+X hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run launcher" { spawn "fuzzel"; }
     Mod+B hotkey-overlay-title="Run a browser" { spawn "zen-browser"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+    // Open dms menus
+    Mod+D     hotkey-overlay-title="Run launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+S     hotkey-overlay-title="Open control center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+P     hotkey-overlay-title="Open power menu" { spawn "dms" "ipc" "call" "powermenu" "open"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
