@@ -6,6 +6,7 @@ return {
       servers = {
         gdscript = {},
         fish_lsp = {},
+        qmlls = {},
       },
       setup = {
         clangd = function(_, opts)

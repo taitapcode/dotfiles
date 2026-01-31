@@ -74,19 +74,9 @@ aur_install() {
   run "$helper" -S --needed --noconfirm "${pkgs[@]}"
 }
 
-do_stow() {
-  local dir="$1"
-  if [ ! -d "$REPO_DIR/$dir" ]; then
-    warn "Missing module directory: $dir (skipping)"
-    return 0
-  fi
-  msg "Stowing $dir -> $TARGET_DIR"
-  run stow -v -t "$TARGET_DIR" "$STOW_FLAGS" "$dir"
-}
-
 install_fish() {
   pacman_install fish fzf zoxide bat eza fd
-  do_stow fish
+  stow fish
   if run chsh -s "$(command -v fish)" "$USER"; then
     msg "Default shell switched to fish for $USER"
   else
@@ -96,29 +86,29 @@ install_fish() {
 
 install_starship() {
   pacman_install starship
-  do_stow starship
+  stow starship
 }
 
 install_kitty() {
   pacman_install kitty
   aur_install ttf-delugia-code
-  do_stow kitty
+  stow kitty
 }
 
 install_ghostty() {
   pacman_install ghostty
   aur_install ttf-delugia-code
-  do_stow ghostty
+  stow ghostty
 }
 
 install_lazygit() {
   pacman_install lazygit
-  do_stow lazygit
+  stow lazygit
 }
 
 install_tmux() {
   pacman_install tmux git
-  do_stow tmux
+  stow tmux
   # Install TPM if missing
   local tpm_dir="$HOME/.tmux/plugins/tpm"
   if [ ! -d "$tpm_dir" ]; then
@@ -131,13 +121,13 @@ install_tmux() {
 
 install_nvim() {
   pacman_install neovim nodejs npm xclip unzip wl-clipboard curl tree-sitter-cli go rust
-  do_stow nvim
+  stow nvim
   run sudo link /bin/nvim /bin/vi
 }
 
 install_yazi() {
   pacman_install yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
-  do_stow yazi
+  stow yazi
 }
 
 usage() {
@@ -150,8 +140,6 @@ Modules:
 Options:
     --all                 Install/stow all modules (default if none specified)
     --dry-run             Print actions without executing
-    --target DIR          Stow target directory (default: \$HOME)
-    --stow-flags FLAGS    Extra flags passed to stow
     -h, --help            Show this help
 
 Examples:
@@ -176,14 +164,6 @@ parse_args() {
     --dry-run)
       DRY_RUN=true
       shift
-      ;;
-    --target)
-      TARGET_DIR="$2"
-      shift 2
-      ;;
-    --stow-flags)
-      STOW_FLAGS="$2"
-      shift 2
       ;;
     -h | --help)
       usage
