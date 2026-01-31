@@ -3,7 +3,6 @@ set -Eeuo pipefail
 
 REPO_URL="https://github.com/taitapcode/dotfiles.git"
 NIRI_BRANCH="niri"
-DOTFILES_BRANCH="niri"
 NIRI_DIR="$HOME/.niri"
 
 install_pkgs() {
