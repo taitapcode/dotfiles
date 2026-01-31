@@ -1,0 +1,16 @@
+bibata-cursor-theme
+base-devel
+brightnessctl
+noto-fonts-emoji
+noto-fonts
+noto-fonts-cjk
+xwayland-satellite
+cava
+matugen
+fcitx5
+fcitx5-gtk
+fcitx5-configtool
+fcitx5-vmk-bin
+
+# AUR
+dms-shell-bin
