@@ -1,0 +1,13 @@
+{
+  "dankPomodoroTimer": {
+    "enabled": true,
+    "completedPomodoros-2026-02-01": 1
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  },
+  "dankBatteryAlerts": {
+    "enabled": true
+  }
+}

@@ -73,6 +73,7 @@ install_dependencies() {
     cava
     matugen
     sddm-astronaut-theme
+    keyd
 
     # AUR packages
     ttf-delugia-code
@@ -133,6 +134,32 @@ apply_sddm_config() {
   sudo sed -i "9s#.*#ConfigFile=Themes/pixel_sakura.conf#" /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
 }
 
+apply_keyd_config() {
+  sudo systemctl enable --now keyd
+  echo "[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape when pressed and control when held.
+# capslock = overloadt(control, esc, 150)
+
+# Remaps capslock to escape
+capslock = esc
+
+# Remaps the escape key to capslock
+esc = capslock" | sudo tee /etc/keyd/default.conf
+  sudo keyd reload
+
+  echo "#!/bin/sh
+if [ \"\${1}\" = \"post\" ]; then
+    sleep 1
+    systemctl restart keyd
+fi" | sudo tee /lib/systemd/system-sleep/keyd-restart
+  sudo chmod +x /lib/systemd/system-sleep/keyd-restart
+}
+
 sync_niri_config() {
   echo "Syncing configuration with stow..."
   cd "$NIRI_DIR" || exit 1
@@ -147,6 +174,7 @@ main() {
   config_git
   apply_grub_config
   apply_sddm_config
+  apply_keyd_config
   clone_niri_dotfiles
   sync_niri_config
   echo "Installation complete! Please restart your system."
