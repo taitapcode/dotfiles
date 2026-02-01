@@ -166,6 +166,10 @@ sync_niri_config() {
   stow .
 }
 
+apply_dms_config() {
+  echo "Applying dms-shell configuration..."
+  systemctl --user add-wants niri.service dms
+}
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
@@ -177,6 +181,7 @@ main() {
   apply_keyd_config
   clone_niri_dotfiles
   sync_niri_config
+  apply_dms_config
   echo "Installation complete! Please restart your system."
   echo "To install my dotfiles, run this command:"
   echo "git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh"

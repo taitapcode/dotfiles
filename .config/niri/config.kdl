@@ -279,7 +279,6 @@ layout {
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "~/.local/bin/randwall ~/.local/share/wallpapers/"
-// spawn-sh-at-startup "qs -c noctalia-shell"
 spawn-sh-at-startup "fcitx5 -d"
 
 // Environment variables
