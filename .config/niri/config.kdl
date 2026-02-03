@@ -378,7 +378,6 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
-    Mod+X hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
     Mod+B hotkey-overlay-title="Run a browser" { spawn "zen-browser"; }
 
     // Open dms menus
@@ -417,7 +416,6 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+Z repeat=false { toggle-overview; }
     Mod+Tab repeat=false { toggle-overview; }
 
     Mod+C repeat=false { close-window; }

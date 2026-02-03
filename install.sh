@@ -74,6 +74,7 @@ install_dependencies() {
     matugen
     sddm-astronaut-theme
     keyd
+    colloid-catppuccin-theme-git
 
     # AUR packages
     ttf-delugia-code
