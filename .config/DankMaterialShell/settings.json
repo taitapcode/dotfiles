@@ -360,11 +360,6 @@
           "showSwap": false
         },
         {
-          "id": "diskUsage",
-          "enabled": true,
-          "mountPath": "/"
-        },
-        {
           "id": "battery",
           "enabled": true
         },
