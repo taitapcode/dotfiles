@@ -11,7 +11,6 @@ return {
         'gdscript',
         'godot_resource',
         'gdshader',
-        'qmlls',
       })
     end
   end,

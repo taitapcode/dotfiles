@@ -18,11 +18,9 @@ require('lazy').setup({
     -- add LazyVim and import its plugins
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     -- import any extras modules here
-    -- { import = 'lazyvim.plugins.extras.ai.copilot' },
     { import = 'lazyvim.plugins.extras.ai.copilot-native' },
     { import = 'lazyvim.plugins.extras.ai.sidekick' },
     { import = 'lazyvim.plugins.extras.ai.avante' },
-
     { import = 'lazyvim.plugins.extras.ui.mini-indentscope' },
     { import = 'lazyvim.plugins.extras.coding.mini-comment' },
     { import = 'lazyvim.plugins.extras.coding.mini-surround' },
@@ -33,7 +31,6 @@ require('lazy').setup({
     { import = 'lazyvim.plugins.extras.editor.illuminate' },
     { import = 'lazyvim.plugins.extras.editor.mini-diff' },
     { import = 'lazyvim.plugins.extras.editor.aerial' },
-
     { import = 'lazyvim.plugins.extras.lang.python' },
     { import = 'lazyvim.plugins.extras.lang.clangd' },
     { import = 'lazyvim.plugins.extras.lang.markdown' },
@@ -47,7 +44,6 @@ require('lazy').setup({
     -- { import = 'lazyvim.plugins.extras.lang.java' },
     -- { import = 'lazyvim.plugins.extras.lang.svelte' },
     { import = 'lazyvim.plugins.extras.lang.vue' },
-
     { import = 'lazyvim.plugins.extras.linting.eslint' },
     { import = 'lazyvim.plugins.extras.formatting.prettier' },
     -- import/override with your plugins
