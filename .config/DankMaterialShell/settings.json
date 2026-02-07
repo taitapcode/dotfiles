@@ -146,9 +146,9 @@
   "niriOverviewOverlayEnabled": true,
   "useAutoLocation": false,
   "weatherEnabled": false,
-  "networkPreference": "auto",
+  "networkPreference": "wifi",
   "vpnLastConnected": "",
-  "iconTheme": "Colloid-Catppuccin-Light",
+  "iconTheme": "Colloid-Catppuccin",
   "cursorSettings": {
     "theme": "Bibata-Modern-Ice",
     "size": 40,

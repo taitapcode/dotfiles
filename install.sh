@@ -171,6 +171,7 @@ apply_dms_config() {
   echo "Applying dms-shell configuration..."
   systemctl --user add-wants niri.service dms
 }
+
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
