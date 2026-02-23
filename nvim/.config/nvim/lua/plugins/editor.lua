@@ -32,7 +32,6 @@ return {
           local hidden_folders = {
             '.git',
             'node_modules',
-            'build',
             'dist',
             '.next',
           }
