@@ -79,7 +79,7 @@ install_dependencies() {
     # AUR packages
     ttf-delugia-code
     power-profiles-daemon
-    fcitx5-vmk-bin
+    fcitx5-lotus-bin
     dms-shell-bin
   )
   install_pkgs "${deps[@]}"
@@ -94,9 +94,9 @@ clone_niri_dotfiles() {
   git clone "$REPO_URL" -b "$NIRI_BRANCH" "$NIRI_DIR" --depth 1
 }
 
-apply_vmk_config() {
-  echo "Applying VMK keyboard layout configuration..."
-  sudo systemctl enable --now fcitx5-vmk-server@$(whoami).service
+apply_lotus_config() {
+  sudo systemctl enable --now fcitx5-lotus-server@$(whoami).service ||
+    (sudo systemd-sysusers && sudo systemctl enable --now fcitx5-lotus-server@$(whoami).service)
 }
 
 config_skip_review_paru() {
@@ -162,6 +162,9 @@ fi" | sudo tee /lib/systemd/system-sleep/keyd-restart
 }
 
 sync_niri_config() {
+  echo "Cleaning up existing configuration with stow..."
+  rm -rf "$HOME/.config/niri"
+
   echo "Syncing configuration with stow..."
   cd "$NIRI_DIR" || exit 1
   stow .
@@ -175,7 +178,7 @@ apply_dms_config() {
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
-  apply_vmk_config
+  apply_lotus_config
   config_skip_review_paru
   config_git
   apply_grub_config
