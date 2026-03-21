@@ -6,6 +6,18 @@ return {
       servers = {
         gdscript = {},
         fish_lsp = {},
+        copilot = {
+          filetypes = {
+            'javascript',
+            'python',
+            'lua',
+            'rust',
+            'html',
+            'css',
+            'typescript',
+            'go',
+          },
+        },
       },
       setup = {
         clangd = function(_, opts)
