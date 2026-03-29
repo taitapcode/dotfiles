@@ -5,7 +5,6 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$REPO_DIR"
 
-TARGET_DIR="$HOME"
 PACMAN_CMD=${PACMAN_CMD:-pacman}
 SUDO_CMD=${SUDO_CMD:-sudo}
 STOW_FLAGS=${STOW_FLAGS:-}
