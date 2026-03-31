@@ -1,6 +1,6 @@
 {
   "Competitive Programming Template": {
-    "prefix": "cptemplate",
+    "prefix": "gaytemplate",
     "body": [
       "#include <bits/stdc++.h>",
       "#define el '\\n'",
