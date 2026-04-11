@@ -140,4 +140,10 @@ return {
       opts.scroll.enabled = false
     end,
   },
+  {
+    'm4xshen/autoclose.nvim',
+    opts = {
+      options = { pair_spaces = true },
+    },
+  },
 }
