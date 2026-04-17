@@ -8,12 +8,18 @@ require('mini.pairs').setup()
 require('mini.basics').setup({
   options = {
     extra_ui = true,
-    win_borders = 'single'
   },
   mappings = {
     basic = true,
     windows = true,
     move_with_alt = true,
+  }
+})
+
+require('mini.cmdline').setup({
+  autocomplete = {
+    enable = true,
+    delay = 200,
   }
 })
 
