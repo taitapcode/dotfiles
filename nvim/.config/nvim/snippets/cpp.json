@@ -23,7 +23,7 @@
   },
   "Fast I/O": {
     "prefix": "fastio",
-    "body": ["ios_base::sync_with_stdio(false);", "cin.tie(nullptr);"],
+    "body": [ "ios_base::sync_with_stdio(false);", "cin.tie(nullptr);" ],
     "description": "Fast I/O"
   },
   "File open": {

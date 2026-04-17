@@ -52,3 +52,6 @@ end
 
 map('i', '<Space>', smart_space, { expr = true })
 map('i', '<BS>', smart_backspace, { expr = true, replace_keycodes = true })
+
+-- Disable command history
+map('n', 'q:', '<Nop>')

@@ -10,7 +10,7 @@ require("bufferline").setup({
     right_mouse_command = function(n) Snacks.bufdelete(n) end,
 
     diagnostics = "nvim_lsp",
-    always_show_bufferline = true,
+    always_show_bufferline = false,
     separator_style = "slant",
 
     diagnostics_indicator = function(_, _, diag)

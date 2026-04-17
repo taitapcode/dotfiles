@@ -16,5 +16,6 @@ vim.o.cursorline = true
 vim.o.wrap = true
 vim.o.linebreak = true
 vim.o.breakindent = true
+vim.o.confirm = true
 
 require('vim._core.ui2').enable()
