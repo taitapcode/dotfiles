@@ -1,9 +1,3 @@
-_G.map = function(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  if opts then options = vim.tbl_extend("force", options, opts) end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
-
 -- Paste without replacing your clipboard with the deleted text
 map('x', '<leader>p', [["_dP]], { desc = 'Paste (Black hole)' })
 
@@ -13,7 +7,6 @@ map('n', 'X', [["_X]])
 
 -- Selection & Search
 map('n', '<leader>ha', 'ggVG', { desc = 'Select all' })
-map('n', '<leader>hh', ':set hlsearch!<cr>', { desc = 'Toggle highlight search' })
 
 -- Handle Smart Space: (|) -> ( | )
 local function smart_space()
@@ -52,6 +45,3 @@ end
 
 map('i', '<Space>', smart_space, { expr = true })
 map('i', '<BS>', smart_backspace, { expr = true, replace_keycodes = true })
-
--- Disable command history
-map('n', 'q:', '<Nop>')

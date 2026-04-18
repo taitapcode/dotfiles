@@ -72,33 +72,3 @@ map('n', '<leader>sM', function() Snacks.picker.man() end, { desc = 'Man Pages' 
 map('n', '<leader>sq', function() Snacks.picker.qflist() end, { desc = 'Quickfix List' })
 map('n', '<leader>sR', function() Snacks.picker.resume() end, { desc = 'Resume' })
 map('n', '<leader>su', function() Snacks.picker.undo() end, { desc = 'Undo History' })
-
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', { clear = true }),
-  callback = function(args)
-    -- Helper to avoid repeating the buffer ID and 'LSP' description
-    local function lsp_map(lhs, rhs, desc)
-      map('n', lhs, rhs, { buffer = args.buf, desc = 'LSP: ' .. desc })
-    end
-
-    -- Navigation & Definitions
-    lsp_map('gd', function() Snacks.picker.lsp_definitions() end, 'Goto Definition')
-    lsp_map('gD', function() Snacks.picker.lsp_declarations() end, 'Goto Declaration')
-    lsp_map('gr', function() Snacks.picker.lsp_references() end, 'References')
-    lsp_map('gI', function() Snacks.picker.lsp_implementations() end, 'Goto Implementation')
-    lsp_map('gy', function() Snacks.picker.lsp_type_definitions() end, 'Type Definition')
-    lsp_map('<leader>sd', function() Snacks.picker.diagnostics_buffer() end, 'Buffer Diagnostics')
-
-    -- Calls & Symbols
-    lsp_map('gai', function() Snacks.picker.lsp_incoming_calls() end, 'Incoming Calls')
-    lsp_map('gao', function() Snacks.picker.lsp_outgoing_calls() end, 'Outgoing Calls')
-    lsp_map('<leader>sy', function() Snacks.picker.lsp_symbols() end, 'Symbols')
-    lsp_map('<leader>sS', function() Snacks.picker.lsp_workspace_symbols() end, 'Workspace Symbols')
-
-    -- Standard LSP Actions
-    lsp_map('K', vim.lsp.buf.hover, 'Hover Documentation')
-    lsp_map('<leader>cr', vim.lsp.buf.rename, 'Rename Symbol')
-    lsp_map('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
-    lsp_map('<leader>cd', vim.diagnostic.open_float, 'Line Diagnostics')
-  end,
-})

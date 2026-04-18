@@ -1,4 +1,4 @@
-local core_modules = { "options", "keymaps", "autocmds", "cmds" }
+local core_modules = { "options", 'functions',"keymaps", "autocmds", "cmds" }
 for _, mod in ipairs(core_modules) do
   local ok, err = pcall(require, "config." .. mod)
   if not ok then

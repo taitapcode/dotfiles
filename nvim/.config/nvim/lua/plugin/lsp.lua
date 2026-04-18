@@ -12,9 +12,6 @@ require('mason-lspconfig').setup({
 
 vim.lsp.enable({ 'gdscript', 'lua_ls', 'fish_lsp', 'clangd' })
 
-vim.lsp.config('*', {
-  capabilities = vim.lsp.protocol.make_client_capabilities()
-})
 
 vim.lsp.config('lua_ls', {
   settings = {
