@@ -5,9 +5,15 @@ require('conform').setup({
     lua = { 'stylua' },
     python = { 'black' },
     fish = { 'fish_indent' },
+    cpp = {},
   },
-  format_on_save = {
-    timeout_ms = 500,
-    lsp_format = 'fallback',
-  },
+  format_on_save = function(bufnr)
+    -- Disable with a list of filetypes
+    local ignore_filetypes = { 'cpp' }
+    if vim.tbl_contains(ignore_filetypes, vim.bo[bufnr].filetype) then
+      return
+    end
+
+    return { timeout_ms = 500, lsp_fallback = true }
+  end,
 })
