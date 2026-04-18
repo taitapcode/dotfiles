@@ -45,3 +45,8 @@ end
 
 map('i', '<Space>', smart_space, { expr = true })
 map('i', '<BS>', smart_backspace, { expr = true, replace_keycodes = true })
+
+-- Disable q maps
+map('n', 'q:', '<Ignore>')
+map('n', 'q/', '<Ignore>')
+map('n', 'q?', '<Ignore>')

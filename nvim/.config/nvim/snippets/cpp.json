@@ -47,7 +47,7 @@
     "description": "Include debug.h from ~/.local/include if -DEBUG is passed."
   },
   "Namespace Std": {
-    "prefix": "stdnamespace",
+    "prefix": "nstd",
     "body": "using namespace std;",
     "description": "Just using namespace std"
   }
