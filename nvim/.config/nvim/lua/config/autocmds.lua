@@ -92,8 +92,6 @@ vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter' }, {
     local ignore_ft = {
       'snacks_picker_list',
       'snacks_picker_input',
-      'minifiles',
-      'help',
     }
 
     if vim.tbl_contains(ignore_ft, vim.bo.filetype) then
