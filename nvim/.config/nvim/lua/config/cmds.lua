@@ -3,5 +3,5 @@ vim.api.nvim_create_user_command(
   function()
     vim.pack.update()
   end,
-  { desc = "Update all plugins" }
+  { desc = 'Update all plugins' }
 )

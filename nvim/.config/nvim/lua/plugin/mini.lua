@@ -5,7 +5,6 @@ vim.pack.add({
 })
 
 require('mini.move').setup()
-require('mini.pairs').setup()
 require('mini.basics').setup {
   options = {
     basic = true,

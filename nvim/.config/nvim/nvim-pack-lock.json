@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "autoclose.nvim": {
+      "rev": "bafd0368716216fa6a7bb2a43ecd889b44efdb46",
+      "src": "https://github.com/m4xshen/autoclose.nvim"
+    },
     "bufferline.nvim": {
       "rev": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "src": "https://github.com/akinsho/bufferline.nvim"

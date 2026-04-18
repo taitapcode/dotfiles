@@ -7,5 +7,5 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
     MiniTrailspace.trim()
     MiniTrailspace.trim_last_lines()
   end,
-  desc = "Auto-remove trailing whitespace on save",
+  desc = 'Auto-remove trailing whitespace on save',
 })

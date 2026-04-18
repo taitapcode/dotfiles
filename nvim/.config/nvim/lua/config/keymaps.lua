@@ -8,44 +8,6 @@ map('n', 'X', [["_X]])
 -- Selection & Search
 map('n', '<leader>ha', 'ggVG', { desc = 'Select all' })
 
--- Handle Smart Space: (|) -> ( | )
-local function smart_space()
-  local col = vim.api.nvim_win_get_cursor(0)[2]
-  local line = vim.api.nvim_get_current_line()
-  local left = line:sub(col, col)
-  local right = line:sub(col + 1, col + 1)
-
-  -- If cursor is between (), [], or {}, insert two spaces and move left
-  if left:match('[%(%{%[]') and right:match('[%)%}%]]') then
-    return '<Space><Space><Left>'
-  end
-  return '<Space>'
-end
-
--- Handle Smart Backspace: ( | ) -> ()
-local function smart_backspace()
-  local col = vim.api.nvim_win_get_cursor(0)[2]
-  local line = vim.api.nvim_get_current_line()
-
-  local char_before = line:sub(col, col)
-  local char_after = line:sub(col + 1, col + 1)
-  local context_wide = line:sub(col - 1, col + 2) -- e.g., "(  )"
-
-  if context_wide:match('%(  %)') or context_wide:match('%[  %]') or context_wide:match('%{  %}') then
-    return "<BS><Del>"
-  end
-
-  local pairs = { ['('] = ')', ['['] = ']', ['{'] = '}', ['"'] = '"', ["'"] = "'" }
-  if pairs[char_before] == char_after then
-    return "<BS><Del>"
-  end
-
-  return "<BS>"
-end
-
-map('i', '<Space>', smart_space, { expr = true })
-map('i', '<BS>', smart_backspace, { expr = true, replace_keycodes = true })
-
 -- Disable q maps
 map('n', 'q:', '<Ignore>')
 map('n', 'q/', '<Ignore>')
