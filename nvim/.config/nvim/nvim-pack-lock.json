@@ -60,10 +60,6 @@
       "rev": "b456bfe845e475e9cec065b7a9a1ef657ad2f41b",
       "src": "https://github.com/nvim-mini/mini.statusline"
     },
-    "mini.surround": {
-      "rev": "2715e04bea3ec9244f15b421dc5b18c0fe326210",
-      "src": "https://github.com/nvim-mini/mini.surround"
-    },
     "mini.trailspace": {
       "rev": "b362246495d18c29b4545a8f1c47f627f8011b7c",
       "src": "https://github.com/nvim-mini/mini.trailspace"

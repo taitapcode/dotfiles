@@ -3,7 +3,10 @@ vim.pack.add({ 'https://github.com/folke/snacks.nvim' })
 require('snacks').setup({
   bigfile = { enabled = true },
   indent = { enabled = true },
-  input = { enabled = true },
+  input = {
+    enabled = true,
+    b = { completion = false },
+  },
   picker = {
     enabled = true,
     -- layout = "ivy",
@@ -48,6 +51,7 @@ map('n', '<leader>gs', function() Snacks.picker.git_status() end, { desc = 'Git 
 map('n', '<leader>gS', function() Snacks.picker.git_stash() end, { desc = 'Git Stash' })
 map('n', '<leader>gd', function() Snacks.picker.git_diff() end, { desc = 'Git Diff (Hunks)' })
 map('n', '<leader>gf', function() Snacks.picker.git_log_file() end, { desc = 'Git Log File' })
+map('n', '<leader>gg', function() Snacks.lazygit() end, { desc = 'Open lazygit' })
 
 -- Grep & Search
 map('n', '<leader>sb', function() Snacks.picker.lines() end, { desc = 'Buffer Lines' })
