@@ -8,7 +8,5 @@ map('n', 'X', [["_X]])
 -- Selection & Search
 map('n', '<leader>ha', 'ggVG', { desc = 'Select all' })
 
--- Disable q maps
-map('n', 'q:', '<Ignore>')
-map('n', 'q/', '<Ignore>')
-map('n', 'q?', '<Ignore>')
+-- Restart nvim
+map('n', '<leader>r', '<cmd>restart<CR>', { desc = 'Restart neovim' })

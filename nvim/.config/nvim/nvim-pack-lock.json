@@ -12,9 +12,17 @@
       "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
       "src": "https://github.com/catppuccin/nvim"
     },
+    "competitest.nvim": {
+      "rev": "b42c06ca308906f07912ba9aff015ac2c0831f85",
+      "src": "https://github.com/xeluxee/competitest.nvim"
+    },
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "flash.nvim": {
+      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "src": "https://github.com/folke/flash.nvim"
     },
     "gitsigns.nvim": {
       "rev": "8d82c240f190fc33723d48c308ccc1ed8baad69d",
@@ -72,9 +80,17 @@
       "rev": "b362246495d18c29b4545a8f1c47f627f8011b7c",
       "src": "https://github.com/nvim-mini/mini.trailspace"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "4b7fbaa239c5db6b36f424a4521ca9f1a401be33",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-surround": {
+      "rev": "9291040de8cd8a4439eb64c441e8d5d2bf884a5a",
+      "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-tmux-navigation": {
       "rev": "4898c98702954439233fdaf764c39636681e2861",

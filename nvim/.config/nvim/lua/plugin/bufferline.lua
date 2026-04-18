@@ -3,23 +3,27 @@ vim.pack.add({ 'https://github.com/akinsho/bufferline.nvim' })
 require('bufferline').setup({
   options = {
     show_buffer_icons = true,
-    show_close_icon = true,
-    show_buffer_close_icons = true,
+    show_close_icon = false,
+    show_buffer_close_icons = false,
 
-    close_command = function(n) Snacks.bufdelete(n) end,
-    right_mouse_command = function(n) Snacks.bufdelete(n) end,
+    close_command = function(n)
+      Snacks.bufdelete(n)
+    end,
+    right_mouse_command = function(n)
+      Snacks.bufdelete(n)
+    end,
 
     diagnostics = 'nvim_lsp',
-    always_show_bufferline = false,
-    separator_style = 'slant',
+    -- always_show_bufferline = false,
+    -- separator_style = 'slant',
 
     diagnostics_indicator = function(_, _, diag)
       local icons = {
         Error = require('mini.icons').get('lsp', 'error') .. ' ',
-        Warn  = require('mini.icons').get('lsp', 'warn') .. ' ',
+        Warn = require('mini.icons').get('lsp', 'warn') .. ' ',
       }
       local ret = (diag.error and icons.Error .. diag.error .. ' ' or '')
-               .. (diag.warning and icons.Warn .. diag.warning or '')
+        .. (diag.warning and icons.Warn .. diag.warning or '')
       return vim.trim(ret)
     end,
 
