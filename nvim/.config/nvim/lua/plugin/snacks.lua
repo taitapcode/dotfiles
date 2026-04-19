@@ -14,6 +14,7 @@ require('snacks').setup({
       input = {
         keys = {
           ['<Esc>'] = { 'close', mode = { 'n', 'i' } },
+          ['<C-o>'] = { 'confirm', mode = { 'n', 'i' } },
         },
       },
     },
