@@ -60,6 +60,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       Snacks.picker.lsp_type_definitions()
     end, 'Type Definition')
     lsp_map('<leader>sd', function()
+      Snacks.picker.diagnostics()
+    end, 'Diagnostics')
+    lsp_map('<leader>sD', function()
       Snacks.picker.diagnostics_buffer()
     end, 'Buffer Diagnostics')
 
