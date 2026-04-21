@@ -75,7 +75,7 @@ aur_install() {
 
 install_fish() {
   pacman_install fish fzf zoxide bat eza fd
-  stow fish
+  run "stow fish"
   if run chsh -s "$(command -v fish)" "$USER"; then
     msg "Default shell switched to fish for $USER"
   else
@@ -85,29 +85,29 @@ install_fish() {
 
 install_starship() {
   pacman_install starship
-  stow starship
+  run "stow starship"
 }
 
 install_kitty() {
   pacman_install kitty
   aur_install ttf-delugia-code
-  stow kitty
+  run "stow kitty"
 }
 
 install_ghostty() {
   pacman_install ghostty
   aur_install ttf-delugia-code
-  stow ghostty
+  run "stow ghostty"
 }
 
 install_lazygit() {
   pacman_install lazygit
-  stow lazygit
+  run "stow lazygit"
 }
 
 install_tmux() {
   pacman_install tmux git
-  stow tmux
+  run "stow tmux"
   # Install TPM if missing
   local tpm_dir="$HOME/.tmux/plugins/tpm"
   if [ ! -d "$tpm_dir" ]; then
@@ -120,13 +120,13 @@ install_tmux() {
 
 install_nvim() {
   pacman_install neovim nodejs npm xclip unzip wl-clipboard curl tree-sitter-cli go rust
-  stow nvim
+  run "stow nvim"
   run sudo link /bin/nvim /bin/vi
 }
 
 install_yazi() {
   pacman_install yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide resvg imagemagick
-  stow yazi
+  run "stow yazi"
 }
 
 usage() {
