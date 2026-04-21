@@ -432,11 +432,6 @@
           "enabled": true
         },
         {
-          "id": "cpuTemp",
-          "enabled": true,
-          "minimumWidth": true
-        },
-        {
           "id": "cpuUsage",
           "enabled": true
         },
