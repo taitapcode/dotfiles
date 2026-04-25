@@ -7,11 +7,11 @@ vim.pack.add({
 require('mini.move').setup()
 require('mini.ai').setup()
 
-require('mini.basics').setup {
+require('mini.basics').setup({
   options = {
     basic = true,
     extra_ui = true,
-    win_borders = 'double'
+    win_borders = 'double',
   },
   mappings = {
     basic = true,
@@ -20,5 +20,5 @@ require('mini.basics').setup {
   },
   autocommands = {
     basic = true,
-  }
-}
+  },
+})

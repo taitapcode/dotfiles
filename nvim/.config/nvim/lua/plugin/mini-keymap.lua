@@ -10,6 +10,6 @@ local shifttab_steps = { 'minisnippets_prev', 'pmenu_prev' }
 map_multistep('i', '<S-Tab>', shifttab_steps)
 
 -- Hide search highlighting
-map_combo({ 'n','i','x','c' }, '<Esc><Esc>', function()
+map_combo({ 'n', 'i', 'x', 'c' }, '<Esc><Esc>', function()
   vim.cmd('nohlsearch')
 end)
