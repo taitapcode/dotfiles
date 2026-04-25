@@ -9,7 +9,7 @@ map('n', 'X', [["_X]])
 map('n', '<leader>ha', 'ggVG', { desc = 'Select all' })
 
 -- Restart nvim
-map('n', '<leader>R', '<cmd>restart<CR>', { desc = 'Restart neovim' })
+map('n', '<M-R>', '<cmd>restart<CR>', { desc = 'Restart neovim' })
 
 -- Buffers navigations
 map('n', 'H', '<cmd>bp<cr>', { desc = 'Buffer previous' })
