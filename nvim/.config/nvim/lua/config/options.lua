@@ -18,5 +18,8 @@ vim.o.breakindent = true
 vim.o.confirm = true
 vim.o.completeopt = 'menuone,noinsert'
 vim.o.swapfile = false
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.o.foldenable = false
 
 require('vim._core.ui2').enable()
