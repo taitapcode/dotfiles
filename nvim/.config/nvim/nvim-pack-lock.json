@@ -13,7 +13,7 @@
       "src": "https://github.com/xeluxee/competitest.nvim"
     },
     "conform.nvim": {
-      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "flash.nvim": {
@@ -29,7 +29,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "0a3b42c3e503df87aef6d6513e13148381495c3a",
+      "rev": "0c2823e0418f3d9230ff8b201c976e84de1cb401",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -53,7 +53,7 @@
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.files": {
-      "rev": "e8db416c9f5dbce70f5501da28263d45c0a4df6b",
+      "rev": "34299f5dc9433b3e2f8efd316fff70982d4e0072",
       "src": "https://github.com/nvim-mini/mini.files"
     },
     "mini.icons": {
@@ -81,7 +81,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "e146efacbafed3789ac568abcc5a981c5decaa58",
+      "rev": "8fde495949782bb61c2605174e231d145a048d8c",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
