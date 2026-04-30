@@ -26,18 +26,6 @@ require('bufferline').setup({
         .. (diag.warning and icons.Warn .. diag.warning or '')
       return vim.trim(ret)
     end,
-
-    offsets = {
-      {
-        filetype = 'minifiles',
-        text = 'Mini Files',
-        highlight = 'Directory',
-        text_align = 'left',
-      },
-      {
-        filetype = 'snacks_layout_box',
-      },
-    },
   },
 })
 
