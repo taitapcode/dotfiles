@@ -110,6 +110,6 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
     vim.cmd('quit')
     -- 2. Open the actual command line with a ':'
     -- We use feedkeys so it happens after the window closes
-    vim.api.nvim_feedkeys(':', 'n', false)
+    vim.api.nvim_feedkeys(':q', 'n', false)
   end,
 })
