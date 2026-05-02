@@ -59,7 +59,6 @@ install_dependencies() {
     noto-fonts-emoji
     noto-fonts
     noto-fonts-cjk
-    xdg-desktop-portal-hyprland
     brightnessctl
     nautilus
     bibata-cursor-theme
