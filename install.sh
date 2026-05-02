@@ -72,6 +72,7 @@ install_dependencies() {
     mpv
     cava
     matugen
+    dms-shell-niri
     sddm-astronaut-theme
     keyd
     colloid-catppuccin-theme-git
@@ -80,7 +81,6 @@ install_dependencies() {
     ttf-delugia-code
     power-profiles-daemon
     fcitx5-lotus-bin
-    dms-shell-bin
   )
   install_pkgs "${deps[@]}"
 }
@@ -190,7 +190,6 @@ main() {
   echo "Installation complete! Please restart your system."
   echo "To install my dotfiles, run this command:"
   echo "git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh"
-
 }
 
 main
