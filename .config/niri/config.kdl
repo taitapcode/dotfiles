@@ -396,7 +396,8 @@ binds {
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Return hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
-  Mod+B hotkey-overlay-title="Run a browser" { spawn "zen-browser"; }
+  Mod+B hotkey-overlay-title="Run a browser" { spawn "helium-browser"; }
+  Mod+E hotkey-overlay-title="Run a file explorer" { spawn "nautilus"; }
 
   // Open dms menus
   Mod+D     hotkey-overlay-title="Run launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
@@ -638,9 +639,9 @@ binds {
   // Mod+Space       { switch-layout "next"; }
   // Mod+Shift+Space { switch-layout "prev"; }
 
-  Print { screenshot; }
-  Ctrl+Print { screenshot-screen; }
-  Alt+Print { screenshot-window; }
+  Mod+Shift+S { screenshot show-pointer=false; }
+  Mod+Shift+Ctrl+S { screenshot-screen show-pointer=false; }
+  Mod+Shift+Alt+S { screenshot-window show-pointer=false; }
 
   // Applications such as remote-desktop clients and software KVM switches may
   // request that niri stops processing the keyboard shortcuts defined here

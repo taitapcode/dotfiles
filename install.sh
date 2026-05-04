@@ -62,7 +62,6 @@ install_dependencies() {
     brightnessctl
     nautilus
     bibata-cursor-theme
-    zen-browser
     fcitx5
     fcitx5-gtk
     fcitx5-configtool
@@ -75,6 +74,8 @@ install_dependencies() {
     sddm-astronaut-theme
     keyd
     colloid-catppuccin-theme-git
+    helium-browser-bin
+    xwayland-satellite
 
     # AUR packages
     ttf-delugia-code
