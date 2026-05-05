@@ -25,7 +25,7 @@ function note
             end
             echo "Đang commit và push..."
             git add .
-            set -l commit_msg (date "+%S:%M:%H-%d/%m/%Y")
+            set -l commit_msg (date "+%S:%M:%H %d/%m/%Y")
             git commit -m "$commit_msg"
             git push
             echo "Đã push thành công!"
@@ -38,7 +38,7 @@ function note
             if set -q argv[2]
                 nvim $note_dir/$argv[2].md
             else
-                set -l timestamp (date "+%S%M%H%d%m%Y")
+                set -l timestamp (date "%M%H%d%m%Y")
                 nvim $note_dir/$timestamp.md
             end
 
@@ -46,7 +46,7 @@ function note
             if test -n "$argv[1]"
                 nvim $note_dir/$argv[1].md
             else
-                set -l timestamp (date "+%d%m%Y")
+                set -l timestamp (date "+%Y%m%d")
                 nvim $note_dir/$timestamp.md
             end
     end
