@@ -1,5 +1,5 @@
 function note
-    set -l note_dir ~/Documents/Notes
+    set -l note_dir ~/Documents/notes
 
     if not test -d $note_dir
         mkdir -p $note_dir
