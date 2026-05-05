@@ -46,7 +46,7 @@ function note
             if test -n "$argv[1]"
                 nvim $note_dir/$argv[1].md
             else
-                set -l timestamp (date "+%H%d%m%Y")
+                set -l timestamp (date "+%d%m%Y")
                 nvim $note_dir/$timestamp.md
             end
     end
