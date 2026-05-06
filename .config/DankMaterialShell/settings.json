@@ -205,8 +205,8 @@
   "networkPreference": "wifi",
   "iconTheme": "Colloid-Catppuccin-Dark",
   "cursorSettings": {
-    "theme": "Bibata-Modern-Ice",
-    "size": 40,
+    "theme": "Banana",
+    "size": 45,
     "niri": {
       "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
@@ -280,9 +280,9 @@
   "matugenTemplateMangowc": false,
   "matugenTemplateQt5ct": false,
   "matugenTemplateQt6ct": false,
-  "matugenTemplateFirefox": true,
+  "matugenTemplateFirefox": false,
   "matugenTemplatePywalfox": false,
-  "matugenTemplateZenBrowser": true,
+  "matugenTemplateZenBrowser": false,
   "matugenTemplateVesktop": false,
   "matugenTemplateEquibop": false,
   "matugenTemplateGhostty": false,
@@ -294,8 +294,8 @@
   "matugenTemplateDgop": false,
   "matugenTemplateKcolorscheme": false,
   "matugenTemplateVscode": false,
-  "matugenTemplateEmacs": true,
-  "matugenTemplateZed": true,
+  "matugenTemplateEmacs": false,
+  "matugenTemplateZed": false,
   "showDock": true,
   "dockAutoHide": true,
   "dockSmartAutoHide": false,

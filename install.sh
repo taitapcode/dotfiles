@@ -61,7 +61,6 @@ install_dependencies() {
     noto-fonts-cjk
     brightnessctl
     nautilus
-    bibata-cursor-theme
     fcitx5
     fcitx5-gtk
     fcitx5-configtool
@@ -81,6 +80,7 @@ install_dependencies() {
     ttf-delugia-code
     power-profiles-daemon
     fcitx5-lotus-bin
+    banana-cursor-bin
   )
   install_pkgs "${deps[@]}"
 }
