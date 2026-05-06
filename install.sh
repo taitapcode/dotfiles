@@ -12,7 +12,7 @@ STOW_FLAGS=${STOW_FLAGS:-}
 DRY_RUN=false
 
 modules=(fish kitty lazygit tmux nvim yazi ghostty starship)
-default_modules=(fish kitty lazygit tmux nvim yazi)
+default_modules=(fish ghostty lazygit tmux nvim yazi)
 selected_modules=()
 
 msg() { printf "\033[1;32m==>\033[0m %s\n" "$*"; }

@@ -10,6 +10,9 @@ require('snacks').setup({
   picker = {
     enabled = true,
     -- layout = "ivy",
+    sources = {
+      files = { hidden = true },
+    },
     win = {
       input = {
         keys = {
