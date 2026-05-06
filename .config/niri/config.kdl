@@ -354,6 +354,18 @@ window-rule {
   // block-out-from "screencast"
 }
 
+window-rule {
+  // Match Ghostty's app-id (check with 'niri msg windows' if unsure)
+  match app-id="com.mitchellh.ghostty"
+
+  background-effect {
+    blur true
+    // Optional: xray makes blur more efficient by showing the wallpaper
+    // instead of windows underneath
+    xray true
+  }
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
@@ -375,10 +387,6 @@ window-rule {
   }
 }
 
-window-rule {
-  match app-id="^kitty$"
-}
-
 binds {
   // Keys consist of modifiers separated by + signs, followed by an XKB key name
   // in the end. To find an XKB name for a particular key, you may use a program
@@ -395,7 +403,7 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
-  Mod+Return hotkey-overlay-title="Open a terminal" { spawn "kitty"; }
+  Mod+Return hotkey-overlay-title="Open a terminal" { spawn "ghostty"; }
   Mod+B hotkey-overlay-title="Run a browser" { spawn "helium-browser"; }
   Mod+E hotkey-overlay-title="Run a file explorer" { spawn "nautilus"; }
 
