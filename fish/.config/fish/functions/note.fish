@@ -35,19 +35,21 @@ function note
             nvim -c "lua Snacks.picker.files()"
 
         case new
+            cd $note_dir
             if set -q argv[2]
-                nvim $note_dir/$argv[2].md
+                nvim argv[2].md
             else
                 set -l timestamp (date "%M%H%d%m%Y")
-                nvim $note_dir/$timestamp.md
+                nvim $timestamp.md
             end
 
         case "*"
+            cd $note_dir
             if test -n "$argv[1]"
-                nvim $note_dir/$argv[1].md
+                nvim $argv[1].md
             else
                 set -l timestamp (date "+%Y%m%d")
-                nvim $note_dir/$timestamp.md
+                nvim $timestamp.md
             end
     end
 end
