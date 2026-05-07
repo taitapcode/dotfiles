@@ -8,7 +8,9 @@ local cmp = require('blink.cmp')
 cmp.build():wait(60000)
 
 cmp.setup({
-  completion = { documentation = { auto_show = true } },
+  completion = {
+    documentation = { auto_show = true },
+  },
   keymap = {
     preset = 'enter',
     ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },

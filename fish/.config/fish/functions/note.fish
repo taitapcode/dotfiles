@@ -48,5 +48,6 @@ function note
                 set -l timestamp (date "+%Y%m%d")
                 nvim $timestamp.md
             end
+            cd -
     end
 end
