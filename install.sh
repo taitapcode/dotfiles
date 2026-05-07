@@ -75,12 +75,16 @@ install_dependencies() {
     colloid-catppuccin-theme-git
     helium-browser-bin
     xwayland-satellite
+    libsecret
+    gnome-keyring
+    zed
 
     # AUR packages
     ttf-delugia-code
     power-profiles-daemon
     fcitx5-lotus-bin
     banana-cursor-bin
+    onlyoffice-bin
   )
   install_pkgs "${deps[@]}"
 }
