@@ -7,28 +7,25 @@ function note
 
     switch "$argv[1]"
         case sync
-            # Kéo dữ liệu mới nhất từ remote về
             cd $note_dir
             if not test -d .git
-                echo "Chưa setup Git cho folder này."
+                echo "No Git repo in this directory"
                 return 1
             end
-            echo "Đang sync notes từ server..."
             git pull
-            echo "Đã sync xong!"
+            cd -
 
         case push
             cd $note_dir
             if not test -d .git
-                echo "Chưa setup Git."
+                echo "No Git repo in this directory"
                 return 1
             end
-            echo "Đang commit và push..."
             git add .
             set -l commit_msg (date "+%S:%M:%H %d/%m/%Y")
             git commit -m "$commit_msg"
             git push
-            echo "Đã push thành công!"
+            cd -
 
         case folder
             cd $note_dir
