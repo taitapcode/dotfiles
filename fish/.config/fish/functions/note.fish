@@ -6,7 +6,7 @@ function note
     end
 
     switch "$argv[1]"
-        case sync
+        case pull
             cd $note_dir
             if not test -d .git
                 echo "No Git repo in this directory"
