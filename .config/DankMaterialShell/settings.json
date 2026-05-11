@@ -13,7 +13,7 @@
   "controlCenterTileColorMode": "primary",
   "buttonColorMode": "primary",
   "cornerRadius": 12,
-  "niriLayoutGapsOverride": -1,
+  "niriLayoutGapsOverride": 4,
   "niriLayoutRadiusOverride": -1,
   "niriLayoutBorderSize": -1,
   "hyprlandLayoutGapsOverride": -1,
@@ -177,7 +177,7 @@
   "runningAppsGroupByApp": false,
   "runningAppsCurrentMonitor": false,
   "appIdSubstitutions": [],
-  "centeringMode": "index",
+  "centeringMode": "geometric",
   "clockDateFormat": "dddd, dd/MM/yyyy",
   "lockDateFormat": "dddd, dd/MM/yyyy",
   "greeterRememberLastSession": true,
@@ -426,13 +426,13 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
-          "id": "launcherButton",
+          "id": "appsDock",
           "enabled": true
         },
-        "focusedWindow",
         {
-          "id": "dankPomodoroTimer",
-          "enabled": true
+          "id": "focusedWindow",
+          "enabled": true,
+          "focusedWindowCompactMode": false
         }
       ],
       "centerWidgets": [
@@ -474,12 +474,12 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 4,
+      "innerPadding": 1,
       "bottomGap": 0,
-      "transparency": 0.83,
-      "widgetTransparency": 0.82,
+      "transparency": 1,
+      "widgetTransparency": 1,
       "squareCorners": false,
-      "noBackground": false,
+      "noBackground": true,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": true,
       "gothCornerRadiusValue": 9,
@@ -506,7 +506,10 @@
       "shadowIntensity": 0,
       "shadowOpacity": 60,
       "shadowColorMode": "text",
-      "shadowCustomColor": "#000000"
+      "shadowCustomColor": "#000000",
+      "clickThrough": false,
+      "maximizeWidgetIcons": false,
+      "widgetPadding": 8
     }
   ],
   "desktopClockEnabled": false,
