@@ -78,8 +78,6 @@ install_dependencies() {
     libsecret
     gnome-keyring
     zed
-    zathura
-    zathura-pdf-mupdf
 
     # AUR packages
     ttf-delugia-code
@@ -181,11 +179,6 @@ apply_dms_config() {
   systemctl --user add-wants niri.service dms
 }
 
-apply_zathura_config() {
-  echo "Setting zathura as default pdf viewer..."
-  xdg-mime default org.pwmt.zathura.desktop application/pdf
-}
-
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
@@ -198,7 +191,6 @@ main() {
   clone_niri_dotfiles
   sync_niri_config
   apply_dms_config
-  apply_zathura_config
   echo "Installation complete! Please restart your system."
   echo "To install my dotfiles, run this command:"
   echo "git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh"
