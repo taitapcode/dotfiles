@@ -122,6 +122,16 @@
       "id": "darkMode",
       "enabled": true,
       "width": 50
+    },
+    {
+      "id": "builtin_cups",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "colorPicker",
+      "enabled": true,
+      "width": 50
     }
   ],
   "showWorkspaceIndex": false,

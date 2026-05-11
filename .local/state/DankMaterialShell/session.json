@@ -25,12 +25,12 @@
   "wallpaperCyclingInterval": 300,
   "wallpaperCyclingTime": "06:00",
   "monitorCyclingSettings": {},
-  "nightModeEnabled": false,
+  "nightModeEnabled": true,
   "nightModeTemperature": 4500,
   "nightModeHighTemperature": 6500,
   "nightModeAutoEnabled": false,
   "nightModeAutoMode": "time",
-  "nightModeStartHour": 18,
+  "nightModeStartHour": 23,
   "nightModeStartMinute": 0,
   "nightModeEndHour": 6,
   "nightModeEndMinute": 0,
@@ -59,8 +59,10 @@
   "dockLauncherPosition": 0,
   "hiddenTrayIds": [],
   "trayItemOrder": [],
-  "recentColors": [],
-  "showThirdPartyPlugins": false,
+  "recentColors": [
+    "#d0bcff"
+  ],
+  "showThirdPartyPlugins": true,
   "launchPrefix": "",
   "lastBrightnessDevice": "",
   "brightnessExponentialDevices": {},
@@ -80,7 +82,7 @@
   "hiddenOutputDeviceNames": [],
   "hiddenInputDeviceNames": [],
   "launcherLastMode": "all",
-  "appDrawerLastMode": "apps",
+  "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
   "configVersion": 3
 }
