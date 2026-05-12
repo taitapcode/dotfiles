@@ -1,6 +1,8 @@
 {
   "isLightMode": false,
   "doNotDisturb": false,
+  "doNotDisturbUntil": 0,
+  "terminalOverride": "",
   "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-lyz3d2.png",
   "perMonitorWallpaper": false,
   "monitorWallpapers": {},
@@ -78,11 +80,18 @@
   "appOverrides": {},
   "searchAppActions": true,
   "vpnLastConnected": "",
+  "lastPlayerIdentity": "Helium",
   "deviceMaxVolumes": {},
   "hiddenOutputDeviceNames": [],
   "hiddenInputDeviceNames": [],
+  "locale": "",
+  "timeLocale": "",
   "launcherLastMode": "all",
+  "launcherLastQuery": "",
+  "launcherQueryHistory": [],
   "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
+  "settingsSidebarExpandedIds": ",",
+  "settingsSidebarCollapsedIds": ",",
   "configVersion": 3
 }
