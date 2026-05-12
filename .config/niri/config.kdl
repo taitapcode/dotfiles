@@ -349,9 +349,11 @@ window-rule {
   // block-out-from "screencast"
 }
 
+
 window-rule {
-  // Match Ghostty's app-id (check with 'niri msg windows' if unsure)
   match app-id="com.mitchellh.ghostty"
+
+  opacity 0.88
 
   background-effect {
     blur true
