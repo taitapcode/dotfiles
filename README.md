@@ -1,5 +1,7 @@
 # Niri Dotfiles
 
+![Previewed Image](preview-image.png)
+
 ## Features
 
 - **Niri Window Manager** - A modern Wayland tiling window manager
