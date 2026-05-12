@@ -355,9 +355,14 @@ window-rule {
 
   background-effect {
     blur true
-    // Optional: xray makes blur more efficient by showing the wallpaper
-    // instead of windows underneath
-    xray true
+  }
+}
+
+layer-rule {
+  match namespace="dms:frame"
+
+  background-effect {
+    xray false
   }
 }
 
