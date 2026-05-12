@@ -5,7 +5,7 @@
       "src": "https://github.com/m4xshen/autoclose.nvim"
     },
     "blink.cmp": {
-      "rev": "d3874d2a13aa19b095bdd10d37a82a8f0aa7cad3",
+      "rev": "2ef3db111181c5eef22a462aa0122349a6027f28",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "1423254f58a3407a5afd5ade0ccd901f3eecc6ba",
+      "rev": "51feb0ada33d18f3c5c71ffb46005dbf8b33bef4",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {

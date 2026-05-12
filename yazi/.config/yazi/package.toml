@@ -3,5 +3,15 @@ use = "yazi-rs/plugins:full-border"
 rev = "68f7d48"
 hash = "3996fc74044bc44144b323686f887e1"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "1db18bb"
+hash = "c8d30a70659f1b880407e61c564ab4e8"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:zoom"
+rev = "1db18bb"
+hash = "fa268cb59989a87780605fdcfb8d99a9"
+
 [flavor]
 deps = []
