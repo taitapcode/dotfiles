@@ -538,7 +538,7 @@
           "showBrightnessPercent": true,
           "showMicIcon": false,
           "showMicPercent": false,
-          "showBatteryIcon": true,
+          "showBatteryIcon": false,
           "showPrinterIcon": false,
           "showScreenSharingIcon": true
         },
