@@ -3,7 +3,7 @@
   "doNotDisturb": false,
   "doNotDisturbUntil": 0,
   "terminalOverride": "",
-  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-lyz3d2.png",
+  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-yqg6r7.jpg",
   "perMonitorWallpaper": false,
   "monitorWallpapers": {},
   "perModeWallpaper": false,
@@ -12,19 +12,15 @@
   "monitorWallpapersLight": {},
   "monitorWallpapersDark": {},
   "monitorWallpaperFillModes": {},
-  "wallpaperTransition": "fade",
+  "wallpaperTransition": "random",
   "includedTransitions": [
-    "fade",
     "wipe",
-    "disc",
     "stripes",
-    "iris bloom",
-    "pixelate",
-    "portal"
+    "iris bloom"
   ],
-  "wallpaperCyclingEnabled": false,
+  "wallpaperCyclingEnabled": true,
   "wallpaperCyclingMode": "interval",
-  "wallpaperCyclingInterval": 300,
+  "wallpaperCyclingInterval": 7200,
   "wallpaperCyclingTime": "06:00",
   "monitorCyclingSettings": {},
   "nightModeEnabled": false,
@@ -91,7 +87,7 @@
   "launcherQueryHistory": [],
   "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
-  "settingsSidebarExpandedIds": ",",
+  "settingsSidebarExpandedIds": ",dock_launcher,workspaces_widgets,",
   "settingsSidebarCollapsedIds": ",",
   "configVersion": 3
 }

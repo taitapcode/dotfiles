@@ -69,7 +69,7 @@ install_dependencies() {
     mpv
     cava
     matugen
-    dms-shell-niri
+    dms-shell-git
     sddm-astronaut-theme
     keyd
     colloid-catppuccin-theme-git
