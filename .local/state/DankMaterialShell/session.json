@@ -3,7 +3,7 @@
   "doNotDisturb": false,
   "doNotDisturbUntil": 0,
   "terminalOverride": "",
-  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-qrgvll.png",
+  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-yqg6r7.jpg",
   "perMonitorWallpaper": false,
   "monitorWallpapers": {},
   "perModeWallpaper": false,
@@ -18,7 +18,7 @@
     "stripes",
     "iris bloom"
   ],
-  "wallpaperCyclingEnabled": true,
+  "wallpaperCyclingEnabled": false,
   "wallpaperCyclingMode": "interval",
   "wallpaperCyclingInterval": 7200,
   "wallpaperCyclingTime": "06:00",
