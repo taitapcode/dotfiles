@@ -86,13 +86,22 @@
   "launcherLastMode": "all",
   "launcherLastQuery": "",
   "launcherQueryHistory": [
-    "hel",
     "dis",
-    "x"
+    "edge",
+    "? clear",
+    "x",
+    "bgrave",
+    "brave",
+    "hentaiz",
+    "gho",
+    "ki",
+    "kit",
+    "ghos",
+    "hel"
   ],
   "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
-  "settingsSidebarExpandedIds": ",dock_launcher,workspaces_widgets,",
+  "settingsSidebarExpandedIds": ",dock_launcher,workspaces_widgets,system,",
   "settingsSidebarCollapsedIds": ",",
   "configVersion": 3
 }
