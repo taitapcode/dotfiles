@@ -3,7 +3,7 @@
   "doNotDisturb": false,
   "doNotDisturbUntil": 0,
   "terminalOverride": "",
-  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-yqg6r7.jpg",
+  "wallpaperPath": "/home/tai/.local/share/wallpapers/wallhaven-qrgvll.png",
   "perMonitorWallpaper": false,
   "monitorWallpapers": {},
   "perModeWallpaper": false,
@@ -84,7 +84,10 @@
   "timeLocale": "",
   "launcherLastMode": "all",
   "launcherLastQuery": "",
-  "launcherQueryHistory": [],
+  "launcherQueryHistory": [
+    "dis",
+    "x"
+  ],
   "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
   "settingsSidebarExpandedIds": ",dock_launcher,workspaces_widgets,",
