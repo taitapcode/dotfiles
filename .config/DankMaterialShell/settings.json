@@ -679,7 +679,7 @@
   "frameShowOnOverview": true,
   "frameBlurEnabled": true,
   "frameCloseGaps": false,
-  "frameLauncherEmergeSide": "top",
+  "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": true,
   "frameMode": "connected",
   "configVersion": 11
