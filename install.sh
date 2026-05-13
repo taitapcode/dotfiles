@@ -78,6 +78,7 @@ install_dependencies() {
     libsecret
     gnome-keyring
     zed
+    discord
 
     # AUR packages
     ttf-delugia-code
