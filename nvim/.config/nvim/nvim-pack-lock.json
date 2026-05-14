@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-lspconfig.nvim": {
-      "rev": "51feb0ada33d18f3c5c71ffb46005dbf8b33bef4",
+      "rev": "eaa34887d444cb002e1b165fac399ae4bbc771f7",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -57,39 +57,39 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.ai": {
-      "rev": "7e10ce8468c0fce4f527ae2c0e5c484f7667f73d",
+      "rev": "a783ce6e1a5b3bc90519f20b51f4a5f6702734af",
       "src": "https://github.com/nvim-mini/mini.ai"
     },
     "mini.basics": {
-      "rev": "30b9d5c026965bbf6cfedc0d30ee66273f6c4084",
+      "rev": "9ad4ffe62474f5f82c88d3b745f47581c51ba592",
       "src": "https://github.com/nvim-mini/mini.basics"
     },
     "mini.completion": {
-      "rev": "667d94669be66043123cac44e7c5d65a31657732",
+      "rev": "6937ff1d7bf47ab58046c6685cc9057aa481ecb2",
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.files": {
-      "rev": "3e247eb12ca8c05622ceb8745f9004f761b22ef8",
+      "rev": "f9f0ccbef0fd24eaddc8675accca83fa1f310c3f",
       "src": "https://github.com/nvim-mini/mini.files"
     },
     "mini.icons": {
-      "rev": "bac6317300e205335df425296570d84322730067",
+      "rev": "9c7b1b90b15bdd69c52f6e31889dbc9987c30ec4",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.keymap": {
-      "rev": "dc3b688b26a810f519cdd0572a27587a138ced78",
+      "rev": "14f4cf1058bd3458d4cccd6a4587b6ebb1d43385",
       "src": "https://github.com/nvim-mini/mini.keymap"
     },
     "mini.move": {
-      "rev": "74d140143b1bb905c3d0aebcfc2f216fd237080e",
+      "rev": "a776027e68fe763987a0132d59877d651a7c0130",
       "src": "https://github.com/nvim-mini/mini.move"
     },
     "mini.snippets": {
-      "rev": "8e3acd41bd7ee8f89967c83bacc93871b98a14aa",
+      "rev": "5330cc759cc7f67ad6cc885ad509e3d989a5904e",
       "src": "https://github.com/nvim-mini/mini.snippets"
     },
     "mini.trailspace": {
-      "rev": "b362246495d18c29b4545a8f1c47f627f8011b7c",
+      "rev": "ae2fd422564c6e781caf6545355ca6051e20fa26",
       "src": "https://github.com/nvim-mini/mini.trailspace"
     },
     "nui.nvim": {
@@ -97,7 +97,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
+      "rev": "75e49cfa588a89ca667d767c0afef3ceac205faa",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
