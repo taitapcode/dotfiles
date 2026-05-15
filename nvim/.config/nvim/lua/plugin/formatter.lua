@@ -5,7 +5,7 @@ require('conform').setup({
     lua = { 'stylua' },
     python = { 'black' },
     fish = { 'fish_indent' },
-    cpp = {},
+    json = { 'prettierd' },
   },
   format_on_save = function(bufnr)
     -- Disable with a list of filetypes
@@ -17,3 +17,11 @@ require('conform').setup({
     return { timeout_ms = 500, lsp_fallback = true }
   end,
 })
+
+map({ 'n', 'v', 'i' }, '<M-s>', function()
+  require('conform').format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
+  })
+end, { desc = 'Format file or range (visual)' })

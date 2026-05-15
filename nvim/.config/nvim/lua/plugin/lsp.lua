@@ -19,6 +19,7 @@ require('mason-tool-installer').setup({
     -- Formatter
     'stylua',
     'black',
+    'prettierd',
   },
   auto_update = true,
 })
