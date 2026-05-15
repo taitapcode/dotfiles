@@ -113,3 +113,14 @@ vim.api.nvim_create_autocmd('CmdwinEnter', {
     vim.api.nvim_feedkeys(':q', 'n', false)
   end,
 })
+
+--- Enable LSP Inlay Hints
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('LspHints', { clear = true }),
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method('textDocument/inlayHint') then
+      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+    end
+  end,
+})
