@@ -362,7 +362,7 @@ window-rule {
 }
 
 layer-rule {
-  match namespace="dms:frame"
+  match namespace="dms:*"
 
   background-effect {
     xray false

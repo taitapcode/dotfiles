@@ -1,9 +1,9 @@
 {
-  "currentThemeName": "purple",
-  "currentThemeCategory": "generic",
+  "currentThemeName": "dynamic",
+  "currentThemeCategory": "dynamic",
   "customThemeFile": "",
   "registryThemeVariants": {},
-  "matugenScheme": "scheme-tonal-spot",
+  "matugenScheme": "scheme-neutral",
   "matugenContrast": 0,
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
@@ -487,7 +487,7 @@
       "id": "default",
       "name": "Main Bar",
       "enabled": true,
-      "position": 3,
+      "position": 0,
       "screenPreferences": [
         "all"
       ],
@@ -531,27 +531,40 @@
           "enabled": true
         },
         {
+          "id": "notificationButton",
+          "enabled": true
+        },
+        {
           "id": "controlCenterButton",
           "enabled": true,
           "showNetworkIcon": true,
+          "showBluetoothIcon": true,
+          "showAudioIcon": true,
           "showAudioPercent": false,
-          "showBrightnessIcon": true,
-          "showBrightnessPercent": true,
+          "showBrightnessIcon": false,
+          "showBrightnessPercent": false,
           "showMicIcon": false,
           "showMicPercent": false,
           "showBatteryIcon": false,
           "showPrinterIcon": false,
-          "showScreenSharingIcon": true
-        },
-        {
-          "id": "notificationButton",
-          "enabled": true
+          "showScreenSharingIcon": true,
+          "controlCenterGroupOrder": [
+            "screenSharing",
+            "audio",
+            "network",
+            "bluetooth",
+            "vpn",
+            "microphone",
+            "brightness",
+            "battery",
+            "printer"
+          ]
         }
       ],
       "spacing": 0,
       "innerPadding": 1,
       "bottomGap": 0,
-      "transparency": 0.9,
+      "transparency": 0.85,
       "widgetTransparency": 1,
       "squareCorners": false,
       "noBackground": true,
@@ -566,7 +579,7 @@
       "widgetOutlineColor": "surfaceText",
       "widgetOutlineOpacity": 1,
       "widgetOutlineThickness": 1,
-      "fontScale": 1,
+      "fontScale": 1.1,
       "autoHide": false,
       "autoHideDelay": 250,
       "showOnWindowsOpen": false,
@@ -669,10 +682,10 @@
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "frameEnabled": true,
-  "frameThickness": 10,
-  "frameRounding": 17,
+  "frameThickness": 2,
+  "frameRounding": 15,
   "frameColor": "",
-  "frameOpacity": 0.49,
+  "frameOpacity": 0.5,
   "frameScreenPreferences": [
     "all"
   ],

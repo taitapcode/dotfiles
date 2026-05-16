@@ -109,7 +109,7 @@
   ],
   "appDrawerLastMode": "plugins",
   "niriOverviewLastMode": "apps",
-  "settingsSidebarExpandedIds": ",dock_launcher,workspaces_widgets,system,",
-  "settingsSidebarCollapsedIds": ",",
+  "settingsSidebarExpandedIds": ",dock_launcher,system,",
+  "settingsSidebarCollapsedIds": ",workspaces_widgets,",
   "configVersion": 3
 }
