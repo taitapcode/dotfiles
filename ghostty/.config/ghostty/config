@@ -6,3 +6,5 @@ keybind = ctrl+enter=unbind
 font-synthetic-style = bold-italic
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
+# background-opacity = 0.9
+# background-blur = true
