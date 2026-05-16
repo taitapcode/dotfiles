@@ -353,7 +353,7 @@ window-rule {
 window-rule {
   match app-id="com.mitchellh.ghostty"
 
-  opacity 0.88
+  opacity 0.9
 
   background-effect {
     blur true
