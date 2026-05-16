@@ -1,9 +1,9 @@
-_G.map = function(mode, lhs, rhs, opts)
+_G.map = function(mode, keybind, command, opts)
   local options = { noremap = true, silent = true }
   if opts then
     options = vim.tbl_extend('force', options, opts)
   end
-  vim.keymap.set(mode, lhs, rhs, options)
+  vim.keymap.set(mode, keybind, command, options)
 end
 
 -- Paste without replacing your clipboard with the deleted text

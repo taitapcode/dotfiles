@@ -7,3 +7,4 @@ AllowShortIfStatementsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
 PointerAlignment: Left
+AccessModifierOffset: -2
