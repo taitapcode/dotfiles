@@ -40,5 +40,4 @@ alias mux='tmuxinator'
 # Others
 alias pm='sudo pacman'
 alias cl='clear'
-alias oc='opencode'
 alias v='nvim'
