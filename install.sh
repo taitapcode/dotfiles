@@ -73,19 +73,19 @@ install_dependencies() {
     sddm-astronaut-theme
     keyd
     colloid-catppuccin-theme-git
-    helium-browser-bin
     xwayland-satellite
     libsecret
     gnome-keyring
     zed
     discord
+    libreoffice-fresh
 
     # AUR packages
     ttf-delugia-code
     power-profiles-daemon
     fcitx5-lotus-bin
     banana-cursor-bin
-    onlyoffice-bin
+    brave-origin-nightly-bin
   )
   install_pkgs "${deps[@]}"
 }
