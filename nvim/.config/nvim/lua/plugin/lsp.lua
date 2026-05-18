@@ -15,6 +15,7 @@ require('mason-tool-installer').setup({
     'clangd',
     'basedpyright',
     'bash-language-server',
+    'copilot-language-server',
 
     -- Formatter
     'stylua',
