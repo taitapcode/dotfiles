@@ -4,6 +4,10 @@
       "rev": "bafd0368716216fa6a7bb2a43ecd889b44efdb46",
       "src": "https://github.com/m4xshen/autoclose.nvim"
     },
+    "blink-copilot": {
+      "rev": "7ad8209b2f880a2840c94cdcd80ab4dc511d4f39",
+      "src": "https://github.com/fang2hou/blink-copilot"
+    },
     "blink.cmp": {
       "rev": "2ef3db111181c5eef22a462aa0122349a6027f28",
       "src": "https://github.com/saghen/blink.cmp"
@@ -53,7 +57,7 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "8e921c2b68571e978db5d4d3fef9c9a7f8755473",
+      "rev": "cbf8d285e1462dd24acf3507817be2bbcb035919",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.ai": {
@@ -61,7 +65,7 @@
       "src": "https://github.com/nvim-mini/mini.ai"
     },
     "mini.basics": {
-      "rev": "9ad4ffe62474f5f82c88d3b745f47581c51ba592",
+      "rev": "69d3f97431788b27df5edf90e9922ba4af38f990",
       "src": "https://github.com/nvim-mini/mini.basics"
     },
     "mini.completion": {
@@ -97,7 +101,7 @@
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "3de240997fc3208eb29df5e5c17ba4665961bd84",
+      "rev": "246572944c2a1e2a646c2e7609ff619b0fe74c18",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
