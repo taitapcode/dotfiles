@@ -16,11 +16,13 @@ require('mason-tool-installer').setup({
     'basedpyright',
     'bash-language-server',
     'copilot-language-server',
+    'texlab',
 
     -- Formatter
     'stylua',
     'black',
     'prettierd',
+    'tex-fmt',
   },
   auto_update = true,
 })

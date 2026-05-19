@@ -6,6 +6,8 @@ require('conform').setup({
     python = { 'black' },
     fish = { 'fish_indent' },
     json = { 'prettierd' },
+    jsonc = { 'prettierd' },
+    tex = { 'tex-fmt' },
   },
   format_on_save = {
     timeout_ms = 500,
