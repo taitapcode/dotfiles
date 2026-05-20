@@ -49,7 +49,7 @@
     "brave-origin-nightly",
     "com.mitchellh.ghostty",
     "org.gnome.Nautilus",
-    "discord",
+    "vesktop",
     "dev.zed.Zed",
     "Godot"
   ],
@@ -84,8 +84,10 @@
   "locale": "",
   "timeLocale": "",
   "launcherLastMode": "all",
-  "launcherLastQuery": "",
+  "launcherLastQuery": "venc",
   "launcherQueryHistory": [
+    "venc",
+    "ven",
     "go",
     "wa",
     "br",

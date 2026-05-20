@@ -11,9 +11,9 @@ install_pkgs() {
     return 2
   fi
 
-  # Ensure paru exists
-  command -v paru >/dev/null 2>&1 || {
-    echo "Error: paru not found on PATH." >&2
+  # Ensure yay exists
+  command -v yay >/dev/null 2>&1 || {
+    echo "Error: yay not found on PATH." >&2
     return 127
   }
 
@@ -35,7 +35,7 @@ install_pkgs() {
   local -a opts=(--needed --noconfirm)
 
   echo "Installing: ${missing[*]}"
-  paru -Sy "${opts[@]}" "${missing[@]}"
+  yay -Sy "${opts[@]}" "${missing[@]}"
 }
 
 install_chaoticaur_and_AUR_helper() {
@@ -47,7 +47,7 @@ install_chaoticaur_and_AUR_helper() {
   if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
     echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
   fi
-  sudo pacman -Sy paru --needed --noconfirm
+  sudo pacman -Sy yay --needed --noconfirm
 }
 
 install_dependencies() {
@@ -77,7 +77,7 @@ install_dependencies() {
     libsecret
     gnome-keyring
     zed
-    discord
+    vesktop
     libreoffice-fresh
     godot
 
@@ -103,10 +103,6 @@ clone_niri_dotfiles() {
 apply_lotus_config() {
   sudo systemctl enable --now fcitx5-lotus-server@$(whoami).service ||
     (sudo systemd-sysusers && sudo systemctl enable --now fcitx5-lotus-server@$(whoami).service)
-}
-
-config_skip_review_paru() {
-  echo "SkipReview" | sudo tee -a /etc/paru.conf
 }
 
 config_git() {
@@ -185,7 +181,6 @@ main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
   apply_lotus_config
-  config_skip_review_paru
   config_git
   apply_grub_config
   apply_sddm_config
