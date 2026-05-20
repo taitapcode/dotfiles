@@ -280,6 +280,8 @@ spawn-sh-at-startup "fcitx5 -d"
 // Environment variables
 environment {
   QT_QPA_PLATFORMTHEME "gtk3"
+  xcursor-theme "Banana"
+  xcursor-size "45"
 }
 
 xwayland-satellite {

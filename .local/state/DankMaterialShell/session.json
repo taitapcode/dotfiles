@@ -50,6 +50,7 @@
     "com.mitchellh.ghostty",
     "org.gnome.Nautilus",
     "vesktop",
+    "org.pwmt.zathura",
     "dev.zed.Zed",
     "Godot"
   ],
@@ -84,10 +85,10 @@
   "locale": "",
   "timeLocale": "",
   "launcherLastMode": "all",
-  "launcherLastQuery": "za",
+  "launcherLastQuery": "",
   "launcherQueryHistory": [
-    "za",
     "z",
+    "za",
     "venc",
     "ven",
     "go",
