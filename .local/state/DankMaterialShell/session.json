@@ -50,7 +50,8 @@
     "com.mitchellh.ghostty",
     "org.gnome.Nautilus",
     "discord",
-    "dev.zed.Zed"
+    "dev.zed.Zed",
+    "Godot"
   ],
   "barPinnedApps": [],
   "dockLauncherPosition": 0,
@@ -76,7 +77,7 @@
   "appOverrides": {},
   "searchAppActions": true,
   "vpnLastConnected": "",
-  "lastPlayerIdentity": "Helium",
+  "lastPlayerIdentity": "Brave Origin",
   "deviceMaxVolumes": {},
   "hiddenOutputDeviceNames": [],
   "hiddenInputDeviceNames": [],
@@ -85,10 +86,11 @@
   "launcherLastMode": "all",
   "launcherLastQuery": "",
   "launcherQueryHistory": [
+    "go",
+    "wa",
     "br",
     "w",
     "bing",
-    "wa",
     "local",
     "brave",
     "libre",

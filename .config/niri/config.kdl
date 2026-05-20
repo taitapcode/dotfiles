@@ -121,7 +121,7 @@ layout {
   // - "always", the focused column will always be centered.
   // - "on-overflow", focusing a column will center it if it doesn't fit
   //   together with the previously focused column.
-  center-focused-column "always"
+  center-focused-column "never"
 
   // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
   preset-column-widths {
@@ -333,7 +333,7 @@ window-rule {
   // This app-id regular expression will work for both:
   // - host Firefox (app-id is "firefox")
   // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  match app-id=r#"brave-origin-nightly$"# title="^Picture-in-Picture$"
   open-floating true
 }
 
@@ -382,7 +382,7 @@ window-rule {
     // Note: it'll look better to set background opacity
     // through your GTK theme CSS and not here.
     // This is just an example that makes it look obvious.
-    opacity 0.6
+    opacity 0.8
 
     background-effect {
       blur true

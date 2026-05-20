@@ -79,6 +79,7 @@ install_dependencies() {
     zed
     discord
     libreoffice-fresh
+    godot
 
     # AUR packages
     ttf-delugia-code
