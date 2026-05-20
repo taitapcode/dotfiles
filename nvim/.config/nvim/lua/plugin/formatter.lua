@@ -17,7 +17,7 @@ require('conform').setup({
 
 map({ 'n', 'v', 'i' }, '<M-s>', function()
   require('conform').format({
-    lsp_fallback = true,
+    lsp_fallback = 'fallback',
     async = false,
     timeout_ms = 500,
   })

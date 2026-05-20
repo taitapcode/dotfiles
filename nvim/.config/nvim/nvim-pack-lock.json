@@ -9,7 +9,7 @@
       "src": "https://github.com/fang2hou/blink-copilot"
     },
     "blink.cmp": {
-      "rev": "2ef3db111181c5eef22a462aa0122349a6027f28",
+      "rev": "35e3923a09ff3db150ceff80004befcbbfa071a0",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.lib": {
@@ -69,15 +69,15 @@
       "src": "https://github.com/nvim-mini/mini.basics"
     },
     "mini.completion": {
-      "rev": "6937ff1d7bf47ab58046c6685cc9057aa481ecb2",
+      "rev": "04abe6fc7860858785ba63c435d76bf5b8b64b5f",
       "src": "https://github.com/nvim-mini/mini.completion"
     },
     "mini.files": {
-      "rev": "5e0f0d264166e71d37ca35d84c54b1887ea76b40",
+      "rev": "423d6b5afb7a94e658950d470957f830d43dd41e",
       "src": "https://github.com/nvim-mini/mini.files"
     },
     "mini.icons": {
-      "rev": "9c7b1b90b15bdd69c52f6e31889dbc9987c30ec4",
+      "rev": "520995f1d75da0e4cc901ee95080b1ff2bc46b94",
       "src": "https://github.com/nvim-mini/mini.icons"
     },
     "mini.keymap": {
@@ -89,11 +89,11 @@
       "src": "https://github.com/nvim-mini/mini.move"
     },
     "mini.snippets": {
-      "rev": "5330cc759cc7f67ad6cc885ad509e3d989a5904e",
+      "rev": "9a08aa14e02abb790c823a622d7d6c736cbbe65a",
       "src": "https://github.com/nvim-mini/mini.snippets"
     },
     "mini.trailspace": {
-      "rev": "ae2fd422564c6e781caf6545355ca6051e20fa26",
+      "rev": "22653218f1aedc9bf306c8b4e8ec2c8a575f6fae",
       "src": "https://github.com/nvim-mini/mini.trailspace"
     },
     "nui.nvim": {
