@@ -58,7 +58,7 @@
   "blurBorderOpacity": 0.35,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
-  "blurWallpaperOnOverview": false,
+  "blurWallpaperOnOverview": true,
   "showLauncherButton": true,
   "showWorkspaceSwitcher": true,
   "showFocusedWindow": true,
@@ -178,6 +178,7 @@
   "audioWheelScrollAmount": 5,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
+  "focusedWindowSize": 1,
   "runningAppsCompactMode": true,
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
@@ -699,7 +700,6 @@
   "frameCloseGaps": false,
   "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": true,
-  "frameUseSpotlightLauncher": false,
   "frameMode": "connected",
   "configVersion": 11
 }
