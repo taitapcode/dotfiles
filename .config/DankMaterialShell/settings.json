@@ -225,6 +225,7 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "rememberLastQuery": false,
+  "rememberLastMode": true,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -240,6 +241,7 @@
   "dankLauncherV2IncludeFoldersInAll": false,
   "launcherUseOverlayLayer": false,
   "launcherStyle": "full",
+  "spotlightBarShowModeChips": false,
   "useAutoLocation": false,
   "weatherEnabled": false,
   "networkPreference": "wifi",
@@ -331,7 +333,7 @@
   "matugenTemplateVesktop": false,
   "matugenTemplateVencord": false,
   "matugenTemplateEquibop": false,
-  "matugenTemplateGhostty": true,
+  "matugenTemplateGhostty": false,
   "matugenTemplateKitty": false,
   "matugenTemplateFoot": false,
   "matugenTemplateAlacritty": false,
