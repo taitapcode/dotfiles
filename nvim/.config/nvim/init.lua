@@ -1,20 +1,22 @@
-local core_modules = { 'options', 'keymaps', 'autocmds', 'cmds' }
-for _, mod in ipairs(core_modules) do
-  local ok, err = pcall(require, 'config.' .. mod)
-  if not ok then
-    vim.notify('Error loading config.' .. mod .. '\n' .. err, vim.log.levels.ERROR)
-  end
-end
+local config_root = vim.fn.stdpath('config')
 
-local plugin_dir = vim.fn.stdpath('config') .. '/lua/plugin'
-if vim.fn.isdirectory(plugin_dir) == 1 then
-  for _, file in ipairs(vim.fn.readdir(plugin_dir)) do
-    if file:match('%.lua$') then
-      local mod_name = 'plugin.' .. file:gsub('%.lua$', '')
-      local ok, err = pcall(require, mod_name)
-      if not ok then
-        vim.notify('Error in ' .. file .. ':\n' .. err, vim.log.levels.ERROR)
+local function load_dir(path)
+  local target_dir = config_root .. '/lua/' .. path
+  local module_prefix = path:gsub('/', '.') .. '.'
+
+  if vim.fn.isdirectory(target_dir) == 1 then
+    for _, file in ipairs(vim.fn.readdir(target_dir)) do
+      if file:match('%.lua$') then
+        local mod_name = module_prefix .. file:gsub('%.lua$', '')
+        local ok, err = pcall(require, mod_name)
+        if not ok then
+          vim.notify('Error loading ' .. mod_name .. ':\n' .. err, vim.log.levels.ERROR)
+        end
       end
     end
   end
 end
+
+load_dir('config/helper')
+load_dir('config')
+load_dir('plugin')

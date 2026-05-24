@@ -29,19 +29,19 @@ require('bufferline').setup({
   },
 })
 
-map('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
-map('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = 'Delete Non-Pinned Buffers' })
-map('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = 'Delete Buffers to the Right' })
-map('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = 'Delete Buffers to the Left' })
-map('n', '<leader>bj', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
+MAP('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
+MAP('n', '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', { desc = 'Delete Non-Pinned Buffers' })
+MAP('n', '<leader>br', '<Cmd>BufferLineCloseRight<CR>', { desc = 'Delete Buffers to the Right' })
+MAP('n', '<leader>bl', '<Cmd>BufferLineCloseLeft<CR>', { desc = 'Delete Buffers to the Left' })
+MAP('n', '<leader>bj', '<cmd>BufferLinePick<cr>', { desc = 'Pick Buffer' })
 
-map('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
-map('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
+MAP('n', '<S-h>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
+MAP('n', '<S-l>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 
-map('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
-map('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
-map('n', '[B', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer prev' })
-map('n', ']B', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer next' })
+MAP('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Prev Buffer' })
+MAP('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
+MAP('n', '[B', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer prev' })
+MAP('n', ']B', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer next' })
 
 -- Fixes bufferline UI when restoring a session or handling bulk buffer changes
 vim.api.nvim_create_autocmd({ 'BufAdd', 'BufDelete' }, {

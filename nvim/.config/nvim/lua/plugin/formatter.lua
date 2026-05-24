@@ -15,7 +15,7 @@ require('conform').setup({
   },
 })
 
-map({ 'n', 'v', 'i' }, '<M-s>', function()
+MAP({ 'n', 'v', 'i' }, '<M-s>', function()
   require('conform').format({
     lsp_fallback = 'fallback',
     async = false,

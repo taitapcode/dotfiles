@@ -16,10 +16,10 @@ flash.setup({
   },
 })
 
-map({ 'n', 'x', 'o' }, '<M-f>', function()
+MAP({ 'n', 'x', 'o' }, '<M-f>', function()
   flash.jump()
 end, { desc = 'Flash jump' })
 
-map({ 'n', 'x', 'o' }, '<M-F>', function()
+MAP({ 'n', 'x', 'o' }, '<M-F>', function()
   flash.treesitter()
 end, { desc = 'Flash jump' })

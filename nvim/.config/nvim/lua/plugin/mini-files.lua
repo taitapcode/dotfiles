@@ -36,7 +36,7 @@ require('mini.files').setup({
   },
 })
 
-map('n', '<leader>e', function()
+MAP('n', '<leader>e', function()
   MiniFiles.open(vim.api.nvim_buf_get_name(0), true)
 end, { desc = 'Open mini.files' })
-map('n', '<Esc>', MiniFiles.close, { desc = 'Close mini.files' })
+MAP('n', '<Esc>', MiniFiles.close, { desc = 'Close mini.files' })

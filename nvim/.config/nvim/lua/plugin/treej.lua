@@ -4,4 +4,4 @@ require('treesj').setup({
   max_join_length = 200,
 })
 
-map('n', '<leader>m', require('treesj').toggle)
+MAP('n', '<leader>m', require('treesj').toggle)

@@ -23,12 +23,12 @@ require('competitest').setup({
   },
 })
 
-map('n', '<leader>ta', '<cmd>CompetiTest add_testcase<cr>', { desc = 'Add Testcase' })
-map('n', '<leader>tr', '<cmd>CompetiTest run<cr>', { desc = 'Run Testcases' })
-map('n', '<leader>to', '<cmd>CompetiTest show_ui<cr>', { desc = 'Show UI' })
+MAP('n', '<leader>ta', '<cmd>CompetiTest add_testcase<cr>', { desc = 'Add Testcase' })
+MAP('n', '<leader>tr', '<cmd>CompetiTest run<cr>', { desc = 'Run Testcases' })
+MAP('n', '<leader>to', '<cmd>CompetiTest show_ui<cr>', { desc = 'Show UI' })
 
 -- Loop for Edit and Delete
 for i = 0, 9 do
-  map('n', '<leader>te' .. i, '<cmd>CompetiTest edit_testcase ' .. i .. '<cr>', { desc = 'Edit testcase ' .. i })
-  map('n', '<leader>td' .. i, '<cmd>CompetiTest delete_testcase ' .. i .. '<cr>', { desc = 'Delete testcase ' .. i })
+  MAP('n', '<leader>te' .. i, '<cmd>CompetiTest edit_testcase ' .. i .. '<cr>', { desc = 'Edit testcase ' .. i })
+  MAP('n', '<leader>td' .. i, '<cmd>CompetiTest delete_testcase ' .. i .. '<cr>', { desc = 'Delete testcase ' .. i })
 end

@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     -- Helper to avoid repeating the buffer ID and 'LSP' description
     local function lsp_map(lhs, rhs, desc)
-      map('n', lhs, rhs, { buffer = args.buf, desc = 'LSP: ' .. desc })
+      MAP('n', lhs, rhs, { buffer = args.buf, desc = 'LSP: ' .. desc })
     end
 
     -- Navigation & Definitions
