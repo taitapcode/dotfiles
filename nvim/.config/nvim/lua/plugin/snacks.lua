@@ -79,7 +79,7 @@ MAP('n', '<leader>fp', function()
   Snacks.picker.projects()
 end, { desc = 'Projects' })
 MAP('n', '<leader>fr', function()
-  Snacks.picker.recent()
+  Snacks.picker.recent({ layout = { preset = 'ivy' } })
 end, { desc = 'Recent' })
 
 -- Git
