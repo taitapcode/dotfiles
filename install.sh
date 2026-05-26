@@ -11,9 +11,9 @@ install_pkgs() {
     return 2
   fi
 
-  # Ensure yay exists
-  command -v yay >/dev/null 2>&1 || {
-    echo "Error: yay not found on PATH." >&2
+  # Ensure paru exists
+  command -v paru >/dev/null 2>&1 || {
+    echo "Error: paru not found on PATH." >&2
     return 127
   }
 
@@ -35,7 +35,7 @@ install_pkgs() {
   local -a opts=(--needed --noconfirm)
 
   echo "Installing: ${missing[*]}"
-  yay -Sy "${opts[@]}" "${missing[@]}"
+  paru -Sy "${opts[@]}" "${missing[@]}"
 }
 
 install_chaoticaur_and_AUR_helper() {
@@ -47,7 +47,7 @@ install_chaoticaur_and_AUR_helper() {
   if ! grep -q "\[chaotic-aur\]" /etc/pacman.conf; then
     echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
   fi
-  sudo pacman -Sy yay --needed --noconfirm
+  sudo pacman -Sy paru --needed --noconfirm
 }
 
 install_dependencies() {

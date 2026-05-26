@@ -1,60 +1,12 @@
 {
   "appUsageRanking": {
-    "com.mitchellh.ghostty": {
-      "name": "Ghostty",
-      "exec": "",
-      "icon": "com.mitchellh.ghostty",
-      "comment": "A terminal emulator",
-      "usageCount": 4,
-      "lastUsed": 1779539322188
-    },
-    "brave-origin-nightly": {
-      "name": "Brave Origin (nightly)",
-      "exec": "",
-      "icon": "brave-origin-nightly",
+    "microsoft-edge": {
+      "name": "Microsoft Edge",
+      "exec": "/usr/bin/microsoft-edge-stable %U",
+      "icon": "microsoft-edge",
       "comment": "Access the Internet",
       "usageCount": 2,
-      "lastUsed": 1779531285172
-    },
-    "localsend": {
-      "name": "LocalSend",
-      "exec": "localsend",
-      "icon": "localsend",
-      "comment": "An open source cross-platform alternative to AirDrop",
-      "usageCount": 3,
-      "lastUsed": 1779531510409
-    },
-    "org.pwmt.zathura": {
-      "name": "Zathura",
-      "exec": "",
-      "icon": "org.pwmt.zathura",
-      "comment": "Minimalistic document viewer",
-      "usageCount": 1,
-      "lastUsed": 1779538513478
-    },
-    "vesktop": {
-      "name": "Vesktop",
-      "exec": "",
-      "icon": "vesktop",
-      "comment": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support. Vencord comes pre-installed",
-      "usageCount": 2,
-      "lastUsed": 1779538646065
-    },
-    "com.ayugram.desktop": {
-      "name": "AyuGram Desktop",
-      "exec": "env DESKTOPINTEGRATION=1 AyuGram -- %U",
-      "icon": "com.ayugram.desktop",
-      "comment": "Desktop version of AyuGram - ToS breaking Telegram client",
-      "usageCount": 2,
-      "lastUsed": 1779539006283
-    },
-    "org.telegram.desktop": {
-      "name": "Telegram",
-      "exec": "Telegram -- %U",
-      "icon": "org.telegram.desktop",
-      "comment": "New era of messaging",
-      "usageCount": 1,
-      "lastUsed": 1779539083157
+      "lastUsed": 1779719430227
     }
   }
 }

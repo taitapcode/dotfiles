@@ -1,5 +1,9 @@
 {
   "dankBatteryAlerts": {
     "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
   }
 }

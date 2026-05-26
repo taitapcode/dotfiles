@@ -16,5 +16,5 @@
 Run the install script to set up the entire environment:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/taitapcode/dotfiles/niri/install.sh | bash
+bash <(curl -fsSL https://raw.githubusercontent.com/taitapcode/dotfiles/niri/install.sh)
 ```
