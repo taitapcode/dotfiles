@@ -9,5 +9,5 @@ mouse-scroll-multiplier = 2
 # background-opacity = 0.9
 # background-blur = true
 
-custom-shader = shader/cursor_warp.glsl
-custom-shader = shader/ripple_cursor.glsl
+# custom-shader = shader/cursor_warp.glsl
+# custom-shader = shader/ripple_cursor.glsl
