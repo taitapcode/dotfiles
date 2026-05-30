@@ -16,6 +16,7 @@ require('bufferline').setup({
     diagnostics = 'nvim_lsp',
     always_show_bufferline = false,
     -- separator_style = 'slant',
+    indicator = { style = 'underline' },
 
     diagnostics_indicator = function(_, _, diag)
       local icons = {
@@ -27,6 +28,19 @@ require('bufferline').setup({
       return vim.trim(ret)
     end,
   },
+})
+
+-- Fixes bufferline UI when restoring a session or handling bulk buffer changes
+vim.api.nvim_create_autocmd({ 'BufAdd', 'BufDelete' }, {
+  callback = function()
+    vim.schedule(function()
+      pcall(function()
+        if vim.api.nvim_get_vvar('exiting') == vim.NIL then
+          require('bufferline').refresh()
+        end
+      end)
+    end)
+  end,
 })
 
 MAP('n', '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', { desc = 'Toggle Pin' })
@@ -43,15 +57,9 @@ MAP('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next Buffer' })
 MAP('n', '[B', '<cmd>BufferLineMovePrev<cr>', { desc = 'Move buffer prev' })
 MAP('n', ']B', '<cmd>BufferLineMoveNext<cr>', { desc = 'Move buffer next' })
 
--- Fixes bufferline UI when restoring a session or handling bulk buffer changes
-vim.api.nvim_create_autocmd({ 'BufAdd', 'BufDelete' }, {
-  callback = function()
-    vim.schedule(function()
-      pcall(function()
-        if vim.api.nvim_get_vvar('exiting') == vim.NIL then
-          require('bufferline').refresh()
-        end
-      end)
-    end)
-  end,
-})
+for i = 1, 9 do
+  MAP('n', string.format('<A-%d>', i), string.format('<cmd>BufferLineGoToBuffer %d<cr>', i), {
+    desc = string.format('Go to buffer %d', i),
+    silent = true,
+  })
+end
