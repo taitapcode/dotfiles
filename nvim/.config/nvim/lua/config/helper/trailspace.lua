@@ -1,13 +1,5 @@
 local trail_group = vim.api.nvim_create_augroup('TrailspaceHelperFixed', { clear = true })
 
--- 1. Setup the highlight color group explicitly
-local function setup_colors()
-  vim.api.nvim_set_hl(0, 'CustomTrailspace', {
-    default = false,
-    bg = '#f38ba8',
-  })
-end
-
 -- Helper to safely locate our custom match ID
 local function get_match_id()
   for _, match in ipairs(vim.fn.getmatches()) do
@@ -17,7 +9,7 @@ local function get_match_id()
   end
 end
 
--- 2. Refined Highlight Logic
+-- Refined Highlight Logic
 local function highlight_trailspace()
   -- Target only normal, editable files
   local buftype = vim.bo.buftype
@@ -34,7 +26,7 @@ local function highlight_trailspace()
   end
 end
 
--- 3. Trim Logic (Both spaces and trailing blank lines)
+-- Trim Logic (Both spaces and trailing blank lines)
 local function trim_trailspace()
   if vim.bo.buftype ~= '' then
     return
@@ -54,7 +46,7 @@ local function trim_trailspace()
   vim.fn.winrestview(view)
 end
 
--- 4. Event Hooks
+-- Event Hooks
 vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter', 'InsertLeave', 'TextChanged' }, {
   group = trail_group,
   callback = highlight_trailspace,
@@ -72,8 +64,13 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = trim_trailspace,
 })
 
--- Ensure colors don't break when you swap themes out at runtime
+-- Setup the highlight color group explicitly
 vim.api.nvim_create_autocmd('ColorScheme', {
   group = trail_group,
-  callback = setup_colors,
+  callback = function()
+    vim.api.nvim_set_hl(0, 'CustomTrailspace', {
+      default = false,
+      bg = '#f38ba8',
+    })
+  end,
 })

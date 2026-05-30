@@ -2,9 +2,9 @@ vim.pack.add({ 'https://github.com/akinsho/bufferline.nvim' })
 
 require('bufferline').setup({
   options = {
-    show_buffer_icons = true,
     show_close_icon = false,
-    show_buffer_close_icons = true,
+    show_buffer_icons = true,
+    show_buffer_close_icons = false,
 
     close_command = function(n)
       Snacks.bufdelete(n)
@@ -15,7 +15,7 @@ require('bufferline').setup({
 
     diagnostics = 'nvim_lsp',
     always_show_bufferline = false,
-    -- separator_style = 'slant',
+    separator_style = 'slant',
     indicator = { style = 'underline' },
 
     diagnostics_indicator = function(_, _, diag)
