@@ -7,14 +7,14 @@ if gdproject then
 end
 
 -- Highlight yank
--- vim.api.nvim_create_autocmd('TextYankPost', {
---   group = vim.api.nvim_create_augroup('highlight_yank', { clear = true }),
---   pattern = '*',
---   desc = 'highlight selection on yank',
---   callback = function()
---     vim.highlight.on_yank({ timeout = 200, visual = true })
---   end,
--- })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('HighlightYank', { clear = true }),
+  pattern = '*',
+  desc = 'highlight selection on yank',
+  callback = function()
+    vim.hl.on_yank({ timeout = 200, visual = true })
+  end,
+})
 
 -- Restore cursor to file position in previous editing session
 vim.api.nvim_create_autocmd('BufReadPost', {
@@ -123,4 +123,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
     end
   end,
+})
+
+-- Start terminal in Insert mode
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('TerminalInsert', { clear = true }),
+  pattern = 'term://*',
+  callback = vim.schedule_wrap(function(data)
+    if vim.api.nvim_get_current_buf() == data.buf and vim.bo.buftype == 'terminal' then
+      vim.cmd('startinsert')
+    end
+  end),
+  desc = 'Start terminal in Insert mode',
 })

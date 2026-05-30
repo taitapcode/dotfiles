@@ -163,3 +163,32 @@ MAP = function(mode, keybind, command, opts)
   end
   vim.keymap.set(mode, keybind, command, options)
 end
+
+--- Options toggle mapping helper using the '\' prefix
+---@param suffix string The key following the '\' prefix
+---@param command string|function The command or callback function to execute
+---@param desc string Documentation description
+MAP_TOGGLE = function(suffix, command, desc)
+  local toggle_prefix = [[\]]
+  MAP('n', toggle_prefix .. suffix, command, { desc = desc })
+end
+
+local cache_empty_line = {}
+--- Background implementation for dot-repeatable empty line insertion
+KEYMAP_PUT_EMPTY_LINE = function(put_above)
+  if type(put_above) == 'boolean' then
+    vim.o.operatorfunc = 'v:lua.KEYMAP_PUT_EMPTY_LINE'
+    cache_empty_line = { put_above = put_above }
+    return 'g@l'
+  end
+  local target_line = vim.fn.line('.') - (cache_empty_line.put_above and 1 or 0)
+  vim.fn.append(target_line, vim.fn['repeat']({ '' }, vim.v.count1))
+end
+
+--- Background implementation for target buffer diagnostic status swapping
+KEYMAP_TOGGLE_DIAGNOSTIC = function()
+  local buf_id = vim.api.nvim_get_current_buf()
+  local is_enabled = vim.diagnostic.is_enabled({ bufnr = buf_id })
+  vim.diagnostic.enable(not is_enabled, { bufnr = buf_id })
+  print(not is_enabled and '  diagnostic' or 'nodiagnostic')
+end

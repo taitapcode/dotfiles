@@ -27,7 +27,7 @@ end, {
 })
 
 -- Remove specified packages from the system
-vim.api.nvim_create_user_command('PackDelete', function(info)
+vim.api.nvim_create_user_command('PackRemove', function(info)
   vim.pack.del(info.fargs, { force = info.bang })
 end, {
   desc = 'Delete packages',

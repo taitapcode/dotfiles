@@ -6,7 +6,7 @@ vim.pack.add({
 })
 
 local cmp = require('blink.cmp')
-cmp.build():wait(60000)
+cmp.build():pwait()
 
 cmp.setup({
   sources = {

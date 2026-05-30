@@ -22,4 +22,32 @@ vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldenable = false
 
+vim.opt.undofile = true
+vim.opt.backup = false
+vim.opt.writebackup = false
+vim.opt.mouse = 'a'
+vim.cmd('filetype plugin indent on')
+
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.ruler = false
+vim.opt.showmode = false
+vim.opt.fillchars = 'eob: '
+vim.opt.shortmess:append('WcC')
+vim.opt.splitkeep = 'screen'
+
+-- Extra UI adjustments
+vim.opt.pumblend = 10
+vim.opt.pumheight = 10
+vim.opt.winblend = 10
+vim.opt.listchars = 'tab:> ,extends:…,precedes:…,nbsp:␣'
+vim.opt.list = true
+
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+vim.opt.infercase = true
+vim.opt.smartcase = true
+vim.opt.virtualedit = 'block'
+vim.opt.formatoptions = 'qjl1'
+
 require('vim._core.ui2').enable()
