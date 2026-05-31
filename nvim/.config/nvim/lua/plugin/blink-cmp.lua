@@ -21,9 +21,18 @@ cmp.setup({
   },
   completion = {
     documentation = { auto_show = true },
+    list = {
+      selection = {
+        preselect = false,
+      },
+    },
+    ghost_text = {
+      enabled = true,
+      show_with_menu = true,
+    },
   },
   keymap = {
-    preset = 'enter',
+    ['<CR>'] = { 'accept', 'fallback' },
     ['<Tab>'] = { 'select_next', 'snippet_forward', 'fallback' },
     ['<S-Tab>'] = { 'select_prev', 'snippet_backward', 'fallback' },
   },
