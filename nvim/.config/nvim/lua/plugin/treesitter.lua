@@ -33,6 +33,7 @@ local ensureInstalled = {
   'xml',
   'yaml',
   'cpp',
+  'latex',
 }
 
 local alreadyInstalled = require('nvim-treesitter.config').get_installed()
