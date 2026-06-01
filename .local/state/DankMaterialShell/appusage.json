@@ -1,0 +1,68 @@
+{
+  "appUsageRanking": {
+    "microsoft-edge": {
+      "name": "Microsoft Edge",
+      "exec": "/usr/bin/microsoft-edge-stable %U",
+      "icon": "microsoft-edge",
+      "comment": "Access the Internet",
+      "usageCount": 3,
+      "lastUsed": 1779847265094
+    },
+    "steam": {
+      "name": "Steam",
+      "exec": "/usr/bin/steam %U",
+      "icon": "steam",
+      "comment": "Application for managing and playing games on Steam",
+      "usageCount": 19,
+      "lastUsed": 1780279791951
+    },
+    "brave-origin-nightly": {
+      "name": "Brave Origin (nightly)",
+      "exec": "",
+      "icon": "brave-origin-nightly",
+      "comment": "Access the Internet",
+      "usageCount": 8,
+      "lastUsed": 1780230254987
+    },
+    "com.mitchellh.ghostty": {
+      "name": "Ghostty",
+      "exec": "",
+      "icon": "com.mitchellh.ghostty",
+      "comment": "A terminal emulator",
+      "usageCount": 6,
+      "lastUsed": 1780230223943
+    },
+    "vesktop": {
+      "name": "Vesktop",
+      "exec": "",
+      "icon": "vesktop",
+      "comment": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support. Vencord comes pre-installed",
+      "usageCount": 4,
+      "lastUsed": 1780232995414
+    },
+    "Godot": {
+      "name": "Godot Engine",
+      "exec": "",
+      "icon": "godot",
+      "comment": "Multi-platform 2D and 3D game engine with a feature-rich editor",
+      "usageCount": 1,
+      "lastUsed": 1780070314486
+    },
+    "blender": {
+      "name": "Blender",
+      "exec": "blender %f",
+      "icon": "blender",
+      "comment": "3D modeling, animation, rendering and post-production",
+      "usageCount": 1,
+      "lastUsed": 1780308351540
+    },
+    "com.obsproject.Studio": {
+      "name": "OBS Studio",
+      "exec": "obs",
+      "icon": "com.obsproject.Studio",
+      "comment": "Free and Open Source Streaming/Recording Software",
+      "usageCount": 1,
+      "lastUsed": 1780308544334
+    }
+  }
+}
