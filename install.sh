@@ -80,8 +80,6 @@ install_dependencies() {
     vesktop
     libreoffice-fresh
     godot
-    zathura
-    zathura-pdf-mupdf
 
     # AUR packages
     ttf-delugia-code
