@@ -21,24 +21,24 @@
       "exec": "",
       "icon": "brave-origin-nightly",
       "comment": "Access the Internet",
-      "usageCount": 8,
-      "lastUsed": 1780230254987
+      "usageCount": 9,
+      "lastUsed": 1780322022342
     },
     "com.mitchellh.ghostty": {
       "name": "Ghostty",
       "exec": "",
       "icon": "com.mitchellh.ghostty",
       "comment": "A terminal emulator",
-      "usageCount": 6,
-      "lastUsed": 1780230223943
+      "usageCount": 7,
+      "lastUsed": 1780322020606
     },
     "vesktop": {
       "name": "Vesktop",
       "exec": "",
       "icon": "vesktop",
       "comment": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support. Vencord comes pre-installed",
-      "usageCount": 4,
-      "lastUsed": 1780232995414
+      "usageCount": 5,
+      "lastUsed": 1780320651803
     },
     "Godot": {
       "name": "Godot Engine",
@@ -63,6 +63,14 @@
       "comment": "Free and Open Source Streaming/Recording Software",
       "usageCount": 1,
       "lastUsed": 1780308544334
+    },
+    "kitty": {
+      "name": "kitty",
+      "exec": "kitty",
+      "icon": "kitty",
+      "comment": "Fast, feature-rich, GPU based terminal",
+      "usageCount": 4,
+      "lastUsed": 1780317199516
     }
   }
 }
