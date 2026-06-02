@@ -7,8 +7,8 @@
   "matugenContrast": 0,
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
-  "popupTransparency": 0.84,
-  "dockTransparency": 1,
+  "popupTransparency": 0.6,
+  "dockTransparency": 0.6,
   "widgetBackgroundColor": "s",
   "widgetColorMode": "default",
   "controlCenterTileColorMode": "primary",
@@ -356,14 +356,14 @@
   },
   "matugenTemplateNeovimSetBackground": true,
   "showDock": true,
-  "dockAutoHide": false,
-  "dockSmartAutoHide": true,
+  "dockAutoHide": true,
+  "dockSmartAutoHide": false,
   "dockUseOverlayLayer": false,
   "dockGroupByApp": true,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": true,
   "dockPosition": 1,
-  "dockSpacing": 4,
+  "dockSpacing": 8,
   "dockBottomGap": 0,
   "dockMargin": 0,
   "dockIconSize": 58,
@@ -482,14 +482,7 @@
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
-  "connectedFrameBarStyleBackups": {
-    "default": {
-      "shadowIntensity": 0,
-      "squareCorners": true,
-      "gothCornersEnabled": true,
-      "borderEnabled": false
-    }
-  },
+  "connectedFrameBarStyleBackups": {},
   "barConfigs": [
     {
       "id": "default",
@@ -570,13 +563,13 @@
         }
       ],
       "spacing": 0,
-      "innerPadding": 1,
+      "innerPadding": -5,
       "bottomGap": 0,
-      "transparency": 0.85,
-      "widgetTransparency": 1,
-      "squareCorners": false,
+      "transparency": 0.6,
+      "widgetTransparency": 0.6,
+      "squareCorners": true,
       "noBackground": true,
-      "gothCornersEnabled": false,
+      "gothCornersEnabled": true,
       "gothCornerRadiusOverride": true,
       "gothCornerRadiusValue": 6,
       "borderEnabled": false,
@@ -684,12 +677,15 @@
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
     }
   },
   "clipboardEnterToPaste": false,
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
-  "frameEnabled": true,
+  "frameEnabled": false,
   "frameThickness": 2,
   "frameRounding": 15,
   "frameColor": "",

@@ -13,7 +13,11 @@
   "monitorWallpapersDark": {},
   "monitorWallpaperFillModes": {},
   "wallpaperTransition": "random",
-  "includedTransitions": ["wipe", "stripes", "iris bloom"],
+  "includedTransitions": [
+    "wipe",
+    "stripes",
+    "iris bloom"
+  ],
   "wallpaperCyclingEnabled": false,
   "wallpaperCyclingMode": "interval",
   "wallpaperCyclingInterval": 7200,
@@ -53,7 +57,10 @@
   "dockLauncherPosition": 0,
   "hiddenTrayIds": [],
   "trayItemOrder": [],
-  "recentColors": ["#98c1f5", "#d0bcff"],
+  "recentColors": [
+    "#98c1f5",
+    "#d0bcff"
+  ],
   "showThirdPartyPlugins": true,
   "pluginBrowserInstalledFirst": false,
   "pluginBrowserSortMode": "default",
@@ -82,6 +89,8 @@
   "launcherLastFileSearchType": "all",
   "launcherLastQuery": "",
   "launcherQueryHistory": [
+    "local",
+    "dra",
     "k",
     "ki",
     "kit",
@@ -101,7 +110,6 @@
     "a",
     "ay",
     "loca",
-    "local",
     "z",
     "venc",
     "ven",
@@ -126,4 +134,3 @@
   "settingsSidebarCollapsedIds": ",workspaces_widgets,",
   "configVersion": 3
 }
-
