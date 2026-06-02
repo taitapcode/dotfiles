@@ -166,9 +166,18 @@ end, { desc = 'Resume' })
 MAP('n', '<leader>su', function()
   Snacks.picker.undo()
 end, { desc = 'Undo History' })
+
 MAP('n', '<leader>ss', function()
-  Snacks.picker.lsp_symbols({ layout = { preset = 'right' } })
+  Snacks.picker.lsp_symbols({
+    layout = { preset = 'right' },
+    sort = { fields = { 'file:asc', 'idx' } },
+    matcher = { sort_empty = true },
+  })
 end, { desc = 'LSP Symbols (Outline)' })
 MAP('n', '<leader>sS', function()
-  Snacks.picker.lsp_workspace_symbols({ layout = { preset = 'right' } })
+  Snacks.picker.lsp_workspace_symbols({
+    layout = { preset = 'right' },
+    sort = { fields = { 'file:asc', 'idx' } },
+    matcher = { sort_empty = true },
+  })
 end, { desc = 'LSP Workspace Symbols' })
