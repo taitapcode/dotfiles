@@ -5,16 +5,16 @@
       "exec": "/usr/bin/microsoft-edge-stable %U",
       "icon": "microsoft-edge",
       "comment": "Access the Internet",
-      "usageCount": 4,
-      "lastUsed": 1780372268028
+      "usageCount": 7,
+      "lastUsed": 1780631442150
     },
     "steam": {
       "name": "Steam",
       "exec": "/usr/bin/steam %U",
       "icon": "steam",
       "comment": "Application for managing and playing games on Steam",
-      "usageCount": 19,
-      "lastUsed": 1780279791951
+      "usageCount": 23,
+      "lastUsed": 1780659258298
     },
     "brave-origin-nightly": {
       "name": "Brave Origin (nightly)",
@@ -29,24 +29,24 @@
       "exec": "",
       "icon": "com.mitchellh.ghostty",
       "comment": "A terminal emulator",
-      "usageCount": 7,
-      "lastUsed": 1780322020606
+      "usageCount": 8,
+      "lastUsed": 1780471441330
     },
     "vesktop": {
       "name": "Vesktop",
       "exec": "",
       "icon": "vesktop",
       "comment": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support. Vencord comes pre-installed",
-      "usageCount": 6,
-      "lastUsed": 1780369100435
+      "usageCount": 8,
+      "lastUsed": 1780666094004
     },
     "Godot": {
       "name": "Godot Engine",
       "exec": "",
       "icon": "godot",
       "comment": "Multi-platform 2D and 3D game engine with a feature-rich editor",
-      "usageCount": 1,
-      "lastUsed": 1780070314486
+      "usageCount": 2,
+      "lastUsed": 1780492615909
     },
     "blender": {
       "name": "Blender",
@@ -79,6 +79,30 @@
       "comment": "Your handy, infinite brainstorming tool",
       "usageCount": 1,
       "lastUsed": 1780365810652
+    },
+    "Waydroid": {
+      "name": "Waydroid",
+      "exec": "waydroid",
+      "icon": "waydroid",
+      "comment": "Run Android apps in a containerized environment.",
+      "usageCount": 15,
+      "lastUsed": 1780710173366
+    },
+    "org.telegram.desktop": {
+      "name": "Telegram",
+      "exec": "Telegram -- %U",
+      "icon": "org.telegram.desktop",
+      "comment": "New era of messaging",
+      "usageCount": 2,
+      "lastUsed": 1780667275047
+    },
+    "waydroid.com.microsoft.bing": {
+      "name": "Bing",
+      "exec": "waydroid app launch com.microsoft.bing",
+      "icon": "/home/tai/.local/share/waydroid/data/icons/com.microsoft.bing.png",
+      "comment": "",
+      "usageCount": 3,
+      "lastUsed": 1780631427612
     }
   }
 }
