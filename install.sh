@@ -65,7 +65,7 @@ install_dependencies() {
     fcitx5-gtk
     fcitx5-configtool
     github-cli
-    sxiv
+    loupe
     mpv
     cava
     matugen

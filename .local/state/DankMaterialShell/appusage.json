@@ -111,6 +111,22 @@
       "comment": "PeaZip archive manager",
       "usageCount": 1,
       "lastUsed": 1780999417113
+    },
+    "org.gnome.Nautilus": {
+      "name": "Files",
+      "exec": "",
+      "icon": "org.gnome.Nautilus",
+      "comment": "Access and organize files",
+      "usageCount": 1,
+      "lastUsed": 1780999677773
+    },
+    "org.gnome.Loupe": {
+      "name": "Image Viewer",
+      "exec": "loupe %U",
+      "icon": "org.gnome.Loupe",
+      "comment": "View and edit images",
+      "usageCount": 1,
+      "lastUsed": 1781000111233
     }
   }
 }
