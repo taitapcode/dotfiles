@@ -78,8 +78,9 @@ install_dependencies() {
     gnome-keyring
     zed
     vesktop
-    libreoffice-fresh
+    onlyoffice-bin
     godot
+    peazip
 
     # AUR packages
     ttf-delugia-code
