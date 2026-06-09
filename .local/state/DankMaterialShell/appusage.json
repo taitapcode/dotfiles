@@ -5,8 +5,8 @@
       "exec": "/usr/bin/microsoft-edge-stable %U",
       "icon": "microsoft-edge",
       "comment": "Access the Internet",
-      "usageCount": 7,
-      "lastUsed": 1780631442150
+      "usageCount": 9,
+      "lastUsed": 1780896378907
     },
     "steam": {
       "name": "Steam",
@@ -29,16 +29,16 @@
       "exec": "",
       "icon": "com.mitchellh.ghostty",
       "comment": "A terminal emulator",
-      "usageCount": 8,
-      "lastUsed": 1780471441330
+      "usageCount": 9,
+      "lastUsed": 1780813092659
     },
     "vesktop": {
       "name": "Vesktop",
       "exec": "",
       "icon": "vesktop",
       "comment": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support. Vencord comes pre-installed",
-      "usageCount": 8,
-      "lastUsed": 1780666094004
+      "usageCount": 11,
+      "lastUsed": 1780900197878
     },
     "Godot": {
       "name": "Godot Engine",
@@ -85,24 +85,32 @@
       "exec": "waydroid",
       "icon": "waydroid",
       "comment": "Run Android apps in a containerized environment.",
-      "usageCount": 15,
-      "lastUsed": 1780710173366
+      "usageCount": 20,
+      "lastUsed": 1780956251521
     },
     "org.telegram.desktop": {
       "name": "Telegram",
       "exec": "Telegram -- %U",
       "icon": "org.telegram.desktop",
       "comment": "New era of messaging",
-      "usageCount": 2,
-      "lastUsed": 1780667275047
+      "usageCount": 3,
+      "lastUsed": 1780931343962
     },
     "waydroid.com.microsoft.bing": {
       "name": "Bing",
       "exec": "waydroid app launch com.microsoft.bing",
       "icon": "/home/tai/.local/share/waydroid/data/icons/com.microsoft.bing.png",
       "comment": "",
-      "usageCount": 3,
-      "lastUsed": 1780631427612
+      "usageCount": 5,
+      "lastUsed": 1780957012628
+    },
+    "peazip": {
+      "name": "PeaZip",
+      "exec": "peazip %F",
+      "icon": "peazip",
+      "comment": "PeaZip archive manager",
+      "usageCount": 1,
+      "lastUsed": 1780999417113
     }
   }
 }
