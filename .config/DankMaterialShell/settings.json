@@ -255,7 +255,7 @@
   "iconTheme": "Colloid-Catppuccin-Dark",
   "cursorSettings": {
     "theme": "Banana",
-    "size": 45,
+    "size": 32,
     "niri": {
       "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
