@@ -1,13 +1,12 @@
 
 [Default Applications]
-text/html=zen.desktop
-x-scheme-handler/http=zen.desktop
-x-scheme-handler/https=zen.desktop
-x-scheme-handler/about=zen.desktop
-x-scheme-handler/unknown=zen.desktop
+text/html=brave-origin.desktop
+x-scheme-handler/http=brave-origin.desktop
+x-scheme-handler/https=brave-origin.desktop
+x-scheme-handler/about=brave-origin.desktop
+x-scheme-handler/unknown=brave-origin.desktop
 x-scheme-handler/discord=vesktop.desktop
-application/pdf=zathura.desktop
-application/postscript=zathura.desktop
+application/pdf=brave-origin.desktop
 image/jpeg=org.gnome.Loupe.desktop
 image/png=org.gnome.Loupe.desktop
 image/gif=org.gnome.Loupe.desktop

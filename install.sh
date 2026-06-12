@@ -69,7 +69,8 @@ install_dependencies() {
     mpv
     cava
     matugen
-    dms-shell-git
+    dms-shell
+    dms-shell-niri
     sddm-astronaut-theme
     keyd
     colloid-catppuccin-theme-git
@@ -87,7 +88,7 @@ install_dependencies() {
     power-profiles-daemon
     fcitx5-lotus-bin
     banana-cursor-bin
-    zen-browser-bin
+    brave-origin-bin
   )
   install_pkgs "${deps[@]}"
 }
@@ -178,6 +179,19 @@ apply_dms_config() {
   systemctl --user add-wants niri.service dms
 }
 
+destroy_nm_applet() {
+  echo "Checking for network-manager-applet..."
+  if pacman -Qi network-manager-applet &>/dev/null; then
+    echo "Found network-manager-applet. Preparing to remove..."
+    if pkill nm-applet; then
+      echo "Stopped running instances of nm-applet."
+    fi
+    sudo pacman -Rnsc network-manager-applet
+  else
+    echo "network-manager-applet is not installed on this system."
+  fi
+}
+
 main() {
   install_chaoticaur_and_AUR_helper
   install_dependencies
@@ -189,6 +203,7 @@ main() {
   clone_niri_dotfiles
   sync_niri_config
   apply_dms_config
+  destroy_nm_applet
   echo "Installation complete! Please restart your system."
   echo "To install my dotfiles, run this command:"
   echo "git clone https://github.com/taitapcode/dotfiles --depth 1 ~/.dotfiles && cd ~/.dotfiles && chmod +x install.sh && ./install.sh"
