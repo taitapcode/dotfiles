@@ -329,14 +329,11 @@ window-rule {
   open-maximized true
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-  // This app-id regular expression will work for both:
-  // - host Firefox (app-id is "firefox")
-  // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-  match app-id=r#"brave-origin-nightly$"# title="^Picture-in-Picture$"
-  open-floating true
-}
+// Open the Zen browser picture-in-picture player as floating by default.
+// window-rule {
+//   match app-id=r#"zen$"# title="^Picture-in-Picture$"
+//   open-floating true
+// }
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
@@ -420,7 +417,7 @@ binds {
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Return hotkey-overlay-title="Open a terminal" { spawn "ghostty"; }
-  Mod+B hotkey-overlay-title="Run a browser" { spawn "brave-origin-nightly"; }
+  Mod+B hotkey-overlay-title="Run a browser" { spawn "zen-browser"; }
   Mod+E hotkey-overlay-title="Run a file explorer" { spawn "nautilus"; }
 
   // Open dms menus

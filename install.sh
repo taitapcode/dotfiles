@@ -87,7 +87,7 @@ install_dependencies() {
     power-profiles-daemon
     fcitx5-lotus-bin
     banana-cursor-bin
-    brave-origin-nightly-bin
+    zen-browser-bin
   )
   install_pkgs "${deps[@]}"
 }
