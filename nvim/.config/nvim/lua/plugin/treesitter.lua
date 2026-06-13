@@ -1,5 +1,5 @@
 vim.pack.add({
-  'https://github.com/nvim-treesitter/nvim-treesitter',
+  'https://github.com/romus204/tree-sitter-manager.nvim',
   'https://github.com/nvim-treesitter/nvim-treesitter-textobjects',
 })
 
@@ -36,27 +36,12 @@ local ensureInstalled = {
   'latex',
 }
 
-local alreadyInstalled = require('nvim-treesitter.config').get_installed()
-local parsersToInstall = vim
-  .iter(ensureInstalled)
-  :filter(function(parser)
-    return not vim.tbl_contains(alreadyInstalled, parser)
-  end)
-  :totable()
-require('nvim-treesitter').install(parsersToInstall)
-require('nvim-treesitter-textobjects').setup()
-
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(e)
-    local name, kind = e.data.spec.name, e.data.kind
-    if name == 'nvim-treesitter' and kind == 'update' then
-      if not e.data.active then
-        vim.cmd.packadd('nvim-treesitter')
-      end
-      vim.cmd('TSUpdate')
-    end
-  end,
+require('tree-sitter-manager').setup({
+  auto_install = true,
+  ensure_installed = ensureInstalled,
 })
+
+require('nvim-treesitter-textobjects').setup()
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
