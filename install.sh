@@ -89,6 +89,7 @@ install_dependencies() {
     fcitx5-lotus-bin
     banana-cursor-bin
     brave-origin-bin
+    zen-browser-bin
   )
   install_pkgs "${deps[@]}"
 }
