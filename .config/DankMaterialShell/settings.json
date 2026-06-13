@@ -462,8 +462,8 @@
         {
           "id": "memUsage",
           "enabled": true,
-          "showSwap": false,
-          "showInGb": true
+          "minimumWidth": true,
+          "showSwap": false
         },
         {
           "id": "battery",
