@@ -417,7 +417,7 @@ binds {
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
   Mod+Return hotkey-overlay-title="Open a terminal" { spawn "ghostty"; }
-  Mod+B hotkey-overlay-title="Run a browser" { spawn "brave-origin"; }
+  Mod+B hotkey-overlay-title="Run a browser" { spawn "zen-browser-bin"; }
   Mod+E hotkey-overlay-title="Run a file explorer" { spawn "nautilus"; }
 
   // Open dms menus
