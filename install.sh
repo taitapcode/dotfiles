@@ -11,7 +11,6 @@ install_pkgs() {
     return 2
   fi
 
-  # Ensure paru exists
   command -v paru >/dev/null 2>&1 || {
     echo "Error: paru not found on PATH." >&2
     return 127
