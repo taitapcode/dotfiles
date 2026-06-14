@@ -554,6 +554,10 @@
           "enabled": true
         },
         {
+          "id": "capsLockIndicator",
+          "enabled": true
+        },
+        {
           "id": "privacyIndicator",
           "enabled": true
         },
