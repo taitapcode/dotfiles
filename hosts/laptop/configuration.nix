@@ -54,6 +54,7 @@
     noto-fonts-color-emoji
     twemoji-color-font
     nerd-fonts.symbols-only 
+    nerd-fonts.caskaydia-cove
   ];
 
   xdg.portal = {

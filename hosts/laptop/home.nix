@@ -7,6 +7,7 @@
     ../../modules/home-manager/zen-browser.nix
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/nvim.nix
+    ../../modules/home-manager/ghostty.nix
   ];
 
   home.username = "tai";
@@ -19,5 +20,6 @@
     zen-browser.enable = true;
     fish.enable = true;
     neovim.enable = true;
+    ghostty.enable = true;
   };
 }
