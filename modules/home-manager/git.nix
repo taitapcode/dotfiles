@@ -9,15 +9,14 @@ in
     programs.git = {
       enable = true;
       
-      userName = "taitapcode"; 
-      userEmail = "hoangductai2007@gmail.com";
-
-      extraConfig = {
+      settings = {
+        user = {
+          name = "taitapcode"; 
+          email = "hoangductai2007@gmail.com";
+        };
         init.defaultBranch = "main";
         pull.rebase = true;
       };
-      
-      delta.enable = true;
     };
   };
 }
