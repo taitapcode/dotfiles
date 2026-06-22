@@ -8,6 +8,7 @@
   imports =
     [
       ./hardware.nix
+      inputs.niri.nixosModules.niri
     ];
 
   # Use the GRUB boot loader.
@@ -87,9 +88,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # Programs
-  programs.firefox.enable = true;
-  programs.dms-shell.enable = true;
-  programs.niri.enable = true;
+  # programs.firefox.enable = true;
+  # programs.dms-shell.enable = true;
+  # programs.niri.enable = true;
   programs.fish.enable = true;
 
   services.keyd = {
@@ -119,6 +120,8 @@
     packages = with pkgs; [
       bat
       eza
+      git
+      lazygit
     ];
   };
   
