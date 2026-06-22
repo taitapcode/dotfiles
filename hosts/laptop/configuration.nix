@@ -108,6 +108,7 @@
       eza
       git
       lazygit
+      opencode
     ];
   };
   
