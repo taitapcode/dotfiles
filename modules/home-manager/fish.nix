@@ -1,13 +1,13 @@
 { config, lib, pkgs, ... }:
-
+let
+  cfg = config.modules.home.fish;
+in
 {
-  options.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
+  options.modules.home.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
 
-  config = lib.mkIf config.fish.enable {
+  config = lib.mkIf cfg.enable {
     programs.fish = {
       enable = true;
-
-      enableBehavior = true; 
 
       interactiveShellInit = ''
         set -g fish_greeting ""
@@ -17,6 +17,7 @@
         cat = "bat";
         ls = "eza --icons";
 	v = "nvim";
+	lg = "lazygit";
       };
     };
   };

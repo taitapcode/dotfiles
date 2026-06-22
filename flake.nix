@@ -1,5 +1,5 @@
 {
-  description = "My NixOS dotfiles flake"
+  description = "My NixOS dotfiles flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -26,7 +26,6 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/laptop/configuration.nix

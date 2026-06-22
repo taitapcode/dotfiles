@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, inputs, ... }:
 
 {
@@ -9,6 +5,8 @@
     [
       ./hardware.nix
       inputs.niri.nixosModules.niri
+      ../../modules/nixos/sddm.nix
+      ../../modules/nixos/keyd.nix
     ];
 
   # Use the GRUB boot loader.
@@ -43,7 +41,6 @@
     ghostty
     lazygit
     tmux
-    weston
     xwayland
   ];
 
@@ -59,17 +56,10 @@
     nerd-fonts.symbols-only 
   ];
 
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    wayland.compositor = "weston"; 
-  };
-
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-    config.common.default = [ "gnome" ];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = [ "gtk" ];
   };
 
   # Enable CUPS to print documents.
@@ -88,22 +78,17 @@
   nixpkgs.config.allowUnfree = true;
 
   # Programs
-  # programs.firefox.enable = true;
-  # programs.dms-shell.enable = true;
-  # programs.niri.enable = true;
-  programs.fish.enable = true;
-
-  services.keyd = {
-    enable = true;
-    keyboards.default = {
-      ids = [ "*" ];
-      settings = {
-        main = {
-          capslock = "esc";
-	  escape = "capslock";
-        };
-      };
+  programs = {
+    niri = {
+      enable = true;
+      package = inputs.niri.packages.${pkgs.system}.niri-unstable;
     };
+    fish.enable = true;
+  };
+
+  modules.nixos = {
+    keyd.enable = true;
+    sddm.enable = true;
   };
 
   # Enable the OpenSSH daemon.
@@ -128,6 +113,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users.tai = import ./home.nix;
+    backupFileExtension = "backup";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
