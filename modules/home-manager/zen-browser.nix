@@ -15,7 +15,13 @@ in
       enable = true;
       setAsDefaultBrowser = true;
 
-      policies = {
+      policies = let
+        mkExtensionSettings = builtins.mapAttrs (_: pluginConfig: {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginConfig.id}/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = pluginConfig.private_allow or true;
+        });
+      in {
         AutofillAddressEnabled = false;
         AutofillCreditCardEnabled = false;
         DisableAppUpdate = false;
@@ -26,11 +32,20 @@ in
         DontCheckDefaultBrowser = true;
         NoDefaultBookmarks = true;
         OfferToSaveLogins = false;
+        TranslateEnabled = false;
         EnableTrackingProtection = {
           Value = true;
           Locked = true;
           Cryptomining = true;
           Fingerprinting = true;
+        };
+
+        # Addons
+        ExtensionSettings = mkExtensionSettings {
+          "uBlock0@raymondhill.net" = { id = "ublock-origin"; };
+          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = { id = "bitwarden-password-manager"; };
+          "dont-track-me-google@robwu.nl" = { id = "dont-track-me-google1"; };
+          "{74145f27-f039-47ce-a470-a662b129930a}" = { id = "clearurls"; };
         };
       };
 
@@ -39,7 +54,6 @@ in
           "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
           "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
           # "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
-          "d8b79d4a-6cba-4495-9ff6-d6d30b0e94fe" # Better Active Tab
           "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
           "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" # No Sidebar Scrollbar
           "906c6915-5677-48ff-9bfc-096a02a72379" # Floating Status Bar
@@ -98,6 +112,7 @@ in
         pinsForce = true;
         pinsForceAction = "remove";
         pins = {
+          # Container 1
           "GitHub" = {
             id = "48e8a119-5a14-4826-9545-91c8e8dd3bf6";
             url = "https://github.com";
@@ -162,6 +177,7 @@ in
             container = 1;
           };
 
+          # Container 2
           "MyBK" = {
             id = "5af8ecd0-55f0-4084-96f5-eb4bc62a5d4e";
             url = "https://mybk.hcmut.edu.vn/my/index.action";
@@ -169,10 +185,17 @@ in
             isEssential = true;
             container = 2;
           };
-          "BK Drive" = {
+          "HCMUT Drive" = {
             id = "ab7d2102-3877-46c1-b8fc-582080ef90b2";
             url = "https://drive.google.com/drive/my-drive";
             position = 102;
+            isEssential = true;
+            container = 2;
+          };
+          "HCMUT Courseware" = {
+            id = "37b822f1-4070-4fd6-ae22-92221880368a";
+            url = "https://www.hcmut-courseware.org/";
+            position = 103;
             isEssential = true;
             container = 2;
           };

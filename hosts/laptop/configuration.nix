@@ -27,11 +27,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -56,6 +51,25 @@
     nerd-fonts.symbols-only 
     nerd-fonts.caskaydia-cove
   ];
+
+  # Define user
+  users.users.tai = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" "video" ];
+    shell = pkgs.fish;
+    packages = with pkgs; [
+      bat
+      eza
+      lazygit
+      opencode
+    ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users.tai = import ./home.nix;
+    backupFileExtension = "backup";
+  };
 
   xdg.portal = {
     enable = true;
@@ -97,26 +111,6 @@
 
   # Ensure hardware acceleration / graphics drivers are active
   hardware.graphics.enable = true;
-
-  # Define user
-  users.users.tai = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
-    shell = pkgs.fish;
-    packages = with pkgs; [
-      bat
-      eza
-      git
-      lazygit
-      opencode
-    ];
-  };
-  
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users.tai = import ./home.nix;
-    backupFileExtension = "backup";
-  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "26.05";
