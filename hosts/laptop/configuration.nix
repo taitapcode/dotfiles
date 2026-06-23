@@ -1,13 +1,16 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware.nix
-      inputs.niri.nixosModules.niri
-      ../../modules/nixos/sddm.nix
-      ../../modules/nixos/keyd.nix
-    ];
+  imports = [
+    ./hardware.nix
+    inputs.niri.nixosModules.niri
+    ../../modules/nixos/sddm.nix
+    ../../modules/nixos/keyd.nix
+  ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
@@ -49,16 +52,27 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       twemoji-color-font
-      nerd-fonts.symbols-only 
+      nerd-fonts.symbols-only
       nerd-fonts.caskaydia-cove
       nerd-fonts.jetbrains-mono
     ];
 
     fontconfig = {
       defaultFonts = {
-        serif = [ "Noto Serif" "Liberation Serif" "Times New Roman" ];
-        sansSerif = [ "Ubuntu" "Noto Sans" "Arial" ];
-        monospace = [ "CaskaydiaCove Nerd Font" "JetBrainsMono Nerd Font" ];
+        serif = [
+          "Noto Serif"
+          "Liberation Serif"
+          "Times New Roman"
+        ];
+        sansSerif = [
+          "Ubuntu"
+          "Noto Sans"
+          "Arial"
+        ];
+        monospace = [
+          "CaskaydiaCove Nerd Font"
+          "JetBrainsMono Nerd Font"
+        ];
       };
     };
   };
@@ -66,7 +80,11 @@
   # Define user
   users.users.tai = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+    ];
     shell = pkgs.fish;
     packages = with pkgs; [
       bat
@@ -123,7 +141,9 @@
   # Ensure hardware acceleration / graphics drivers are active
   hardware.graphics.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   system.stateVersion = "26.05";
 }
-

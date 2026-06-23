@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   cfg = config.modules.home.git;
 in
@@ -8,10 +8,10 @@ in
   config = lib.mkIf cfg.enable {
     programs.git = {
       enable = true;
-      
+
       settings = {
         user = {
-          name = "taitapcode"; 
+          name = "taitapcode";
           email = "hoangductai2007@gmail.com";
         };
         init.defaultBranch = "main";

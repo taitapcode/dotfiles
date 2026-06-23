@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.modules.nixos.sddm;
   sddm-astronaut = pkgs.sddm-astronaut.override {
@@ -28,10 +33,10 @@ in
 
       settings = {
         Theme = {
-	  Current = "sddm-astronaut-theme";
-	  CursorTheme = "Banana";
-	  CursorSize = 24;
-	};
+          Current = "sddm-astronaut-theme";
+          CursorTheme = "Banana";
+          CursorSize = 24;
+        };
       };
     };
   };

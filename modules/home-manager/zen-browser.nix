@@ -1,4 +1,9 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 
 let
   cfg = config.modules.home.zen-browser;
@@ -15,45 +20,57 @@ in
       enable = true;
       setAsDefaultBrowser = true;
 
-      policies = let
-        mkExtensionSettings = builtins.mapAttrs (_: pluginConfig: {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginConfig.id}/latest.xpi";
-            installation_mode = "force_installed";
-            private_browsing = pluginConfig.private_allow or true;
-        });
-      in {
-        AutofillAddressEnabled = false;
-        AutofillCreditCardEnabled = false;
-        DisableAppUpdate = false;
-        DisableFeedbackCommands = true;
-        DisableFirefoxStudies = true;
-        DisablePocket = true;
-        DisableTelemetry = true;
-        DontCheckDefaultBrowser = true;
-        NoDefaultBookmarks = true;
-        OfferToSaveLogins = false;
-        TranslateEnabled = false;
-        EnableTrackingProtection = {
-          Value = true;
-          Locked = true;
-          Cryptomining = true;
-          Fingerprinting = true;
-        };
+      policies =
+        let
+          mkExtensionSettings = builtins.mapAttrs (
+            _: pluginConfig: {
+              install_url = "https://addons.mozilla.org/firefox/downloads/latest/${pluginConfig.id}/latest.xpi";
+              installation_mode = "force_installed";
+              private_browsing = pluginConfig.private_allow or true;
+            }
+          );
+        in
+        {
+          AutofillAddressEnabled = false;
+          AutofillCreditCardEnabled = false;
+          DisableAppUpdate = false;
+          DisableFeedbackCommands = true;
+          DisableFirefoxStudies = true;
+          DisablePocket = true;
+          DisableTelemetry = true;
+          DontCheckDefaultBrowser = true;
+          NoDefaultBookmarks = true;
+          OfferToSaveLogins = false;
+          TranslateEnabled = false;
+          EnableTrackingProtection = {
+            Value = true;
+            Locked = true;
+            Cryptomining = true;
+            Fingerprinting = true;
+          };
 
-        # Addons
-        ExtensionSettings = mkExtensionSettings {
-          "uBlock0@raymondhill.net" = { id = "ublock-origin"; };
-          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = { id = "bitwarden-password-manager"; };
-          "dont-track-me-google@robwu.nl" = { id = "dont-track-me-google1"; };
-          "{74145f27-f039-47ce-a470-a662b129930a}" = { id = "clearurls"; };
+          # Addons
+          ExtensionSettings = mkExtensionSettings {
+            "uBlock0@raymondhill.net" = {
+              id = "ublock-origin";
+            };
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+              id = "bitwarden-password-manager";
+            };
+            "dont-track-me-google@robwu.nl" = {
+              id = "dont-track-me-google1";
+            };
+            "{74145f27-f039-47ce-a470-a662b129930a}" = {
+              id = "clearurls";
+            };
+          };
         };
-      };
 
       profiles.default = {
         mods = [
           "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
           "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
-          # "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
+          "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
           "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
           "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" # No Sidebar Scrollbar
           "906c6915-5677-48ff-9bfc-096a02a72379" # Floating Status Bar

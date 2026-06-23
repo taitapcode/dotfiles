@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   cfg = config.modules.home.fish;
 in
@@ -56,10 +56,16 @@ in
       };
 
       functions = {
-        fish_greeting = { body = ""; };
-        fish_mode_prompt = { body = ""; };
+        fish_greeting = {
+          body = "";
+        };
+        fish_mode_prompt = {
+          body = "";
+        };
 
-        _git_branch_name = { body = "echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')"; };
+        _git_branch_name = {
+          body = "echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')";
+        };
 
         _is_git_dirty = {
           body = ''

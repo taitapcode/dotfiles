@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 let
   cfg = config.modules.nixos.keyd;
 in
@@ -18,4 +18,3 @@ in
     };
   };
 }
-
