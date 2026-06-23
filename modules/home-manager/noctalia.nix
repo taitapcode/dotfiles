@@ -1,4 +1,9 @@
-{ config, lib, pkgs, inputs,... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
 let
   cfg = config.modules.home.noctalia;
 in
@@ -19,6 +24,12 @@ in
           mode = "dark";
           source = "builtin";
           builtin = "Catppuccin";
+        };
+
+        wallpaper = {
+          enable = true;
+          directory = "${inputs.self}/wallpapers";
+          default.path = "${inputs.self}/wallpapers/wallhaven-6lw5ll.jpg";
         };
       };
     };
