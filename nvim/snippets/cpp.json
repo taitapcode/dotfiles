@@ -1,0 +1,54 @@
+{
+  "Competitive Programming Template": {
+    "prefix": "gaytemplate",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "#define el '\\n'",
+      "#define ll long long",
+      "#define db double",
+      "#define ldb long double",
+      "using namespace std;",
+      "",
+      "int main()",
+      "{",
+      "  ios_base::sync_with_stdio(false);",
+      "  cin.tie(nullptr);",
+      "",
+      "  $0",
+      "",
+      "  return 0;",
+      "}"
+    ],
+    "description": "Competitive Programming Template"
+  },
+  "Fast I/O": {
+    "prefix": "fastio",
+    "body": [ "ios_base::sync_with_stdio(false);", "cin.tie(nullptr);" ],
+    "description": "Fast I/O"
+  },
+  "File open": {
+    "prefix": "fileopen",
+    "body": [
+      "freopen(\"${1:filename}.inp\", \"r\", stdin);",
+      "freopen(\"$1.out\", \"w\", stdout);"
+    ],
+    "description": "File open"
+  },
+  "Debug Macro": {
+    "prefix": "debug",
+    "body": [
+      "#ifdef EBUG",
+      "#include <debug.h>",
+      "#else",
+      "#define debug(...)",
+      "#endif",
+      "$0"
+    ],
+    "description": "Include debug.h from ~/.local/include if -DEBUG is passed."
+  },
+  "Namespace Std": {
+    "prefix": "nstd",
+    "body": "using namespace std;",
+    "description": "Just using namespace std"
+  }
+}

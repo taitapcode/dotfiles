@@ -1,0 +1,7 @@
+{
+  "Checkbox": {
+    "prefix": "checkbox",
+    "body": "- [ ] ",
+    "description": "Todo checkbox"
+  }
+}
