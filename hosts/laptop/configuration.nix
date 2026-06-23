@@ -9,26 +9,22 @@
       ../../modules/nixos/keyd.nix
     ];
 
-  # Use the GRUB boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
-
-  # boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos-btw"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # List packages installed in system profile.
+  networking.hostName = "nixos-btw";
+  networking.networkmanager.enable = true;
+
+  hardware.bluetooth.enable = true;
+
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+
   environment.systemPackages = with pkgs; [
     wget
     neovim
@@ -37,20 +33,35 @@
     lazygit
     tmux
     xwayland
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  fonts.packages = with pkgs; [
-    corefonts
-    dejavu_fonts
-    ubuntu-classic
-    liberation_ttf
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-color-emoji
-    twemoji-color-font
-    nerd-fonts.symbols-only 
-    nerd-fonts.caskaydia-cove
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      corefonts
+      dejavu_fonts
+      ubuntu-classic
+      liberation_ttf
+      roboto
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      twemoji-color-font
+      nerd-fonts.symbols-only 
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.jetbrains-mono
+    ];
+
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Serif" "Liberation Serif" "Times New Roman" ];
+        sansSerif = [ "Ubuntu" "Noto Sans" "Arial" ];
+        monospace = [ "CaskaydiaCove Nerd Font" "JetBrainsMono Nerd Font" ];
+      };
+    };
+  };
 
   # Define user
   users.users.tai = {

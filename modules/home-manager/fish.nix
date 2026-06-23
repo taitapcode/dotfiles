@@ -48,23 +48,16 @@ in
         gc = "git commit -m";
         gp = "git push origin master";
         gst = "git status";
-        # Tmux & Others
+        # Others
         tmx = "tmux";
-        mux = "tmuxinator";
         cl = "clear";
         lg = "lazygit";
-	v = "nvim";
-	oc = "opencode";
+        v = "nvim";
       };
 
       functions = {
-        fish_greeting = {
-          body = "";
-        };
-        
-        fish_mode_prompt = {
-          body = "";
-        };
+        fish_greeting = { body = ""; };
+        fish_mode_prompt = { body = ""; };
 
         _git_branch_name = { body = "echo (command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||')"; };
 
