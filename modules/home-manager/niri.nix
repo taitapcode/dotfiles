@@ -3,9 +3,15 @@ let
   cfg = config.modules.home.niri;
 in
 {
+  imports = [
+    ./noctalia.nix
+  ];
+
   options.modules.home.niri.enable = lib.mkEnableOption "Enable Niri configuration";
 
   config = lib.mkIf cfg.enable {
+    modules.home.noctalia.enable = true;
+
     programs.niri = {
       settings = {
         input = {
@@ -48,8 +54,6 @@ in
 
         environment = {
           QT_QPA_PLATFORMTHEME = "gtk3";
-          XCURSOR_THEME = "Banana";
-          XCURSOR_SIZE = "28";
         };
 
         hotkey-overlay.skip-at-startup = true;
@@ -64,6 +68,12 @@ in
           {
             open-maximized = true;
           }
+          {
+            matches = [ { app-id = "dev.noctalia.Noctalia.Settings"; } ];
+            open-floating = true;
+            default-column-width = { fixed = 1080; };
+            default-window-height = { fixed = 920; };
+          }
         ];
 
         binds = {
@@ -73,20 +83,21 @@ in
           "Mod+B" = { action.spawn = "zen-beta"; hotkey-overlay.title = "Run a browser"; };
           "Mod+E" = { action = { spawn = "nautilus"; }; hotkey-overlay.title = "Run a file explorer"; };
 
-          "Super+Alt+S" = { action.spawn-sh = "pkill orca || exec orca"; allow-when-locked = true; };
+          "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
+          "Mod+S".action.spawn-sh = "noctalia msg panel-toggle control-center";
+          "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
 
-          "XF86AudioRaiseVolume" = { action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.5"; allow-when-locked = true; };
-          "XF86AudioLowerVolume" = { action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; allow-when-locked = true; };
-          "XF86AudioMute" = { action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; allow-when-locked = true; };
-          "XF86AudioMicMute" = { action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; allow-when-locked = true; };
+          "XF86AudioRaiseVolume" = { action.spawn-sh = "noctalia msg volume-up"; allow-when-locked = true; };
+          "XF86AudioLowerVolume" = { action.spawn-sh = "noctalia msg volume-down"; allow-when-locked = true; };
+          "XF86AudioMute" = { action.spawn-sh = "noctalia msg volume-mute"; allow-when-locked = true; };
 
           "XF86AudioPlay" = { action.spawn-sh = "playerctl play-pause"; allow-when-locked = true; };
           "XF86AudioStop" = { action.spawn-sh = "playerctl stop"; allow-when-locked = true; };
           "XF86AudioPrev" = { action.spawn-sh = "playerctl previous"; allow-when-locked = true; };
           "XF86AudioNext" = { action.spawn-sh = "playerctl next"; allow-when-locked = true; };
 
-          "XF86MonBrightnessUp" = { action.spawn = [ "brightnessctl" "--class=backlight" "set" "+10%" ]; allow-when-locked = true; };
-          "XF86MonBrightnessDown" = { action.spawn = [ "brightnessctl" "--class=backlight" "set" "10%-" ]; allow-when-locked = true; };
+          "XF86MonBrightnessUp" = { action.spawn-sh = "noctalia msg brightness-up"; allow-when-locked = true; };
+          "XF86MonBrightnessDown" = { action.spawn-sh = "noctalia msg brightness-down"; allow-when-locked = true; };
 
           "Mod+Tab" = { action.toggle-overview = []; repeat = false; };
           "Mod+C" = { action.close-window = []; repeat = false; };
@@ -182,7 +193,7 @@ in
 
           "Mod+BracketLeft".action.consume-or-expel-window-left = [];
           "Mod+BracketRight".action.consume-or-expel-window-right = [];
-          "Mod+Comma".action.consume-window-into-column = [];
+          # "Mod+Comma".action.consume-window-into-column = [];
           "Mod+Period".action.expel-window-from-column = [];
 
           "Mod+R".action.switch-preset-column-width = [];
