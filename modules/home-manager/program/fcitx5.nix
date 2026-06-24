@@ -13,7 +13,7 @@ in
       XMODIFIERS = "@im=fcitx5";
     };
 
-    home.file.".config/fcitx5/config".text = ''
+    xdg.configFile."fcitx5/config".text = ''
       [Hotkey]
       EnumerateWithTriggerKeys=True
       EnumerateSkipFirst=False
@@ -71,7 +71,7 @@ in
       AutoSavePeriod=30
     '';
 
-    home.file.".config/fcitx5/profile".text = ''
+    xdg.configFile."fcitx5/profile".text = ''
       [Groups/0]
       Name=Default
       Default Layout=us
@@ -85,11 +85,6 @@ in
 
       [GroupOrder]
       0=Default
-    '';
-
-    home.file.".config/fcitx5/conf/notifications.conf".text = ''
-      [HiddenNotifications]
-      0=wayland-diagnose-other
     '';
   };
 }
