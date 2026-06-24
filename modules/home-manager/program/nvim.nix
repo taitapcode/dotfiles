@@ -12,6 +12,8 @@ in
   options.modules.home.program.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
+    xdg.configFile."nvim/snippets".source = inputs.self + "/nvim/snippets";
+
     programs.neovim =
       let
         helperDir = inputs.self + "/nvim/helper";
