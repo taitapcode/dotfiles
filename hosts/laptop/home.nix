@@ -22,7 +22,7 @@
     enable = true;
 
     theme = {
-      name = "catppuccin-mocha-lavender-standard";
+      name = "catppuccin-mocha-lavender-standard+normal";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
         size = "standard";
@@ -32,8 +32,8 @@
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Colloid-Dark";
+      package = pkgs.colloid-icon-theme;
     };
 
     font = {
