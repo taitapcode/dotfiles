@@ -24,7 +24,6 @@ in
     programs.niri = {
       settings = {
         input = {
-          keyboard.numlock = true;
           touchpad = {
             tap = true;
             natural-scroll = true;
