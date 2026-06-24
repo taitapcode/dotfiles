@@ -28,13 +28,15 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
+  environment.sessionVariables = {
+    NH_FLAKE = "/home/tai/dotfiles";
+  };
+
   environment.systemPackages = with pkgs; [
     wget
     neovim
     git
     ghostty
-    lazygit
-    tmux
     xwayland
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
@@ -85,16 +87,22 @@
       "networkmanager"
       "video"
     ];
+
     shell = pkgs.fish;
     packages = with pkgs; [
+      tmux
       bat
       eza
       lazygit
       opencode
+      nh
+      github-cli
     ];
   };
 
   home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
     users.tai = import ./home.nix;
     backupFileExtension = "backup";
@@ -145,5 +153,6 @@
     "nix-command"
     "flakes"
   ];
+
   system.stateVersion = "26.05";
 }

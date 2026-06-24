@@ -11,6 +11,7 @@
     ../../modules/home-manager/fish.nix
     ../../modules/home-manager/nvim.nix
     ../../modules/home-manager/ghostty.nix
+    ../../modules/home-manager/tmux.nix
   ];
 
   home.username = "tai";
@@ -69,5 +70,6 @@
     fish.enable = true;
     neovim.enable = true;
     ghostty.enable = true;
+    tmux.enable = true;
   };
 }

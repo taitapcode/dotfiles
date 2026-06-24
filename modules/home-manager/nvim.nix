@@ -107,11 +107,16 @@ in
             plugin = nvim-treesitter-textobjects;
             config = toLuaFile "plugin/treesitter-textobjects";
           }
+          {
+            plugin = vim-tmux-navigator;
+            config = toLuaFile "plugin/tmux-navigator";
+          }
         ];
 
         extraPackages = with pkgs; [
           wl-clipboard
           xclip
+          lazygit
 
           # Lsp
           lua-language-server
@@ -120,6 +125,7 @@ in
           basedpyright
           bash-language-server
           nixd
+          copilot-language-server
 
           # Formatter
           stylua
