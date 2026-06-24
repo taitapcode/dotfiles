@@ -91,6 +91,10 @@
       eza
       opencode
       nh
+      nautilus
+      peazip
+      vesktop
+      onlyoffice-desktopeditors
     ];
   };
 
