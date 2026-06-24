@@ -6,6 +6,15 @@ require('conform').setup({
     json = { 'prettierd' },
     jsonc = { 'prettierd' },
     nix = { 'nixfmt' },
+    c = { 'clang_format' },
+    cpp = { 'clang_format' },
+  },
+  formatters = {
+    ['clang_format'] = {
+      prepend_args = {
+        '-style=file:' .. vim.fn.expand('~/.config/.clang-format'),
+      },
+    },
   },
   format_on_save = {
     timeout_ms = 500,
