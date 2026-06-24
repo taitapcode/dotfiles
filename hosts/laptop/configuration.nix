@@ -33,9 +33,8 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    neovim
+    curl
     git
-    ghostty
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -90,7 +89,6 @@
     packages = with pkgs; [
       bat
       eza
-      lazygit
       opencode
       nh
     ];
