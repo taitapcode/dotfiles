@@ -71,7 +71,6 @@ in
       AutoSavePeriod=30
     '';
 
-    # 2. Cấu hình chọn sẵn bộ gõ English (US) và Lotus (Chuyển đổi từ file profile của bạn)
     home.file.".config/fcitx5/profile".text = ''
       [Groups/0]
       Name=Default
@@ -88,7 +87,6 @@ in
       0=Default
     '';
 
-    # 3. Ẩn thông báo lỗi Wayland (Chuyển đổi từ file conf/notifications.conf của bạn)
     home.file.".config/fcitx5/conf/notifications.conf".text = ''
       [HiddenNotifications]
       0=wayland-diagnose-other
