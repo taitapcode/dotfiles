@@ -51,7 +51,6 @@
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       twemoji-color-font
-      nerd-fonts.symbols-only
       nerd-fonts.caskaydia-cove
       nerd-fonts.jetbrains-mono
     ];
@@ -95,6 +94,7 @@
       peazip
       vesktop
       onlyoffice-desktopeditors
+      btop
     ];
   };
 

@@ -28,13 +28,13 @@ in
             background_opacity = 0.9;
             end = [
               "tray"
-              "clipboard"
-              "network"
-              "bluetooth"
               "cpu"
               "ram"
               "brightness"
               "volume"
+              "clipboard"
+              "bluetooth"
+              "network"
               "battery"
               "notifications"
               "session"
@@ -61,6 +61,7 @@ in
           cross_axis_padding = 0;
           enabled = true;
           icon_size = 70;
+          inactive_opacity = 0.95;
           item_spacing = 0;
           main_axis_padding = 0;
           pinned = [
@@ -125,6 +126,7 @@ in
           wallpaper_scheme = "m3-content";
           templates = {
             community_ids = [ ];
+            enable_builtin_templates = false;
             enable_community_templates = false;
           };
         };
@@ -137,7 +139,10 @@ in
         };
 
         widget = {
-          battery.display_mode = "graphic";
+          battery = {
+            display_mode = "graphic";
+            show_label = false;
+          };
           clock = {
             color = "secondary";
             font_weight = 700;

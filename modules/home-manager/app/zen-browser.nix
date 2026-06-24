@@ -67,6 +67,11 @@ in
         };
 
       profiles.default = {
+        settings = {
+          "zen.welcome-screen.seen" = true;
+          "zen.tabs.vertical.right-side" = true;
+        };
+
         mods = [
           "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
           "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
