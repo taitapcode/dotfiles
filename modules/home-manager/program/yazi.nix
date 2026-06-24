@@ -4,10 +4,11 @@
   ...
 }:
 let
-  cfg = config.modules.home.yazi;
+  cfg = config.modules.home.program.yazi;
 in
 {
-  options.modules.home.yazi.enable = lib.mkEnableOption "Enable Yazi file manager configuration";
+  options.modules.home.program.yazi.enable =
+    lib.mkEnableOption "Enable Yazi file manager configuration";
 
   config = lib.mkIf cfg.enable {
     programs.yazi = {

@@ -5,14 +5,15 @@
   ...
 }:
 let
-  cfg = config.modules.home.noctalia;
+  cfg = config.modules.home.shell.noctalia;
 in
 {
   imports = [
     inputs.noctalia.homeModules.default
   ];
 
-  options.modules.home.noctalia.enable = lib.mkEnableOption "Enable Noctalia shell configuration";
+  options.modules.home.shell.noctalia.enable =
+    lib.mkEnableOption "Enable Noctalia shell configuration";
 
   config = lib.mkIf cfg.enable {
     programs.noctalia = {

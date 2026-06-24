@@ -4,15 +4,7 @@
 }:
 
 {
-  imports = [
-    ../../modules/home-manager/niri.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/zen-browser.nix
-    ../../modules/home-manager/fish.nix
-    ../../modules/home-manager/nvim.nix
-    ../../modules/home-manager/ghostty.nix
-    ../../modules/home-manager/tmux.nix
-  ];
+  imports = [ ../../modules/home-manager ];
 
   home.username = "tai";
   home.homeDirectory = "/home/tai";
@@ -64,12 +56,17 @@
   };
 
   modules.home = {
-    niri.enable = true;
-    git.enable = true;
-    zen-browser.enable = true;
-    fish.enable = true;
-    neovim.enable = true;
-    ghostty.enable = true;
-    tmux.enable = true;
+    program = {
+      fcitx5.enable = true;
+      git.enable = true;
+      neovim.enable = true;
+      tmux.enable = true;
+    };
+    app = {
+      zen-browser.enable = true;
+      ghostty.enable = true;
+    };
+    wm.niri.enable = true;
+    shell.fish.enable = true;
   };
 }

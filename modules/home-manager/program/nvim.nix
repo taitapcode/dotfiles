@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.modules.home.neovim;
+  cfg = config.modules.home.program.neovim;
 in
 {
-  options.modules.home.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
+  options.modules.home.program.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
     programs.neovim =
@@ -117,6 +117,7 @@ in
           wl-clipboard
           xclip
           lazygit
+          ripgrep
 
           # Lsp
           lua-language-server

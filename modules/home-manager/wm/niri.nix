@@ -1,16 +1,25 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
-  cfg = config.modules.home.niri;
+  cfg = config.modules.home.wm.niri;
 in
 {
   imports = [
-    ./noctalia.nix
+    ../shell
   ];
 
-  options.modules.home.niri.enable = lib.mkEnableOption "Enable Niri configuration";
+  options.modules.home.wm.niri.enable = lib.mkEnableOption "Enable Niri configuration";
 
   config = lib.mkIf cfg.enable {
-    modules.home.noctalia.enable = true;
+    home.packages = with pkgs; [
+      xwayland-satellite
+    ];
+
+    modules.home.shell.noctalia.enable = true;
 
     programs.niri = {
       settings = {
@@ -60,6 +69,16 @@ in
         environment = {
           QT_QPA_PLATFORMTHEME = "gtk3";
         };
+
+        spawn-at-startup = [
+          {
+            command = [
+              "fcitx5"
+              "-d"
+              "--replace"
+            ];
+          }
+        ];
 
         hotkey-overlay.skip-at-startup = true;
         prefer-no-csd = true;

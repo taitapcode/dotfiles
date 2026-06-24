@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.modules.home.fzf;
+  cfg = config.modules.home.program.fzf;
 in
 {
-  options.modules.home.fzf.enable = lib.mkEnableOption "Enable FZF configuration via Home Manager";
+  options.modules.home.program.fzf.enable = lib.mkEnableOption "Enable FZF configuration";
 
   config = lib.mkIf cfg.enable {
     programs.fzf = {

@@ -1,9 +1,13 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
-  cfg = config.modules.home.git;
+  cfg = config.modules.home.program.git;
 in
 {
-  options.modules.home.git.enable = lib.mkEnableOption "Enable Git configuration";
+  options.modules.home.program.git.enable = lib.mkEnableOption "Enable Git configuration";
 
   config = lib.mkIf cfg.enable {
     programs.git = {
@@ -16,6 +20,13 @@ in
         };
         init.defaultBranch = "main";
         pull.rebase = true;
+      };
+    };
+
+    programs.gh = {
+      enable = true;
+      settings = {
+        git_protocol = "https";
       };
     };
   };

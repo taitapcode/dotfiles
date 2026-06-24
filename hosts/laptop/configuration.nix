@@ -6,10 +6,9 @@
 
 {
   imports = [
-    ./hardware.nix
     inputs.niri.nixosModules.niri
-    ../../modules/nixos/sddm.nix
-    ../../modules/nixos/keyd.nix
+    ./hardware.nix
+    ../../modules/nixos
   ];
 
   boot.loader.grub.enable = true;
@@ -29,7 +28,7 @@
   services.upower.enable = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = "/home/tai/dotfiles";
+    NH_FLAKE = "/home/tai/.dotfiles";
   };
 
   environment.systemPackages = with pkgs; [
@@ -37,7 +36,6 @@
     neovim
     git
     ghostty
-    xwayland
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -90,13 +88,11 @@
 
     shell = pkgs.fish;
     packages = with pkgs; [
-      tmux
       bat
       eza
       lazygit
       opencode
       nh
-      github-cli
     ];
   };
 
@@ -141,6 +137,7 @@
   modules.nixos = {
     keyd.enable = true;
     sddm.enable = true;
+    fcitx5.enable = true;
   };
 
   # Enable the OpenSSH daemon.
