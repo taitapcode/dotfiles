@@ -33,7 +33,6 @@ in
         # Cat (Bat)
         cat = "bat";
         # Cp / Rm / Grep
-        cp = "cp -i";
         cf = "cp -r";
         rf = "rm -rf";
         grep = "grep --color=auto";
