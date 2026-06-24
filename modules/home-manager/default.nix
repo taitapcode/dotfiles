@@ -5,6 +5,6 @@
     ./app
     ./program
     ./shell
-    ./wm
+    ./desktop
   ];
 }

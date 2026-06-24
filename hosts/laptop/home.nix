@@ -66,7 +66,7 @@
       zen-browser.enable = true;
       ghostty.enable = true;
     };
-    wm.niri.enable = true;
+    desktop.niri.enable = true;
     shell.fish.enable = true;
   };
 }

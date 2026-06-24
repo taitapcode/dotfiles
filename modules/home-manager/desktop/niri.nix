@@ -5,14 +5,14 @@
   ...
 }:
 let
-  cfg = config.modules.home.wm.niri;
+  cfg = config.modules.home.desktop.niri;
 in
 {
   imports = [
     ../shell
   ];
 
-  options.modules.home.wm.niri.enable = lib.mkEnableOption "Enable Niri configuration";
+  options.modules.home.desktop.niri.enable = lib.mkEnableOption "Enable Niri configuration";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
