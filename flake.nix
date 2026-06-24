@@ -29,13 +29,19 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./hosts/laptop/configuration.nix
-        home-manager.nixosModules.default
-      ];
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/laptop/configuration.nix
+          home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
