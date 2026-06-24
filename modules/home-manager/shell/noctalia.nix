@@ -108,6 +108,7 @@ in
         plugins.enabled = [ ];
 
         shell = {
+          avatar_path = "${inputs.self}/assets/images/profile.jpg";
           corner_radius_scale = 1.6;
           lang = "en";
           niri_overview_type_to_launch_enabled = true;
@@ -133,8 +134,8 @@ in
 
         wallpaper = {
           enable = true;
-          directory = "${inputs.self}/wallpapers";
-          default.path = "${inputs.self}/wallpapers/wallhaven-6lw5ll.jpg";
+          directory = "${inputs.self}/assets/images/wallpapers";
+          default.path = "${inputs.self}/assets/images/wallpapers/wallhaven-8gr6l2.jpg";
           transition_on_startup = true;
         };
 
