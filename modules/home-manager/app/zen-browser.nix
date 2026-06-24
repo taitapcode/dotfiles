@@ -186,9 +186,9 @@ in
             isEssential = true;
             container = 1;
           };
-          "Nix options" = {
+          "Nix packages" = {
             id = "73b6be11-a5c9-4e17-8ab7-58a84e4afd58";
-            url = "https://search.nixos.org/options";
+            url = "https://search.nixos.org/packages";
             position = 109;
             isEssential = true;
             container = 1;
