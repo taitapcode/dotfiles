@@ -57,6 +57,7 @@
 
   modules.home = {
     program = {
+      fish.enable = true;
       fcitx5.enable = true;
       git.enable = true;
       neovim.enable = true;
@@ -67,6 +68,5 @@
       ghostty.enable = true;
     };
     desktop.niri.enable = true;
-    shell.fish.enable = true;
   };
 }

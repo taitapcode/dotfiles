@@ -9,7 +9,7 @@ let
 in
 {
   imports = [
-    ../shell
+    ./shell
   ];
 
   options.modules.home.desktop.niri.enable = lib.mkEnableOption "Enable Niri configuration";
@@ -19,7 +19,7 @@ in
       xwayland-satellite
     ];
 
-    modules.home.shell.noctalia.enable = true;
+    modules.home.desktop.shell.noctalia.enable = true;
 
     programs.niri = {
       settings = {

@@ -5,13 +5,13 @@
   ...
 }:
 let
-  cfg = config.modules.home.shell.noctalia;
+  cfg = config.modules.home.desktop.shell.noctalia;
 in
 {
   imports = [
     inputs.noctalia.homeModules.default
   ];
-  options.modules.home.shell.noctalia.enable =
+  options.modules.home.desktop.shell.noctalia.enable =
     lib.mkEnableOption "Enable Noctalia shell configuration";
   config = lib.mkIf cfg.enable {
     programs.noctalia = {
@@ -145,7 +145,7 @@ in
           };
           clock = {
             color = "secondary";
-            font_weight = 700;
+            font_weight = "700";
             format = "{: %H:%M - %A, %d/%m/%Y }";
           };
           cpu.display = "text";

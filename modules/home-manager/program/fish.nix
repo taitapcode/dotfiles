@@ -1,13 +1,15 @@
 { config, lib, ... }:
 let
-  cfg = config.modules.home.shell.fish;
+  cfg = config.modules.home.program.fish;
 in
 {
   imports = [
-    ../program
+    ./fzf.nix
+    ./zoxide.nix
+    ./yazi.nix
   ];
 
-  options.modules.home.shell.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
+  options.modules.home.program.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
 
   config = lib.mkIf cfg.enable {
     modules.home.program = {
