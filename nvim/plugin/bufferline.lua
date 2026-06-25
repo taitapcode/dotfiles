@@ -14,7 +14,6 @@ require('bufferline').setup({
     diagnostics = 'nvim_lsp',
     always_show_bufferline = false,
     separator_style = 'slant',
-    indicator = { style = 'underline' },
 
     diagnostics_indicator = function(_, _, diag)
       local icons = {
