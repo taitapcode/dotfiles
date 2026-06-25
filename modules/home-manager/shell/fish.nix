@@ -18,6 +18,7 @@ in
 
     programs.fish = {
       enable = true;
+      generateCompletions = true;
 
       shellAliases = {
         # Navigation
