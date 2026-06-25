@@ -131,6 +131,10 @@ in
             plugin = vim-tmux-navigator;
             config = toLuaFile "plugin/tmux-navigator";
           }
+          {
+            plugin = render-markdown-nvim;
+            config = toLuaFile "plugin/render-markdown";
+          }
         ];
 
         extraPackages = with pkgs; [
