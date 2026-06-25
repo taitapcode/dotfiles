@@ -12,7 +12,13 @@ require('conform').setup({
   formatters = {
     ['clang_format'] = {
       prepend_args = {
-        '-style=file:' .. vim.fn.expand('~/.config/.clang-format'),
+        '-style=file:' .. vim.fn.stdpath('config') .. '/clang-format',
+      },
+    },
+    stylua = {
+      prepend_args = {
+        '--config-path',
+        vim.fn.stdpath('config') .. '/stylua.toml',
       },
     },
   },
