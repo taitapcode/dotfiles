@@ -133,7 +133,6 @@ in
         };
 
         wallpaper = {
-          enable = true;
           directory = "${inputs.self}/assets/images/wallpapers";
           default.path = "${inputs.self}/assets/images/wallpapers/wallhaven-8gr6l2.jpg";
           transition_on_startup = true;
