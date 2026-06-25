@@ -9,19 +9,7 @@ let
   cfg = config.modules.home.program.neovim;
 in
 {
-  options.modules.home.program.neovim = {
-    enable = lib.mkEnableOption "Enable Neovim configuration";
-
-    helpers = lib.mkOption {
-      type = lib.types.listOf lib.types.str;
-      default = builtins.attrNames (
-        lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".lua" name)
-          (builtins.readDir (self + "/nvim/helper"))
-      );
-      description = "List of helper lua files to load from nvim/helper/";
-      example = [ "keymap" "trailspace" ];
-    };
-  };
+  options.modules.home.program.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."nvim/snippets".source = self + "/nvim/snippets";
@@ -30,13 +18,7 @@ in
 
     programs.neovim =
       let
-        helperDir = self + "/nvim/helper";
-        loadHelperFiles = lib.concatMapStringsSep "\n\n" (name: ''
-          ;(function()
-            ${builtins.readFile (helperDir + "/" + name + ".lua")}
-          end)()
-        '') cfg.helpers;
-
+        toHelperFile = file: builtins.readFile (self + "/nvim/helper/" + file + ".lua");
         toLuaFile = file: builtins.readFile (self + "/nvim/" + file + ".lua");
       in
       {
@@ -153,7 +135,9 @@ in
         ];
 
         initLua = ''
-          ${loadHelperFiles}
+          ${toHelperFile "keymap"}
+          ${toHelperFile "trailspace"}
+          ${toHelperFile "fcitx5"}
 
           ${toLuaFile "config/options"}
           ${toLuaFile "config/keymaps"}
