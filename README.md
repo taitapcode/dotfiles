@@ -1,6 +1,6 @@
-# nixos-btw
+# My Dotfiles Flake
 
-NixOS dotfiles for my laptop — a fully declarative, reproducible setup powered by the [Nix](https://nixos.org/) package manager.
+NixOS dotfiles — a fully declarative, reproducible setup powered by the [Nix](https://nixos.org/) package manager.
 
 ## Usage
 
@@ -40,7 +40,3 @@ modules.home = {
 ## Screenshots
 
 > TODO
-
-## License
-
-MIT
