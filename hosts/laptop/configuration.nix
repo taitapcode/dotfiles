@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  self,
   ...
 }:
 
@@ -101,7 +102,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs self; };
     users.tai = import ./home.nix;
     backupFileExtension = "backup";
   };

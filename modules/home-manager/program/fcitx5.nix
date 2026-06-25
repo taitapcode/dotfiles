@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  inputs,
+  self,
   ...
 }:
 
@@ -18,6 +18,6 @@ in
       XMODIFIERS = "@im=fcitx5";
     };
 
-    xdg.configFile."fcitx5".source = inputs.self + "/fcitx5";
+    xdg.configFile."fcitx5".source = self + "/fcitx5";
   };
 }

@@ -2,7 +2,7 @@
   config,
   lib,
   pkgs,
-  inputs,
+  self,
   ...
 }:
 let
@@ -12,7 +12,7 @@ in
   options.modules.home.program.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."nvim/snippets".source = inputs.self + "/nvim/snippets";
+    xdg.configFile."nvim/snippets".source = self + "/nvim/snippets";
     xdg.configFile."nvim/stylua.toml".text = ''
       indent_type = "Spaces"
       indent_width = 2
@@ -34,7 +34,7 @@ in
 
     programs.neovim =
       let
-        helperDir = inputs.self + "/nvim/helper";
+        helperDir = self + "/nvim/helper";
         helperFiles = builtins.readDir helperDir;
         luaFiles = lib.attrNames (
           lib.filterAttrs (name: type: type == "regular" && lib.hasSuffix ".lua" name) helperFiles
@@ -45,7 +45,7 @@ in
           end)()
         '') luaFiles;
 
-        toLuaFile = file: builtins.readFile (inputs.self + "/nvim/" + file + ".lua");
+        toLuaFile = file: builtins.readFile (self + "/nvim/" + file + ".lua");
       in
       {
         enable = true;

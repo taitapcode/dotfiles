@@ -2,11 +2,12 @@
   config,
   lib,
   inputs,
+  self,
   ...
 }:
 let
   cfg = config.modules.home.desktop.shell.noctalia;
-  wallpaperPath = "${inputs.self}/assets/images/wallpapers";
+  wallpaperPath = "${self}/assets/images/wallpapers";
   defaultWallpaper = "${wallpaperPath}/wallhaven-jevz8y.png";
 in
 {
@@ -110,7 +111,7 @@ in
         plugins.enabled = [ ];
 
         shell = {
-          avatar_path = "${inputs.self}/assets/images/profile.jpg";
+          avatar_path = "${self}/assets/images/profile.jpg";
           corner_radius_scale = 1.6;
           lang = "en";
           niri_overview_type_to_launch_enabled = true;
