@@ -207,17 +207,24 @@ in
             isEssential = true;
             container = 2;
           };
+          "HCMUT Gmail" = {
+            id = "e4efd123-3226-4606-b948-430f2d2c1566";
+            url = "https://mail.google.com/mail/u/0/#inbox";
+            position = 102;
+            isEssential = true;
+            container = 2;
+          };
           "HCMUT Drive" = {
             id = "ab7d2102-3877-46c1-b8fc-582080ef90b2";
             url = "https://drive.google.com/drive/my-drive";
-            position = 102;
+            position = 103;
             isEssential = true;
             container = 2;
           };
           "HCMUT Courseware" = {
             id = "37b822f1-4070-4fd6-ae22-92221880368a";
             url = "https://www.hcmut-courseware.org/";
-            position = 103;
+            position = 104;
             isEssential = true;
             container = 2;
           };
