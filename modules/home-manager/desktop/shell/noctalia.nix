@@ -6,6 +6,8 @@
 }:
 let
   cfg = config.modules.home.desktop.shell.noctalia;
+  wallpaperPath = "${inputs.self}/assets/images/wallpapers";
+  defaultWallpaper = "${wallpaperPath}/wallhaven-jevz8y.png";
 in
 {
   imports = [
@@ -133,8 +135,9 @@ in
         };
 
         wallpaper = {
-          directory = "${inputs.self}/assets/images/wallpapers";
-          default.path = "${inputs.self}/assets/images/wallpapers/wallhaven-8gr6l2.jpg";
+          directory = wallpaperPath;
+          default.path = defaultWallpaper;
+          last.path = defaultWallpaper;
           transition_on_startup = true;
         };
 
