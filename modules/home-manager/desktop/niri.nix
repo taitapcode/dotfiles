@@ -154,19 +154,19 @@ in
           };
 
           "XF86AudioPlay" = {
-            action.spawn-sh = "playerctl play-pause";
+            action.spawn-sh = "noctalia msg media toggle";
             allow-when-locked = true;
           };
           "XF86AudioStop" = {
-            action.spawn-sh = "playerctl stop";
+            action.spawn-sh = "noctalia msg media stop";
             allow-when-locked = true;
           };
           "XF86AudioPrev" = {
-            action.spawn-sh = "playerctl previous";
+            action.spawn-sh = "noctalia msg media previous";
             allow-when-locked = true;
           };
           "XF86AudioNext" = {
-            action.spawn-sh = "playerctl next";
+            action.spawn-sh = "noctalia msg media next";
             allow-when-locked = true;
           };
 
