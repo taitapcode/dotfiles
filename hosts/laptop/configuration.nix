@@ -19,7 +19,7 @@
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  networking.hostName = "nixos-btw";
+  networking.hostName = "laptop";
   networking.networkmanager.enable = true;
 
   hardware.bluetooth.enable = true;
@@ -106,10 +106,19 @@
     backupFileExtension = "backup";
   };
 
+  security.rtkit.enable = true;
+
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    config.common.default = [ "gtk" ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config.common = {
+      "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+      "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+      default = [ "gtk" ];
+    };
   };
 
   # Enable CUPS to print documents.
