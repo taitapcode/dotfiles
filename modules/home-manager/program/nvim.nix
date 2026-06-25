@@ -18,7 +18,10 @@ in
 
     programs.neovim =
       let
-        loadLuaFile = base: builtins.readFile (self + "/nvim/" + base + ".lua");
+        loadLuaFile = path: builtins.readFile (self + "/nvim/" + path);
+        loadHelper = file: loadLuaFile ("helper/" + file + ".lua");
+        loadConfig = file: loadLuaFile ("config/" + file + ".lua");
+        loadPluginConfig = file: loadLuaFile ("plugin/" + file + ".lua");
       in
       {
         enable = true;
@@ -34,79 +37,79 @@ in
 
           {
             plugin = autoclose-nvim;
-            config = loadLuaFile "plugin/autoclose";
+            config = loadPluginConfig "autoclose";
           }
           {
             plugin = blink-cmp;
-            config = loadLuaFile "plugin/blink-cmp";
+            config = loadPluginConfig "blink-cmp";
           }
           {
             plugin = catppuccin-nvim;
-            config = loadLuaFile "plugin/colorscheme";
+            config = loadPluginConfig "colorscheme";
           }
           {
             plugin = bufferline-nvim;
-            config = loadLuaFile "plugin/bufferline";
+            config = loadPluginConfig "bufferline";
           }
           {
             plugin = lualine-nvim;
-            config = loadLuaFile "plugin/lualine";
+            config = loadPluginConfig "lualine";
           }
           {
             plugin = mini-icons;
-            config = loadLuaFile "plugin/mini-icons";
+            config = loadPluginConfig "mini-icons";
           }
           {
             plugin = mini-files;
-            config = loadLuaFile "plugin/mini-files";
+            config = loadPluginConfig "mini-files";
           }
           {
             plugin = mini-ai;
-            config = loadLuaFile "plugin/mini-ai";
+            config = loadPluginConfig "mini-ai";
           }
           {
             plugin = mini-move;
-            config = loadLuaFile "plugin/mini-move";
+            config = loadPluginConfig "mini-move";
           }
           {
             plugin = snacks-nvim;
-            config = loadLuaFile "plugin/snacks";
+            config = loadPluginConfig "snacks";
           }
           {
             plugin = gitsigns-nvim;
-            config = loadLuaFile "plugin/gitsigns";
+            config = loadPluginConfig "gitsigns";
           }
           {
             plugin = flash-nvim;
-            config = loadLuaFile "plugin/flash";
+            config = loadPluginConfig "flash";
           }
           {
             plugin = conform-nvim;
-            config = loadLuaFile "plugin/formatter";
+            config = loadPluginConfig "formatter";
           }
           {
             plugin = competitest-nvim;
-            config = loadLuaFile "plugin/competitest";
+            config = loadPluginConfig "competitest";
           }
           {
             plugin = nvim-surround;
-            config = loadLuaFile "plugin/surround";
+            config = loadPluginConfig "surround";
           }
           {
             plugin = treesj;
-            config = loadLuaFile "plugin/treesj";
+            config = loadPluginConfig "treesj";
           }
           {
             plugin = nvim-treesitter-textobjects;
-            config = loadLuaFile "plugin/treesitter-textobjects";
+            config = loadPluginConfig "treesitter-textobjects";
           }
           {
             plugin = vim-tmux-navigator;
-            config = loadLuaFile "plugin/tmux-navigator";
+            config = loadPluginConfig "tmux-navigator";
           }
           {
             plugin = render-markdown-nvim;
-            config = loadLuaFile "plugin/render-markdown";
+            config = loadPluginConfig "render-markdown";
           }
         ];
 
@@ -134,15 +137,15 @@ in
         ];
 
         initLua = ''
-          ${loadLuaFile "helper/keymap"}
-          ${loadLuaFile "helper/trailspace"}
-          ${loadLuaFile "helper/fcitx5"}
+          ${loadHelper "keymap"}
+          ${loadHelper "trailspace"}
+          ${loadHelper "fcitx5"}
 
-          ${loadLuaFile "config/options"}
-          ${loadLuaFile "config/keymaps"}
-          ${loadLuaFile "config/autocmds"}
-          ${loadLuaFile "config/cmds"}
-          ${loadLuaFile "config/lsp"}
+          ${loadConfig "options"}
+          ${loadConfig "keymaps"}
+          ${loadConfig "autocmds"}
+          ${loadConfig "cmds"}
+          ${loadConfig "lsp"}
         '';
       };
   };
