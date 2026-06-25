@@ -67,6 +67,9 @@ in
 
         environment = {
           QT_QPA_PLATFORMTHEME = "gtk3";
+          MOZ_ENABLE_WAYLAND = "1";
+          NIXOS_OZONE_WL = "1";
+          GDK_BACKEND = "wayland";
         };
 
         spawn-at-startup = [

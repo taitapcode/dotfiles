@@ -14,7 +14,7 @@ in
       settings = {
         theme = "Catppuccin Mocha";
         font-family = "CaskaydiaCove Nerd Font";
-        font-size = 18;
+        font-size = 17;
         window-decoration = false;
       };
     };
