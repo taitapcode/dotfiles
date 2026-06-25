@@ -13,13 +13,13 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."nvim/snippets".source = inputs.self + "/nvim/snippets";
-    xdg.configFile."stylua/stylua.toml".text = ''
+    xdg.configFile."nvim/stylua.toml".text = ''
       indent_type = "Spaces"
       indent_width = 2
       column_width = 120
       quote_style = "AutoPreferSingle"
     '';
-    xdg.configFile.".clang-format".text = ''
+    xdg.configFile."nvim/clang-format".text = ''
       BasedOnStyle: Google
       BreakBeforeBraces: Allman
       IndentWidth: 2
@@ -138,6 +138,7 @@ in
           xclip
           lazygit
           ripgrep
+          fzf
 
           # Lsp
           lua-language-server
