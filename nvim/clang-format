@@ -1,0 +1,10 @@
+BasedOnStyle: Google
+BreakBeforeBraces: Allman
+IndentWidth: 2
+UseTab: Never
+ColumnLimit: 0
+AllowShortIfStatementsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+PointerAlignment: Left
+AccessModifierOffset: -2

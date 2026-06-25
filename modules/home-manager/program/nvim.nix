@@ -13,24 +13,8 @@ in
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."nvim/snippets".source = self + "/nvim/snippets";
-    xdg.configFile."nvim/stylua.toml".text = ''
-      indent_type = "Spaces"
-      indent_width = 2
-      column_width = 120
-      quote_style = "AutoPreferSingle"
-    '';
-    xdg.configFile."nvim/clang-format".text = ''
-      BasedOnStyle: Google
-      BreakBeforeBraces: Allman
-      IndentWidth: 2
-      UseTab: Never
-      ColumnLimit: 0
-      AllowShortIfStatementsOnASingleLine: true
-      AllowShortFunctionsOnASingleLine: true
-      AllowShortLoopsOnASingleLine: true
-      PointerAlignment: Left
-      AccessModifierOffset: -2
-    '';
+    xdg.configFile."nvim/stylua.toml".source = self + "/nvim/stylua.toml";
+    xdg.configFile."nvim/clang-format".source = self + "/nvim/clang-format";
 
     programs.neovim =
       let
