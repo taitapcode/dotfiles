@@ -29,7 +29,7 @@
   services.upower.enable = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = "/home/tai/.dotfiles";
+    NH_FLAKE = self.outPath;
   };
 
   environment.systemPackages = with pkgs; [
