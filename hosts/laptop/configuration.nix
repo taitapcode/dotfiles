@@ -29,7 +29,7 @@
   services.upower.enable = true;
 
   environment.sessionVariables = {
-    NH_FLAKE = self.outPath;
+    NH_FLAKE = "/home/tai/.dotfiles";
   };
 
   environment.systemPackages = with pkgs; [
@@ -150,6 +150,7 @@
     keyd.enable = true;
     sddm.enable = true;
     fcitx5.enable = true;
+    waydroid.enable = true;
   };
 
   # Enable the OpenSSH daemon.
