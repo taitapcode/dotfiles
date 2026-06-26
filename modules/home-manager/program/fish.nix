@@ -46,7 +46,7 @@ in
         gi = "git init";
         ga = "git add";
         gc = "git commit -m";
-        gp = "git push origin master";
+        gp = "git push origin main";
         gst = "git status";
         # Others
         tmx = "tmux";
