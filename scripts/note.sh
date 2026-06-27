@@ -104,7 +104,7 @@ case "${1:-}" in
 
         cd "$note_dir" || exit 1
         if [ -n "${1:-}" ]; then
-          nvim "${1:-}.md"
+          nvim "$1.md"
         else
           timestamp=$(date "+%Y%m%d")
           nvim "$timestamp.md"

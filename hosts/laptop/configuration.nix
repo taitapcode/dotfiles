@@ -97,7 +97,7 @@
       onlyoffice-desktopeditors
       btop
 
-      self.packages.${pkgs.system}.note
+      self.packages.${pkgs.stdenv.hostPlatform.system}.note
     ];
   };
 
