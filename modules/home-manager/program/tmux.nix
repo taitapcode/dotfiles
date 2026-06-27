@@ -1,4 +1,5 @@
 {
+  self,
   config,
   lib,
   pkgs,
@@ -11,6 +12,8 @@ in
   options.modules.home.program.tmux.enable = lib.mkEnableOption "Enable Tmux configuration";
 
   config = lib.mkIf cfg.enable {
+    home.packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.note ];
+
     programs.tmux = {
       enable = true;
       escapeTime = 0;
@@ -49,8 +52,12 @@ in
         set -g status-left ""
         set -g status-right "#{}"
         set -ag status-right "#{}"
+
         bind -n M-H previous-window
         bind -n M-L next-window
+
+        bind n split-window -h -l 30% "fish -c 'note'"
+        bind f split-window -h -l 30% "fish -c 'note folder'"
       '';
     };
   };
