@@ -96,6 +96,8 @@
       vesktop
       onlyoffice-desktopeditors
       btop
+
+      self.packages.${pkgs.system}.note
     ];
   };
 

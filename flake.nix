@@ -40,7 +40,22 @@
       home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
+      packages.${system} = {
+        note = pkgs.writeShellApplication {
+          name = "note";
+          runtimeInputs = [
+            pkgs.git
+            pkgs.neovim
+            pkgs.coreutils
+          ];
+          text = builtins.readFile ./scripts/note.sh;
+        };
+      };
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs self; };
         modules = [
