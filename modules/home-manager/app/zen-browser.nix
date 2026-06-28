@@ -125,7 +125,7 @@ in
           };
         };
 
-        pinsForce = true;
+        pinsForce = false;
         pinsForceAction = "remove";
         pins = {
           # Container 1
