@@ -14,5 +14,6 @@
     ./bat.nix
     ./eza.nix
     ./nh.nix
+    ./bun.nix
   ];
 }

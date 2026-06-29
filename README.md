@@ -30,7 +30,7 @@ And in `hosts/laptop/home.nix`:
 
 ```nix
 modules.home = {
-  program.neovim.enable = true;
+  programs.neovim.enable = true;
   app.zen-browser.enable = true;
   desktop.niri.enable = true;
 };

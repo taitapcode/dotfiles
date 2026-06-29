@@ -3,7 +3,7 @@
 {
   imports = [
     ./app
-    ./program
+    ./programs
     ./desktop
   ];
 }

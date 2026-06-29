@@ -185,13 +185,6 @@ in
             isEssential = true;
             container = 1;
           };
-          "Nix packages" = {
-            id = "73b6be11-a5c9-4e17-8ab7-58a84e4afd58";
-            url = "https://search.nixos.org/packages";
-            position = 109;
-            isEssential = true;
-            container = 1;
-          };
 
           # Container 2
           "MyBK" = {
