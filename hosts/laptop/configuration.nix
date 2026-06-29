@@ -28,14 +28,10 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  environment.sessionVariables = {
-    NH_FLAKE = "/home/tai/.dotfiles";
-  };
-
   environment.systemPackages = with pkgs; [
     wget
     curl
-    git
+
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
@@ -87,15 +83,11 @@
 
     shell = pkgs.fish;
     packages = with pkgs; [
-      bat
-      eza
-      opencode
-      nh
       nautilus
       peazip
-      vesktop
       onlyoffice-desktopeditors
       btop
+      loupe
 
       self.packages.${pkgs.stdenv.hostPlatform.system}.note
     ];

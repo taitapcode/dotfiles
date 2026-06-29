@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.modules.home.program.neovim;
+  cfg = config.modules.home.programs.neovim;
 in
 {
-  options.modules.home.program.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
+  options.modules.home.programs.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
     xdg.configFile."nvim/snippets".source = self + "/nvim/snippets";

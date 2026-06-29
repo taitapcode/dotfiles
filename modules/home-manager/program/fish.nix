@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  cfg = config.modules.home.program.fish;
+  cfg = config.modules.home.programs.fish;
 in
 {
   imports = [
@@ -9,10 +9,10 @@ in
     ./yazi.nix
   ];
 
-  options.modules.home.program.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
+  options.modules.home.programs.fish.enable = lib.mkEnableOption "Enable Fish shell configuration";
 
   config = lib.mkIf cfg.enable {
-    modules.home.program = {
+    modules.home.programs = {
       fzf.enable = true;
       zoxide.enable = true;
       yazi.enable = true;
@@ -28,7 +28,6 @@ in
         "..." = "z ../..";
         "3.." = "z ../../..";
         # Ls (Eza)
-        ls = "eza --icons --group-directories-first";
         ll = "ls --header --long";
         la = "ll --all";
         lt = "ll --tree --level=2";

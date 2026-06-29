@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.modules.home.program.git;
+  cfg = config.modules.home.programs.git;
 in
 {
-  options.modules.home.program.git.enable = lib.mkEnableOption "Enable Git configuration";
+  options.modules.home.programs.git.enable = lib.mkEnableOption "Enable Git configuration";
 
   config = lib.mkIf cfg.enable {
     programs.git = {

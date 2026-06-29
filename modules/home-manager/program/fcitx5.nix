@@ -6,10 +6,10 @@
 }:
 
 let
-  cfg = config.modules.home.program.fcitx5;
+  cfg = config.modules.home.programs.fcitx5;
 in
 {
-  options.modules.home.program.fcitx5.enable = lib.mkEnableOption "Enable Fcitx5 configuration";
+  options.modules.home.programs.fcitx5.enable = lib.mkEnableOption "Enable Fcitx5 configuration";
 
   config = lib.mkIf cfg.enable {
     home.sessionVariables = {

@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.modules.home.program.zoxide;
+  cfg = config.modules.home.programs.zoxide;
 in
 {
-  options.modules.home.program.zoxide.enable = lib.mkEnableOption "Enable Zoxide configuration";
+  options.modules.home.programs.zoxide.enable = lib.mkEnableOption "Enable Zoxide configuration";
 
   config = lib.mkIf cfg.enable {
     programs.zoxide = {

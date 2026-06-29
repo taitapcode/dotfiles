@@ -56,16 +56,22 @@
   };
 
   modules.home = {
-    program = {
+    programs = {
       fish.enable = true;
       fcitx5.enable = true;
       git.enable = true;
       neovim.enable = true;
       tmux.enable = true;
+      opencode.enable = true;
+      nh.enable = true;
+      eza.enable = true;
+      bat.enable = true;
     };
     app = {
       zen-browser.enable = true;
       ghostty.enable = true;
+      vesktop.enable = true;
+      mpv.enable = true;
     };
     desktop.niri.enable = true;
   };

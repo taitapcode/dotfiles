@@ -10,5 +10,9 @@
     ./zoxide.nix
     ./yazi.nix
     ./tmux.nix
+    ./opencode.nix
+    ./bat.nix
+    ./eza.nix
+    ./nh.nix
   ];
 }

@@ -6,10 +6,10 @@
   ...
 }:
 let
-  cfg = config.modules.home.program.tmux;
+  cfg = config.modules.home.programs.tmux;
 in
 {
-  options.modules.home.program.tmux.enable = lib.mkEnableOption "Enable Tmux configuration";
+  options.modules.home.programs.tmux.enable = lib.mkEnableOption "Enable Tmux configuration";
 
   config = lib.mkIf cfg.enable {
     home.packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.note ];
