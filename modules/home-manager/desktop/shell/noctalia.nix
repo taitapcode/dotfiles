@@ -149,7 +149,6 @@ in
           };
           clock = {
             color = "secondary";
-            font_weight = "700";
             format = "{: %H:%M - %A, %d/%m/%Y }";
           };
           cpu.display = "text";
