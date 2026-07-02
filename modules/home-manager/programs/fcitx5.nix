@@ -18,6 +18,6 @@ in
       XMODIFIERS = "@im=fcitx5";
     };
 
-    xdg.configFile."fcitx5".source = self + "/fcitx5";
+    xdg.configFile."fcitx5".source = self + "/config/fcitx5";
   };
 }

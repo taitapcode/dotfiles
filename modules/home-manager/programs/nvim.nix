@@ -7,18 +7,19 @@
 }:
 let
   cfg = config.modules.home.programs.neovim;
+  nvimConfig = "${self}/config/nvim/";
 in
 {
   options.modules.home.programs.neovim.enable = lib.mkEnableOption "Enable Neovim configuration";
 
   config = lib.mkIf cfg.enable {
-    xdg.configFile."nvim/snippets".source = self + "/nvim/snippets";
-    xdg.configFile."nvim/stylua.toml".source = self + "/nvim/stylua.toml";
-    xdg.configFile."nvim/clang-format".source = self + "/nvim/clang-format";
+    xdg.configFile."nvim/snippets".source = nvimConfig + "snippets";
+    xdg.configFile."nvim/stylua.toml".source = nvimConfig + "stylua.toml";
+    xdg.configFile."nvim/clang-format".source = nvimConfig + "clang-format";
 
     programs.neovim =
       let
-        loadLuaFile = path: builtins.readFile (self + "/nvim/" + path);
+        loadLuaFile = path: builtins.readFile (nvimConfig + path);
         loadHelper = file: loadLuaFile ("helper/" + file + ".lua");
         loadConfig = file: loadLuaFile ("config/" + file + ".lua");
         loadPluginConfig = file: loadLuaFile ("plugin/" + file + ".lua");

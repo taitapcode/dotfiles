@@ -7,7 +7,6 @@
 
 {
   imports = [
-    inputs.niri.nixosModules.niri
     ./hardware.nix
     ../../modules/nixos
   ];
@@ -135,7 +134,7 @@
   programs = {
     niri = {
       enable = true;
-      package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+      useNautilus = true;
     };
     fish.enable = true;
   };
