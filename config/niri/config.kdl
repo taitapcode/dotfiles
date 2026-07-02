@@ -98,6 +98,11 @@ window-rule {
   clip-to-geometry true
   draw-border-with-background false
   open-maximized true
+
+  background-effect {
+    blur true
+    xray false
+  }
 }
 
 window-rule {
@@ -111,9 +116,11 @@ window-rule {
   match app-id="com.mitchellh.ghostty"
 
   opacity 0.9
+}
 
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
   background-effect {
-    blur true
     xray false
   }
 }
