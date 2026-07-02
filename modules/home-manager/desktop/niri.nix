@@ -136,46 +136,107 @@ in
             hotkey-overlay.title = "Run a file explorer";
           };
 
-          "Mod+D".action.spawn-sh = "noctalia msg panel-toggle launcher";
-          "Mod+S".action.spawn-sh = "noctalia msg panel-toggle control-center";
-          "Mod+Comma".action.spawn-sh = "noctalia msg settings-toggle";
+          # Đã chuyển đổi từ spawn-sh sang dạng list của spawn
+          "Mod+D".action.spawn = [
+            "noctalia"
+            "msg"
+            "panel-toggle"
+            "launcher"
+          ];
+          "Mod+S".action.spawn = [
+            "noctalia"
+            "msg"
+            "panel-toggle"
+            "control-center"
+          ];
+          "Mod+Comma".action.spawn = [
+            "noctalia"
+            "msg"
+            "settings-toggle"
+          ];
+          "Mod+P".action.spawn = [
+            "noctalia"
+            "msg"
+            "panel-toggle"
+            "session"
+          ];
 
           "XF86AudioRaiseVolume" = {
-            action.spawn-sh = "noctalia msg volume-up";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-up"
+            ];
             allow-when-locked = true;
           };
           "XF86AudioLowerVolume" = {
-            action.spawn-sh = "noctalia msg volume-down";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-down"
+            ];
             allow-when-locked = true;
           };
           "XF86AudioMute" = {
-            action.spawn-sh = "noctalia msg volume-mute";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "volume-mute"
+            ];
             allow-when-locked = true;
           };
 
           "XF86AudioPlay" = {
-            action.spawn-sh = "noctalia msg media toggle";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "media"
+              "toggle"
+            ];
             allow-when-locked = true;
           };
           "XF86AudioStop" = {
-            action.spawn-sh = "noctalia msg media stop";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "media"
+              "stop"
+            ];
             allow-when-locked = true;
           };
           "XF86AudioPrev" = {
-            action.spawn-sh = "noctalia msg media previous";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "media"
+              "previous"
+            ];
             allow-when-locked = true;
           };
           "XF86AudioNext" = {
-            action.spawn-sh = "noctalia msg media next";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "media"
+              "next"
+            ];
             allow-when-locked = true;
           };
 
           "XF86MonBrightnessUp" = {
-            action.spawn-sh = "noctalia msg brightness-up";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "brightness-up"
+            ];
             allow-when-locked = true;
           };
           "XF86MonBrightnessDown" = {
-            action.spawn-sh = "noctalia msg brightness-down";
+            action.spawn = [
+              "noctalia"
+              "msg"
+              "brightness-down"
+            ];
             allow-when-locked = true;
           };
 
