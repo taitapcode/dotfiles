@@ -38,4 +38,4 @@ modules.home = {
 
 ## Screenshots
 
-> TODO
+![screenshot](./assets/screenshot.png)
