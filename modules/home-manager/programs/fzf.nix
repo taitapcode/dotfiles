@@ -33,11 +33,11 @@ in
           "hl+" = "#f38ba8";
         };
 
-        fileWidgetOptions = [
+        fileWidget.options = [
           "--preview 'if test -d {}; eza --tree --color=always {} | head -200; else; bat --style=numbers --color=always --line-range :500 {}; end'"
         ];
 
-        historyWidgetOptions = [
+        historyWidget.options = [
           "--preview 'echo {}'"
           "--preview-window down:3:hidden:wrap"
           "--bind 'ctrl-/:toggle-preview'"
