@@ -6,5 +6,6 @@
     ./zen-browser.nix
     ./vesktop.nix
     ./mpv.nix
+    ./anki.nix
   ];
 }
