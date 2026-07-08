@@ -73,6 +73,7 @@ in
             "zen-beta"
             "org.gnome.Nautilus"
             "vesktop"
+            "steam"
             "onlyoffice-desktopeditors"
           ];
           reserve_space = false;

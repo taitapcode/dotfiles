@@ -142,6 +142,7 @@
     sddm.enable = true;
     fcitx5.enable = true;
     waydroid.enable = true;
+    steam.enable = true;
   };
 
   # Enable the OpenSSH daemon.

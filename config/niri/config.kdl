@@ -60,20 +60,13 @@ layout {
 }
 
 cursor {
-  xcursor-theme "default"
+  xcursor-theme "Banana"
   xcursor-size 24
 }
 
 // Add lines like this to spawn processes at startup.
 spawn-at-startup "fcitx5" "-d" "--replace"
 
-// Environment variables
-environment {
-  "GDK_BACKEND" "wayland"
-  "MOZ_ENABLE_WAYLAND" "1"
-  "NIXOS_OZONE_WL" "1"
-  "QT_QPA_PLATFORMTHEME" "gtk3"
-}
 
 hotkey-overlay {
   skip-at-startup
