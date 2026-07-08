@@ -60,6 +60,7 @@ in
 
         dock = {
           auto_hide = true;
+          position = "right";
           background_opacity = 0.85;
           cross_axis_padding = 0;
           enabled = true;
