@@ -74,6 +74,7 @@ in
             "org.gnome.Nautilus"
             "vesktop"
             "steam"
+            "org.qbittorrent.qBittorrent"
             "onlyoffice-desktopeditors"
           ];
           reserve_space = false;

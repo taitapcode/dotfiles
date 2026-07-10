@@ -7,5 +7,6 @@
     ./vesktop.nix
     ./mpv.nix
     ./anki.nix
+    ./qbittorrent.nix
   ];
 }
