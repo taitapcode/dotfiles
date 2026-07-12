@@ -23,12 +23,11 @@
     enable = true;
 
     theme = {
-      name = "catppuccin-mocha-lavender-standard+normal";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
+      name = "Catppuccin-GTK-Lavender-Dark";
+      package = pkgs.magnetic-catppuccin-gtk.override {
+        accent = [ "lavender" ];
         size = "standard";
-        tweaks = [ "normal" ];
-        variant = "mocha";
+        shade = "dark";
       };
     };
 
