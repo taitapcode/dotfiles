@@ -7,7 +7,7 @@
 let
   cfg = config.modules.nixos.sddm;
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "japanese_aesthetic";
+    embeddedTheme = "jake_the_dog";
   };
 in
 {
