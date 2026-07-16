@@ -61,9 +61,19 @@ in
         };
 
       profiles.default = {
+        presets = {
+          betterfox.enable = true;
+          arkenfox.enable = true;
+        };
+
         settings = {
           "zen.welcome-screen.seen" = true;
           "zen.tabs.vertical.right-side" = true;
+          "zen.theme.gradient" = true;
+          "zen.theme.gradient.show-custom-color" = true;
+          "browser.ctrlTab.sortByRecentlyUsed" = true;
+          "browser.engagement.ctrlTab.has-used" = true;
+          "ui.systemUsesDarkTheme" = 1;
         };
 
         mods = [
@@ -192,7 +202,7 @@ in
                   blue = 0;
                   algorithm = "floating";
                   lightness = 0;
-                  type = "explicit-lightness"; # Fixed
+                  type = "explicit-lightness";
                 }
               ];
               opacity = 0.5;
@@ -244,7 +254,7 @@ in
                   blue = 0;
                   algorithm = "floating";
                   lightness = 0;
-                  type = "explicit-lightness"; # Fixed
+                  type = "explicit-lightness";
                 }
               ];
               opacity = 0.5;

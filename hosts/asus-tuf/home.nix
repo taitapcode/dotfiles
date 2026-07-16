@@ -21,7 +21,6 @@
 
   gtk = {
     enable = true;
-
     theme = {
       name = "Catppuccin-GTK-Lavender-Dark";
       package = pkgs.magnetic-catppuccin-gtk.override {
