@@ -63,7 +63,6 @@ in
       profiles.default = {
         presets = {
           betterfox.enable = true;
-          arkenfox.enable = true;
         };
 
         settings = {
