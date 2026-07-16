@@ -79,7 +79,6 @@ in
           "a6335949-4465-4b71-926c-4a52d34bc9c0" # Better Find Bar
           "f7c71d9a-bce2-420f-ae44-a64bd92975ab" # Better Unloaded Tabs
           "72f8f48d-86b9-4487-acea-eb4977b18f21" # Better CtrlTab Panel
-          "664c54f9-d97d-410b-a479-23dd8a08a628" # Better Tab Indicators
           "4ab93b88-151c-451b-a1b7-a1e0e28fa7f8" # No Sidebar Scrollbar
           "906c6915-5677-48ff-9bfc-096a02a72379" # Floating Status Bar
           "58649066-2b6f-4a5b-af6d-c3d21d16fc00" # Private Mode Highlighting
@@ -196,11 +195,11 @@ in
               type = "gradient";
               colors = [
                 {
-                  red = 0;
-                  green = 0;
-                  blue = 0;
+                  red = 59;
+                  green = 59;
+                  blue = 59;
                   algorithm = "floating";
-                  lightness = 0;
+                  lightness = 23;
                   type = "explicit-lightness";
                 }
               ];
@@ -248,11 +247,11 @@ in
               type = "gradient";
               colors = [
                 {
-                  red = 0;
-                  green = 0;
-                  blue = 0;
+                  red = 59;
+                  green = 59;
+                  blue = 59;
                   algorithm = "floating";
-                  lightness = 0;
+                  lightness = 23;
                   type = "explicit-lightness";
                 }
               ];
