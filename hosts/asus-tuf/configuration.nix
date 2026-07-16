@@ -27,19 +27,6 @@
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
-  fileSystems."/mnt/games" = {
-    device = "/dev/disk/by-uuid/88B408DEB408D09C";
-    fsType = "ntfs3";
-    options = [
-      "uid=1000"
-      "gid=100"
-      "rw"
-      "exec"
-      "nofail"
-      "force"
-    ];
-  };
-
   environment.systemPackages = with pkgs; [
     wget
     curl
@@ -141,6 +128,11 @@
   # Allow proprietary/unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
+  # Nvidia drivers
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;
+
   # Programs
   programs = {
     niri = {
@@ -160,9 +152,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = false;
-
-  # Ensure hardware acceleration / graphics drivers are active
-  hardware.graphics.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
