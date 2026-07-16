@@ -19,13 +19,26 @@
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  networking.hostName = "laptop";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   hardware.bluetooth.enable = true;
 
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
+
+  fileSystems."/mnt/games" = {
+    device = "/dev/disk/by-uuid/88B408DEB408D09C";
+    fsType = "ntfs3";
+    options = [
+      "uid=1000"
+      "gid=100"
+      "rw"
+      "exec"
+      "nofail"
+      "force"
+    ];
+  };
 
   environment.systemPackages = with pkgs; [
     wget

@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +38,7 @@
       self,
       nixpkgs,
       home-manager,
+      nixos-hardware,
       ...
     }@inputs:
     let
@@ -51,12 +57,22 @@
           text = builtins.readFile ./scripts/note.sh;
         };
       };
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs self; };
-        modules = [
-          ./hosts/laptop/configuration.nix
-          home-manager.nixosModules.default
-        ];
+      nixosConfigurations = {
+        acer-aspire = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs self; };
+          modules = [
+            ./hosts/acer-aspire/configuration.nix
+            home-manager.nixosModules.default
+          ];
+        };
+        asus-tuf = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs self; };
+          modules = [
+            ./hosts/asus-tuf/configuration.nix
+            home-manager.nixosModules.default
+            nixos-hardware.nixosModules.asus-fa506nc
+          ];
+        };
       };
     };
 }
