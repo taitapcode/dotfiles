@@ -21,12 +21,14 @@
 
   gtk = {
     enable = true;
+
     theme = {
-      name = "Catppuccin-GTK-Lavender-Dark";
-      package = pkgs.magnetic-catppuccin-gtk.override {
-        accent = [ "lavender" ];
+      name = "catppuccin-mocha-lavender-standard+normal";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "lavender" ];
         size = "standard";
-        shade = "dark";
+        tweaks = [ "normal" ];
+        variant = "mocha";
       };
     };
 
@@ -42,10 +44,19 @@
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
+      gtk-color-scheme = "prefer-dark";
     };
 
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "catppuccin-mocha-lavender-standard+normal";
+      icon-theme = "Colloid-Dark";
     };
   };
 
