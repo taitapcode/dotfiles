@@ -93,6 +93,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    asusctl
 
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
@@ -141,6 +142,7 @@
       "wheel"
       "networkmanager"
       "video"
+      "power"
     ];
 
     shell = pkgs.fish;
@@ -175,6 +177,9 @@
       "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
     };
   };
+
+  services.asusd.enable = true;
+  powerManagement.powertop.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
