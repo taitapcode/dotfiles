@@ -15,5 +15,6 @@
     ./eza.nix
     ./nh.nix
     ./bun.nix
+    ./mangohud.nix
   ];
 }

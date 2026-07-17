@@ -66,6 +66,7 @@
       eza.enable = true;
       bat.enable = true;
       bun.enable = true;
+      mangohud.enable = true;
     };
     app = {
       zen-browser.enable = true;
