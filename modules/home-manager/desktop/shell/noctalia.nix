@@ -72,6 +72,7 @@ in
             "com.mitchellh.ghostty"
             "zen-beta"
             "org.gnome.Nautilus"
+            "anki"
             "vesktop"
             "steam"
             "org.qbittorrent.qBittorrent"

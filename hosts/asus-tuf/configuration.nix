@@ -196,11 +196,6 @@
   # Allow proprietary/unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
-  # Nvidia drivers
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
-
   # Programs
   programs = {
     niri = {
