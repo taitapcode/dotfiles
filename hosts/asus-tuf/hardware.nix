@@ -18,11 +18,11 @@
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "asus-wmi" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [
     "acpi_backlight=native"
-    "asus-wmi"
+    "nvidia_drm.modeset=1"
   ];
 
   fileSystems."/" = {

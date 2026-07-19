@@ -196,6 +196,8 @@
   # Allow proprietary/unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
+  hardware.nvidia.modesetting.enable = true;
+
   # Programs
   programs = {
     niri = {
