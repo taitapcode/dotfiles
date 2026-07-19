@@ -56,6 +56,13 @@
           ];
           text = builtins.readFile ./scripts/note.sh;
         };
+        rcc = pkgs.writeShellApplication {
+          name = "rcc";
+          runtimeInputs = [
+            pkgs.gcc
+          ];
+          text = builtins.readFile ./scripts/rcc.sh;
+        };
       };
       nixosConfigurations = {
         acer-aspire = nixpkgs.lib.nixosSystem {

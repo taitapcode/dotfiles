@@ -154,6 +154,7 @@
       loupe
 
       self.packages.${pkgs.stdenv.hostPlatform.system}.note
+      self.packages.${pkgs.stdenv.hostPlatform.system}.rcc
     ];
   };
 
