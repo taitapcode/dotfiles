@@ -198,6 +198,8 @@
   nixpkgs.config.allowUnfree = true;
 
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.nvidiaPersistenced = true;
 
   # Programs
   programs = {
