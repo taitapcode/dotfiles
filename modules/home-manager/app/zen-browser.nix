@@ -183,13 +183,6 @@ in
                 isEssential = true;
                 container = 1;
               };
-              "Zalo Web" = {
-                id = "81781902-ac7e-432f-8f67-88f8bea8fc09";
-                url = "chat.zalo.me";
-                position = 109;
-                isEssential = true;
-                container = 1;
-              };
             };
             theme = {
               type = "gradient";
