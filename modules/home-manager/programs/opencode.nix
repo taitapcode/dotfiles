@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -13,9 +14,63 @@ in
   config = lib.mkIf cfg.enable {
     programs.opencode = {
       enable = true;
+
+      extraPackages = with pkgs; [
+        lua-language-server
+        fish-lsp
+        clang-tools
+        basedpyright
+        bash-language-server
+        nixd
+      ];
+
       tui = {
         theme = "catppuccin";
       };
+
+      settings = {
+        lsp = {
+          nixd = {
+            command = [ "nixd" ];
+            extensions = [ ".nix" ];
+          };
+          lua_ls = {
+            command = [ "lua-language-server" ];
+            extensions = [ ".lua" ];
+          };
+          fish_lsp = {
+            command = [ "fish-lsp" ];
+            extensions = [ ".fish" ];
+          };
+          clangd = {
+            command = [ "clangd" ];
+            extensions = [
+              ".c"
+              ".cpp"
+              ".h"
+              ".hpp"
+            ];
+          };
+          basedpyright = {
+            command = [
+              "basedpyright-langserver"
+              "--stdio"
+            ];
+            extensions = [ ".py" ];
+          };
+          bashls = {
+            command = [
+              "bash-language-server"
+              "start"
+            ];
+            extensions = [
+              ".sh"
+              ".bash"
+            ];
+          };
+        };
+      };
+
       commands = {
         commit = ''
           ---
