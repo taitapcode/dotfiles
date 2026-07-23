@@ -194,7 +194,7 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     nvidiaPersistenced = true;
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
