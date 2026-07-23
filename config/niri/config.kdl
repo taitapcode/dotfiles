@@ -1,3 +1,11 @@
+output "eDP-1" {
+  mode "1920x1080@144"
+  scale 1.0
+  hot-corners {
+    top-right
+  }
+}
+
 // Input device configuration.
 input {
   keyboard {
@@ -30,6 +38,7 @@ layout {
   gaps 7
 
   center-focused-column "never"
+  always-center-single-column
 
   preset-column-widths {
     proportion 0.5
