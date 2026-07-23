@@ -20,15 +20,8 @@
     "hid_generic"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [
-    "kvm-amd"
-  ];
-
-  boot.kernelParams = [
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-    "usbcore.autosuspend=-1"
-    "usbcore.default_autosuspend=-1"
-  ];
+  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
