@@ -25,7 +25,6 @@
 
   hardware.bluetooth.enable = true;
 
-  services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
   # Asus config
@@ -94,24 +93,17 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
-    asusctl
-
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      corefonts
-      dejavu_fonts
       ubuntu-classic
       liberation_ttf
-      roboto
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
-      twemoji-color-font
       nerd-fonts.caskaydia-cove
       nerd-fonts.jetbrains-mono
     ];
@@ -222,9 +214,6 @@
     waydroid.enable = true;
     steam.enable = true;
   };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = false;
 
   nix.settings.experimental-features = [
     "nix-command"

@@ -3,7 +3,7 @@ let
   cfg = config.modules.nixos.keyd;
 in
 {
-  options.modules.nixos.keyd.enable = lib.mkEnableOption "Enable SDDM Display Manager configuration";
+  options.modules.nixos.keyd.enable = lib.mkEnableOption "Enable Keyd configuration";
 
   config = lib.mkIf cfg.enable {
     services.keyd = {

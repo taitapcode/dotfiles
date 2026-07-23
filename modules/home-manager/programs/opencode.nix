@@ -33,7 +33,6 @@ in
           - If the diff covers multiple unrelated changes, split into separate commits
           - Each commit should be atomic and self-contained
           - After writing the commit message, stage and commit with `git commit -m "<message>"`
-          - Output ONLY the commit message(s), nothing else
 
           $ARGUMENTS
         '';
