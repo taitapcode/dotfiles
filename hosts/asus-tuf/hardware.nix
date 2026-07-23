@@ -10,29 +10,34 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
+  boot.initrd.enable = true;
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"
-    "usb_storage"
     "usbhid"
+    "usb_storage"
     "sd_mod"
+    "hid_generic"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" "asus-wmi" ];
-  boot.extraModulePackages = [ ];
-  boot.kernelParams = [
-    "acpi_backlight=native"
-    "nvidia_drm.modeset=1"
-    "nvidia_drm.fbdev=1"
+  boot.kernelModules = [
+    "kvm-amd"
   ];
 
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    "usbcore.autosuspend=-1"
+    "usbcore.default_autosuspend=-1"
+  ];
+  boot.extraModulePackages = [ ];
+
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/ddd3c9d1-ebb5-49fe-b5d8-7566dea42d1c";
+    device = "/dev/disk/by-uuid/a749964b-a33a-4a2d-a3b7-c3ca7f5119a8";
     fsType = "ext4";
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/A9B8-EEE9";
+    device = "/dev/disk/by-uuid/826C-6183";
     fsType = "vfat";
     options = [
       "fmask=0022"

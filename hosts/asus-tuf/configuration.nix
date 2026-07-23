@@ -1,5 +1,6 @@
 {
   pkgs,
+  config,
   inputs,
   self,
   ...
@@ -180,7 +181,7 @@
   };
 
   services.asusd.enable = true;
-  powerManagement.powertop.enable = true;
+  powerManagement.powertop.enable = false;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -197,9 +198,13 @@
   # Allow proprietary/unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
 
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.powerManagement.enable = true;
-  hardware.nvidia.nvidiaPersistenced = true;
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    nvidiaPersistenced = true;
+    powerManagement.finegrained = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   # Programs
   programs = {
