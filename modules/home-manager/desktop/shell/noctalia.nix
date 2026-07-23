@@ -83,6 +83,8 @@ in
           smart_auto_hide = true;
         };
 
+        location.address = "Ho Chi Minh City, Vietnam";
+
         lockscreen_widgets = {
           enabled = false;
           schema_version = 2;
@@ -122,7 +124,7 @@ in
           niri_overview_type_to_launch_enabled = true;
           screen_time_enabled = true;
           settings_show_advanced = true;
-          show_location = false;
+          show_location = true;
           panel.clipboard_placement = "attached";
           screenshot.confirm_region = true;
         };
