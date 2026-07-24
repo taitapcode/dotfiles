@@ -19,11 +19,9 @@ in
       sddm-astronaut
     ];
 
-    services.xserver.enable = true;
-
     services.displayManager.sddm = {
       enable = true;
-      wayland.enable = false;
+      wayland.enable = true;
 
       package = pkgs.kdePackages.sddm;
       extraPackages = with pkgs; [
