@@ -10,21 +10,14 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.enable = true;
   boot.initrd.availableKernelModules = [
     "nvme"
     "xhci_pci"
     "usbhid"
-    "usb_storage"
-    "sd_mod"
     "hid_generic"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = [
-    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
-    "acpi_backlight=native"
-  ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {

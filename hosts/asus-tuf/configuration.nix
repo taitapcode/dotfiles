@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   inputs,
   self,
   ...
@@ -16,6 +15,7 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.device = "nodev";
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "acpi_backlight=native" ];
 
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -27,7 +27,12 @@
 
   services.upower.enable = true;
 
-  # Asus config
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    nvidiaPersistenced = true;
+  };
+
   services.asusd.asusdConfig.text = ''
     (
       charge_control_end_threshold: 80,
@@ -189,14 +194,6 @@
 
   # Allow proprietary/unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    nvidiaPersistenced = true;
-    powerManagement.finegrained = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   # Programs
   programs = {
