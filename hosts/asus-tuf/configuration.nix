@@ -7,6 +7,7 @@
 
 {
   imports = [
+    inputs.catppuccin.nixosModules.catppuccin
     ./hardware.nix
     ../../modules/nixos
   ];
@@ -23,14 +24,27 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  hardware.bluetooth.enable = true;
-
   services.upower.enable = true;
-
+  hardware.bluetooth.enable = true;
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = true;
+    powerManagement.finegrained = true;
     nvidiaPersistenced = true;
+  };
+
+  fileSystems."/mnt/Storage" = {
+    device = "/dev/disk/by-uuid/1A5E3A2E5E3A02D5";
+    fsType = "ntfs3";
+    options = [
+      "uid=1000"
+      "gid=100"
+      "exec"
+      "rw"
+      "nofail"
+      "umask=000"
+      "force"
+    ];
   };
 
   services.asusd.asusdConfig.text = ''
@@ -80,20 +94,6 @@
       armoury_settings: {},
     )
   '';
-
-  fileSystems."/mnt/Storage" = {
-    device = "/dev/disk/by-uuid/1A5E3A2E5E3A02D5";
-    fsType = "ntfs3";
-    options = [
-      "uid=1000"
-      "gid=100"
-      "exec"
-      "rw"
-      "nofail"
-      "umask=000"
-      "force"
-    ];
-  };
 
   environment.systemPackages = with pkgs; [
     wget
@@ -162,6 +162,13 @@
     extraSpecialArgs = { inherit inputs self; };
     users.tai = import ./home.nix;
     backupFileExtension = "backup";
+  };
+
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "blue";
   };
 
   security.rtkit.enable = true;

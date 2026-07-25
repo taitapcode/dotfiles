@@ -1,10 +1,14 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
 {
-  imports = [ ../../modules/home-manager ];
+  imports = [
+    inputs.catppuccin.homeModules.catppuccin
+    ../../modules/home-manager
+  ];
 
   home.username = "tai";
   home.homeDirectory = "/home/tai";
@@ -21,17 +25,6 @@
 
   gtk = {
     enable = true;
-
-    theme = {
-      name = "catppuccin-mocha-lavender-standard+normal";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "lavender" ];
-        size = "standard";
-        tweaks = [ "normal" ];
-        variant = "mocha";
-      };
-    };
-
     iconTheme = {
       name = "Colloid-Dark";
       package = pkgs.colloid-icon-theme;
@@ -55,14 +48,21 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "catppuccin-mocha-lavender-standard+normal";
-      icon-theme = "Colloid-Dark";
     };
   };
 
   qt = {
     enable = true;
     platformTheme.name = "gtk3";
+  };
+
+  catppuccin = {
+    enable = true;
+    autoEnable = true;
+    flavor = "mocha";
+    accent = "blue";
+    gtk.icon.enable = false;
+    kvantum.enable = false;
   };
 
   modules.home = {
@@ -86,6 +86,7 @@
       mpv.enable = true;
       anki.enable = true;
       qbittorrent.enable = true;
+      zathura.enable = true;
     };
     desktop.niri.enable = true;
   };

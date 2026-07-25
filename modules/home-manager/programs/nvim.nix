@@ -45,10 +45,6 @@ in
             config = loadPluginConfig "blink-cmp";
           }
           {
-            plugin = catppuccin-nvim;
-            config = loadPluginConfig "colorscheme";
-          }
-          {
             plugin = bufferline-nvim;
             config = loadPluginConfig "bufferline";
           }

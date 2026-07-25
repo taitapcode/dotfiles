@@ -11,11 +11,11 @@ let
   defaultWallpaper = "${wallpaperPath}/4.png";
 in
 {
-  imports = [
-    inputs.noctalia.homeModules.default
-  ];
+  imports = [ inputs.noctalia.homeModules.default ];
+
   options.modules.home.desktop.shell.noctalia.enable =
     lib.mkEnableOption "Enable Noctalia shell configuration";
+
   config = lib.mkIf cfg.enable {
     programs.noctalia = {
       enable = true;
@@ -72,8 +72,9 @@ in
             "com.mitchellh.ghostty"
             "zen-beta"
             "org.gnome.Nautilus"
-            "anki"
             "vesktop"
+            "anki"
+            "org.pwmt.zathura"
             "steam"
             "org.qbittorrent.qBittorrent"
             "onlyoffice-desktopeditors"

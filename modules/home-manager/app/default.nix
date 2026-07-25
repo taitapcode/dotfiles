@@ -8,5 +8,6 @@
     ./mpv.nix
     ./anki.nix
     ./qbittorrent.nix
+    ./zathura.nix
   ];
 }

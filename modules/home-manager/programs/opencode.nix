@@ -24,10 +24,6 @@ in
         nixd
       ];
 
-      tui = {
-        theme = "catppuccin";
-      };
-
       settings = {
         lsp = {
           nixd = {
