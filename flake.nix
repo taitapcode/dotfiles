@@ -48,10 +48,12 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      packages.${system} = {
+      packages.${system} = let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
         note = pkgs.writeShellApplication {
           name = "note";
           runtimeInputs = [
