@@ -50,27 +50,28 @@
       system = "x86_64-linux";
     in
     {
-      packages.${system} = let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-        note = pkgs.writeShellApplication {
-          name = "note";
-          runtimeInputs = [
-            pkgs.git
-            pkgs.neovim
-            pkgs.coreutils
-          ];
-          text = builtins.readFile ./scripts/note.sh;
+      packages.${system} =
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          note = pkgs.writeShellApplication {
+            name = "note";
+            runtimeInputs = [
+              pkgs.git
+              pkgs.neovim
+              pkgs.coreutils
+            ];
+            text = builtins.readFile ./scripts/note.sh;
+          };
+          rcc = pkgs.writeShellApplication {
+            name = "rcc";
+            runtimeInputs = [
+              pkgs.gcc
+            ];
+            text = builtins.readFile ./scripts/rcc.sh;
+          };
         };
-        rcc = pkgs.writeShellApplication {
-          name = "rcc";
-          runtimeInputs = [
-            pkgs.gcc
-          ];
-          text = builtins.readFile ./scripts/rcc.sh;
-        };
-      };
       nixosConfigurations = {
         acer-aspire = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs self; };
