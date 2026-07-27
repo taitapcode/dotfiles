@@ -65,6 +65,39 @@
     kvantum.enable = false;
   };
 
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "x-scheme-handler/http" = "zen-beta.desktop";
+    "x-scheme-handler/https" = "zen-beta.desktop";
+    "text/html" = "zen-beta.desktop";
+
+    "application/pdf" = "org.pwmt.zathura.desktop";
+    "application/epub+zip" = "org.pwmt.zathura.desktop";
+
+    "application/msword" = "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "onlyoffice-desktopeditors.desktop";
+
+    "image/png" = "org.gnome.Loupe.desktop";
+    "image/jpeg" = "org.gnome.Loupe.desktop";
+    "image/webp" = "org.gnome.Loupe.desktop";
+    "image/gif" = "org.gnome.Loupe.desktop";
+    "image/svg+xml" = "org.gnome.Loupe.desktop";
+
+    "video/mp4" = "mpv.desktop";
+    "video/webm" = "mpv.desktop";
+    "video/x-matroska" = "mpv.desktop";
+    "audio/mpeg" = "mpv.desktop";
+    "audio/flac" = "mpv.desktop";
+    "audio/ogg" = "mpv.desktop";
+
+    "x-scheme-handler/magnet" = "org.qbittorrent.qBittorrent.desktop";
+    "application/x-bittorrent" = "org.qbittorrent.qBittorrent.desktop";
+
+    "inode/directory" = "org.gnome.Nautilus.desktop";
+  };
+
   modules.home = {
     programs = {
       fish.enable = true;
