@@ -73,6 +73,7 @@ in
             "zen-beta"
             "org.gnome.Nautilus"
             "vesktop"
+            "Localsend"
             "anki"
             "org.pwmt.zathura"
             "steam"

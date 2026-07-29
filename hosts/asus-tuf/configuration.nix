@@ -217,6 +217,7 @@
     fcitx5.enable = true;
     waydroid.enable = true;
     steam.enable = true;
+    localsend.enable = true;
   };
 
   nix.settings.experimental-features = [
