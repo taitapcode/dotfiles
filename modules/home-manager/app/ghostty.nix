@@ -3,7 +3,7 @@ let
   cfg = config.modules.home.app.ghostty;
 in
 {
-  options.modules.home.app.ghostty.enable = lib.mkEnableOption "Enable Ghostty configuration";
+  options.modules.home.app.ghostty.enable = lib.mkEnableOption "Enable ghostty";
 
   config = lib.mkIf cfg.enable {
     programs.ghostty = {

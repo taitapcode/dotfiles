@@ -3,7 +3,7 @@ let
   cfg = config.modules.home.app.zathura;
 in
 {
-  options.modules.home.app.zathura.enable = lib.mkEnableOption "Enable Zathura configuration";
+  options.modules.home.app.zathura.enable = lib.mkEnableOption "Enable zathura";
 
   config = lib.mkIf cfg.enable {
     programs.zathura = {

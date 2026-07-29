@@ -8,7 +8,7 @@ let
   cfg = config.modules.home.app.anki;
 in
 {
-  options.modules.home.app.anki.enable = lib.mkEnableOption "Enable Anki";
+  options.modules.home.app.anki.enable = lib.mkEnableOption "Enable anki";
 
   config = lib.mkIf cfg.enable {
     home.packages = [
