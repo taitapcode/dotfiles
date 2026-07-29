@@ -13,7 +13,7 @@ in
     inputs.zen-browser.homeModules.beta
   ];
 
-  options.modules.home.app.zen-browser.enable = lib.mkEnableOption "Enable Zen Browser Configuration";
+  options.modules.home.app.zen-browser.enable = lib.mkEnableOption "Enable zen browser";
 
   config = lib.mkIf cfg.enable {
     programs.zen-browser = {
@@ -155,31 +155,38 @@ in
                 isEssential = true;
                 container = 1;
               };
-              "Gemini" = {
-                id = "1cd614cf-cb2a-4e9d-97ba-b42be17ca761";
-                url = "https://gemini.google.com/app";
-                position = 105;
-                isEssential = true;
-                container = 1;
-              };
-              "Claude" = {
-                id = "f41edcd1-b367-409f-ad80-506924daf97e";
-                url = "https://claude.ai/";
-                position = 106;
-                isEssential = true;
-                container = 1;
-              };
               "Youtube Music" = {
                 id = "55b18b31-65f5-4ade-ac44-cf54a3ddf325";
                 url = "https://music.youtube.com/";
-                position = 107;
+                position = 105;
                 isEssential = true;
                 container = 1;
               };
               "Facebook" = {
                 id = "3757ac88-55f5-4466-8111-18b6458cde11";
                 url = "https://facebook.com";
+                position = 106;
+                isEssential = true;
+                container = 1;
+              };
+              "Gemini" = {
+                id = "1cd614cf-cb2a-4e9d-97ba-b42be17ca761";
+                url = "https://gemini.google.com/app";
+                position = 107;
+                isEssential = true;
+                container = 1;
+              };
+              "Claude" = {
+                id = "f41edcd1-b367-409f-ad80-506924daf97e";
+                url = "https://claude.ai/";
                 position = 108;
+                isEssential = true;
+                container = 1;
+              };
+              "Chat GPT" = {
+                id = "39ce3f01-bff9-4055-94b1-ff8b4583e530";
+                url = "https://chatgpt.com/";
+                position = 109;
                 isEssential = true;
                 container = 1;
               };
