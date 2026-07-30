@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./program
-    ./service
+    ./sddm.nix
+    ./keyd.nix
   ];
 }

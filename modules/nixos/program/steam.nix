@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.modules.nixos.steam;
+  cfg = config.modules.nixos.program.steam;
 in
 {
-  options.modules.nixos.steam.enable = lib.mkEnableOption "Enable Steam support";
+  options.modules.nixos.program.steam.enable = lib.mkEnableOption "Enable Steam support";
 
   config = lib.mkIf cfg.enable {
     boot.supportedFilesystems = [ "ntfs3" ];

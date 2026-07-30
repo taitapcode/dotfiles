@@ -4,10 +4,10 @@
   ...
 }:
 let
-  cfg = config.modules.nixos.localsend;
+  cfg = config.modules.nixos.program.localsend;
 in
 {
-  options.modules.nixos.localsend = {
+  options.modules.nixos.program.localsend = {
     enable = lib.mkEnableOption "Enable LocalSend";
     openFirewall = lib.mkOption {
       type = lib.types.bool;

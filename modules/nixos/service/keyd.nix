@@ -1,9 +1,9 @@
 { config, lib, ... }:
 let
-  cfg = config.modules.nixos.keyd;
+  cfg = config.modules.nixos.service.keyd;
 in
 {
-  options.modules.nixos.keyd.enable = lib.mkEnableOption "Enable Keyd configuration";
+  options.modules.nixos.service.keyd.enable = lib.mkEnableOption "Enable Keyd configuration";
 
   config = lib.mkIf cfg.enable {
     services.keyd = {

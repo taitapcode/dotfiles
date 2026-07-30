@@ -146,11 +146,15 @@
   };
 
   modules.nixos = {
-    keyd.enable = true;
-    sddm.enable = true;
-    fcitx5.enable = true;
-    waydroid.enable = true;
-    steam.enable = true;
+    service = {
+      keyd.enable = true;
+      sddm.enable = true;
+    };
+    program = {
+      fcitx5.enable = true;
+      waydroid.enable = true;
+      steam.enable = true;
+    };
   };
 
   # Ensure hardware acceleration / graphics drivers are active

@@ -98,6 +98,7 @@
   environment.systemPackages = with pkgs; [
     wget
     curl
+    wdisplays
   ];
 
   fonts = {
@@ -212,12 +213,16 @@
   };
 
   modules.nixos = {
-    keyd.enable = true;
-    sddm.enable = true;
-    fcitx5.enable = true;
-    waydroid.enable = true;
-    steam.enable = true;
-    localsend.enable = true;
+    service = {
+      keyd.enable = true;
+      sddm.enable = true;
+    };
+    program = {
+      fcitx5.enable = true;
+      waydroid.enable = true;
+      steam.enable = true;
+      localsend.enable = true;
+    };
   };
 
   nix.settings.experimental-features = [
