@@ -23,6 +23,10 @@ in
       yazi.enable = true;
     };
 
+    home.packages = with pkgs; [
+      file
+    ];
+
     programs.fish = {
       enable = true;
       generateCompletions = true;
