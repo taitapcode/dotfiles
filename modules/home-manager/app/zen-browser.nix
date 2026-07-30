@@ -72,6 +72,7 @@ in
           "zen.theme.gradient.show-custom-color" = true;
           "browser.ctrlTab.sortByRecentlyUsed" = true;
           "browser.engagement.ctrlTab.has-used" = true;
+          "browser.translations.automaticallyPopup" = false;
           "ui.systemUsesDarkTheme" = 1;
         };
 
