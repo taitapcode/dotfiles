@@ -16,5 +16,6 @@
     ./nh.nix
     ./bun.nix
     ./mangohud.nix
+    ./kanshi.nix
   ];
 }

@@ -111,6 +111,7 @@
       bat.enable = true;
       bun.enable = true;
       mangohud.enable = true;
+      kanshi.enable = true;
     };
     app = {
       zen-browser.enable = true;
