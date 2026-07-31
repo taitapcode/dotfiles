@@ -12,7 +12,7 @@ in
   options.modules.home.programs.kanshi.enable = lib.mkEnableOption "Enable kanshi";
 
   config = lib.mkIf cfg.enable {
-    home.systemPackages = [ pkgs.wdisplays ];
+    home.packages = [ pkgs.wdisplays ];
 
     services.kanshi = {
       enable = true;
