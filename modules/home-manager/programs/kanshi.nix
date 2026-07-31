@@ -38,7 +38,7 @@ in
               {
                 criteria = "Samsung Electric Company Odyssey G5 HNBY300070";
                 status = "enable";
-                mode = "2560x1440@144Hz";
+                mode = "2560x1440@120Hz";
                 scale = 1.0;
                 position = "0,0";
               }
