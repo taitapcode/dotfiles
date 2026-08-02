@@ -152,6 +152,10 @@ in
         };
 
         widget = {
+          workspaces = {
+            hide_when_empty = true;
+            show_labels = false;
+          };
           battery = {
             display_mode = "graphic";
             show_label = false;
@@ -160,17 +164,8 @@ in
             color = "secondary";
             format = "{: %H:%M - %A, %d/%m/%Y }";
           };
-          cpu.display = "text";
           media.hide_when_no_media = true;
           network.show_label = false;
-          ram = {
-            display = "text";
-            show_label = false;
-          };
-          workspaces = {
-            display = "none";
-            hide_when_empty = true;
-          };
         };
       };
     };
