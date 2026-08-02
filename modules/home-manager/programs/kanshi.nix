@@ -38,14 +38,14 @@ in
               {
                 criteria = "Samsung Electric Company Odyssey G5 HNBY300070";
                 status = "enable";
-                mode = "2560x1440@120Hz";
+                mode = "2560x1440@164.983Hz";
                 scale = 1.0;
                 position = "0,0";
               }
 
               {
                 criteria = "Chimei Innolux Corporation 0x1521 Unknown";
-                status = "enable";
+                status = "disable";
                 mode = "1920x1080@144Hz";
                 scale = 1.0;
                 position = "2560,0";
