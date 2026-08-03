@@ -25,6 +25,8 @@ in
       ];
 
       settings = {
+        plugin = [ "opencode-session-auto-rename" ];
+
         lsp = {
           nixd = {
             command = [ "nixd" ];
