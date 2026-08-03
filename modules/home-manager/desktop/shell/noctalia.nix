@@ -158,7 +158,7 @@ in
           };
           battery = {
             display_mode = "graphic";
-            show_label = false;
+            show_label = true;
           };
           clock = {
             color = "secondary";
