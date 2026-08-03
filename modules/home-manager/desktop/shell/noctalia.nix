@@ -8,7 +8,7 @@
 let
   cfg = config.modules.home.desktop.shell.noctalia;
   wallpaperPath = "${self}/assets/wallpapers";
-  defaultWallpaper = "${wallpaperPath}/1.png";
+  defaultWallpaper = "${wallpaperPath}/3.png";
 in
 {
   imports = [ inputs.noctalia.homeModules.default ];
@@ -52,7 +52,7 @@ in
         };
 
         control_center = {
-          sidebar = "full";
+          sidebar = "compact";
           sidebar_section = "none";
         };
 
@@ -60,7 +60,6 @@ in
 
         dock = {
           auto_hide = true;
-          position = "bottom";
           background_opacity = 0.85;
           cross_axis_padding = 0;
           enabled = true;
@@ -74,47 +73,19 @@ in
             "org.gnome.Nautilus"
             "vesktop"
             "org.pwmt.zathura"
-            "Localsend"
+            "LocalSend"
             "anki"
             "steam"
             "org.qbittorrent.qBittorrent"
             "onlyoffice-desktopeditors"
           ];
+          position = "bottom";
           reserve_space = false;
           show_dots = true;
           smart_auto_hide = true;
         };
 
         location.address = "Ho Chi Minh City, Vietnam";
-
-        lockscreen_widgets = {
-          enabled = false;
-          schema_version = 2;
-          widget_order = [ "lockscreen-login-box@eDP-1" ];
-          grid = {
-            cell_size = 16;
-            major_interval = 4;
-            visible = true;
-          };
-          widget."lockscreen-login-box@eDP-1" = {
-            box_height = 70.0;
-            box_width = 400.0;
-            cx = 960.0;
-            cy = 961.0;
-            output = "eDP-1";
-            rotation = 0.0;
-            type = "login_box";
-            settings = {
-              background_color = "surface_variant";
-              background_opacity = 0.88;
-              background_radius = 12.0;
-              input_opacity = 1.0;
-              input_radius = 6.0;
-              show_login_button = true;
-            };
-          };
-        };
-
         notification.position = "top_center";
 
         plugins.enabled = [ ];
@@ -127,7 +98,24 @@ in
           screen_time_enabled = true;
           settings_show_advanced = true;
           show_location = true;
-          panel.clipboard_placement = "attached";
+
+          launcher = {
+            categories = false;
+            providers = {
+              emoji = {
+                global = true;
+                prefix = "";
+              };
+              session.global = false;
+              wallpaper.global = false;
+            };
+          };
+
+          panel = {
+            clipboard_placement = "floating";
+            polkit_placement = "attached";
+          };
+
           screenshot.confirm_region = true;
         };
 
@@ -146,16 +134,12 @@ in
 
         wallpaper = {
           directory = wallpaperPath;
+          transition_on_startup = true;
           default.path = defaultWallpaper;
           last.path = defaultWallpaper;
-          transition_on_startup = true;
         };
 
         widget = {
-          workspaces = {
-            hide_when_empty = true;
-            show_labels = false;
-          };
           battery = {
             display_mode = "graphic";
             show_label = true;
@@ -166,6 +150,10 @@ in
           };
           media.hide_when_no_media = true;
           network.show_label = false;
+          workspaces = {
+            hide_when_empty = true;
+            show_labels = false;
+          };
         };
       };
     };
