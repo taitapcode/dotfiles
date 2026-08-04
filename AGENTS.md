@@ -24,34 +24,27 @@ Both hosts use hostname `nixos`, so `nh` can't infer which configuration to buil
 
 ## Folder Structure
 
+The repo follows a fixed top-level layout; each directory holds **many** files of the same kind, so do not rely on a fixed file list — discover actual contents with glob/file search before touching anything.
+
 ```
 .dotfiles/
-├── flake.nix
-├── assets/                 # profile.jpg (Noctalia avatar), screenshot.png, wallpapers/{1,2,3}.png
-├── config/                 # Raw dotfiles, sourced by modules via `self + "/config/..."`
-│   ├── fcitx5/
-│   │   ├── conf/           # classicui.conf, notifications.conf
-│   │   ├── config          # trigger Alt+Z, page Up/Down
-│   │   └── profile         # DefaultIM = lotus
-│   ├── niri/
-│   │   └── config.kdl      # ~292 lines: layout, binds, noctalia/ghostty window rules
-│   └── nvim/
-│       ├── config/         # autocmds, cmds, keymaps, lsp, options (readFile into initLua)
-│       ├── helper/         # fcitx5, keymap, trailspace
-│       ├── plugin/         # one file per plugin (18 plugins, incl. blink-cmp, snacks)
-│       ├── snippets/       # cpp.json, markdown.json
-│       ├── clang-format    # Google base, Allman braces, indent 2
-│       └── stylua.toml     # 2 spaces, 120 col, single quotes
-├── hosts/
-│   ├── acer-aspire/        # Intel laptop
-│   └── asus-tuf/           # ASUS TUF F15 (FA506NC, NVIDIA) - the primary machine
+├── flake.nix          # entrypoint
+├── assets/            # static resources (images, wallpapers, avatars, screenshots) — any number of files
+├── config/            # raw dotfiles mirroring ~/.config structure; sourced by modules via `self + "/config/<app>/..."` (home.file for each top-level app dir). Anything here maps 1:1 onto a config app/subdir.
+├── hosts/<host>/      # per-machine NixOS config; each host = one dir, enabled `<host>` attr in flake
 ├── modules/
-│   ├── home-manager/       # see "Home-Manager Modules" below
-│   └── nixos/              # see "NixOS Modules" below
-└── scripts/
-    ├── note.sh             # git-backed notes helper
-    └── rcc.sh              # compile+run+delete a C++17 file
+│   ├── home-manager/  # one file per module under app/ programs/ desktop/ (see below)
+│   └── nixos/         # one file per module under program/ service/
+└── scripts/           # one *.sh helper per flake package/lazy-exec; each is wrapped via writeShellApplication
 ```
+
+Conventions when adding files:
+
+- **`config/`**: add the whole app dir as-is (mirror of `~/.config`); wire it into the matching home-manager module. No per-file listing needed.
+- **`modules/`**: one module per file, named `<name>.nix`, placed under the category dir (`programs/`, `app/`, `desktop/` for home; `program/`, `service/` for nixos). Groups of related modules may live in a subdir with their own `default.nix` (e.g. `desktop/shell/`).
+- **`hosts/`**: add a new host by creating `<name>/configuration.nix` + `<name>/home.nix` and exporting a `nixosConfigurations.<name>` in `flake.nix`.
+- **`scripts/`**: add a new `scripts/<name>.sh` and expose it as `packages.${system}.<name>` in `flake.nix`.
+- **`assets/`**: drop files here; reference by `self + "/assets/<file>"`.
 
 ## Hosts
 
@@ -64,45 +57,26 @@ Common to both: GRUB+EFI, TZ `Asia/Ho_Chi_Minh`, hostname `nixos`, user `tai` (s
 
 ## Home-Manager Modules
 
-`modules/home-manager/default.nix` imports `./app ./programs ./desktop`. Option namespace: `modules.home.*`. Enabled modules (from `hosts/*/home.nix`) use the pattern `options.modules.home.programs.<name>.enable = lib.mkEnableOption ...`.
+`modules/home-manager/default.nix` imports `./app ./programs ./desktop`. Option namespace: `modules.home.*`. One module per file under the category dirs; hosts enable them declaratively in `hosts/*/home.nix`. The module inventory is **not** enumerated here — discover it by globbing `modules/home-manager/*/*.nix` (e.g. `programs/*.nix`, `app/*.nix`, `desktop/**/*.nix`).
 
-`programs/`:
-- `fish` — fish w/ custom prompt (git branch + dirty ✗), aliases (`ll`, `la`, `cat`→bat, `v`→nvim, `tmx`, `lg`, ...), `fifc` plugin, vi bindings; **auto-enables fzf, zoxide, yazi**.
-- `fcitx5` — session vars (`GTK_IM_MODULE`, `QT_IM_MODULE`, `XMODIFIERS`), sources `config/fcitx5`.
-- `fzf` — preview widgets w/ bat/eza (also pulls bat, eza, ripgrep, fd).
-- `git` — user `taitapcode` (hoangductai2007@gmail.com), `init.defaultBranch=main`, `pull.rebase`; pulls `gh` (https) + `lazygit` (icons).
-- `nvim` — `vim`/`vi` aliases; ~18 plugins with per-file lua config from `config/nvim/plugin/`, 8 LSP servers (nixd, lua_ls, fish_lsp, clangd, basedpyright, bashls, gdscript, copilot), formatters via conform; uses `builtins.readFile` to inline all `config/`+`helper/` lua into `initLua`.
-- `tmux` — prefix `C-s`, vi mode, mouse, catppuccin mocha status bar, M-H/M-L window nav, `n`/`f` split-pane note binds.
-- `opencode` — LSP servers (nixd, clangd, bashls, ...), session-renamed plugin.
-- `bat`, `eza` (icons, group-directories-first), `bun`, `mangohud`, `kanshi` (2 output profiles: laptop builtin 1920×1080@144, external Samsung Odyssey G5 2560×1440@165 w/ builtin disabled; also installs `wdisplays`).
-- `nh` — configured with `flake = "/home/${config.home.username}/.dotfiles"`, keeping last 5 generations.
+Pattern: `options.modules.home.programs.<name>.enable = lib.mkEnableOption ...` → `config = lib.mkIf cfg.enable { ... }`. Modules that configure an app keep its dotfiles in `config/<app>/` and source them via `self + "/config/<app>/..."`.
 
-`app/`: `ghostty` (CaskaydiaCove 17, no decoration, fish integration), `vesktop` (Discord, tray), `mpv`, `anki` (review-heatmap ice, image-occlusion), `qbittorrent`, `zathura` (PDF/epub, hashtag recolor, half-page scroll), `zen` — default browser w/ hard privacy policies, forced addons (uBlock, Bitwarden, ClearURLs), `betterfox`, 2 containers (Personal/Study), 2 spaces (Daily compact).
-
-`desktop/`:
-- `niri` (+ `desktop.shell.noctalia`) — sources `config/niri`→`~/.config/niri`, `xwayland-satellite`, session vars (`GDK_BACKEND=wayland`, `MOZ_ENABLE_WAYLAND=1`, `NIXOS_OZONE_WL=1`, `QT_QPA_PLATFORMTHEME=gtk3`).
-- `shell/noctalia` — via `inputs.noctalia.homeModules.default`; full Noctalia shell: top bar opacity 0.9 w/ start workspaces + end tray/system widgets, bottom auto-hide dock (10 pinned apps), control center, backdrop, `assets/wallpapers/3.png` default, Catppuccin + Oxocarbon theme, location HCMC.
+Stable facts worth knowing (don't treat as exhaustive):
+- `programs/git` holds the git identity: user `taitapcode` / hoangductai2007@gmail.com.
+- Auto-chains (see Flake section): `programs/fish` also enables `fzf`, `zoxide`, `yazi`; `desktop/niri` also enables `desktop/shell/noctalia`.
 
 ## NixOS Modules
 
-`modules/nixos/default.nix` imports `./program ./service`. `modules.nixos.program.*`:
-- `fcitx5` — via `inputs.fcitx5-lotus.nixosModules.fcitx5-lotus`; i18n.inputMethod fcitx5 + `services.fcitx5-lotus` for user `tai`.
-- `steam` — overlay flags (`--no-cef-sandbox`, `-cef-disable-gpu-compositing`), `gamescopeSession`, gamemode, `ntfs3` fstab.
-- `waydroid` — `virtualisation.waydroid` with nftables.
-- `localsend` — `programs.localsend` + `openFirewall` option (default true).
+`modules/nixos/default.nix` imports `./program ./service`. Option namespace: `modules.nixos.*`. One module per file; discover by globbing `modules/nixos/*/*.nix`.
 
-`modules.nixos.service.*`:
-- `keyd` — capslock ↔ escape globally.
-- `sddm` — wayland (kwin compositor), window `banana-cursor` 28.
+Pattern: `options.modules.nixos.<category>.<name>.enable = lib.mkEnableOption ...` → `config = lib.mkIf cfg.enable { ... }`.
 
 ## Scripts
 
-- `note` (`scripts/note.sh`) — git-backed notes in `~/Documents/notes`; `note [name]`/`note new` open daily/named `.md` in nvim, `note folder` → `Snacks.picker.files`, `note clone <url>`/`note pull`/`note push`. Flake runtime inputs: git, neovim, coreutils.
-- `rcc` (`scripts/rcc.sh`) — `g++ -std=c++17 -O2 -Wall -Wextra file.cpp -o file && ./file && rm file`, multiple `.cpp` args, ignores non-.cpp.
+Each helper is `scripts/<name>.sh`, wrapped as `packages.${system}.<name>` in `flake.nix` via `writeShellApplication`. Discover by globbing `scripts/*.sh`; details live inside each script (usage/help in the header).
 
 ## Conventions
 
-- Home-manager modules: `options.modules.home.programs.<name>.enable = lib.mkEnableOption ...` → `config = lib.mkIf cfg.enable { ... }`; registered via `modules/home-manager/default.nix`. NixOS modules use `modules.nixos.*`.
 - Hosts enable modules declaratively (e.g. `modules.home.programs.fish.enable = true;` in `hosts/*/home.nix`).
 - Username `tai`, home `/home/tai`, state version `26.05`.
 - Theme: Catppuccin Mocha (accent blue) — home level both hosts, system level only `asus-tuf`.
