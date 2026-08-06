@@ -8,7 +8,7 @@ let
   cfg = config.modules.nixos.program.waydroid;
 in
 {
-  options.modules.nixos.program.waydroid.enable = lib.mkEnableOption "Enable waydroid support";
+  options.modules.nixos.program.waydroid.enable = lib.mkEnableOption "Enable waydroid";
 
   config = lib.mkIf cfg.enable {
     virtualisation.waydroid.enable = true;

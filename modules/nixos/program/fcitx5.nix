@@ -13,7 +13,7 @@ in
     inputs.fcitx5-lotus.nixosModules.fcitx5-lotus
   ];
 
-  options.modules.nixos.program.fcitx5.enable = lib.mkEnableOption "Enable Fcitx5 Lotus configuration";
+  options.modules.nixos.program.fcitx5.enable = lib.mkEnableOption "Enable Fcitx5 Lotus";
 
   config = lib.mkIf cfg.enable {
     i18n.inputMethod = {
