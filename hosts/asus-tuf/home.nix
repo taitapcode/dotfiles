@@ -75,9 +75,12 @@
     "application/epub+zip" = "org.pwmt.zathura.desktop";
 
     "application/msword" = "onlyoffice-desktopeditors.desktop";
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "onlyoffice-desktopeditors.desktop";
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "onlyoffice-desktopeditors.desktop";
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
+      "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" =
+      "onlyoffice-desktopeditors.desktop";
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation" =
+      "onlyoffice-desktopeditors.desktop";
 
     "image/png" = "org.gnome.Loupe.desktop";
     "image/jpeg" = "org.gnome.Loupe.desktop";
