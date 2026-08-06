@@ -124,6 +124,7 @@
       # anki.enable = true;
       qbittorrent.enable = true;
       zathura.enable = true;
+      helium.enable = true;
     };
     desktop.niri.enable = true;
   };

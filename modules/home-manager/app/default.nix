@@ -9,5 +9,6 @@
     ./anki.nix
     ./qbittorrent.nix
     ./zathura.nix
+    ./helium.nix
   ];
 }
