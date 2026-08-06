@@ -74,7 +74,7 @@ in
             "vesktop"
             "org.pwmt.zathura"
             "LocalSend"
-            "anki"
+            # "anki"
             "steam"
             "org.qbittorrent.qBittorrent"
             "onlyoffice-desktopeditors"
