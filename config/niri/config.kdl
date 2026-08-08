@@ -90,6 +90,11 @@ animations {
 debug {
   // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
+
+  // Wait for a frame to fully finish rendering before queueing the next one.
+  // Fixes screen tearing (especially with Nvidia / Ghostty) caused by the
+  // driver delivering frames ahead of the compositor.
+  wait-for-frame-completion-before-queueing
 }
 
 // Window rules
