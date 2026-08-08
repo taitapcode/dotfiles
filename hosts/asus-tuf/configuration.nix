@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   self,
+  config,
   ...
 }:
 
@@ -27,9 +28,9 @@
   services.upower.enable = true;
   hardware.bluetooth.enable = true;
   hardware.nvidia = {
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     modesetting.enable = true;
     powerManagement.enable = true;
-    powerManagement.finegrained = true;
     nvidiaPersistenced = true;
   };
 
